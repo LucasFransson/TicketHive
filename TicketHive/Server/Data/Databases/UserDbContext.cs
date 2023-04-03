@@ -6,10 +6,10 @@ using TicketHive.Server.Models;
 
 namespace TicketHive.Server.Data.Databases
 {
-    public class UserDbContext : ApiAuthorizationDbContext<ApplicationUser>
+    public class UserDbContext : ApiAuthorizationDbContext<UserModel>
     {
         public UserDbContext(
-            DbContextOptions options,
+            DbContextOptions<UserDbContext> options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }

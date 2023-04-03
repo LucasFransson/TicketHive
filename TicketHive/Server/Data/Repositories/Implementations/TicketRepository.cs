@@ -4,10 +4,10 @@ using TicketHive.Server.Models;
 
 namespace TicketHive.Server.Data.Repositories.Implementations
 {
-    public class EventRepository : Repository<EventModel>, IEventRepository
+    public class TicketRepository : Repository<TicketModel>,ITicketRepository
     {
         private readonly AppDbContext _appDbContext;
-        public EventRepository(AppDbContext context) : base(context)
+        public TicketRepository(AppDbContext context) : base(context)
         {
             _appDbContext = context;
         }

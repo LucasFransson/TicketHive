@@ -1,6 +1,11 @@
-﻿namespace TicketHive.Server.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TicketHive.Server.Models
 {
-    public class Country
+    public class CountryModel
     {
+        [Key]
+        [MaxLength(100)]
+        public required string Name { get; set; }
     }
 }
