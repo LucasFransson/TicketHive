@@ -2,7 +2,7 @@
 
 namespace TicketHive.Server.Data.Repositories.Interfaces
 {
-    public interface IEventRepository : IRepository<EventModel>
+    public interface ITicketRepository : IRepository<TicketModel>
     {
     }
 }

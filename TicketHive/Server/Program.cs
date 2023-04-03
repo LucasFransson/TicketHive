@@ -7,16 +7,18 @@ using TicketHive.Server.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var connectionStringUser = builder.Configuration.GetConnectionString("UserDbConnection") ?? throw new InvalidOperationException("Connection string 'UserDbConnection' not found.");
 builder.Services.AddDbContext<UserDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlServer(connectionStringUser));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+//var connectionStringApp = builder.Configuration.GetConnectionString("AppDbConnection");
+//builder.Services.AddDbContext<AppDbContext>(options=> options.UseSqlServer(connectionStringApp));
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<UserModel>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<UserDbContext>();
 
 builder.Services.AddIdentityServer()
-    .AddApiAuthorization<ApplicationUser, UserDbContext>();
+    .AddApiAuthorization<UserModel, UserDbContext>();
 
 builder.Services.AddAuthentication()
     .AddIdentityServerJwt();

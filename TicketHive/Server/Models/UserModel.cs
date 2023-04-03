@@ -2,8 +2,9 @@
 
 namespace TicketHive.Server.Models
 {
-    public class ApplicationUser : IdentityUser
+    public class UserModel : IdentityUser
     {
         public List<TicketModel> Tickets { get; set; }
+        public CountryModel Country { get; set; }
     }
 }

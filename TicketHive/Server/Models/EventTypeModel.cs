@@ -1,13 +1,12 @@
-﻿namespace TicketHive.Server.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TicketHive.Server.Models
 {
-    public class EventType
+    public class EventTypeModel
     {
-        public int Id { get; set; }
-        public int MaxUsers { get; set; }
-        public bool isSoldOut { get; set; }
-        public decimal Price { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
-        List<ApplicationUser> Users { get; set; }
+        [Key]
+        [MaxLength(50)]
+        public required string Name { get; set; }
+        List<EventModel> Events { get; set; } = new();
     }
 }
