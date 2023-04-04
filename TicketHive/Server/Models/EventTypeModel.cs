@@ -7,6 +7,6 @@ namespace TicketHive.Server.Models
         [Key]
         [MaxLength(50)]
         public required string Name { get; set; }
-        List<EventModel> Events { get; set; } = new();
+        public List<EventModel>? Events { get; set; } = new();
     }
 }

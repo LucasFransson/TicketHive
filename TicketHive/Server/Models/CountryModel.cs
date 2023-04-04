@@ -9,5 +9,6 @@ namespace TicketHive.Server.Models
         public required string Name { get; set; }
         [MaxLength(100)]
         public required string Currency { get; set; }
+        public bool IsAvailableForUserRegistration { get; set; }
     }
 }
