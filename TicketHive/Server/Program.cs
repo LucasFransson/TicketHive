@@ -11,8 +11,8 @@ var connectionStringUser = builder.Configuration.GetConnectionString("UserDbConn
 builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(connectionStringUser));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-//var connectionStringApp = builder.Configuration.GetConnectionString("AppDbConnection");
-//builder.Services.AddDbContext<AppDbContext>(options=> options.UseSqlServer(connectionStringApp));
+var connectionStringApp = builder.Configuration.GetConnectionString("AppDbConnection");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionStringApp));
 
 builder.Services.AddDefaultIdentity<UserModel>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<UserDbContext>();

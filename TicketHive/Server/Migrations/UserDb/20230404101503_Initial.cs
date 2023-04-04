@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace TicketHive.Server.Migrations
+namespace TicketHive.Server.Migrations.UserDb
 {
     /// <inheritdoc />
     public partial class Initial : Migration
@@ -26,35 +26,11 @@ namespace TicketHive.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AspNetUsers",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "CountryModel",
                 columns: table => new
                 {
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Currency = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -78,17 +54,6 @@ namespace TicketHive.Server.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DeviceCodes", x => x.UserCode);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "EventTypeModel",
-                columns: table => new
-                {
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EventTypeModel", x => x.Name);
                 });
 
             migrationBuilder.CreateTable(
@@ -147,6 +112,38 @@ namespace TicketHive.Server.Migrations
                         column: x => x.RoleId,
                         principalTable: "AspNetRoles",
                         principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUsers",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CountryName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetUsers_CountryModel_CountryName",
+                        column: x => x.CountryName,
+                        principalTable: "CountryModel",
+                        principalColumn: "Name",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -235,68 +232,6 @@ namespace TicketHive.Server.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "EventModel",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    MaxUsers = table.Column<int>(type: "int", nullable: false),
-                    IsSoldOut = table.Column<bool>(type: "bit", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CountryName = table.Column<string>(type: "nvarchar(100)", nullable: false),
-                    EventTypeName = table.Column<string>(type: "nvarchar(50)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_EventModel", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_EventModel_CountryModel_CountryName",
-                        column: x => x.CountryName,
-                        principalTable: "CountryModel",
-                        principalColumn: "Name",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_EventModel_EventTypeModel_EventTypeName",
-                        column: x => x.EventTypeName,
-                        principalTable: "EventTypeModel",
-                        principalColumn: "Name",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TicketModel",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    EventId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    StartTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndTime = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TicketModel", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_TicketModel_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_TicketModel_EventModel_EventId",
-                        column: x => x.EventId,
-                        principalTable: "EventModel",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -330,6 +265,11 @@ namespace TicketHive.Server.Migrations
                 column: "NormalizedEmail");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AspNetUsers_CountryName",
+                table: "AspNetUsers",
+                column: "CountryName");
+
+            migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
@@ -346,16 +286,6 @@ namespace TicketHive.Server.Migrations
                 name: "IX_DeviceCodes_Expiration",
                 table: "DeviceCodes",
                 column: "Expiration");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EventModel_CountryName",
-                table: "EventModel",
-                column: "CountryName");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_EventModel_EventTypeName",
-                table: "EventModel",
-                column: "EventTypeName");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Keys_Use",
@@ -381,16 +311,6 @@ namespace TicketHive.Server.Migrations
                 name: "IX_PersistedGrants_SubjectId_SessionId_Type",
                 table: "PersistedGrants",
                 columns: new[] { "SubjectId", "SessionId", "Type" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TicketModel_EventId",
-                table: "TicketModel",
-                column: "EventId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_TicketModel_UserId",
-                table: "TicketModel",
-                column: "UserId");
         }
 
         /// <inheritdoc />
@@ -421,22 +341,13 @@ namespace TicketHive.Server.Migrations
                 name: "PersistedGrants");
 
             migrationBuilder.DropTable(
-                name: "TicketModel");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "EventModel");
-
-            migrationBuilder.DropTable(
                 name: "CountryModel");
-
-            migrationBuilder.DropTable(
-                name: "EventTypeModel");
         }
     }
 }

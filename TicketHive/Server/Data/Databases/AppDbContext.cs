@@ -9,9 +9,9 @@ namespace TicketHive.Server.Data.Databases
         {
             
         }
-        public DbSet<CountryModel> Countries;
-        public DbSet<EventModel> Events;
-        public DbSet<EventTypeModel> EventTypes;
-        public DbSet<TicketModel> Tickets;
+        public DbSet<CountryModel> Countries { get; set; } 
+        public DbSet<EventModel> Events { get; set; }
+        public DbSet<EventTypeModel> EventTypes { get; set; }
+        public DbSet<TicketModel> Tickets { get; set; }
     }
 }

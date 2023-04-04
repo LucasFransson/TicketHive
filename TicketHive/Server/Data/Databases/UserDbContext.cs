@@ -13,6 +13,5 @@ namespace TicketHive.Server.Data.Databases
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
-        public DbSet<UserModel> Users;
     }
 }

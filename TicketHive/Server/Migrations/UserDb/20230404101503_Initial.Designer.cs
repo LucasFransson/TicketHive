@@ -3,17 +3,20 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TicketHive.Server.Data.Databases;
 
 #nullable disable
 
-namespace TicketHive.Server.Migrations
+namespace TicketHive.Server.Migrations.UserDb
 {
     [DbContext(typeof(UserDbContext))]
-    partial class UserDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230404101503_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -300,7 +303,23 @@ namespace TicketHive.Server.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("TicketHive.Server.Models.ApplicationUser", b =>
+            modelBuilder.Entity("TicketHive.Server.Models.CountryModel", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Currency")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Name");
+
+                    b.ToTable("CountryModel");
+                });
+
+            modelBuilder.Entity("TicketHive.Server.Models.UserModel", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -311,6 +330,10 @@ namespace TicketHive.Server.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CountryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -354,6 +377,8 @@ namespace TicketHive.Server.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CountryName");
+
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -363,111 +388,6 @@ namespace TicketHive.Server.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-                });
-
-            modelBuilder.Entity("TicketHive.Server.Models.CountryModel", b =>
-                {
-                    b.Property<string>("Name")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("Name");
-
-                    b.ToTable("CountryModel");
-                });
-
-            modelBuilder.Entity("TicketHive.Server.Models.EventModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CountryName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("EventTypeName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<bool>("IsSoldOut")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("MaxUsers")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CountryName");
-
-                    b.HasIndex("EventTypeName");
-
-                    b.ToTable("EventModel");
-                });
-
-            modelBuilder.Entity("TicketHive.Server.Models.EventTypeModel", b =>
-                {
-                    b.Property<string>("Name")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Name");
-
-                    b.ToTable("EventTypeModel");
-                });
-
-            modelBuilder.Entity("TicketHive.Server.Models.TicketModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("EventId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("TicketModel");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -481,7 +401,7 @@ namespace TicketHive.Server.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("TicketHive.Server.Models.ApplicationUser", null)
+                    b.HasOne("TicketHive.Server.Models.UserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -490,7 +410,7 @@ namespace TicketHive.Server.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("TicketHive.Server.Models.ApplicationUser", null)
+                    b.HasOne("TicketHive.Server.Models.UserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -505,7 +425,7 @@ namespace TicketHive.Server.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TicketHive.Server.Models.ApplicationUser", null)
+                    b.HasOne("TicketHive.Server.Models.UserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -514,14 +434,14 @@ namespace TicketHive.Server.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("TicketHive.Server.Models.ApplicationUser", null)
+                    b.HasOne("TicketHive.Server.Models.UserModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TicketHive.Server.Models.EventModel", b =>
+            modelBuilder.Entity("TicketHive.Server.Models.UserModel", b =>
                 {
                     b.HasOne("TicketHive.Server.Models.CountryModel", "Country")
                         .WithMany()
@@ -529,39 +449,7 @@ namespace TicketHive.Server.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TicketHive.Server.Models.EventTypeModel", "EventType")
-                        .WithMany()
-                        .HasForeignKey("EventTypeName")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Country");
-
-                    b.Navigation("EventType");
-                });
-
-            modelBuilder.Entity("TicketHive.Server.Models.TicketModel", b =>
-                {
-                    b.HasOne("TicketHive.Server.Models.EventModel", "Event")
-                        .WithMany()
-                        .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("TicketHive.Server.Models.ApplicationUser", "User")
-                        .WithMany("Tickets")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Event");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("TicketHive.Server.Models.ApplicationUser", b =>
-                {
-                    b.Navigation("Tickets");
                 });
 #pragma warning restore 612, 618
         }
