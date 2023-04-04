@@ -18,7 +18,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         }
         public IEnumerable<TEntity> GetAll()
         {
-            return _Context.Set<TEntity>().ToList();
+            return _Context.Set<TEntity>().AsEnumerable();
         }
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> predicate)
         {
@@ -40,6 +40,5 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         {
             _Context.Set<TEntity>().RemoveRange(entities);
         }
-
     }
 }
