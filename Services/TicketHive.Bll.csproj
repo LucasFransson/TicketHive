@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TicketHive.Extensions\TicketHive.Extensions.csproj" />
+    <ProjectReference Include="..\TicketHive\Client\TicketHive.Client.csproj" />
+    <ProjectReference Include="..\TicketHive\Shared\TicketHive.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

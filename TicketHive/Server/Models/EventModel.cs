@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 
 namespace TicketHive.Server.Models
 {
@@ -14,8 +15,9 @@ namespace TicketHive.Server.Models
         public required decimal Price { get; set; }
         public required DateTime StartTime { get; set; }
         public required DateTime EndTime { get; set; }
-        public List<TicketModel> SoldTickets { get; set; } = new();
+        public List<TicketModel>? SoldTickets { get; set; } = new();
         public required CountryModel Country { get; set; }
         public required EventTypeModel EventType { get; set; }
+
     }
 }
