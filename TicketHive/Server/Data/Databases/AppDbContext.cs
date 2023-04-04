@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TicketHive.Server.Models;
 
 namespace TicketHive.Server.Data.Databases
 {
@@ -8,5 +9,9 @@ namespace TicketHive.Server.Data.Databases
         {
             
         }
+        public DbSet<CountryModel> Countries;
+        public DbSet<EventModel> Events;
+        public DbSet<EventTypeModel> EventTypes;
+        public DbSet<TicketModel> Tickets;
     }
 }
