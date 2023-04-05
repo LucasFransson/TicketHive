@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketHive.Shared", "Ticket
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketHive.Bll", "Services\TicketHive.Bll.csproj", "{631D2EC0-9FD8-4D1A-BB3B-0D020ACA42C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketHive.Extensions", "TicketHive.Extensions\TicketHive.Extensions.csproj", "{375FDE4F-2BF5-45A1-AC13-39205E897DCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketHive.Extensions", "TicketHive.Extensions\TicketHive.Extensions.csproj", "{375FDE4F-2BF5-45A1-AC13-39205E897DCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

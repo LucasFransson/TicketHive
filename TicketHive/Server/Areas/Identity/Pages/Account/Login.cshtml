@@ -1,0 +1,82 @@
+﻿@page
+@model TicketHive.Server.Areas.Identity.Pages.Account.LoginModel
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/app.css" rel="stylesheet" asp-append-version="true" />
+
+<title>Login</title>
+</head>
+
+<body>
+    <main class="login-background">
+        <div class="container-login">
+            <div class="box-login">
+                <div class="top">
+                    <h4>Login</h4>
+                </div>
+                <form method="post">
+                    <div class="input-box">
+                        <input type="text"
+                               placeholder="Username"
+                               asp-for="@Model.Username" />
+                    </div>
+                    <div class="input-box">
+                        <input type="password"
+                               placeholder="Password"
+                               asp-for="@Model.Password" />
+                    </div>
+                    <div class="input-box">
+                        <button type="submit">Log In</button>
+                    </div>
+                    <div>
+                        <span class="text-danger" asp-validation-for="Username"></span>
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <div class="boxes">
+        <ul class="single-box">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        </div>
+        
+       
+</body>
+
+</html>
+
+
+
+
+@*<form method="post">
+    <label for="input-username">Username:</label>
+    <input id="input-username" type="text" asp-for="Username" />
+    <label for="input-password">Password:</label>
+    <input id="input-password" type="password" asp-for="Password" />
+    <input type="submit" value="Log In" />
+    <div>
+        <span class="text-danger" asp-validation-for="Username"></span>
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+</form>*@
+
+@{
+
+}
+
