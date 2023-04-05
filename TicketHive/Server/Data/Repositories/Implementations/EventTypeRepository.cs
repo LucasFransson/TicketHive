@@ -11,5 +11,6 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         {
             _appDbContext = context;
         }
+
     }
 }
