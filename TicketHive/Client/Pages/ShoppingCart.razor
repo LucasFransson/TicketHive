@@ -1,0 +1,78 @@
+﻿@page "/cart/{id:int}"
+
+
+<h3>ShoppingCart</h3>
+
+<div>
+<table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Event
+                </th>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Price
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Total
+                </th>
+                <th>
+                    Remove
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    @item.Event.Name
+                </td>
+                <td>
+                    @item.StartTime
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    @*@item.Quantity*@
+                </td>
+                <td>
+                    @*@item.Total*@
+                </td>
+                <td>
+                    @*<button class="btn btn-danger" @onclick="RemoveItem">Remove</button>*@
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+@code {
+    private TicketViewModel? item;
+
+    //method that will be called when the page is loaded
+    protected override async Task OnInitializedAsync()
+    {
+        //call the method to get the cart items
+        //await GetCartItems();
+    }
+    //create the method GetCartItems
+    private async Task GetCartItems(int id)
+    {
+        //call the method GetCartItems from the CartService
+        //var cartItems = await CartService.GetCartItems();
+        //assign the result to the CartItems property
+        //CartItems = cartItems;
+    }
+    //create the property CartItems
+    //public List<TicketViewModel> CartItems { get; set; } = new();
+    //create the property CartService
+//[Inject]
+//public ICartService CartService { get; set; }
+
+}
