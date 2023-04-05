@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TicketHive.Extensions\TicketHive.Extensions.csproj" />
     <ProjectReference Include="..\TicketHive\Client\TicketHive.Client.csproj" />
+    <ProjectReference Include="..\TicketHive\Server\TicketHive.Server.csproj" />
     <ProjectReference Include="..\TicketHive\Shared\TicketHive.Shared.csproj" />
   </ItemGroup>
 

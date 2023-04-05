@@ -17,21 +17,21 @@ public class CountriesController : ControllerBase
     }
 
     // GET: api/<CountriesController>
-    [HttpGet]
-    public IEnumerable<CountryViewModel> Get()
-    {
-        return null;
-    }
+    //[HttpGet]
+    //public IEnumerable<CountryViewModel> Get()
+    //{
+    //    return null;
+    //}
 
-    // GET api/<CountriesController>/5
-    [HttpGet("{id}")]
-    public string Get(int id)
-    {
-        return null;
-    }
+    //// GET api/<CountriesController>/5
+    //[HttpGet("{id}")]
+    //public string Get(int id)
+    //{
+    //    return null;
+    //}
 
-    [HttpGet]
-    public Task<CountryViewModel> Get([FromBody] string name)
+    [HttpGet("{name}")]
+    public Task<CountryViewModel> GetByName(string name)
     {
         return _unitOfWork.Countries.GetByName(name);
     }

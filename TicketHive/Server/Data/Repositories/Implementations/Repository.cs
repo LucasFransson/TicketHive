@@ -26,7 +26,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             IEnumerable<TEntity> entities = await _context.Set<TEntity>().ToListAsync();
-            
+
             return entities;
         }
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> predicate)
@@ -48,104 +48,6 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         public void RemoveRange(IEnumerable<TEntity> entities)
         {
             _context.Set<TEntity>().RemoveRange(entities);
-        }
-
-        public Object ReturnViewModel(TEntity entity)
-        {
-            switch (entity.GetType().Name)
-            {
-                case "CountryModel":
-                    {
-                        return ConvertCountryModel(entity as CountryModel);
-                    }
-                case "EventModel":
-                    {
-                        //EventModel? test = entity as EventModel;
-                        return ConvertEventModel(entity as EventModel);
-                    }
-                case "EventTypeModel":
-                    {
-                        return ConvertEventTypeModel(entity as EventTypeModel);
-                    }
-                case "TicketModel":
-                    {
-                        return ConvertTicketModel(entity as TicketModel);
-                    }
-
-                default: throw new ArgumentException("Invalid Model type.");
-            }
-        }
-
-        private EventTypeViewModel ConvertEventTypeModel(EventTypeModel eventTypeModel)
-        {
-            EventTypeViewModel eventTypeViewModel = new()
-            {
-                Name = eventTypeModel.Name,
-                Events = ConvertListOfEventModels(eventTypeModel.Events)
-            };
-
-            return eventTypeViewModel;
-        }
-
-        private List<EventViewModel>? ConvertListOfEventModels(List<EventModel> eventModels)
-        {
-            List<EventViewModel>? eventViewModels = eventModels.Select(e => ConvertEventModel(e)).ToList();
-
-            return eventViewModels;
-        }
-
-        private EventViewModel ConvertEventModel(EventModel eventModel)
-        {
-            EventViewModel eventViewModel = new()
-            {
-                Id = eventModel.Id,
-                Name = eventModel.Name,
-                Description = eventModel.Description,
-                MaxUsers = eventModel.MaxUsers,
-                IsSoldOut = eventModel.IsSoldOut,
-                Price = eventModel.Price,
-                //StartTime = eventModel.StartTime,
-                //EndTime = eventModel.EndTime,
-                SoldTickets = ConvertListOfTicketModels(eventModel.SoldTickets),
-                Country = ConvertCountryModel(eventModel.Country),
-                EventType = ConvertEventTypeModel(eventModel.EventType)
-            };
-
-            return eventViewModel;
-        }
-
-        private CountryViewModel ConvertCountryModel(CountryModel countryModel)
-        {
-            CountryViewModel countryViewModel = new()
-            {
-                Name = countryModel.Name,
-                Currency = countryModel.Currency,
-                IsAvailableForUserRegistration = countryModel.IsAvailableForUserRegistration,
-            };
-
-            return countryViewModel;
-        }
-
-        private TicketViewModel ConvertTicketModel(TicketModel ticketModel)
-        {
-            TicketViewModel ticketViewModel = new()
-            {
-                Id = ticketModel.Id,
-                Event = ConvertEventModel(ticketModel.Event),
-                Username = ticketModel.Username,
-                Price = ticketModel.Price,
-                //StartTime = ticketModel.StartTime,
-                //EndTime = ticketModel.EndTime
-            };
-
-            return ticketViewModel;
-        }
-
-        private List<TicketViewModel>? ConvertListOfTicketModels(List<TicketModel> eventModels)
-        {
-            List<TicketViewModel>? ticketViewModels = eventModels.Select(t => ConvertTicketModel(t)).ToList();
-
-            return ticketViewModels;
         }
     }
 }
