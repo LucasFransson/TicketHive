@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TicketHive.Bll.Services.Implementations;
 using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Managers
@@ -25,5 +26,7 @@ namespace TicketHive.Bll.Services.Managers
         {
             return new CountryViewModel(name, currency, isAvailableForUsers); 
         }
+
+
     }
 }
