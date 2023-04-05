@@ -15,11 +15,14 @@ namespace TicketHive.Server.Models
         public required decimal Price { get; set; }
         //public DateTime StartTime { get; set; }
         //public DateTime EndTime { get; set; }
-        public List<TicketModel> SoldTickets { get; set; } = new();
+        public List<TicketModel>? SoldTickets { get; set; }
+
         [ForeignKey(nameof(Country))]
         public required string CountryName { get; set; }
-        public required CountryModel Country { get; set; }
-        public required EventTypeModel EventType { get; set; }
+        public required CountryModel? Country { get; set; }
+        [ForeignKey(nameof(EventType))]
+        public required string EventTypeName { get; set; }
+        public required EventTypeModel? EventType { get; set; }
 
     }
 }

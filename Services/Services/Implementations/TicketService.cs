@@ -12,6 +12,7 @@ namespace TicketHive.Bll.Services.Implementations
     {
         public TicketService(HttpClient httpClient) : base(httpClient)
         {
+
         }
     }
 }

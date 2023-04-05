@@ -61,9 +61,6 @@ namespace TicketHive.Server.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<bool>("IsSoldOut")
-                        .HasColumnType("bit");
-
                     b.Property<int>("MaxUsers")
                         .HasColumnType("int");
 

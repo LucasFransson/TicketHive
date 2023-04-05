@@ -4,18 +4,24 @@ namespace TicketHive.Shared.ViewModels
 {
     public class EventViewModel
     {
-        public int Id { get; set; }
-        [MaxLength(100)]
-        public required string Name { get; set; }
-        [MaxLength(500)]
+        public int? Id { get; }
+        public string Name { get; set; }
         public string? Description { get; set; }
-        public required int MaxUsers { get; set; }
-        public bool IsSoldOut { get; set; }    // Consider Changing to Expression ( MaxUser & SoldTickets ) 
-        public required decimal Price { get; set; }
-        //public required DateTime StartTime { get; set; }
-        //public required DateTime EndTime { get; set; }
+        public int MaxUsers { get; set; }
+        public bool IsSoldOut => (MaxUsers <= SoldTickets?.Count) ? true : false; 
+        public decimal Price { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public List<TicketViewModel> SoldTickets { get; set; } = new();
-        public required CountryViewModel Country { get; set; }
-        public required EventTypeViewModel EventType { get; set; }
+        public  CountryViewModel Country { get; set; }
+        public  EventTypeViewModel EventType { get; set; }
+
+        public EventViewModel(string name,int maxUsers, decimal price,CountryViewModel country)
+        {
+            Name = name;
+            MaxUsers = maxUsers;
+            Price = price;
+            Country = country;
+        }
     }
 }

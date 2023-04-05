@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
 using TicketHive.Shared.ViewModels;
@@ -16,19 +17,13 @@ public class CountriesController : ControllerBase
         _unitOfWork = unitOfWork;
     }
 
-    // GET: api/<CountriesController>
-    //[HttpGet]
-    //public IEnumerable<CountryViewModel> Get()
-    //{
-    //    return null;
-    //}
-
-    //// GET api/<CountriesController>/5
-    //[HttpGet("{id}")]
-    //public string Get(int id)
-    //{
-    //    return null;
-    //}
+    //GET: api/<CountriesController>
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<CountryViewModel>>> Get()
+    {
+        return Ok(await _unitOfWork.Countries.GetAllAsync());
+ 
+    }
 
     [HttpGet("{name}")]
     public Task<CountryViewModel> GetByName(string name)

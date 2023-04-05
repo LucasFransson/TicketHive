@@ -16,7 +16,9 @@ public static class ConvertToViewModel<TEntity>
         {
             case "CountryModel":
                 {
-                    return ConvertCountryModel(entity as CountryModel);
+                    
+                    CountryViewModel countryViewModel = ConvertCountryModel(entity as CountryModel);
+                    return countryViewModel;
                 }
             case "EventModel":
                 {
@@ -41,18 +43,23 @@ public static class ConvertToViewModel<TEntity>
         EventTypeViewModel eventTypeViewModel = new()
         {
             Name = eventTypeModel.Name,
-            Events = ConvertListOfEventModels(eventTypeModel.Events)
+            Events = null,
         };
 
         return eventTypeViewModel;
     }
 
-    private static List<EventViewModel>? ConvertListOfEventModels(List<EventModel> eventModels)
-    {
-        List<EventViewModel>? eventViewModels = eventModels.Select(e => ConvertEventModel(e)).ToList();
+    //private static List<EventViewModel>? ConvertListOfEventModels(List<EventModel> eventModels)
+    //{
+    //    List<EventViewModel>? eventViewModels = new(); 
+            
+    //    foreach(var eventModel in eventModels)
+    //    {
+    //        eventViewModels.Add(ConvertEventModel(eventModel));
+    //    }    
 
-        return eventViewModels;
-    }
+    //    return eventViewModels;
+    //}
 
     private static EventViewModel ConvertEventModel(EventModel eventModel)
     {
@@ -66,9 +73,9 @@ public static class ConvertToViewModel<TEntity>
             Price = eventModel.Price,
             //StartTime = eventModel.StartTime,
             //EndTime = eventModel.EndTime,
-            SoldTickets = ConvertListOfTicketModels(eventModel.SoldTickets),
-            Country = ConvertCountryModel(eventModel.Country),
-            EventType = ConvertEventTypeModel(eventModel.EventType)
+            SoldTickets = null,
+            Country = null,
+            EventType = null,
         };
 
         return eventViewModel;
@@ -91,7 +98,7 @@ public static class ConvertToViewModel<TEntity>
         TicketViewModel ticketViewModel = new()
         {
             Id = ticketModel.Id,
-            Event = ConvertEventModel(ticketModel.Event),
+            Event = null,
             Username = ticketModel.Username,
             Price = ticketModel.Price,
             //StartTime = ticketModel.StartTime,
@@ -101,11 +108,16 @@ public static class ConvertToViewModel<TEntity>
         return ticketViewModel;
     }
 
-    private static List<TicketViewModel>? ConvertListOfTicketModels(List<TicketModel> eventModels)
-    {
-        List<TicketViewModel>? ticketViewModels = eventModels.Select(t => ConvertTicketModel(t)).ToList();
+    //private static List<TicketViewModel>? ConvertListOfTicketModels(List<TicketModel> ticketModels)
+    //{
+    //    List<TicketViewModel>? ticketViewModels = new();
+        
+    //    foreach (var ticketModel in ticketModels)
+    //    {
+    //        ticketViewModels.Add(ConvertTicketModel(ticketModel));
+    //    }
 
-        return ticketViewModels;
-    }
+    //    return ticketViewModels;
+    //}
 }
  

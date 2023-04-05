@@ -37,4 +37,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\" />
+  </ItemGroup>
+
 </Project>

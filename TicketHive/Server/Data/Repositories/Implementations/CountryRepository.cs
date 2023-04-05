@@ -1,4 +1,5 @@
-﻿using TicketHive.Server.Data.Databases;
+﻿using Microsoft.EntityFrameworkCore;
+using TicketHive.Server.Data.Databases;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
 using TicketHive.Server.StaticMethods;
@@ -13,6 +14,14 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         {
             _context = context;
         }
+
+        public async Task<List<CountryViewModel>> GetAllAsync()
+        {
+            List<CountryModel> countryModels = await _context.Countries.ToListAsync();
+
+            return countryModels.Select(cm => (CountryViewModel) ConvertToViewModel<CountryModel>.ReturnViewModel(cm)).ToList();
+        }
+
 
         public async Task<CountryViewModel?> GetByName(string name)
         {

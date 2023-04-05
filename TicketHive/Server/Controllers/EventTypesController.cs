@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TicketHive.Server.Data.Repositories.Interfaces;
+using TicketHive.Shared.ViewModels;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -7,18 +9,25 @@ namespace TicketHive.Server.Controllers;
 [ApiController]
 public class EventTypesController : ControllerBase
 {
+    private readonly IUnitOfWork _unitOfWork;
+
+    public EventTypesController(IUnitOfWork unitOfWork)
+    {
+        _unitOfWork = unitOfWork;
+    }
+
     // GET: api/<EventTypesController>
     [HttpGet]
-    public IEnumerable<string> Get()
+    public async Task<IEnumerable<EventTypeViewModel>> Get()
     {
-        return new string[] { "value1", "value2" };
+        return await _unitOfWork.EventTypes.GetAllAsync();
     }
 
     // GET api/<EventTypesController>/5
-    [HttpGet("{id}")]
-    public string Get(int id)
+    [HttpGet("{name}")]
+    public async Task<EventTypeViewModel> Get(string name)
     {
-        return "value";
+        return await _unitOfWork.EventTypes.GetByNameAsync(name);
     }
 
     // POST api/<EventTypesController>

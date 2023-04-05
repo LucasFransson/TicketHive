@@ -1,10 +1,12 @@
 ﻿using Duende.IdentityServer.Validation;
+using IdentityModel;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.Linq.Expressions;
 using TicketHive.Server.Data.Databases;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
+using TicketHive.Server.StaticMethods;
 using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Server.Data.Repositories.Implementations
@@ -25,9 +27,20 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         }
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            IEnumerable<TEntity> entities = await _context.Set<TEntity>().ToListAsync();
+            return await _context.Set<TEntity>().ToListAsync();
 
-            return entities;
+            //IEnumerable<TEntity> viewModels = entities.Select(e => (TEntity)ConvertToViewModel<TEntity>.ReturnViewModel(e));
+
+            //return viewModels;
+
+            //List<TEntity>? entityViewModels = new(); //(IEnumerable<TEntity>?) entities.Select(t => ConvertToViewModel<TEntity>.ReturnViewModel(t) as TEntity).ToList();
+
+            //foreach(TEntity entity in entities)
+            //{
+            //    entityViewModels.Add((TEntity)ConvertToViewModel<TEntity>.ReturnViewModel(entity));
+            //}
+            
+            //return entityViewModels.AsEnumerable();
         }
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> predicate)
         {

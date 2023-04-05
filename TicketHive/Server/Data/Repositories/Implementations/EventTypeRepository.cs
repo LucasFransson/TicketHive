@@ -1,6 +1,9 @@
-﻿using TicketHive.Server.Data.Databases;
+﻿using Microsoft.EntityFrameworkCore;
+using TicketHive.Server.Data.Databases;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
+using TicketHive.Server.StaticMethods;
+using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Server.Data.Repositories.Implementations
 {
@@ -12,4 +15,5 @@ namespace TicketHive.Server.Data.Repositories.Implementations
             _appDbContext = context;
         }
     }
+
 }
