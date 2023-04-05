@@ -23,5 +23,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
 
             return eventViewModels;
         }
+
+
     }
 }

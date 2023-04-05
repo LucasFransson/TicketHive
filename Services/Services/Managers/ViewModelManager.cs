@@ -9,28 +9,28 @@ using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Managers
 {
-    public abstract class ViewModelManager
+    public abstract class ViewModelManager  // Made this class abstract and let UnitOfService Inherit from it instead.
     {
+        // All of the "Create" Methods here should probably be removed, due to changes in design plan
         public TicketViewModel CreateTicket()
         {
             return new TicketViewModel();
         }
         public EventTypeViewModel CreateEventType(string eventName)
         {
-            return new EventTypeViewModel(eventName);
+            return new EventTypeViewModel();
         }
         public EventViewModel CreateEvent(string eventName,int maxUsers,decimal price,CountryViewModel country)
         {
-            return new EventViewModel(eventName,maxUsers,price,country);
+            return new EventViewModel();
         }
         public CountryViewModel CreateCountry(string name, string currency, bool isAvailableForUsers)
         {
-            return new CountryViewModel(name, currency, isAvailableForUsers); 
+            return new CountryViewModel(); 
         }
 
-
-
-
+        // Random Sorting and Filtration methods are for the moment collectec here. The filtration methods should be moved to their respective Services,
+        // but the sorting that doesn't involve any new API Calls will probably be kept here in an attempt to seperate the API calls from other methods in Services.
 
         public async Task<IEnumerable<EventViewModel>> SortEventsByDateAsync(IEnumerable<EventViewModel> events)
         {
