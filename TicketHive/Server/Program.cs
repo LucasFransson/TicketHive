@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using TicketHive.Server.Data.Databases;
+using TicketHive.Server.Data.Repositories.Implementations;
+using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +15,8 @@ builder.Services.AddDbContext<UserDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 var connectionStringApp = builder.Configuration.GetConnectionString("AppDbConnection");
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionStringApp));
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddDefaultIdentity<UserModel>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<UserDbContext>();

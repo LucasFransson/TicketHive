@@ -9,7 +9,7 @@ namespace TicketHive.Shared.ViewModels
         [MaxLength(100)]
         public required string Username { get; set; }
         public required decimal Price { get; set; }
-        public required DateTime StartTime { get; set; }
-        public required DateTime EndTime { get; set; }
+        //public required DateTime StartTime { get; set; }
+        //public required DateTime EndTime { get; set; }
     }
 }

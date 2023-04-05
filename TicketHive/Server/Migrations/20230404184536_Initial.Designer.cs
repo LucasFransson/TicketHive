@@ -12,7 +12,7 @@ using TicketHive.Server.Data.Databases;
 namespace TicketHive.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230404101131_Initial")]
+    [Migration("20230404184536_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -36,6 +36,9 @@ namespace TicketHive.Server.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<bool>("IsAvailableForUserRegistration")
+                        .HasColumnType("bit");
+
                     b.HasKey("Name");
 
                     b.ToTable("Countries");
@@ -53,7 +56,6 @@ namespace TicketHive.Server.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -140,7 +142,7 @@ namespace TicketHive.Server.Migrations
                         .HasForeignKey("CountryName");
 
                     b.HasOne("TicketHive.Server.Models.EventTypeModel", "EventType")
-                        .WithMany()
+                        .WithMany("Events")
                         .HasForeignKey("EventTypeName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -153,12 +155,22 @@ namespace TicketHive.Server.Migrations
             modelBuilder.Entity("TicketHive.Server.Models.TicketModel", b =>
                 {
                     b.HasOne("TicketHive.Server.Models.EventModel", "Event")
-                        .WithMany()
+                        .WithMany("SoldTickets")
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Event");
+                });
+
+            modelBuilder.Entity("TicketHive.Server.Models.EventModel", b =>
+                {
+                    b.Navigation("SoldTickets");
+                });
+
+            modelBuilder.Entity("TicketHive.Server.Models.EventTypeModel", b =>
+                {
+                    b.Navigation("Events");
                 });
 #pragma warning restore 612, 618
         }
