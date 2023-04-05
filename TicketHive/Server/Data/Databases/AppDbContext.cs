@@ -13,5 +13,13 @@ namespace TicketHive.Server.Data.Databases
         public DbSet<EventModel> Events { get; set; }
         public DbSet<EventTypeModel> EventTypes { get; set; }
         public DbSet<TicketModel> Tickets { get; set; }
+        public DbSet<SoldTicketModel> SoldTickets { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<SoldTicketModel>()
+                .Property(t => t.Id)
+                .ValueGeneratedNever();
+        }
     }
 }

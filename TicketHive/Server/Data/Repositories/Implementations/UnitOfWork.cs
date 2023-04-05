@@ -12,6 +12,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         public IEventRepository Events { get; set; }
         public IEventTypeRepository EventTypes { get; set; }
         public ITicketRepository Tickets { get; set; }
+        public ISoldTicketRepository SoldTickets { get; set; }
         public UnitOfWork(AppDbContext context)
         {
             _context = context;
@@ -19,6 +20,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
             Events = new EventRepository(context);
             EventTypes = new EventTypeRepository(context);
             Tickets = new TicketRepository(context);
+            SoldTickets = new SoldTicketRepository(context);
         }
         public int Complete()
         {

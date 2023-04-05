@@ -6,6 +6,7 @@
         public IEventRepository Events { get; set; }
         public IEventTypeRepository EventTypes { get; set; }
         public ITicketRepository Tickets { get; set; }
+        public ISoldTicketRepository SoldTickets { get; set; }
         int Complete();
 
         void Dispose();

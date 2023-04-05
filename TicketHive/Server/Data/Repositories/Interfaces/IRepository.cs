@@ -6,7 +6,7 @@ namespace TicketHive.Server.Data.Repositories.Interfaces
     {
         Task<TEntity?> GetByIdAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();
-        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> predicate);
+        Task<IEnumerable<TEntity>> Get(Expression<Func<TEntity, bool>> predicate);
         Task AddAsync(TEntity entity);
         Task AddRangeAsync(IEnumerable<TEntity> entities);
         void Remove(TEntity entity);
