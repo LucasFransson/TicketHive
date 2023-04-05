@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TicketHive.Server.Data.Databases;
 
@@ -11,9 +12,11 @@ using TicketHive.Server.Data.Databases;
 namespace TicketHive.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230404193304_test33")]
+    partial class test33
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +53,6 @@ namespace TicketHive.Server.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CountryName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Description")
@@ -60,6 +62,9 @@ namespace TicketHive.Server.Migrations
                     b.Property<string>("EventTypeName")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("IsSoldOut")
+                        .HasColumnType("bit");
 
                     b.Property<int>("MaxUsers")
                         .HasColumnType("int");
@@ -128,9 +133,7 @@ namespace TicketHive.Server.Migrations
                 {
                     b.HasOne("TicketHive.Server.Models.CountryModel", "Country")
                         .WithMany()
-                        .HasForeignKey("CountryName")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CountryName");
 
                     b.HasOne("TicketHive.Server.Models.EventTypeModel", "EventType")
                         .WithMany("Events")

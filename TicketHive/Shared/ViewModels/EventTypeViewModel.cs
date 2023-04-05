@@ -6,10 +6,5 @@ namespace TicketHive.Shared.ViewModels
     {
         public string Name { get; set; }
         public List<EventViewModel>? Events { get; set; } = new();
-
-        public EventTypeViewModel(string name)
-        {
-            Name = name;
-        }
     }
 }

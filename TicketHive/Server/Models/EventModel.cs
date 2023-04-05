@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Reflection;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TicketHive.Server.Models
 {
@@ -13,11 +13,16 @@ namespace TicketHive.Server.Models
         public required int MaxUsers { get; set; }
         public bool IsSoldOut => (MaxUsers <= SoldTickets?.Count) ? true : false; 
         public required decimal Price { get; set; }
-        public required DateTime StartTime { get; set; }
-        public required DateTime EndTime { get; set; }
-        public List<TicketModel>? SoldTickets { get; set; } = new();
-        public required CountryModel Country { get; set; }
-        public required EventTypeModel EventType { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public List<TicketModel>? SoldTickets { get; set; }
+
+        [ForeignKey(nameof(Country))]
+        public required string CountryName { get; set; }
+        public required CountryModel? Country { get; set; }
+        [ForeignKey(nameof(EventType))]
+        public required string EventTypeName { get; set; }
+        public required EventTypeModel? EventType { get; set; }
 
     }
 }

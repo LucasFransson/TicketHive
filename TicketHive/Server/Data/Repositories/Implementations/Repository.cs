@@ -1,44 +1,51 @@
-﻿using System.Linq.Expressions;
+﻿using Duende.IdentityServer.Validation;
+using IdentityModel;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.Linq.Expressions;
 using TicketHive.Server.Data.Databases;
 using TicketHive.Server.Data.Repositories.Interfaces;
+using TicketHive.Server.Models;
+using TicketHive.Server.StaticMethods;
+using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Server.Data.Repositories.Implementations
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly AppDbContext _Context;
+        protected readonly AppDbContext _context;
 
         public Repository(AppDbContext context)
         {
-            _Context = context;
+            _context = context;
         }
-        public TEntity GetById(int id)
+        public async Task<TEntity?> GetByIdAsync(int id)
         {
-            return _Context.Set<TEntity>().Find(id);
+            return await _context.Set<TEntity>().FindAsync(id);
         }
-        public IEnumerable<TEntity> GetAll()
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
-            return _Context.Set<TEntity>().AsEnumerable();
+            return await _context.Set<TEntity>().ToListAsync();
         }
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> predicate)
         {
-            return _Context.Set<TEntity>().Where(predicate);
+            return _context.Set<TEntity>().Where(predicate);
         }
-        public void Add(TEntity entity)
+        public async Task AddAsync(TEntity entity)
         {
-            _Context.Set<TEntity>().Add(entity);
+            await _context.Set<TEntity>().AddAsync(entity);
         }
-        public void AddRange(IEnumerable<TEntity> entities)
+        public async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
-            _Context.Set<TEntity>().AddRange(entities);
+            await _context.Set<TEntity>().AddRangeAsync(entities);
         }
         public void Remove(TEntity entity)
         {
-            _Context.Set<TEntity>().Remove(entity);
+            _context.Set<TEntity>().Remove(entity);
         }
         public void RemoveRange(IEnumerable<TEntity> entities)
         {
-            _Context.Set<TEntity>().RemoveRange(entities);
+            _context.Set<TEntity>().RemoveRange(entities);
         }
     }
 }

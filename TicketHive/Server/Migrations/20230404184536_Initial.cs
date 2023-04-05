@@ -16,7 +16,8 @@ namespace TicketHive.Server.Migrations
                 columns: table => new
                 {
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Currency = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    Currency = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    IsAvailableForUserRegistration = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,7 +42,7 @@ namespace TicketHive.Server.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     MaxUsers = table.Column<int>(type: "int", nullable: false),
                     IsSoldOut = table.Column<bool>(type: "bit", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),

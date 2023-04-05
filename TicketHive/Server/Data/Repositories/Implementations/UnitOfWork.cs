@@ -1,4 +1,5 @@
-﻿using TicketHive.Server.Data.Databases;
+﻿using System.Runtime.CompilerServices;
+using TicketHive.Server.Data.Databases;
 using TicketHive.Server.Data.Repositories.Interfaces;
 
 namespace TicketHive.Server.Data.Repositories.Implementations
@@ -26,7 +27,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
     }
 }
