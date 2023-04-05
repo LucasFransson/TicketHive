@@ -20,5 +20,6 @@ namespace TicketHive.Server.Models
         public required string CountryName { get; set; }
         public required CountryModel Country { get; set; }
         public required EventTypeModel EventType { get; set; }
+
     }
 }

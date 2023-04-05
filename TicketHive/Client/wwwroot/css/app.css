@@ -99,3 +99,268 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
+
+
+/*Egen CSS*/
+
+
+
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+}
+
+html,
+body {
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    /* background-color: #121212; */
+    /* background-color: #0d0b0f; */
+
+    background-color: #0f0d11;
+    background-color: #0d0b0f;
+    /* background-image: linear-gradient(rgb(28, 16, 48), rgb(39, 27, 58) 70%); */
+    /* background-image: linear-gradient(
+		-45deg,
+		rgb(20, 30, 49) 50%,
+		rgb(35, 58, 84) 50%
+	); */
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    margin: 0px;
+}
+
+#container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.login-background {
+    background-color: #0e0b0e;
+    /*background-image: linear-gradient(135deg,#fbe89c 41%, #305076 41%,#305076 43%,*/ /*#332133*/ /*#0d0b0f*/ /*#17131a 43%,#17131a 85%,#305076 85%,#305076 87%,#fbe89c 87%*/ /*,#fbe89c 89%*/ /*,#17131a 99%);*/
+    /*    background-image: linear-gradient(135deg, #fbe89c 40%, #332133 40%);*/
+    /*    background-image: linear-gradient(0deg,#fbe89c,#305076 50%);
+    background-image: linear-gradient(180deg,#fbe89c 15%,#305076 20%);*/
+    background: rgb(251,232,156);
+    background: linear-gradient(0deg, rgba(251,232,156,0.6264880952380952) 0%, rgba(110,127,130,1) 17%, rgba(85,108,125,1) 37%, rgba(56,86,120,1) 69%, rgba(48,80,118,1) 100%);
+}
+
+
+.container-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    text-shadow: 0 0 5px #0e0b0e;
+    margin: 0px 700px 0px 700px;
+    z-index: 1;
+    position:relative;
+}
+
+.box-login {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+    border: 1px solid #0e0b0e;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #0e0b0e;
+}
+
+.login-background h4 {
+    margin: 10px;
+    margin-top: 50px;
+    padding: 1px;
+    text-align: center;
+    font-size: 36px;
+}
+
+.input-box {
+    padding: 60px 20px 30px 40px;
+  
+}
+
+    .input-box input[type='text'] {
+        border-radius: 15px;
+      
+        padding: 10px;
+        font-size: 24px;
+        width: 85%;
+        background: rgba(255, 255, 255, 0.2);
+        margin-top: 60px;
+        color: #f7f7f9;
+        border: transparent;
+        border-bottom: 1px solid transparent;
+        outline: transparent;
+    }
+
+        .input-box input[type='text']::placeholder {
+            color: #f7f7f9;
+        }
+
+        .input-box input[type='text']:focus {
+            box-shadow: 0 2px 10px #fbe89c;
+            border-bottom: 1px solid #f2e19d;
+            background: rgba(255, 255, 255, 0.5);
+
+        }
+
+    .input-box input[type='password'] {
+        border-radius: 15px;
+        border-bottom: 1px solid #0e0b0e;
+        padding: 10px;
+        font-size: 24px;
+        width: 85%;
+        background: rgba(255, 255, 255, 0.2);
+        color: #f7f7f9;
+        border: transparent;
+        border-bottom: 1px solid transparent;
+        outline: transparent;
+    }
+
+        .input-box input[type='password']::placeholder {
+            color: #f7f7f9;
+        }
+
+        .input-box input[type='password']:focus {
+            box-shadow: 0 2px 10px #fbe89c;
+            border-bottom: 1px solid #f2e19d;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+.box-login button {
+    border: transparent;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 24px;
+    width: 85%;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fae061;
+    margin-bottom: 40px;
+    transition: all 0.5s ease-in-out;
+}
+
+    .box-login button:hover {
+        animation: grow 2s alternate linear infinte;
+        background-color: #fae061;
+        box-shadow: 0 2px 10px #fbe89c;
+        color: #305076;
+    }
+
+
+.boxes {
+    background: linear-gradient(to top, #2c3e50 0%, #fd746c 100%);
+    width: 100%;
+/*    height: 100%;*/
+}
+
+.single-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+    .single-box li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 25px;
+        height: 25px;
+        background: rgba(255, 255, 255, 0.2);
+        animation: animate 20s linear infinite;
+        bottom: -150px;
+    }
+
+        .single-box li:nth-child(1) {
+            left: 86%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .single-box li:nth-child(2) {
+            left: 12%;
+            width: 30px;
+            height: 30px;
+            animation-delay: 1.5s;
+            animation-duration: 10s;
+        }
+
+        .single-box li:nth-child(3) {
+            left: 29%;
+            width: 100px;
+            height: 100px;
+            animation-delay: 5.5s;
+        }
+
+        .single-box li:nth-child(4) {
+            left: 42%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 15s;
+        }
+
+        .single-box li:nth-child(5) {
+            left: 65%;
+            width: 40px;
+            height: 40px;
+            animation-delay: 0s;
+        }
+
+        .single-box li:nth-child(6) {
+            left: 15%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3.5s;
+        }
+
+        .single-box li:nth-child(7) {
+            left: 75%;
+            width: 200px;
+            height: 200px;
+            animation-delay: 4.5s;
+            bottom: -250px;
+        }
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes grow {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 1.1;
+    }
+}

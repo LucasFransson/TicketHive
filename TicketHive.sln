@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketHive.Server", "TicketHive\Server\TicketHive.Server.csproj", "{5E620CA5-8027-42D8-A5BB-B86AA8AD285A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketHive.Server", "TicketHive\Server\TicketHive.Server.csproj", "{5E620CA5-8027-42D8-A5BB-B86AA8AD285A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketHive.Client", "TicketHive\Client\TicketHive.Client.csproj", "{8B533397-DACD-48C2-9F90-92C50391D12D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketHive.Client", "TicketHive\Client\TicketHive.Client.csproj", "{8B533397-DACD-48C2-9F90-92C50391D12D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketHive.Shared", "TicketHive\Shared\TicketHive.Shared.csproj", "{27794FE3-443F-4B53-99D5-63B84678D9F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketHive.Shared", "TicketHive\Shared\TicketHive.Shared.csproj", "{27794FE3-443F-4B53-99D5-63B84678D9F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketHive.Bll", "Services\TicketHive.Bll.csproj", "{631D2EC0-9FD8-4D1A-BB3B-0D020ACA42C2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketHive.Extensions", "TicketHive.Extensions\TicketHive.Extensions.csproj", "{375FDE4F-2BF5-45A1-AC13-39205E897DCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{27794FE3-443F-4B53-99D5-63B84678D9F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27794FE3-443F-4B53-99D5-63B84678D9F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27794FE3-443F-4B53-99D5-63B84678D9F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{631D2EC0-9FD8-4D1A-BB3B-0D020ACA42C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{631D2EC0-9FD8-4D1A-BB3B-0D020ACA42C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{631D2EC0-9FD8-4D1A-BB3B-0D020ACA42C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{631D2EC0-9FD8-4D1A-BB3B-0D020ACA42C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{375FDE4F-2BF5-45A1-AC13-39205E897DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{375FDE4F-2BF5-45A1-AC13-39205E897DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{375FDE4F-2BF5-45A1-AC13-39205E897DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{375FDE4F-2BF5-45A1-AC13-39205E897DCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

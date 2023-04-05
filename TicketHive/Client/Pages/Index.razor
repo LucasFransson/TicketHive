@@ -1,4 +1,5 @@
 ﻿@page "/"
+@inject AuthenticationStateProvider provider
 
 <PageTitle>Index</PageTitle>
 
@@ -6,4 +7,18 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+@*@code
+{
+    private bool isAdmin;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await provider.GetAuthenticationStateAsync();
+
+        var name = authState.User.Identity.Name;
+
+        isAdmin = authState.User.IsInRole("Admin");
+    }
+}*@

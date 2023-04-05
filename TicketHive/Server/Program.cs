@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using TicketHive.Server.Data.Databases;
@@ -21,8 +22,14 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddDefaultIdentity<UserModel>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<UserDbContext>();
 
+//builder.Services.AddIdentityServer()
+//    .AddApiAuthorization<UserModel, UserDbContext>();
 builder.Services.AddIdentityServer()
-    .AddApiAuthorization<UserModel, UserDbContext>();
+    .AddApiAuthorization<UserModel, UserDbContext>(options =>
+    {
+        options.IdentityResources["openid"].UserClaims.Add("role");
+        options.ApiResources.Single().UserClaims.Add("role");
+    });
 
 builder.Services.AddAuthentication()
     .AddIdentityServerJwt();
