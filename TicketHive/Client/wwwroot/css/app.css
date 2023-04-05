@@ -1,5 +1,11 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+
+:root {
+    
+    --yellow : #fbe89c;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -16,6 +22,7 @@ a, .btn-link {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+    
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
