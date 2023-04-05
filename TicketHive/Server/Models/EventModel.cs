@@ -11,7 +11,7 @@ namespace TicketHive.Server.Models
         [MaxLength(500)]
         public string? Description { get; set; }
         public required int MaxUsers { get; set; }
-        public bool IsSoldOut { get; set; }    // Consider Changing to Expression ( MaxUser & SoldTickets ) 
+        public bool IsSoldOut => (MaxUsers <= SoldTickets?.Count) ? true : false; 
         public required decimal Price { get; set; }
         //public DateTime StartTime { get; set; }
         //public DateTime EndTime { get; set; }
