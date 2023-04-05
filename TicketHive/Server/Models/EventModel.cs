@@ -13,8 +13,8 @@ namespace TicketHive.Server.Models
         public required int MaxUsers { get; set; }
         public bool IsSoldOut => (MaxUsers <= SoldTickets?.Count) ? true : false; 
         public required decimal Price { get; set; }
-        //public DateTime StartTime { get; set; }
-        //public DateTime EndTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
         public List<TicketModel>? SoldTickets { get; set; }
 
         [ForeignKey(nameof(Country))]

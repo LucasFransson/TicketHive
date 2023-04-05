@@ -49,18 +49,6 @@ public static class ConvertToViewModel<TEntity>
         return eventTypeViewModel;
     }
 
-    //private static List<EventViewModel>? ConvertListOfEventModels(List<EventModel> eventModels)
-    //{
-    //    List<EventViewModel>? eventViewModels = new(); 
-            
-    //    foreach(var eventModel in eventModels)
-    //    {
-    //        eventViewModels.Add(ConvertEventModel(eventModel));
-    //    }    
-
-    //    return eventViewModels;
-    //}
-
     private static EventViewModel ConvertEventModel(EventModel eventModel)
     {
         EventViewModel eventViewModel = new()
@@ -69,10 +57,9 @@ public static class ConvertToViewModel<TEntity>
             Name = eventModel.Name,
             Description = eventModel.Description,
             MaxUsers = eventModel.MaxUsers,
-            IsSoldOut = eventModel.IsSoldOut,
             Price = eventModel.Price,
-            //StartTime = eventModel.StartTime,
-            //EndTime = eventModel.EndTime,
+            StartTime = eventModel.StartTime,
+            EndTime = eventModel.EndTime,
             SoldTickets = null,
             Country = null,
             EventType = null,
@@ -83,6 +70,7 @@ public static class ConvertToViewModel<TEntity>
 
     private static CountryViewModel ConvertCountryModel(CountryModel countryModel)
     {
+
         CountryViewModel countryViewModel = new()
         {
             Name = countryModel.Name,
@@ -101,23 +89,11 @@ public static class ConvertToViewModel<TEntity>
             Event = null,
             Username = ticketModel.Username,
             Price = ticketModel.Price,
-            //StartTime = ticketModel.StartTime,
-            //EndTime = ticketModel.EndTime
+            StartTime = ticketModel.StartTime,
+            EndTime = ticketModel.EndTime
         };
 
         return ticketViewModel;
     }
-
-    //private static List<TicketViewModel>? ConvertListOfTicketModels(List<TicketModel> ticketModels)
-    //{
-    //    List<TicketViewModel>? ticketViewModels = new();
-        
-    //    foreach (var ticketModel in ticketModels)
-    //    {
-    //        ticketViewModels.Add(ConvertTicketModel(ticketModel));
-    //    }
-
-    //    return ticketViewModels;
-    //}
 }
  

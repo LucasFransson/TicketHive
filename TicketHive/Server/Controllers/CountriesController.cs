@@ -22,13 +22,19 @@ public class CountriesController : ControllerBase
     public async Task<ActionResult<IEnumerable<CountryViewModel>>> Get()
     {
         return Ok(await _unitOfWork.Countries.GetAllAsync());
- 
     }
 
     [HttpGet("{name}")]
-    public Task<CountryViewModel> GetByName(string name)
+    public async Task<ActionResult<CountryViewModel>> GetByName(string name)
     {
-        return _unitOfWork.Countries.GetByName(name);
+        CountryViewModel? result = await _unitOfWork.Countries.GetByName(name);
+
+        if (result is not null)
+        {
+            return Ok(result);
+        }
+
+        return NotFound();
     }
 
     // POST api/<CountriesController>

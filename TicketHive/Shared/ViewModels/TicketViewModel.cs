@@ -4,7 +4,7 @@ namespace TicketHive.Shared.ViewModels
 {
     public class TicketViewModel
     {
-        public int Id { get; }
+        public int Id { get; set; }
         public EventViewModel Event { get; set; }
         public string Username { get; set; }
         public decimal Price { get; set; }

@@ -22,25 +22,10 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         public async Task<TEntity?> GetByIdAsync(int id)
         {
             return await _context.Set<TEntity>().FindAsync(id);
-            //return (TEntity?) ReturnViewModel(selectedEntity);
-            //return (TEntity?) _convertToViewModelService.ReturnViewModel(await _context.Set<TEntity>().FindAsync(id));
         }
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await _context.Set<TEntity>().ToListAsync();
-
-            //IEnumerable<TEntity> viewModels = entities.Select(e => (TEntity)ConvertToViewModel<TEntity>.ReturnViewModel(e));
-
-            //return viewModels;
-
-            //List<TEntity>? entityViewModels = new(); //(IEnumerable<TEntity>?) entities.Select(t => ConvertToViewModel<TEntity>.ReturnViewModel(t) as TEntity).ToList();
-
-            //foreach(TEntity entity in entities)
-            //{
-            //    entityViewModels.Add((TEntity)ConvertToViewModel<TEntity>.ReturnViewModel(entity));
-            //}
-            
-            //return entityViewModels.AsEnumerable();
         }
         public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> predicate)
         {

@@ -18,16 +18,23 @@ public class EventTypesController : ControllerBase
 
     // GET: api/<EventTypesController>
     [HttpGet]
-    public async Task<IEnumerable<EventTypeViewModel>> Get()
+    public async Task<ActionResult<List<EventTypeViewModel>>> Get()
     {
-        return await _unitOfWork.EventTypes.GetAllAsync();
+        return Ok(await _unitOfWork.EventTypes.GetAllAsync());
     }
 
     // GET api/<EventTypesController>/5
     [HttpGet("{name}")]
-    public async Task<EventTypeViewModel> Get(string name)
+    public async Task<ActionResult<EventTypeViewModel>> Get(string name)
     {
-        return await _unitOfWork.EventTypes.GetByNameAsync(name);
+        EventTypeViewModel result = await _unitOfWork.EventTypes.GetByNameAsync(name);
+
+        if (result is not null)
+        {
+            return Ok(result);
+        }
+
+        return NotFound();
     }
 
     // POST api/<EventTypesController>
