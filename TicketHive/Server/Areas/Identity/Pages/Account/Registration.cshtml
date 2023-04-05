@@ -1,0 +1,18 @@
+﻿@page
+@model TicketHive.Server.Areas.Identity.Pages.Account.RegistrationModel
+@{
+}
+
+<h1>Register</h1>
+
+<form method="post">
+    <label for="input-username">Username:</label>
+    <input id="input-username" type="text" asp-for="Username" />
+    <label for="input-password">Password:</label>
+    <input id="input-password" type="password" asp-for="Password" />
+    <input type="submit" value="Register" />
+    <div>
+        <span class="text-danger" asp-validation-for="Username"></span>
+        <span class="text-danger" asp-validation-for="Password"></span>
+    </div>
+</form>
