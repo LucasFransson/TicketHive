@@ -9,7 +9,8 @@ namespace TicketHive.Server.Data.Repositories.Interfaces
         Task<IEnumerable<TEntity>> Get(Expression<Func<TEntity, bool>> predicate);
         Task AddAsync(TEntity entity);
         Task AddRangeAsync(IEnumerable<TEntity> entities);
+        void Update(TEntity entity);
         void Remove(TEntity entity);
-        void RemoveRange(IEnumerable<TEntity> entities);
+        Task RemoveRange(IEnumerable<TEntity> entities);
     }
 }
