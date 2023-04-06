@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TicketHive.Server.Data.Repositories.Interfaces;
+using TicketHive.Server.Models;
 using TicketHive.Shared.DTOs;
 
 namespace TicketHive.Server.Controllers
@@ -15,7 +16,25 @@ namespace TicketHive.Server.Controllers
             return View();
         }
 
+
+
+
         [HttpGet]
+        public async Task<SoldTicketDto> GetByEntity(SoldTicketModel model)
+        {
+            return new SoldTicketDto
+            {
+                Id = model.Id,
+                //Event = model.Event,
+                Username = model.Username,
+                Price = model.Price,
+                StartTime = model.StartTime,
+                EndTime = model.EndTime
+            };
+        }
+
+
+        [HttpGet] // Not in use, for  syntax test purposes only!
         public async Task<List<SoldTicketDto>> GetAllSoldTicketsAsync()
         {
             var soldTickets = await _unitOfWork.SoldTickets.GetAllAsync();
@@ -26,7 +45,7 @@ namespace TicketHive.Server.Controllers
                 var eventModel = await _unitOfWork.Events.GetByIdAsync(soldTicket.Event.Id);
                 var countryModel = await _unitOfWork.Countries.GetByName(eventModel.CountryName);
 
-                var eventDto = new EventDTO
+                var eventDto = new EventViewModel
                 {
                     Name = eventModel.Name,
                     MaxUsers = eventModel.MaxUsers,

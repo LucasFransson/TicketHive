@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicketHive.Shared.DTOs
 {
-    public class EventDTO
+    public class EventViewModel
     {
         public string Name { get; set; }
         public int MaxUsers { get; set; }

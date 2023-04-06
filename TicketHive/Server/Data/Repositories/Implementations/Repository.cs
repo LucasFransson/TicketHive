@@ -31,21 +31,28 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         {
             return await _context.Set<TEntity>().Where(predicate).ToListAsync();
         }
-        public async Task AddAsync(TEntity entity)
+        public void Add(TEntity entity)
         {
-            await _context.Set<TEntity>().AddAsync(entity);
+            _context.Set<TEntity>().Add(entity);
         }
         public async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
             await _context.Set<TEntity>().AddRangeAsync(entities);
         }
+        public void Uppdate(TEntity entity)
+        {
+            _context.Update<TEntity>(entity);
+        }
         public void Remove(TEntity entity)
         {
             _context.Set<TEntity>().Remove(entity);
+
         }
-        public void RemoveRange(IEnumerable<TEntity> entities)
+        public async Task RemoveRange(IEnumerable<TEntity> entities)
         {
             _context.Set<TEntity>().RemoveRange(entities);
+            await _context.SaveChangesAsync();
+
         }
     }
 }
