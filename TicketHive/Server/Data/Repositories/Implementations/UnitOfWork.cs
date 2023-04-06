@@ -22,9 +22,9 @@ namespace TicketHive.Server.Data.Repositories.Implementations
             Tickets = new TicketRepository(context);
             SoldTickets = new SoldTicketRepository(context);
         }
-        public int Complete()
+        public async Task CompleteAsync()
         {
-            throw new NotImplementedException();
+            await _context.SaveChangesAsync();
         }
 
         public void Dispose()

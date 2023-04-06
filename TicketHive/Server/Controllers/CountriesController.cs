@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
+using TicketHive.Shared.DTOs;
 using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Server.Controllers;
@@ -39,8 +40,24 @@ public class CountriesController : ControllerBase
 
     // POST api/<CountriesController>
     [HttpPost]
-    public void Post([FromBody] string value)
+    public IActionResult Post([FromBody] CountryDTO countryDTO)
     {
+        if(countryDTO is not null)
+        {
+            CountryModel countryModel = new()
+            {
+                Name = countryDTO.Name,
+                Currency = countryDTO.Currency,
+                IsAvailableForUserRegistration = countryDTO.IsAvailableForUserRegistration
+            };
+            
+            _unitOfWork.Countries.Add(countryModel);
+            _unitOfWork.CompleteAsync();
+
+            return Ok();
+        }
+
+        return BadRequest();
     }
 
     // PUT api/<CountriesController>/5
