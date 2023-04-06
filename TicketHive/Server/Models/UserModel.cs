@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TicketHive.Server.Models
 {
     public class UserModel : IdentityUser
     {
-        public CountryModel Country { get; set; }
-        public List<int> TicketIds { get; set; } = new();
+        [ForeignKey(nameof(Country))]
+        [Column("Country")]
+        public string? CountryName { get; set; }
+        public CountryModel? Country { get; set; }
     }
 }
