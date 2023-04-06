@@ -4,7 +4,7 @@
 @inject UserManager<UserModel> UserManager
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-@{
+@*@{
     var returnUrl = "/";
     if (Context.Request.Query.TryGetValue("returnUrl", out var existingUrl)) {
         returnUrl = existingUrl;
@@ -32,4 +32,4 @@ else
         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login" asp-route-returnUrl="@returnUrl">Login</a>
     </li>
 }
-</ul>
+</ul>*@

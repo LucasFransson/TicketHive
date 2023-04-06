@@ -52,5 +52,10 @@ namespace TicketHive.Server.Data.Repositories.Implementations
             _context.Set<TEntity>().RemoveRange(entities);
             await _context.SaveChangesAsync();
         }
+
+        public void Update(TEntity entity)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
