@@ -246,7 +246,6 @@ namespace TicketHive.Server.StaticMethods
                 {
                     Event = newEvent,
                     EventId = newEvent.Id,
-                    Username = null,
                     Price = newEvent.Price,
                     StartTime = newEvent.StartTime,
                     EndTime = newEvent.EndTime
