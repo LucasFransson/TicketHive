@@ -2,8 +2,10 @@
 
 namespace TicketHive.Server.StaticMethods
 {
-    public static class CountryDataSeeder
+    public static class DataSeeder
     {
+
+        // A List of all Countries in the Database
         public static List<CountryModel> Countries = new List<CountryModel>
         {
             new CountryModel { Name = "Afghanistan", Currency = "AFN", IsAvailableForUserRegistration = false },
@@ -201,5 +203,57 @@ namespace TicketHive.Server.StaticMethods
             new CountryModel { Name = "Zambia", Currency = "ZMW", IsAvailableForUserRegistration = false },
             new CountryModel { Name = "Zimbabwe", Currency = "ZWL", IsAvailableForUserRegistration = false }
         };
+
+
+        // Method for creating seed data for an Event
+        public static void AddData(string countryName,
+                                      string eventName,
+                                      string eventDescription,
+                                      int eventMaxUsers,
+                                      int eventPrice,
+                                      DateTime eventStart,
+                                      DateTime eventEnd,
+                                      EventTypeModel eventType,
+                                      List<EventModel> eventsList,
+                                      List<TicketModel> ticketsList)
+        {
+
+
+            // Get the Country from the Name
+            CountryModel selectedCountry = Countries.First(c => c.Name == countryName);
+
+            // Create a new Event with the information from the input parameters
+
+            EventModel newEvent = new EventModel
+            {
+                Name = eventName,
+                Description = eventDescription,
+                MaxUsers = eventMaxUsers,
+                Price = eventPrice,
+                StartTime = eventStart,
+                EndTime = eventEnd,
+                Country = selectedCountry,
+                CountryName = selectedCountry.Name,
+                EventType = eventType,
+                EventTypeName = eventType.Name
+            };
+            eventsList.Add(newEvent);   // Add the Event to list of Events
+
+            // Create as many tickets as the value of 'MaxUsers' in the Event 
+            for (int i = 1; i <= newEvent.MaxUsers; i++)
+            {
+                var ticket = new TicketModel
+                {
+                    Event = newEvent,
+                    EventId = newEvent.Id,
+                    Username = null,
+                    Price = newEvent.Price,
+                    StartTime = newEvent.StartTime,
+                    EndTime = newEvent.EndTime
+                };
+
+                ticketsList.Add(ticket);    // Add each Ticket to the list of Tickets
+            }
+        }
     }
 }
