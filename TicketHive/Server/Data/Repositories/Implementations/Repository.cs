@@ -39,6 +39,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         public async Task AddRangeAsync(IEnumerable<TEntity> entities)
         {
             await _context.Set<TEntity>().AddRangeAsync(entities);
+            await _context.SaveChangesAsync();
         }
         public void Update(TEntity entity)
         {

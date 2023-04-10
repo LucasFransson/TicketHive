@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
 using TicketHive.Shared.DTOs;
 
@@ -9,47 +10,77 @@ namespace TicketHive.Server.Controllers;
 [ApiController]
 public class TicketsController : ControllerBase
 {
+    private readonly IUnitOfWork _unitOfWork;
+
+    public TicketsController(IUnitOfWork unitOfWork)
+    {
+        _unitOfWork = unitOfWork;
+    }
+
     // GET: api/<TicketsController>
     [HttpGet]
-    public IEnumerable<string> Get()
+    public async Task<ActionResult<IEnumerable<TicketDTO>>> Get()
     {
-        return new string[] { "value1", "value2" };
+        IEnumerable<TicketDTO> tickets = (await _unitOfWork.Tickets.GetAllAsync()).Select(tm => new TicketDTO
+        {
+            Id = tm.Id,
+            EventId = tm.EventId,
+            Price = tm.Price,
+            StartTime = tm.StartTime,
+            EndTime = tm.EndTime
+        });
+
+        return Ok(tickets);
     }
 
     // GET api/<TicketsController>/5
     [HttpGet("{id}")]
-    public string Get(int id)
+    public async Task<ActionResult<TicketDTO>> Get(int id)
     {
-        return "value";
+        TicketModel? ticketModel = await _unitOfWork.Tickets.GetByIdAsync(id);
+
+        if (ticketModel is not null)
+        {
+            TicketDTO ticketDTO = new()
+            {
+                Id = ticketModel.Id,
+                EventId = ticketModel.EventId,
+                Price = ticketModel.Price,
+                StartTime = ticketModel.StartTime,
+                EndTime = ticketModel.EndTime
+            };
+
+            return Ok(ticketDTO);
+        }
+
+        return NotFound();
+    }
+    // POST api/<SoldTicketsController>
+    [HttpPost]
+    public async Task<ActionResult> Post([FromBody] List<TicketDTO> ticketDTOs)
+    {
+        IEnumerable<TicketModel> tickets = ticketDTOs.Select(tm => new TicketModel
+        {
+            EventId = tm.EventId,
+            Price = tm.Price,
+            StartTime = tm.StartTime,
+            EndTime = tm.EndTime
+        });
+
+        if (tickets is not null)
+        {
+            await _unitOfWork.Tickets.AddRangeAsync(tickets);
+
+            return Ok();
+        }
+
+        return BadRequest();
     }
 
-    // POST api/<TicketsController>
-    //[HttpPost]
-    //public async Task<ActionResult> Post()
-    //{
-        ////if (soldTicketDTO is not null)
-        ////{
-        //    TicketModel TicketModel = new()
-        //    {
-        //        //Id = soldTicketDTO.Id,
-        //        ////EventId = soldTicketDTO.EventId,
-        //        //Username = soldTicketDTO.Username,
-        //        //Price = soldTicketDTO.Price,
-        //        //StartTime = soldTicketDTO.StartTime,
-        //        //EndTime = soldTicketDTO.EndTime,
-        //    };
-
-        //    await _unitOfWork.Tickets.Add(soldTicketModel);
-
-        //    return Ok();
-        ////}
-
-        //return BadRequest();
-
-        // PUT api/<TicketsController>/5
-        [HttpPut("{id}")]
+    [HttpPut("{id}")]
     public void Put(int id, [FromBody] string value)
     {
+
     }
 
     // DELETE api/<TicketsController>/5
