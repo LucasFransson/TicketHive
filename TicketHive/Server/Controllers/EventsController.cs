@@ -40,13 +40,27 @@ public class EventsController : ControllerBase
 
     // GET api/<EventsController>/5
     [HttpGet("{id}")]
-    public async Task<ActionResult<EventViewModel>> Get(int id)
+    public async Task<ActionResult<EventDTO>> Get(int id)
     {
-        EventModel? result = await _unitOfWork.Events.GetByIdAsync(id);
+        EventModel? eventModel = await _unitOfWork.Events.GetByIdAsync(id);
         
-        if (result is not null)
+        if (eventModel is not null)
         {
-            return Ok(result);
+            EventDTO eventDTO = new()
+            {
+                Id = eventModel.Id,
+                Name = eventModel.Name,
+                Description = eventModel.Description,
+                MaxUsers = eventModel.MaxUsers,
+                IsSoldOut= eventModel.IsSoldOut,
+                Price = eventModel.Price,
+                StartTime = eventModel.StartTime,
+                EndTime = eventModel.EndTime,
+                CountryName = eventModel.CountryName,
+                EventTypeName = eventModel.EventTypeName
+            };
+
+            return Ok(eventDTO);
         }
 
         return NotFound();
