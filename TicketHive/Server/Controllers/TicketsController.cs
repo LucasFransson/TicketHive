@@ -54,9 +54,9 @@ public class TicketsController : ControllerBase
         }
 
         return NotFound();
-
-        // POST api/<SoldTicketsController>
-        [HttpPost]
+    }
+    // POST api/<SoldTicketsController>
+    [HttpPost]
     public async Task<ActionResult> Post([FromBody] List<TicketDTO> ticketDTOs)
     {
         IEnumerable<TicketModel> tickets = ticketDTOs.Select(tm => new TicketModel
