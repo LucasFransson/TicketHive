@@ -20,19 +20,33 @@ public class CountriesController : ControllerBase
 
     //GET: api/<CountriesController>
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<CountryViewModel>>> Get()
+    public async Task<ActionResult<IEnumerable<CountryDTO>>> Get()
     {
-        return Ok(await _unitOfWork.Countries.GetAllAsync());
+        IEnumerable<CountryDTO> countries = (await _unitOfWork.Countries.GetAllAsync()).Select(cm => new CountryDTO
+        {
+            Name = cm.Name,
+            Currency = cm.Currency,
+            IsAvailableForUserRegistration = cm.IsAvailableForUserRegistration
+        });
+
+        return Ok(countries);
     }
 
     [HttpGet("{name}")]
-    public async Task<ActionResult<CountryViewModel>> GetByName(string name)
+    public async Task<ActionResult<CountryDTO>> Get(string name)
     {
-        CountryViewModel? result = await _unitOfWork.Countries.GetByName(name);
+        CountryModel? countryModel = await _unitOfWork.Countries.GetByNameAsync(name);
 
-        if (result is not null)
+        if (countryModel is not null)
         {
-            return Ok(result);
+            CountryDTO countryDTO = new()
+            {
+                Name = countryModel.Name,
+                Currency = countryModel.Currency,
+                IsAvailableForUserRegistration = countryModel.IsAvailableForUserRegistration
+            };
+
+            return Ok(countryDTO);
         }
 
         return NotFound();
@@ -40,7 +54,7 @@ public class CountriesController : ControllerBase
 
     // POST api/<CountriesController>
     [HttpPost]
-    public IActionResult Post([FromBody] CountryDTO countryDTO)
+    public async Task<IActionResult> Post([FromBody] CountryDTO countryDTO)
     {
         if(countryDTO is not null)
         {
@@ -51,8 +65,7 @@ public class CountriesController : ControllerBase
                 IsAvailableForUserRegistration = countryDTO.IsAvailableForUserRegistration
             };
             
-            _unitOfWork.Countries.Add(countryModel);
-            _unitOfWork.CompleteAsync();
+            await _unitOfWork.Countries.Add(countryModel);
 
             return Ok();
         }
@@ -67,8 +80,16 @@ public class CountriesController : ControllerBase
     }
 
     // DELETE api/<CountriesController>/5
-    [HttpDelete("{id}")]
-    public void Delete(int id)
+    [HttpDelete("{name}")]
+    public async Task<IActionResult> Delete(string name)
     {
+        bool IsRemoved = await _unitOfWork.Countries.RemoveByNameAsync(name);
+
+        if (IsRemoved)
+        {
+            return Ok();
+        }
+
+        return NotFound();
     }
 }

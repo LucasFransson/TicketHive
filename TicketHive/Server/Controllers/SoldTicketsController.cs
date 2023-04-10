@@ -1,77 +1,96 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
 using TicketHive.Shared.DTOs;
 
-namespace TicketHive.Server.Controllers
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace TicketHive.Server.Controllers;
+[Route("api/[controller]")]
+[ApiController]
+public class SoldTicketsController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class SoldTicketsController : Controller
+    private readonly IUnitOfWork _unitOfWork;
+
+    public SoldTicketsController(IUnitOfWork unitOfWork)
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-
-
-
-        [HttpGet]
-        public async Task<SoldTicketDto> GetByEntity(SoldTicketModel model)
-        {
-            return new SoldTicketDto
-            {
-                Id = model.Id,
-                //Event = model.Event,
-                Username = model.Username,
-                Price = model.Price,
-                StartTime = model.StartTime,
-                EndTime = model.EndTime
-            };
-        }
-
-
-        [HttpGet] // Not in use, for  syntax test purposes only!
-        public async Task<List<SoldTicketDto>> GetAllSoldTicketsAsync()
-        {
-            var soldTickets = await _unitOfWork.SoldTickets.GetAllAsync();
-            var soldTicketDtos = new List<SoldTicketDto>();
-
-            foreach (var soldTicket in soldTickets)
-            {
-                var eventModel = await _unitOfWork.Events.GetByIdAsync(soldTicket.Event.Id);
-                var countryModel = await _unitOfWork.Countries.GetByName(eventModel.CountryName);
-
-                var eventDto = new EventViewModel
-                {
-                    Name = eventModel.Name,
-                    MaxUsers = eventModel.MaxUsers,
-                    Price = eventModel.Price,
-                    Country = new CountryDTO
-                    {
-                        Name = countryModel.Name,
-                        Currency = countryModel.Currency,
-                        IsAvailableForUserRegistration = countryModel.IsAvailableForUserRegistration
-                    }
-                };
-
-                var soldTicketDto = new SoldTicketDto
-                {
-                    Id = soldTicket.Id,
-                    Event = eventDto,
-                    Username = soldTicket.Username,
-                    Price = soldTicket.Price,
-                    StartTime = soldTicket.StartTime,
-                    EndTime = soldTicket.EndTime
-                };
-
-                soldTicketDtos.Add(soldTicketDto);
-            }
-
-            return soldTicketDtos;
-        }
+        _unitOfWork = unitOfWork;
     }
+
+    // GET: api/<SoldTicketsController>
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<SoldTicketDTO>>> Get()
+    {
+        IEnumerable<SoldTicketDTO> soldTickets = (await _unitOfWork.SoldTickets.GetAllAsync()).Select(stm => new SoldTicketDTO
+        {
+            Id = stm.Id,
+            EventId = stm.EventId,
+            Username = stm.Username,
+            Price = stm.Price,
+            StartTime = stm.StartTime,
+            EndTime = stm.EndTime,
+        });
+
+        return Ok(soldTickets);
+    }
+    // GET api/<SoldTicketsController>/5
+    [HttpGet("{id}")]
+    public async Task<ActionResult<SoldTicketDTO>> Get(int id)
+    {
+        SoldTicketModel? soldTicketModel = await _unitOfWork.SoldTickets.GetByIdAsync(id);
+
+        if (soldTicketModel is not null)
+        {
+            SoldTicketDTO soldTicketDTO = new()
+            {
+                Id = soldTicketModel.Id,
+                EventId = soldTicketModel.EventId,
+                Username = soldTicketModel.Username,
+                Price = soldTicketModel.Price,
+                StartTime = soldTicketModel.StartTime,
+                EndTime = soldTicketModel.EndTime
+            };
+
+            return Ok(soldTicketDTO);
+        }
+
+        return NotFound();
+    }
+
+    // POST api/<SoldTicketsController>
+    [HttpPost]
+    public async Task<ActionResult> Post([FromBody] SoldTicketDTO soldTicketDTO)
+    {
+        if (soldTicketDTO is not null)
+        {
+            SoldTicketModel soldTicketModel = new()
+            {
+                Id = soldTicketDTO.Id,
+                EventId = soldTicketDTO.EventId,
+                Username = soldTicketDTO.Username,
+                Price = soldTicketDTO.Price,
+                StartTime = soldTicketDTO.StartTime,
+                EndTime = soldTicketDTO.EndTime
+            };
+
+            await _unitOfWork.SoldTickets.Add(soldTicketModel);
+
+            return Ok();
+        }
+
+        return BadRequest();
+    }
+
+    // PUT api/<SoldTicketsController>/5
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody] string value)
+    {
+    }
+
+    // DELETE api/<SoldTicketsController>/5
+    [HttpDelete("{id}")]
+    public void Delete(int id)
+    {
+    }
+    
 }

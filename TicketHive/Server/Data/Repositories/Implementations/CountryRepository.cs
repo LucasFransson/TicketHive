@@ -15,19 +15,24 @@ namespace TicketHive.Server.Data.Repositories.Implementations
             _context = context;
         }
 
-        public async Task<List<CountryViewModel>> GetAllAsync()
+        public async Task<CountryModel?> GetByNameAsync(string name)
         {
-            List<CountryModel> countryModels = await _context.Countries.ToListAsync();
-
-            return countryModels.Select(cm => (CountryViewModel) ConvertToViewModel<CountryModel>.ReturnViewModel(cm)).ToList();
+            return await _context.Countries.FindAsync(name);
         }
 
-
-        public async Task<CountryViewModel?> GetByName(string name)
+        public async Task<bool> RemoveByNameAsync(string name)
         {
-            var selectedEntity = await _context.Countries.FindAsync(name);
+            CountryModel? countryToDelete = await _context.Countries.FindAsync(name);
 
-            return (CountryViewModel?) ConvertToViewModel<CountryModel>.ReturnViewModel(selectedEntity);
+            if (countryToDelete is not null)
+            {
+                _context.Countries.Remove(countryToDelete);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
         }
     }
 }

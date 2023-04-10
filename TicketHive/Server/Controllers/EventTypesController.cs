@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TicketHive.Server.Data.Repositories.Interfaces;
+using TicketHive.Server.Models;
+using TicketHive.Shared.DTOs;
 using TicketHive.Shared.ViewModels;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -18,16 +20,21 @@ public class EventTypesController : ControllerBase
 
     // GET: api/<EventTypesController>
     [HttpGet]
-    public async Task<ActionResult<List<EventTypeViewModel>>> Get()
+    public async Task<ActionResult<IEnumerable<EventTypeDTO>>> Get()
     {
-        return Ok(await _unitOfWork.EventTypes.GetAllAsync());
+        IEnumerable<EventTypeDTO> eventTypes = (await _unitOfWork.EventTypes.GetAllAsync()).Select(etm => new EventTypeDTO
+        {
+            Name = etm.Name
+        });
+
+        return Ok(eventTypes);
     }
 
     // GET api/<EventTypesController>/5
     [HttpGet("{name}")]
-    public async Task<ActionResult<EventTypeViewModel>> Get(string name)
+    public async Task<ActionResult<EventTypeDTO>> Get(string name)
     {
-        EventTypeViewModel result = await _unitOfWork.EventTypes.GetByNameAsync(name);
+        EventTypeModel? result = await _unitOfWork.EventTypes.GetByNameAsync(name);
 
         if (result is not null)
         {
@@ -39,8 +46,21 @@ public class EventTypesController : ControllerBase
 
     // POST api/<EventTypesController>
     [HttpPost]
-    public void Post([FromBody] string value)
+    public IActionResult Post([FromBody] EventTypeDTO eventTypeDTO)
     {
+        if(eventTypeDTO is not null)
+        {
+            EventTypeModel eventTypeModel = new()
+            {
+                Name = eventTypeDTO.Name
+            };
+            
+            _unitOfWork.EventTypes.Add(eventTypeModel);
+
+            return Ok();
+        }
+
+        return BadRequest();
     }
 
     // PUT api/<EventTypesController>/5
@@ -50,8 +70,16 @@ public class EventTypesController : ControllerBase
     }
 
     // DELETE api/<EventTypesController>/5
-    [HttpDelete("{id}")]
-    public void Delete(int id)
+    [HttpDelete("{name}")]
+    public async Task<IActionResult> Delete(string name)
     {
+        bool IsRemoved = await _unitOfWork.EventTypes.RemoveByNameAsync(name);
+
+        if (IsRemoved)
+        {
+            return Ok();
+        }
+
+        return NotFound();
     }
 }

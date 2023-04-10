@@ -15,17 +15,23 @@ public class EventTypeRepository : Repository<EventTypeModel>, IEventTypeReposit
         _context = context;
     }
 
-    public async Task<EventTypeViewModel?> GetByNameAsync(string name)
+    public async Task<EventTypeModel?> GetByNameAsync(string name)
     {
-        EventTypeModel? eventTypeModel = await _context.EventTypes.FindAsync(name);
-
-        return (EventTypeViewModel?)ConvertToViewModel<EventTypeModel>.ReturnViewModel(eventTypeModel);
+        return await _context.EventTypes.FindAsync(name);
     }
 
-    public async Task<List<EventTypeViewModel>?> GetAllAsync()
+    public async Task<bool> RemoveByNameAsync(string name)
     {
-        List<EventTypeModel>? eventTypeModels = await _context.EventTypes.ToListAsync();
+        EventTypeModel? eventTypeToDelete = await _context.EventTypes.FindAsync(name);
 
-        return eventTypeModels.Select(etm => (EventTypeViewModel)ConvertToViewModel<EventTypeModel>.ReturnViewModel(etm)).ToList();
+        if (eventTypeToDelete is not null)
+        {
+            _context.EventTypes.Remove(eventTypeToDelete);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+        return false;
     }
 }

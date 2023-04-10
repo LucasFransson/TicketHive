@@ -7,10 +7,11 @@ using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Shared.DTOs
 {
-    public class SoldTicketDto
+    public class SoldTicketDTO
     {
         public int Id { get; set; }
-        public EventViewModel Event { get; set; }
+        public int EventId { get; set; }
+        public EventViewModel? Event { get; set; }
         public string Username { get; set; }
         public decimal Price { get; set; }
         public DateTime StartTime { get; set; }
