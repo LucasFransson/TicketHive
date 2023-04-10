@@ -4,7 +4,7 @@ using TicketHive.Server.Models;
 
 namespace TicketHive.Server.Data.Repositories.Implementations
 {
-    public class UserRepository :IUserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly UserDbContext _context;
         public UserRepository(UserDbContext context)

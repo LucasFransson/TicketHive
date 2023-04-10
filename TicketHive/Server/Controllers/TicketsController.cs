@@ -87,5 +87,13 @@ public class TicketsController : ControllerBase
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
+        bool IsRemoved = await _unitOfWork.Tickets.RemoveByIdAsync(id);
+
+        if (IsRemoved)
+        {
+            return Ok();
+        }
+
+        return NotFound();
     }
 }

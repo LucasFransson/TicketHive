@@ -14,5 +14,20 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         {
             _context = context;
         }
+
+        public async Task<bool> RemoveByIdAsync(int id)
+        {
+            EventModel? eventToDelete = await _context.Events.FindAsync(id);
+
+            if (eventToDelete is not null)
+            {
+                _context.Events.Remove(eventToDelete);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+
+            return false;
+        }
     }
 }
