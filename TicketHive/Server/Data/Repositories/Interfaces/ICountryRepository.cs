@@ -5,7 +5,8 @@ namespace TicketHive.Server.Data.Repositories.Interfaces
 {
     public interface ICountryRepository : IRepository<CountryModel>
     {
-        Task<List<CountryViewModel>> GetAllAsync();
-        Task<CountryViewModel>? GetByName(string name);
+        //Task<List<CountryViewModel>> GetAllAsync();
+        Task<CountryModel?> GetByNameAsync(string name);
+        Task<bool> RemoveByNameAsync(string name);
     }
 }

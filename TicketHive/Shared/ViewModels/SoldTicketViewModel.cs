@@ -5,19 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TicketHive.Shared.DTOs;
+using TicketHive.Shared.ViewModels;
+
 
 namespace TicketHive.Shared.DTO
 {
     public class SoldTicketViewModel
     {
         public int Id { get; set; }
-        public EventViewModel Event { get; set; }
+        public int EventID { get; set; }
+        public EventViewModel? Event { get; set; }
         public string Username { get; set; }
         public decimal Price { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 
-        public SoldTicketViewModel(SoldTicketDto soldTicketDto)
+        public SoldTicketViewModel(SoldTicketDTO soldTicketDto)
         {
             Id = soldTicketDto.Id;
             Event = soldTicketDto.Event;

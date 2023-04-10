@@ -15,7 +15,7 @@ namespace TicketHive.Shared.ViewModels
             
         }
         // Constructor for getting related data to SoldTicketDto in the SoldTicketController
-        public CountryViewModel(SoldTicketDto soldTicket)   
+        public CountryViewModel(SoldTicketDTO soldTicket)   
         {
             Name= soldTicket.Event.Country.Name;
             Currency = soldTicket.Event.Country.Currency;

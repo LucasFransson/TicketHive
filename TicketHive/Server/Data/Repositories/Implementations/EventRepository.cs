@@ -14,16 +14,5 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         {
             _context = context;
         }
-
-        public async Task<List<EventViewModel>> GetAllAsync()
-        {
-            List<EventModel> eventModels = await _context.Events.ToListAsync();
-
-            List<EventViewModel> eventViewModels = eventModels.Select(em => (EventViewModel) ConvertToViewModel<EventModel>.ReturnViewModel(em)).ToList();
-
-            return eventViewModels;
-        }
-
-
     }
 }

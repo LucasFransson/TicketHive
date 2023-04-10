@@ -5,7 +5,7 @@ namespace TicketHive.Server.Data.Repositories.Interfaces
 {
     public interface IEventTypeRepository : IRepository<EventTypeModel>
     {
-        Task<EventTypeViewModel?> GetByNameAsync(string name);
-        Task<List<EventTypeViewModel>?> GetAllAsync();
+        Task<EventTypeModel?> GetByNameAsync(string name);
+        Task<bool> RemoveByNameAsync(string name);
     }
 }

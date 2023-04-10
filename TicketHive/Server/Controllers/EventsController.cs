@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
+using TicketHive.Shared.DTOs;
 using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Server.Controllers;
@@ -18,9 +19,23 @@ public class EventsController : ControllerBase
 
     // GET: api/<EventsController>
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<EventViewModel>>> Get()
+    public async Task<ActionResult<IEnumerable<EventDTO>?>> Get()
     {
-        return Ok(await _unitOfWork.Events.GetAllAsync());
+        IEnumerable<EventDTO>? events = (await _unitOfWork.Events.GetAllAsync()).Select(em => new EventDTO
+        {
+            Id = em.Id,
+            Name = em.Name,
+            Description = em.Description,
+            MaxUsers = em.MaxUsers,
+            IsSoldOut = em.IsSoldOut,
+            Price = em.Price,
+            StartTime = em.StartTime,
+            EndTime = em.EndTime,
+            CountryName = em.CountryName,
+            EventTypeName = em.EventTypeName,
+        });
+
+        return Ok(events);
     }
 
     // GET api/<EventsController>/5
@@ -39,12 +54,24 @@ public class EventsController : ControllerBase
 
     // POST api/<EventsController>
     [HttpPost]
-    public async Task<IActionResult> Post([FromBody] EventViewModel eventViewModel)
+    public async Task<IActionResult> Post([FromBody] EventDTO eventDTO)
     {
-        if(eventViewModel is not null)
+        if(eventDTO is not null)
         {
-            //await _unitOfWork.Events.Add(eventViewModel);
-            //await _unitOfWork.Complete();
+            EventModel eventModel = new()
+            {
+                Name = eventDTO.Name,
+                Description = eventDTO.Description,
+                MaxUsers = eventDTO.MaxUsers,
+                Price = eventDTO.Price,
+                StartTime = eventDTO.StartTime,
+                EndTime = eventDTO.EndTime,
+                CountryName = eventDTO.CountryName,
+                EventTypeName = eventDTO.EventTypeName,
+            };
+
+            await _unitOfWork.Events.Add(eventModel);
+
             return Ok();
         }
 

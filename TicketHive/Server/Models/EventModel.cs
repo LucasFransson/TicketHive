@@ -19,10 +19,10 @@ namespace TicketHive.Server.Models
 
         [ForeignKey(nameof(Country))]
         public required string CountryName { get; set; }
-        public required CountryModel? Country { get; set; }
+        public CountryModel? Country { get; set; }
         [ForeignKey(nameof(EventType))]
         public required string EventTypeName { get; set; }
-        public required EventTypeModel? EventType { get; set; }
+        public EventTypeModel? EventType { get; set; }
 
     }
 }

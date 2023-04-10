@@ -6,7 +6,9 @@ namespace TicketHive.Server.Models
     public class SoldTicketModel
     {
         public int Id { get; set; }
-        public required EventModel? Event { get; set; }
+        public int EventId { get; set; }
+        public EventModel? Event { get; set; }
+
         [MaxLength(100)]
         public required string Username { get; set; }
         public required decimal Price { get; set; }
