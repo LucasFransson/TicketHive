@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TicketHive.Server.Controllers;
 using TicketHive.Shared.DTOs;
 
 namespace TicketHive.Server.Models
@@ -11,13 +12,14 @@ namespace TicketHive.Server.Models
         public required string Name { get; set; }
         [MaxLength(500)]
         public string? Description { get; set; }
+        public string? ImageString { get; set; }
         public required int MaxUsers { get; set; }
+        public int TicketsLeft => MaxUsers - SoldTickets.Count();
         public bool IsSoldOut => (MaxUsers <= SoldTickets?.Count) ? true : false; 
         public required decimal Price { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public List<SoldTicketModel>? SoldTickets { get; set; } 
-
         [ForeignKey(nameof(Country))]
         public required string CountryName { get; set; }
         public CountryModel? Country { get; set; }
@@ -37,8 +39,7 @@ namespace TicketHive.Server.Models
             MaxUsers = dto.MaxUsers;
             Price = dto.Price;
             StartTime = dto.StartTime;
-            EndTime = dto.EndTime;
-            //SoldTickets = dto.SoldTickets hur lösa bäst
+            EndTime = dto.EndTime;   
             CountryName = dto.CountryName;
             EventTypeName = dto.EventTypeName;
         }

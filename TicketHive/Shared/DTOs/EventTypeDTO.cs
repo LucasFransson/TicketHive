@@ -10,12 +10,17 @@ public class EventTypeDTO
 {
     public string Name { get; set; }
     //public List<EventTypeDTO>? Events { get; set; }   // See ViewModel for info
-   
-    // Constructor for Model
-    //public EventTypeDTO(string name)
-    //{
-    //    Name = name;
-    //}
+
+
+    public EventTypeDTO()
+    {
+        
+    }
+    //Constructor for Model
+    public EventTypeDTO(string name)
+    {
+        Name = name;
+    }
 
     //// Constructor for ViewModel
     //public EventTypeDTO(EventTypeViewModel viewModel)
@@ -23,4 +28,5 @@ public class EventTypeDTO
     //    Name = viewModel.Name;
     //}
 }
+
 

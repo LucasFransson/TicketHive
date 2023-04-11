@@ -14,10 +14,10 @@ namespace TicketHive.Shared.DTOs
         public int Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public string? ImageString { get; set; }
         public int MaxUsers { get; set; }
-        //public List<SoldTicketDTO>? SoldTickets { get; set; }
-        public int TicketsLeft { get; set; }    // SoldTickets.Count
-        public bool IsSoldOut { get; set; }
+        public int TicketsLeft { get;  }    
+        public bool IsSoldOut { get => TicketsLeft <= 0; } 
         public decimal Price { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
@@ -27,26 +27,30 @@ namespace TicketHive.Shared.DTOs
         public EventTypeDTO EventType { get; set; }
 
 
+        public EventDTO()
+        {
+            
+        }
+
+        // Constructor for Model
+        public EventDTO(int id, string name, string description, int maxUsers, int ticketsLeft, bool isSoldOut, decimal price, DateTime startTime, DateTime endTime, string countryName, CountryDTO country, string eventTypeName, EventTypeDTO eventType, string? imageString)
+        {
+            Id = id;
+            Name = name;
+            Description = description;
+            MaxUsers = maxUsers;
+            TicketsLeft = ticketsLeft;
+            Price = price;
+            StartTime = startTime;
+            EndTime = endTime;
+            CountryName = countryName;
+            Country = country;
+            EventTypeName = eventTypeName;
+            EventType = eventType;
+            ImageString = imageString;
+        }
 
 
-
-        //// Constructor for Model
-        //public EventDTO(int id, string name, string description, int maxUsers, int ticketsLeft, bool isSoldOut, decimal price, DateTime startTime, DateTime endTime, string countryName, CountryDTO country, string eventTypeName, EventTypeDTO eventType)
-        //{
-        //    Id = id;
-        //    Name = name;
-        //    Description = description;
-        //    MaxUsers = maxUsers;
-        //    TicketsLeft = ticketsLeft;
-        //    IsSoldOut = isSoldOut;
-        //    Price = price;
-        //    StartTime = startTime;
-        //    EndTime = endTime;
-        //    CountryName = countryName;
-        //    Country = country;
-        //    EventTypeName = eventTypeName;
-        //    EventType = eventType;
-        //}
 
         //// Constructor for ViewModel
         //public EventDTO(EventViewModel viewModel)
