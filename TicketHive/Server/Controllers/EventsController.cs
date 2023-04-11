@@ -102,13 +102,13 @@ public class EventsController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        //bool IsRemoved = await _unitOfWork.Events.Remove(id);
+        bool IsRemoved = await _unitOfWork.Events.RemoveByIdAsync(id);
 
-        //if(IsRemoved)
-        //{
-        //    return Ok();
-        //}
+        if (IsRemoved)
+        {
+            return Ok();
+        }
 
-        return BadRequest();
+        return NotFound();
     }
 }
