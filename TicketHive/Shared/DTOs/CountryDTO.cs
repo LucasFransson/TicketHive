@@ -9,8 +9,9 @@ namespace TicketHive.Shared.DTOs
 {
     public class CountryDTO
     {
-        public required string Name { get; set; } 
-        public required string Currency { get; set; } 
+        // Rmoved Required because it caused errors
+        public string Name { get; set; } 
+        public string Currency { get; set; } 
         public bool IsAvailableForUserRegistration { get; set; }
 
 

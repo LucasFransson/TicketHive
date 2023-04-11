@@ -33,11 +33,12 @@ namespace TicketHive.Shared.DTOs
         }
 
         // Constructor for Model
-        public EventDTO(int id, string name, string description, int maxUsers, int ticketsLeft, bool isSoldOut, decimal price, DateTime startTime, DateTime endTime, string countryName, CountryDTO country, string eventTypeName, EventTypeDTO eventType, string? imageString)
+        public EventDTO(int id, string name, string description, string? imageString, int maxUsers, int ticketsLeft, decimal price, DateTime startTime, DateTime endTime, string countryName, CountryDTO country, string eventTypeName, EventTypeDTO eventType)
         {
             Id = id;
             Name = name;
-            Description = description;
+            Description = description; 
+            ImageString = imageString;
             MaxUsers = maxUsers;
             TicketsLeft = ticketsLeft;
             Price = price;
@@ -47,7 +48,7 @@ namespace TicketHive.Shared.DTOs
             Country = country;
             EventTypeName = eventTypeName;
             EventType = eventType;
-            ImageString = imageString;
+          
         }
 
 
