@@ -11,7 +11,8 @@ namespace TicketHive.Shared.DTOs
     {
         public int Id { get; set; }
         public int EventId { get; set; }
-        public EventViewModel? Event { get; set; }
+        //public string EventName { get; set; }
+        public EventDTO? Event { get; set; }
         public string Username { get; set; }
         public decimal Price { get; set; }
         public DateTime StartTime { get; set; }

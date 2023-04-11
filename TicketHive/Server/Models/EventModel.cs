@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using TicketHive.Shared.DTOs;
 
 namespace TicketHive.Server.Models
 {
@@ -15,7 +16,7 @@ namespace TicketHive.Server.Models
         public required decimal Price { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public List<SoldTicketModel>? SoldTickets { get; set; } // T
+        public List<SoldTicketModel>? SoldTickets { get; set; } 
 
         [ForeignKey(nameof(Country))]
         public required string CountryName { get; set; }
@@ -24,5 +25,22 @@ namespace TicketHive.Server.Models
         public required string EventTypeName { get; set; }
         public EventTypeModel? EventType { get; set; }
 
+        public EventModel()
+        {
+            
+        }
+        public EventModel(EventDTO dto)
+        {
+            Id = dto.Id;
+            Name = dto.Name;
+            Description = dto.Description;
+            MaxUsers = dto.MaxUsers;
+            Price = dto.Price;
+            StartTime = dto.StartTime;
+            EndTime = dto.EndTime;
+            //SoldTickets = dto.SoldTickets hur lösa bäst
+            CountryName = dto.CountryName;
+            EventTypeName = dto.EventTypeName;
+        }
     }
 }

@@ -14,13 +14,28 @@ namespace TicketHive.Shared.ViewModels
         {
             
         }
-        // Constructor for getting related data to SoldTicketDto in the SoldTicketController
-        public CountryViewModel(SoldTicketDTO soldTicket)   
+        public CountryViewModel(CountryDTO countryDTO)
         {
-            Name= soldTicket.Event.Country.Name;
-            Currency = soldTicket.Event.Country.Currency;
-            IsAvailableForUserRegistration = soldTicket.Event.Country.IsAvailableForUserRegistration;
+            Name = countryDTO.Name;
+            Currency = countryDTO.Currency;
+            IsAvailableForUserRegistration = countryDTO.IsAvailableForUserRegistration;
         }
+
+
+        //public CountryViewModel(CountryDTO cDto)
+        //{
+        //    Name = cDto.Name;
+        //    Currency = cDto.Currency;
+        //    IsAvailableForUserRegistration = cDto.IsAvailableForUserRegistration;
+
+        //}
+        //// Constructor for getting related data to SoldTicketDto in the SoldTicketController
+        //public CountryViewModel(SoldTicketDTO soldTicket)
+        //{
+        //    Name = soldTicket.Event.Country.Name;
+        //    Currency = soldTicket.Event.Country.Currency;
+        //    IsAvailableForUserRegistration = soldTicket.Event.Country.IsAvailableForUserRegistration;
+        //}
     }
 
    

@@ -47,20 +47,20 @@ namespace TicketHive.Bll.Services.Managers
             return await Task.FromResult(events.OrderBy(e => e.Name));
         }
 
-        public async Task<IEnumerable<EventViewModel>> SortEventsBySoldOutAsync(IEnumerable<EventViewModel> events)
-        {
-            return await Task.FromResult(events.OrderBy(e => e.IsSoldOut));
-        }
-        public async Task<IEnumerable<EventViewModel>> GetEventsByCountryAsync(string countryName,UnitOfService uos)
+        //public async Task<IEnumerable<EventViewModel>> SortEventsBySoldOutAsync(IEnumerable<EventViewModel> events)
+        //{
+        //    return await Task.FromResult(events.OrderBy(e => e.IsSoldOut));
+        //}
+        public async Task<IEnumerable<EventViewModel>> GetEventsByCountryAsync(string countryName, UnitOfService uos)
         {
             var country = await GetCountryViewModelByNameAsync(countryName, uos);
             var events = await uos.EventService.GetAllAsync();
             return await Task.FromResult(events.Where(e => e.Country.Name == country.Name));
         }
 
-        public async Task<IEnumerable<EventViewModel>> GetEventsByEventTypeAsync(string eventTypeName,UnitOfService uos)
+        public async Task<IEnumerable<EventViewModel>> GetEventsByEventTypeAsync(string eventTypeName, UnitOfService uos)
         {
-            var eventType = await GetEventTypeViewModelByNameAsync(eventTypeName,uos);
+            var eventType = await GetEventTypeViewModelByNameAsync(eventTypeName, uos);
             var events = await uos.EventService.GetAllAsync();
             return await Task.FromResult(events.Where(e => e.EventType.Name == eventType.Name));
         }
@@ -79,7 +79,7 @@ namespace TicketHive.Bll.Services.Managers
             var eventTypes = await uos.EventTypeService.GetAllAsync();
             return await Task.FromResult(eventTypes.FirstOrDefault(et => et.Name == name));
         }
-        public async Task<IEnumerable<TicketViewModel>> GetTicketsByEventAsync(EventViewModel eventViewModel,UnitOfService uos)
+        public async Task<IEnumerable<TicketViewModel>> GetTicketsByEventAsync(EventViewModel eventViewModel, UnitOfService uos)
         {
             var events = await uos.EventService.GetAllAsync();
             var selectedEvent = events.FirstOrDefault(e => e.Id == eventViewModel.Id);

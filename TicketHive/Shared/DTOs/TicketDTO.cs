@@ -10,8 +10,31 @@ public class TicketDTO
 {
     public int Id { get; set; }
     public int EventId { get; set; }
-    public EventViewModel? Event { get; set; }
+    //public string EventName { get; set; }
+    public EventDTO? Event { get; set; }
     public decimal Price { get; set; }
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
+
+    // Constructor for Model
+    //public TicketDTO(int id, int eventId, EventDTO eventDto, decimal price, DateTime startTime, DateTime endTime)
+    //{
+    //    Id = id;
+    //    EventId = eventId;
+    //    Event = eventDto;
+    //    Price = price;
+    //    StartTime = startTime;
+    //    EndTime = endTime;
+    //}
+
+    //// Constructor for ViewModel 
+    //public TicketDTO(TicketViewModel viewModel)
+    //{
+    //    Id = viewModel.Id;
+    //    EventId = viewModel.EventId;
+    //    Event = viewModel.Event != null ? new EventDTO(viewModel.Event) : null;
+    //    Price = viewModel.Price;
+    //    StartTime = viewModel.StartTime;
+    //    EndTime = viewModel.EndTime;
+    //}
 }
