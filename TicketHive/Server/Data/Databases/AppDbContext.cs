@@ -27,21 +27,21 @@ namespace TicketHive.Server.Data.Databases
             modelBuilder.Entity<CountryModel>().HasData(DataSeeder.Countries);
 
             // Add seed data for EventTypeModel
-            var eventTypes = new List<EventTypeModel> { new EventTypeModel { Name = "Music" } }; // Change this to be set at the DataSeeder class so it matches the rest
+            modelBuilder.Entity<EventTypeModel>().HasData(DataSeeder.EventTypes);
 
             // Create Lists for Events and Tickets
             var events = new List<EventModel>();
             var tickets = new List<TicketModel>();
 
             // Create and add seed data for an Event and Tickets ( adding the events/tickets to their lists )
-            DataSeeder.AddData("Sweden",
+            DataSeeder.AddData(1,"Sweden",
                                "Slayer",
                                "A Heavy Metal Concert",
                                500,
                                300,
                                new DateTime(2023,07,30,19,30,0),
                                new DateTime(2023, 07, 30, 23, 0, 0),
-                               eventTypes.First(et=>et.Name=="Music"),
+                               "Music",//eventTypes.First(et=>et.Name=="Music"),
                                events,
                                tickets);
 

@@ -18,4 +18,8 @@
     <ProjectReference Include="..\Shared\TicketHive.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\css\bootstrap\" />
+  </ItemGroup>
+
 </Project>
