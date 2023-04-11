@@ -85,7 +85,7 @@ public class TicketsController : ControllerBase
 
     // DELETE api/<TicketsController>/5
     [HttpDelete("{id}")]
-    public void Delete(int id)
+    public async Task<IActionResult> Delete(int id)
     {
         bool IsRemoved = await _unitOfWork.Tickets.RemoveByIdAsync(id);
 
