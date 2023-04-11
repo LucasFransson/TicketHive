@@ -4,7 +4,6 @@ namespace TicketHive.Server.StaticMethods
 {
     public static class DataSeeder
     {
-
         // A List of all Countries in the Database
         public static List<CountryModel> Countries = new List<CountryModel>
         {
@@ -204,21 +203,25 @@ namespace TicketHive.Server.StaticMethods
             new CountryModel { Name = "Zimbabwe", Currency = "ZWL", IsAvailableForUserRegistration = false }
         };
 
+        // A List of all Event Types in the Database
+        public static List<EventTypeModel> EventTypes = new()
+        {
+            new EventTypeModel() { Name = "Music"}
+        };
 
         // Method for creating seed data for an Event
-        public static void AddData(string countryName,
+        public static void AddData(int eventId,
+                                      string countryName,
                                       string eventName,
                                       string eventDescription,
                                       int eventMaxUsers,
                                       int eventPrice,
                                       DateTime eventStart,
                                       DateTime eventEnd,
-                                      EventTypeModel eventType,
+                                      string eventType,
                                       List<EventModel> eventsList,
                                       List<TicketModel> ticketsList)
         {
-
-
             // Get the Country from the Name
             CountryModel selectedCountry = Countries.First(c => c.Name == countryName);
 
@@ -226,16 +229,16 @@ namespace TicketHive.Server.StaticMethods
 
             EventModel newEvent = new EventModel
             {
+                Id = eventId,
                 Name = eventName,
                 Description = eventDescription,
                 MaxUsers = eventMaxUsers,
                 Price = eventPrice,
                 StartTime = eventStart,
                 EndTime = eventEnd,
-                Country = selectedCountry,
-                CountryName = selectedCountry.Name,
-                EventType = eventType,
-                EventTypeName = eventType.Name
+                SoldTickets = null,
+                CountryName = countryName,
+                EventTypeName = eventType
             };
             eventsList.Add(newEvent);   // Add the Event to list of Events
 
@@ -244,7 +247,7 @@ namespace TicketHive.Server.StaticMethods
             {
                 var ticket = new TicketModel
                 {
-                    Event = newEvent,
+                    Id = i,
                     EventId = newEvent.Id,
                     Price = newEvent.Price,
                     StartTime = newEvent.StartTime,

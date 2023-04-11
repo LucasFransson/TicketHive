@@ -1,66 +1,36 @@
 ﻿@page "/cart"
 
-<!DOCTYPE html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link href="~/css/app.css" rel="stylesheet" asp-append-version="true" />
-
-    <title>ShoppingCart</title>
-</head>
 <h3>ShoppingCart</h3>
 
-<div>
-<table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Event
-                </th>
-                <th>
-                    Date
-                </th>
-                <th>
-                    Price
-                </th>
-                <th>
-                    Quantity
-                </th>
-                <th>
-                    Total
-                </th>
-                <th>
-                    Remove
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    @*@item.Event.Name*@
-                </td>
-                <td>
-                    @*@item.StartTime*@
-                </td>
-                <td>
-                    @item.Price
-                </td>
-                <td>
-                    @*@item.Quantity*@
-                </td>
-                <td>
-                    @*@item.Total*@
-                </td>
-                <td>
-                    @*<button class="btn btn-danger" @onclick="RemoveItem">Remove</button>*@
-                </td>
-            </tr>
-        </tbody>
-    </table>
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+@*            <div class="col-md-4">
+                <img src="product-image.jpg" class="img-fluid">
+            </div>*@
+            <div class="col-md-8">
+                <h5 class="card-title">Product Name</h5>
+                <p class="card-text">Product Description</p>
+                <p class="card-text">Price: $19.99</p>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary" type="button" @onclick="DecreaseCount">-</button>
+                    </div>
+                    <input type="text" class="form-control" placeholder="@currentCount" aria-label="Quantity">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" @onclick="IncrementCount">+</button>
+                    </div>
+                </div>
+                <button class="btn btn-danger">Remove Item</button>
+            </div>
+        </div>
+    </div>
 </div>
 
+
 @code {
+
+    private int currentCount = 1;
     private TicketViewModel? item;
 
     //method that will be called when the page is loaded
@@ -69,6 +39,23 @@
         //call the method to get the cart items
         //await GetCartItems();
     }
+
+    private void IncrementCount()
+    {
+        if (currentCount <= 10)
+        {
+            currentCount++;
+        }
+    }
+
+    private void DecreaseCount()
+    {
+        if(currentCount > 0)
+        {
+            currentCount--;
+        }
+    }
+
     //create the method GetCartItems
     private async Task GetCartItems(int id)
     {
