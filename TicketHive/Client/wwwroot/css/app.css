@@ -447,6 +447,17 @@ h1 {
             bottom: -250px;
         }
 
+
+/*    Footer*/
+
+.footer {
+    background-color:var(--yellow-light-accent);
+}
+
+.footer ul{
+}
+
+
 /*        nav menu */
 .headerbar {
     padding: 0;

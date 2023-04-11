@@ -28,9 +28,10 @@
 </div>
 
 
-@*@code
-{
-    private bool isAdmin;
+
+
+
+@*    private bool isAdmin;
 
     protected override async Task OnInitializedAsync()
     {
@@ -39,5 +40,4 @@
         var name = authState.User.Identity.Name;
 
         isAdmin = authState.User.IsInRole("Admin");
-    }
-}*@
+    }*@
