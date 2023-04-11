@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Services\TicketHive.Bll.csproj" />
     <ProjectReference Include="..\Shared\TicketHive.Shared.csproj" />
   </ItemGroup>
 

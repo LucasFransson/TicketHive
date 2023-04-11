@@ -5,32 +5,33 @@
 
 
 <div class="container-main">
-	<aside class="left-sidebar gray-background">
-			<h2>left side</h2>
+	<aside class="left-sidebar white-background">
+@*			<h2>left side</h2>*@
 	</aside>
 
 	<main class="center-content white-background blue-foreground">
 		<div><h2>TESTING PAGE!</h2></div>
 	    <ul>
 			<li>
-                <strong class="red-foreground">Slayer</strong> - 2023-06-24<button class="yellow-background" type="submit">Buy Ticket</button>
+                <strong class="red-foreground">Slayer</strong> - 2023-06-24<button class="button-buy" type="submit">Buy Ticket</button>
             </li>
             <li>
-                <strong class="red-foreground">Trelleborgs Erotikmässa</strong> - 2023-07-12<button class="yellow-background" type="submit">Buy Ticket</button>
+                <strong class="red-foreground">Trelleborgs Erotikmässa</strong> - 2023-07-12<button class="button-buy" type="submit">Buy Ticket</button>
             </li>
             <li>
             </li>
         </ul>
     </main>
-		<aside class="right-sidebar gray-background">
-			<h2>right side</h2>
+		<aside class="right-sidebar white-background">
+		@*	<h2>right side</h2>*@
 	</aside>
 </div>
 
 
-@*@code
-{
-    private bool isAdmin;
+
+
+
+@*    private bool isAdmin;
 
     protected override async Task OnInitializedAsync()
     {
@@ -39,5 +40,4 @@
         var name = authState.User.Identity.Name;
 
         isAdmin = authState.User.IsInRole("Admin");
-    }
-}*@
+    }*@
