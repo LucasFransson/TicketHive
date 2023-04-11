@@ -15,7 +15,7 @@ namespace TicketHive.Server.Models
         public required decimal Price { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        public List<SoldTicketModel>? SoldTickets { get; set; }
+        public List<SoldTicketModel>? SoldTickets { get; set; } // T
 
         [ForeignKey(nameof(Country))]
         public required string CountryName { get; set; }
