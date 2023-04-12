@@ -20,6 +20,7 @@ namespace TicketHive.Shared.DTOs
         {
             
         }
+
         // Constructor for DTO from Model Input Parameters
      
         public CountryDTO(string name, string currency, bool isAvailableForUserRegistration)
