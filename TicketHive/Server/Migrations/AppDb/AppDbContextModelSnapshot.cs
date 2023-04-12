@@ -1230,6 +1230,9 @@ namespace TicketHive.Server.Migrations.AppDb
                         .IsRequired()
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("ImageString")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("MaxUsers")
                         .HasColumnType("int");
 
@@ -5352,7 +5355,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         .IsRequired();
 
                     b.HasOne("TicketHive.Server.Models.EventTypeModel", "EventType")
-                        .WithMany("Events")
+                        .WithMany()
                         .HasForeignKey("EventTypeName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -5387,11 +5390,6 @@ namespace TicketHive.Server.Migrations.AppDb
             modelBuilder.Entity("TicketHive.Server.Models.EventModel", b =>
                 {
                     b.Navigation("SoldTickets");
-                });
-
-            modelBuilder.Entity("TicketHive.Server.Models.EventTypeModel", b =>
-                {
-                    b.Navigation("Events");
                 });
 #pragma warning restore 612, 618
         }

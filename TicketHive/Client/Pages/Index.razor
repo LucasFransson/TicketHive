@@ -1,32 +1,16 @@
-﻿@page "/"
-@inject AuthenticationStateProvider provider
+﻿@using TicketHive.Bll.Services;
+@using TicketHive.Bll.Services.Interfaces;
+@using TicketHive.Bll.Services.Implementations;
+@using TicketHive.Shared.ViewModels;
+@page "/"
+@inject AuthenticationStateProvider provider;
 @inject IJSRuntime JsRuntime;
+@inject IUnitOfService unitOfService;
+
 
 <PageTitle>Index</PageTitle>
 
 
-@*<div class="container-main">
-	<aside class="left-sidebar white-background">
-
-	</aside>
-
-	<main class="center-content white-background blue-foreground">
-		<div><h2>TESTING PAGE!</h2></div>
-	    <ul>
-			<li>
-                <strong class="red-foreground">Slayer</strong> - 2023-06-24<button class="button-buy" type="submit">Buy Ticket</button>
-            </li>
-            <li>
-                <strong class="red-foreground">Trelleborgs Erotikmässa</strong> - 2023-07-12<button class="button-buy" type="submit">Buy Ticket</button>
-            </li>
-            <li>
-            </li>
-        </ul>
-    </main>
-		<aside class="right-sidebar white-background">
-
-	</aside>
-</div>*@
 <div class="container">
 			<div id="carouselExampleIndicators"
 				class="carousel slide"
@@ -98,10 +82,41 @@
 			</div>
 		</div>
 
+
 		<div class="container">
 			<div class="row">
 				<div class="card-group mx-auto">
+				@*	@if (_allEvents is not null)
+					{
+						foreach (var e in _allEvents)
+						{
 					<div class="card mr-5">
+						<img src="https://via.placeholder.com/300x200.png?text=Event+Image"
+							 class="card-img-top"
+							 alt="Event Image" />
+						<div class="card-body">
+							<h5 class="card-title">@e.Name</h5>
+							<h6 class="card-subtitle mb-2 text-muted">@e.EventType</h6>
+							<p class="card-text">@e.Description</p>
+							<p class="card-text">@e.StartTime - @e.EndTime</p>
+							<p class="card-text">@e.CountryName</p>
+							<p class="card-text font-weight-bold">$@e.Price</p>
+							<a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
+						</div>
+					</div>
+				}
+			}
+			else
+			{
+				<div class="card mr-5">
+					<div class="card-body">
+						<h5 class="card-title">Something Went Wrong</h5>
+						<p class="card-text">Unable to load event information</p>
+						</div>
+					</div>
+
+			}*@
+			<div class="card mr-5">
 						<img
 							src="https://via.placeholder.com/300x200.png?text=Event+Image"
 							class="card-img-top"
@@ -154,7 +169,21 @@
 		</div>
 
 
+@code {
+	private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
 
+
+	protected override async Task OnInitializedAsync()
+	{
+		await GetAllEvents();
+		_allEvents = null;
+	}
+
+    private async Task GetAllEvents()
+    {
+        _allEvents = await unitOfService.EventService.GetAllAsync();
+    }
+}
 
 
 @functions {
@@ -168,19 +197,6 @@
 	}
   }
 
-@*@functions {
-
-	bool firstRender = true;
-
-	protected async override Task OnAfterRenderAsync()
-	{
-		if (firstRender)
-		{
-			await JsRuntime.InvokeAsync<object>("initializeCarousel");
-			firstRender = false;
-		}
-	}
-}*@
 
 @*    private bool isAdmin;
 

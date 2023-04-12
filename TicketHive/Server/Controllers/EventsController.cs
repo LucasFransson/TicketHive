@@ -21,8 +21,9 @@ public class EventsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<EventDTO>?>> Get()
     {
+
         IEnumerable<EventDTO>? events = (await _unitOfWork.Events.GetAllAsync())
-                                                                .Select(em => new EventDTO(em.Id,
+                                                                 .Select(em => new EventDTO(em.Id,
                                                                                            em.Name,
                                                                                            em.Description,
                                                                                            em.ImageString,
