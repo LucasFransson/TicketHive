@@ -19,21 +19,12 @@ namespace TicketHive.Shared.DTOs
         {
             
         }
-        // Constructor for Model
+        // Constructor for DTO from Model Input Parameters
         public CountryDTO(string name, string currency, bool isAvailableForUserRegistration)
         {
             Name = name;
             Currency = currency;
             IsAvailableForUserRegistration = isAvailableForUserRegistration;
         }
-
-        //// Constructor for ViewModel
-
-        //public CountryDTO(CountryViewModel viewModel)
-        //{
-        //    Name = viewModel.Name;
-        //    Currency = viewModel.Currency;
-        //    IsAvailableForUserRegistration = viewModel.IsAvailableForUserRegistration;
-        //}
     }
 }

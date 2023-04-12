@@ -17,7 +17,7 @@ namespace TicketHive.Server.Models
         public TicketModel()
         {
         }
-
+        // Constructor for Model from recieving DTO
         public TicketModel(TicketDTO dto)
         {
             Id = dto.Id;

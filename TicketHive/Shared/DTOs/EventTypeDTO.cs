@@ -16,17 +16,11 @@ public class EventTypeDTO
     {
         
     }
-    //Constructor for Model
+    // Constructor for DTO from Model Input Parameters
     public EventTypeDTO(string name)
     {
         Name = name;
     }
-
-    //// Constructor for ViewModel
-    //public EventTypeDTO(EventTypeViewModel viewModel)
-    //{
-    //    Name = viewModel.Name;
-    //}
 }
 
 

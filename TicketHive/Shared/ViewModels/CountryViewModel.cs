@@ -14,6 +14,7 @@ namespace TicketHive.Shared.ViewModels
         {
            
         }
+        // Constructor for ViewModel from DTO
         public CountryViewModel(CountryDTO countryDTO)
         {
             Name = countryDTO.Name;
@@ -21,21 +22,6 @@ namespace TicketHive.Shared.ViewModels
             IsAvailableForUserRegistration = countryDTO.IsAvailableForUserRegistration;
         }
 
-
-        //public CountryViewModel(CountryDTO cDto)
-        //{
-        //    Name = cDto.Name;
-        //    Currency = cDto.Currency;
-        //    IsAvailableForUserRegistration = cDto.IsAvailableForUserRegistration;
-
-        //}
-        //// Constructor for getting related data to SoldTicketDto in the SoldTicketController
-        //public CountryViewModel(SoldTicketDTO soldTicket)
-        //{
-        //    Name = soldTicket.Event.Country.Name;
-        //    Currency = soldTicket.Event.Country.Currency;
-        //    IsAvailableForUserRegistration = soldTicket.Event.Country.IsAvailableForUserRegistration;
-        //}
     }
 
    

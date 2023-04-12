@@ -32,7 +32,7 @@ namespace TicketHive.Shared.DTOs
             
         }
 
-        // Constructor for Model
+        // Constructor for DTO from Model Input Parameters
         public EventDTO(int id, string name, string description, string? imageString, int maxUsers, int ticketsLeft, decimal price, DateTime startTime, DateTime endTime, string countryName, CountryDTO country, string eventTypeName, EventTypeDTO eventType)
         {
             Id = id;
@@ -50,85 +50,5 @@ namespace TicketHive.Shared.DTOs
             EventType = eventType;
           
         }
-
-
-
-        //// Constructor for ViewModel
-        //public EventDTO(EventViewModel viewModel)
-        //{
-        //    Id = viewModel.Id;
-        //    Name = viewModel.Name;
-        //    Description = viewModel.Description;
-        //    MaxUsers = viewModel.MaxUsers;
-        //    TicketsLeft = viewModel.TicketsLeft;
-        //    IsSoldOut = viewModel.TicketsLeft == 0;
-        //    Price = viewModel.Price;
-        //    StartTime = viewModel.StartTime;
-        //    EndTime = viewModel.EndTime;
-        //    CountryName = viewModel.CountryName;
-        //    Country = viewModel.Country != null ? new CountryDTO(viewModel.Country.Name, viewModel.Country.Currency, viewModel.Country.IsAvailableForUserRegistration) : null;
-        //    EventTypeName = viewModel.EventTypeName;
-        //    EventType = viewModel.EventType != null ? new EventTypeDTO(viewModel.EventType.Name) : null;
-        //}
-
-        //public EventDTO()
-        //{
-        //    Id = model.Id;
-        //    Name = model.Name;
-        //    Description = model.Description;
-        //    MaxUsers = model.MaxUsers;
-        //    TicketsLeft = model.SoldTickets != null ? model.MaxUsers - model.SoldTickets.Count : model.MaxUsers;
-        //    IsSoldOut = model.IsSoldOut;
-        //    Price = model.Price;
-        //    StartTime = model.StartTime;
-        //    EndTime = model.EndTime;
-        //    CountryName = model.CountryName;
-        //    Country = model.Country != null ? new CountryDTO(model.Country) : null;
-        //    EventTypeName = model.EventTypeName;
-        //    EventType = model.EventType != null ? new EventTypeDTO(model.EventType) : null;
-        //}
-
-        //// Constructor for Model
-        //public EventDTO(int id, string name, string description, int maxUsers, int ticketsLeft, decimal price, DateTime start, DateTime end, string countryName, CountryDTO cDto, EventTypeDTO eDto, string eventTypeName, )
-        //{
-        //    Id = id;
-        //    Name = name;
-        //    Description = description;
-        //    MaxUsers = maxUsers;
-        //    TicketsLeft = ticketsLeft;
-        //    Price = price;
-        //    StartTime = start;
-        //    EndTime = end;
-        //    CountryName = countryName;
-        //    Country = cDto;
-        //    EventType = eDto;
-        //    EventTypeName = eventTypeName;
-
-
-        //}
-
-        //// Constructor for ViewModel
-        //public EventDTO(EventViewModel viewModel)
-        //{
-        //    Id = viewModel.Id;
-        //    Name = viewModel.Name;
-        //    Description = viewModel.Description;
-        //    MaxUsers = viewModel.MaxUsers;
-        //    TicketsLeft = viewModel.TicketsLeft;
-        //    Price = viewModel.Price;
-        //    StartTime = viewModel.StartTime;
-        //    EndTime = viewModel.EndTime;
-        //    CountryName = viewModel.CountryName;
-        //    Country = viewModel.Country;
-        //    EventType = viewModel.EventType;
-        //    EventTypeName = viewModel.EventTypeName;
-        //}
-
-        //// Empty constructor
-        //public EventDTO()
-        //{
-
-        //}
-
     }
 }

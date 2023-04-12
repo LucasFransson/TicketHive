@@ -15,7 +15,8 @@ namespace TicketHive.Server.Models
         {
             
         }
-        public EventTypeModel(EventTypeDTO eDto) // Constructor for DTO
+        // Constructor for Model from recieving DTO
+        public EventTypeModel(EventTypeDTO eDto) 
         {
             Name = eDto.Name;
             //Events = eDto.Events;

@@ -20,8 +20,7 @@ public class TicketDTO
     {
         
     }
-
-    // Constructor for Model
+    // Constructor for DTO from Model Input Parameters
     public TicketDTO(int id, int eventId, EventDTO eventDto, decimal price, DateTime startTime, DateTime endTime)
     {
         Id = id;
@@ -31,15 +30,4 @@ public class TicketDTO
         StartTime = startTime;
         EndTime = endTime;
     }
-
-    //// Constructor for ViewModel 
-    //public TicketDTO(TicketViewModel viewModel)
-    //{
-    //    Id = viewModel.Id;
-    //    EventId = viewModel.EventId;
-    //    Event = viewModel.Event != null ? new EventDTO(viewModel.Event) : null;
-    //    Price = viewModel.Price;
-    //    StartTime = viewModel.StartTime;
-    //    EndTime = viewModel.EndTime;
-    //}
 }

@@ -11,7 +11,7 @@ namespace TicketHive.Shared.ViewModels
         public EventTypeViewModel()
         {
         }
-
+        // Constructor for ViewModel from DTO
         public EventTypeViewModel(EventTypeDTO etDto)
         {
             Name = etDto.Name;

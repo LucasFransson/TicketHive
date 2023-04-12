@@ -22,6 +22,7 @@ namespace TicketHive.Server.Models
         {
             
         }
+        // Constructor for Model from recieving DTO
         public SoldTicketModel(SoldTicketDTO dto)
         {
             Id = dto.Id;
@@ -31,15 +32,5 @@ namespace TicketHive.Server.Models
             StartTime = dto.StartTime;
             EndTime = dto.EndTime;
         }
-        //public SoldTicketModel(SoldTicketDTO stDto)
-        //{
-        //    Id=stDto.Id;
-        //    Event = stDto.Event;
-        //    EventId=stDto.EventId;
-        //    Username=stDto.Username;
-        //    Price=stDto.Price;
-        //    StartTime = stDto.StartTime;
-        //    EndTime = stDto.EndTime;
-        //}
     }
 }

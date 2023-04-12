@@ -11,14 +11,6 @@
     --red-dark-accent: #a8375f;
     --gray-dark-shade: #25282e;
     --gradient-color: #fbfbfb;
-    /*    --gray-dark-shades: #2D2D30;*/
-    /*   383638*/ /*Darker Gray*/
-    /*    221D26 dark purle gray*/
-    /*    F7F6F5 white*/
-    /*    #765630 yellow dark shades*/
-    /*    CA823F yellow darker shades more vivid*/
-    /*    93393E*/ /*Red*/
-    /*    763330 Triadic Red*/
 }
 /*#765630*/
 
@@ -156,11 +148,6 @@ body {
 h1 {
     padding: 0;
     margin: 0;
-}
-
-.container {
-    display: flex;
-    margin: 0px;
 }
 
 .container-main {
@@ -449,16 +436,65 @@ h1 {
             bottom: -250px;
         }
 
-
 /*    Footer*/
 
+/*.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--yellow-light-accent);
+}
+
+    .footer ul {
+    }*/
 .footer {
-    background-color:var(--yellow-light-accent);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--yellow-light-accent);
+    padding: 20px 0;
 }
 
-.footer ul{
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 0;
+}
+
+    .footer-links li a {
+        color: var(--black);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s ease-in-out;
+    }
+
+        .footer-links li a:hover {
+            color: var(--gray-darker);
+        }
+
+.footer-info {
+    text-align: right;
+}
+
+    .footer-info p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--gray);
+    }
 
 /*        nav menu */
 .headerbar {
@@ -786,3 +822,87 @@ a:after {
         scale: 1.1;
     }
 }
+
+/* Define the color scheme */
+:root {
+    --blue: #305076;
+    --yellow: #fbe89c;
+    --white: #eaebe9;
+    --gray: #25282e;
+    --red: #a8375f;
+    --gradient: linear-gradient(to bottom, #fbfbfb, #eaebe9);
+}
+
+/* Define the styles for the cards */
+.card {
+    background-color: var(--white);
+    color: var(--gray);
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+    .card:hover {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.card-subtitle {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--gray);
+}
+
+.card-text {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.btn-buy {
+    background-color: var(--yellow);
+    color: var(--gray);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+    .btn-buy:hover {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+
+/* Define the styles for the container and the header */
+.container {
+    padding: 2rem 0;
+    background: var(--gradient);
+}
+
+.header {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .header h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .header p {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
