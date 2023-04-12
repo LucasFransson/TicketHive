@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace TicketHive.Shared.DTOs
         }
 
         // Constructor for DTO from Model Input Parameters
+     
         public CountryDTO(string name, string currency, bool isAvailableForUserRegistration)
         {
             Name = name;

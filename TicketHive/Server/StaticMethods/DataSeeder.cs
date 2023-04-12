@@ -225,6 +225,8 @@ namespace TicketHive.Server.StaticMethods
             // Get the Country from the Name
             CountryModel selectedCountry = Countries.First(c => c.Name == countryName);
 
+            EventTypeModel selectedEventType = EventTypes.First(e => e.Name == eventType);
+
             // Create a new Event with the information from the input parameters
 
             EventModel newEvent = new EventModel
@@ -232,13 +234,16 @@ namespace TicketHive.Server.StaticMethods
                 Id = eventId,
                 Name = eventName,
                 Description = eventDescription,
+                ImageString = null,
                 MaxUsers = eventMaxUsers,
                 Price = eventPrice,
                 StartTime = eventStart,
                 EndTime = eventEnd,
                 SoldTickets = null,
                 CountryName = countryName,
-                EventTypeName = eventType
+                //Country = selectedCountry,
+                EventTypeName = eventType,
+                //EventType = selectedEventType
             };
             eventsList.Add(newEvent);   // Add the Event to list of Events
 
@@ -249,6 +254,7 @@ namespace TicketHive.Server.StaticMethods
                 {
                     Id = i,
                     EventId = newEvent.Id,
+                    //Event = newEvent,
                     Price = newEvent.Price,
                     StartTime = newEvent.StartTime,
                     EndTime = newEvent.EndTime
