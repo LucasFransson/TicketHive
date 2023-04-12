@@ -51,8 +51,8 @@ public class SoldTicketsController : ControllerBase
         return NotFound();
     }
 
-    // POST api/<SoldTicketsController>
-    [HttpPost]
+	// POST api/<SoldTicketsController>
+	[HttpPost]
     public async Task<ActionResult> Post([FromBody] SoldTicketDTO soldTicketDTO)
     {
         if (soldTicketDTO is not null)

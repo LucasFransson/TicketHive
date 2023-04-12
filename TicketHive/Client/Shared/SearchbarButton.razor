@@ -1,23 +1,24 @@
-﻿@*@inherits LayoutComponentBase*@
-@inject IJSRuntime JSRuntime
+﻿
 
-<div class="search">
+@*<div class="@string.Format("search {0}", isOpen ? "open" : "")">
     <input type="search" class="search-box" />
-    <span class="search-button" @ref="searchButton">
+    <span class="search-button" @onclick="@ToggleSearch">
+        <span class="search-icon"></span>
+    </span>
+</div>*@
+
+<div class="@($"search {(isOpen ? "open" : "")}")">
+    <input type="search" class="search-box" />
+    <span class="search-button" @onclick="@ToggleSearch">
         <span class="search-icon"></span>
     </span>
 </div>
 
 @code {
-    private ElementReference searchButton;
+    private bool isOpen = false;
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    private void ToggleSearch()
     {
-        if (firstRender)
-        {
-            await JSRuntime.InvokeVoidAsync("window.Blazor.invokeMethodAsync", "registerSearchButton", searchButton);
-
-            //await JSRuntime.InvokeVoidAsync("registerSearchButton", searchButton);
-        }
+        isOpen = !isOpen;
     }
 }
