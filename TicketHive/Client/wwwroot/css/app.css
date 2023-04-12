@@ -455,6 +455,7 @@ h1 {
     width: 100%;
     background-color: var(--yellow-light-accent);
     padding: 20px 0;
+    margin-top:10px;
 }
 
 .footer-container {
@@ -538,16 +539,16 @@ h1 {
     /*    border-bottom: 5px solid #080e14;*/
 }
 
-a:focus {
+.navbar a:focus {
     outline: none;
     position: relative;
 }
 
-    a:focus:after {
+    .navbar a:focus:after {
         width: 50px;
     }
 
-a:after {
+.navbar a:after {
     content: '';
     background: var(--gradient-color);
     position: absolute;
@@ -711,6 +712,89 @@ a:after {
                     width: 15px;
                 }
 
+
+
+:root {
+    --blue: #305076;
+    --yellow: #fbe89c;
+    --white: #eaebe9;
+    --gray: #25282e;
+    --red: #a8375f;
+    --gradient: linear-gradient(to bottom, #fbfbfb, #eaebe9);
+}
+
+.card {
+    background-color: var(--white);
+    color: var(--gray);
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+    .card:hover {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.card-subtitle {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--gray);
+}
+
+.card-text {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.btn-buy {
+    background-color: var(--yellow);
+    color: var(--gray);
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+    .btn-buy:hover {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+
+
+.container {
+    padding: 2rem 0;
+    background: var(--gradient);
+}
+
+.header {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .header h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .header p {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
 @media (min-width: 600px) {
     a:focus,
     a:hover {
@@ -823,86 +907,3 @@ a:after {
     }
 }
 
-/* Define the color scheme */
-:root {
-    --blue: #305076;
-    --yellow: #fbe89c;
-    --white: #eaebe9;
-    --gray: #25282e;
-    --red: #a8375f;
-    --gradient: linear-gradient(to bottom, #fbfbfb, #eaebe9);
-}
-
-/* Define the styles for the cards */
-.card {
-    background-color: var(--white);
-    color: var(--gray);
-    border-radius: 10px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
-    .card:hover {
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-.card-img-top {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.card-body {
-    padding: 1rem;
-}
-
-.card-title {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
-
-.card-subtitle {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    color: var(--gray);
-}
-
-.card-text {
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem;
-}
-
-.btn-buy {
-    background-color: var(--yellow);
-    color: var(--gray);
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    transition: all 0.3s ease;
-}
-
-    .btn-buy:hover {
-        background-color: var(--blue);
-        color: var(--white);
-    }
-
-/* Define the styles for the container and the header */
-.container {
-    padding: 2rem 0;
-    background: var(--gradient);
-}
-
-.header {
-    color: var(--white);
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
-    .header h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .header p {
-        font-size: 1.5rem;
-        margin-bottom: 0;
-    }
