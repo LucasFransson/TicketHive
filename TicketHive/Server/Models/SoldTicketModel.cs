@@ -4,6 +4,7 @@ using TicketHive.Shared.DTOs;
 using TicketHive.Server.Data.Repositories.Implementations;
 using TicketHive.Server.Data.Databases;
 using TicketHive.Shared.ViewModels;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TicketHive.Server.Models
 {
@@ -23,6 +24,7 @@ namespace TicketHive.Server.Models
             
         }
         // Constructor for Model from recieving DTO
+        [SetsRequiredMembers]
         public SoldTicketModel(SoldTicketDTO dto)
         {
             Id = dto.Id;

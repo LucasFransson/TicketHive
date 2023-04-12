@@ -22,25 +22,49 @@ public class EventsController : ControllerBase
     public async Task<ActionResult<IEnumerable<EventDTO>?>> Get()
     {
 
-        IEnumerable<EventDTO>? events = (await _unitOfWork.Events.GetAllAsync())
-                                                                 .Select(em => new EventDTO(em.Id,
-                                                                                           em.Name,
-                                                                                           em.Description,
-                                                                                           em.ImageString,
-                                                                                           em.MaxUsers,
-                                                                                           em.TicketsLeft,
-                                                                                           em.Price,
-                                                                                           em.StartTime,
-                                                                                           em.EndTime,
-                                                                                           em.CountryName,
-                                                                                           new CountryDTO(em.CountryName,
-                                                                                                          em.Country.Currency,
-                                                                                                          em.Country.IsAvailableForUserRegistration
-                                                                                                         ),
-                                                                                           em.EventTypeName,
-                                                                                           new EventTypeDTO(em.EventTypeName)
-                                                                                                       ));
-        
+        IEnumerable<EventDTO>? eventDTOs = (await _unitOfWork.Events.GetAllWithIncludesAsync())?
+                                                                 .Select(em => new EventDTO(
+                                                                        em.Id,
+                                                                        em.Name,
+                                                                        em.Description,
+                                                                        em.ImageString,
+                                                                        em.MaxUsers,
+                                                                        em.TicketsLeft,
+                                                                        em.Price,
+                                                                        em.StartTime,
+                                                                        em.EndTime,
+                                                                        em.CountryName,
+                                                                        new CountryDTO
+                                                                        (
+                                                                            em.Country.Name,
+                                                                            em.Country.Currency,
+                                                                            em.Country.IsAvailableForUserRegistration
+                                                                        ),
+                                                                        em.EventTypeName,
+                                                                        new EventTypeDTO(em.EventType.Name)));
+
+        return Ok(eventDTOs);
+
+        //IEnumerable<EventDTO>? events = (await _unitOfWork.Events.GetAllWithIncludesAsync())
+        //                                                 .Select(em => new EventDTO(em.Id,
+        //                                                                           em.Name,
+        //                                                                           em.Description,
+        //                                                                           em.ImageString,
+        //                                                                           em.MaxUsers,
+        //                                                                           em.TicketsLeft,
+        //                                                                           em.Price,
+        //                                                                           em.StartTime,
+        //                                                                           em.EndTime,
+        //                                                                           em.CountryName,
+        //                                                                           new CountryDTO(em.CountryName,
+        //                                                                                          em.Country.Currency,
+        //                                                                                          em.Country.IsAvailableForUserRegistration
+        //                                                                                         ),
+        //                                                                           em.EventTypeName,
+        //                                                                           new EventTypeDTO(em.EventTypeName)
+        //                                                                                       ));
+
+
         //IEnumerable<EventDTO>? events = (await _unitOfWork.Events.GetAllAsync()).Select(em => new EventDTO
         //{
         //    Id = em.Id,
@@ -54,48 +78,46 @@ public class EventsController : ControllerBase
         //    CountryName = em.CountryName,
         //    EventTypeName = em.EventTypeName,
         //});
-
-        return Ok(events);
     }
 
     // GET api/<EventsController>/5
     [HttpGet("{id}")]
     public async Task<ActionResult<EventDTO>> Get(int id)
     {
-        EventModel? model = await _unitOfWork.Events.GetByIdAsync(id);
+        EventModel? eventModel = await _unitOfWork.Events.GetOneWithIncludesAsync(id);
         
-        if (model is not null)
+        if (eventModel is not null)
         {
-            EventDTO eventDTO = new(model.Id,
-                                    model.Name,
-                                    model.Description,
-                                    model.ImageString,
-                                    model.MaxUsers,
-                                    model.TicketsLeft,
-                                    model.Price,
-                                    model.StartTime,
-                                    model.EndTime,
-                                    model.CountryName,
-                                    new CountryDTO(model.CountryName,
-                                                   model.Country.Currency,
-                                                   model.Country.IsAvailableForUserRegistration
+            EventDTO eventDTO = new(eventModel.Id,
+                                    eventModel.Name,
+                                    eventModel.Description,
+                                    eventModel.ImageString,
+                                    eventModel.MaxUsers,
+                                    eventModel.TicketsLeft,
+                                    eventModel.Price,
+                                    eventModel.StartTime,
+                                    eventModel.EndTime,
+                                    eventModel.CountryName,
+                                    new CountryDTO(eventModel.Country.Name,
+                                                   eventModel.Country.Currency,
+                                                   eventModel.Country.IsAvailableForUserRegistration
                                                    ),
-                                    model.EventTypeName,
-                                    new EventTypeDTO(model.EventTypeName)
+                                    eventModel.EventTypeName,
+                                    new EventTypeDTO(eventModel.EventType.Name)
                                     );
 
             //EventDTO eventDTO = new()
             //{
-            //    Id = model.Id,
-            //    Name = model.Name,
-            //    Description = model.Description,
-            //    MaxUsers = model.MaxUsers,
-            //    IsSoldOut= model.IsSoldOut,
-            //    Price = model.Price,
-            //    StartTime = model.StartTime,
-            //    EndTime = model.EndTime,
-            //    CountryName = model.CountryName,
-            //    EventTypeName = model.EventTypeName
+            //    Id = eventModel.Id,
+            //    Name = eventModel.Name,
+            //    Description = eventModel.Description,
+            //    MaxUsers = eventModel.MaxUsers,
+            //    IsSoldOut= eventModel.IsSoldOut,
+            //    Price = eventModel.Price,
+            //    StartTime = eventModel.StartTime,
+            //    EndTime = eventModel.EndTime,
+            //    CountryName = eventModel.CountryName,
+            //    EventTypeName = eventModel.EventTypeName
             //};
 
             return Ok(eventDTO);
@@ -110,17 +132,17 @@ public class EventsController : ControllerBase
     {
         if(eventDTO is not null)
         {
-            EventModel eventModel = new()
-            {
-                Name = eventDTO.Name,
-                Description = eventDTO.Description,
-                MaxUsers = eventDTO.MaxUsers,
-                Price = eventDTO.Price,
-                StartTime = eventDTO.StartTime,
-                EndTime = eventDTO.EndTime,
-                CountryName = eventDTO.CountryName,
-                EventTypeName = eventDTO.EventTypeName,
-            };
+            EventModel eventModel = new(eventDTO);
+            //{
+                //Name = eventDTO.Name,
+                //Description = eventDTO.Description,
+                //MaxUsers = eventDTO.MaxUsers,
+                //Price = eventDTO.Price,
+                //StartTime = eventDTO.StartTime,
+                //EndTime = eventDTO.EndTime,
+                //CountryName = eventDTO.CountryName,
+                //EventTypeName = eventDTO.EventTypeName,
+            //};
 
             await _unitOfWork.Events.Add(eventModel);
 

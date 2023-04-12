@@ -20,11 +20,11 @@ namespace TicketHive.Server.Models
 
         // Constructor for Model from recieving DTO
         [SetsRequiredMembers]
-        public CountryModel(CountryDTO countryDTO)  
+        public CountryModel(CountryDTO dto)  
         {
-            Name = countryDTO.Name;
-            Currency = countryDTO.Currency;
-            IsAvailableForUserRegistration = countryDTO.IsAvailableForUserRegistration;
+            Name = dto.Name;
+            Currency = dto.Currency;
+            IsAvailableForUserRegistration = dto.IsAvailableForUserRegistration;
         }
     }
 }

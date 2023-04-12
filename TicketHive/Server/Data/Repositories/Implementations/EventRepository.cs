@@ -15,6 +15,16 @@ namespace TicketHive.Server.Data.Repositories.Implementations
             _context = context;
         }
 
+        public async Task<IEnumerable<EventModel>?> GetAllWithIncludesAsync()
+        {
+            return (IEnumerable<EventModel>?) await _context.Events.Include(e => e.Country).Include(e => e.EventType).ToListAsync();
+        }
+
+        public async Task<EventModel?> GetOneWithIncludesAsync(int id)
+        {
+            return await _context.Events.Include(e => e.Country).Include(e => e.EventType).FirstOrDefaultAsync(e => e.Id.Equals(id));
+        }
+
         public async Task<bool> RemoveByIdAsync(int id)
         {
             EventModel? eventToDelete = await _context.Events.FindAsync(id);
