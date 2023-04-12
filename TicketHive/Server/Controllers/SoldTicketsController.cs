@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using System.Diagnostics.Metrics;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
+using TicketHive.Server.StaticMethods;
 using TicketHive.Shared.DTOs;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -28,7 +29,7 @@ public class SoldTicketsController : ControllerBase
 
         if (soldTicketModel is not null)
         {
-            return Ok(CreateDTO(soldTicketModel));
+            return Ok(TransformToDTO.FromSoldTicketModel(soldTicketModel));
         }
 
         return NotFound();
@@ -43,7 +44,7 @@ public class SoldTicketsController : ControllerBase
 
         if (soldTicketModels is not null)
         {
-            IEnumerable<SoldTicketDTO> soldTicketDTOs = soldTicketModels.Select(CreateDTO);
+            IEnumerable<SoldTicketDTO> soldTicketDTOs = soldTicketModels.Select(TransformToDTO.FromSoldTicketModel);
         
             return Ok(soldTicketDTOs);
         }
@@ -78,18 +79,4 @@ public class SoldTicketsController : ControllerBase
     public void Delete(int id)
     {
     }
-
-    private SoldTicketDTO CreateDTO(SoldTicketModel soldTicketModel)
-    {
-        EventTypeDTO eventTypeDTO = new(soldTicketModel.Event.EventType.Name);
-
-        CountryDTO countryDTO = new(soldTicketModel.Event.Country.Name, soldTicketModel.Event.Country.Currency, soldTicketModel.Event.Country.IsAvailableForUserRegistration);
-
-        EventDTO eventDTO = new(soldTicketModel.Event.Id, soldTicketModel.Event.Name, soldTicketModel.Event.Description, soldTicketModel.Event.ImageString, soldTicketModel.Event.MaxUsers, soldTicketModel.Event.TicketsLeft, soldTicketModel.Event.Price, soldTicketModel.Event.StartTime, soldTicketModel.Event.EndTime, soldTicketModel.Event.CountryName, countryDTO, soldTicketModel.Event.EventTypeName, eventTypeDTO);
-
-        SoldTicketDTO soldTicketDTO = new(soldTicketModel.Id, soldTicketModel.EventId, eventDTO, soldTicketModel.Username, soldTicketModel.Price, soldTicketModel.StartTime, soldTicketModel.EndTime);
-
-        return soldTicketDTO;
-    }
-
 }
