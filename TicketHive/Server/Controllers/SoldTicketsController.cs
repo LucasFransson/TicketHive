@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Duende.IdentityServer.Events;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System.Diagnostics.Metrics;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
 using TicketHive.Shared.DTOs;
@@ -18,40 +21,31 @@ public class SoldTicketsController : ControllerBase
     }
 
     // GET: api/<SoldTicketsController>
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<SoldTicketDTO>>> Get()
-    {
-        IEnumerable<SoldTicketDTO> soldTickets = (await _unitOfWork.SoldTickets.GetAllAsync()).Select(stm => new SoldTicketDTO
-        {
-            Id = stm.Id,
-            EventId = stm.EventId,
-            Username = stm.Username,
-            Price = stm.Price,
-            StartTime = stm.StartTime,
-            EndTime = stm.EndTime,
-        });
-
-        return Ok(soldTickets);
-    }
-    // GET api/<SoldTicketsController>/5
     [HttpGet("{id}")]
     public async Task<ActionResult<SoldTicketDTO>> Get(int id)
     {
-        SoldTicketModel? soldTicketModel = await _unitOfWork.SoldTickets.GetByIdAsync(id);
+        SoldTicketModel? soldTicketModel = await _unitOfWork.SoldTickets.GetOneByIdWithIncludesAsync(id);
 
         if (soldTicketModel is not null)
         {
-            SoldTicketDTO soldTicketDTO = new()
-            {
-                Id = soldTicketModel.Id,
-                EventId = soldTicketModel.EventId,
-                Username = soldTicketModel.Username,
-                Price = soldTicketModel.Price,
-                StartTime = soldTicketModel.StartTime,
-                EndTime = soldTicketModel.EndTime
-            };
+            return Ok(CreateDTO(soldTicketModel));
+        }
 
-            return Ok(soldTicketDTO);
+        return NotFound();
+    }
+
+
+    // GET api/<SoldTicketsController>/5
+    [HttpGet("[action]/{username}")]
+    public async Task<ActionResult<IEnumerable<SoldTicketDTO>?>> UserTickets(string username)
+    {
+        IEnumerable<SoldTicketModel>? soldTicketModels = await _unitOfWork.SoldTickets.GetUserTicketsAsync(username);
+
+        if (soldTicketModels is not null)
+        {
+            IEnumerable<SoldTicketDTO> soldTicketDTOs = soldTicketModels.Select(CreateDTO);
+        
+            return Ok(soldTicketDTOs);
         }
 
         return NotFound();
@@ -63,15 +57,7 @@ public class SoldTicketsController : ControllerBase
     {
         if (soldTicketDTO is not null)
         {
-            SoldTicketModel soldTicketModel = new()
-            {
-                Id = soldTicketDTO.Id,
-                EventId = soldTicketDTO.EventId,
-                Username = soldTicketDTO.Username,
-                Price = soldTicketDTO.Price,
-                StartTime = soldTicketDTO.StartTime,
-                EndTime = soldTicketDTO.EndTime
-            };
+            SoldTicketModel soldTicketModel = new(soldTicketDTO);
 
             await _unitOfWork.SoldTickets.Add(soldTicketModel);
 
@@ -92,5 +78,18 @@ public class SoldTicketsController : ControllerBase
     public void Delete(int id)
     {
     }
-    
+
+    private SoldTicketDTO CreateDTO(SoldTicketModel soldTicketModel)
+    {
+        EventTypeDTO eventTypeDTO = new(soldTicketModel.Event.EventType.Name);
+
+        CountryDTO countryDTO = new(soldTicketModel.Event.Country.Name, soldTicketModel.Event.Country.Currency, soldTicketModel.Event.Country.IsAvailableForUserRegistration);
+
+        EventDTO eventDTO = new(soldTicketModel.Event.Id, soldTicketModel.Event.Name, soldTicketModel.Event.Description, soldTicketModel.Event.ImageString, soldTicketModel.Event.MaxUsers, soldTicketModel.Event.TicketsLeft, soldTicketModel.Event.Price, soldTicketModel.Event.StartTime, soldTicketModel.Event.EndTime, soldTicketModel.Event.CountryName, countryDTO, soldTicketModel.Event.EventTypeName, eventTypeDTO);
+
+        SoldTicketDTO soldTicketDTO = new(soldTicketModel.Id, soldTicketModel.EventId, eventDTO, soldTicketModel.Username, soldTicketModel.Price, soldTicketModel.StartTime, soldTicketModel.EndTime);
+
+        return soldTicketDTO;
+    }
+
 }
