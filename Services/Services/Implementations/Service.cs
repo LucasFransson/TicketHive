@@ -13,27 +13,27 @@ namespace TicketHive.Bll.Services.Implementations
     public class Service<TEntity> : IService<TEntity> where TEntity : class
     {
         private readonly HttpClient _httpClient;
-	
+
 
         public Service(HttpClient httpClient)
         {
-            _httpClient = httpClient;     
+            _httpClient = httpClient;
         }
 
         // Method for string manipulation of ViewModel to fit the API controllers Route
-		public string GetAPIName()
-		{
-			string typeName = typeof(TEntity).Name;
+        public string GetAPIName()
+        {
+            string typeName = typeof(TEntity).Name;
 
-			if (typeName.EndsWith("ViewModel"))
-			{
-				typeName = typeName.Substring(0, typeName.Length - 9) + "s";
-			}
+            if (typeName.EndsWith("ViewModel"))
+            {
+                typeName = typeName.Substring(0, typeName.Length - 9) + "s";
+            }
 
-			return typeName;
-		}
+            return typeName;
+        }
 
-		public async Task<TEntity> GetByIdAsyncAPINameTest(int id)
+        public async Task<TEntity> GetByIdAsyncAPINameTest(int id)
         {
             return await _httpClient.GetFromJsonAsync<TEntity>($"/api/{GetAPIName().ToLower()}/{id}");
         }
@@ -41,11 +41,11 @@ namespace TicketHive.Bll.Services.Implementations
         {
             return await _httpClient.GetFromJsonAsync<TEntity>($"/api/{GetAPIName().ToLower()}");
         }
-		public async Task<IEnumerable<TEntity>> GetAllAsync()
-		{
-			return await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"/api/{GetAPIName().ToLower()}");
-		}
-		public async Task AddAsync(TEntity entity)
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
+        {
+            return await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"/api/{GetAPIName().ToLower()}");
+        }
+        public async Task AddAsync(TEntity entity)
         {
             var response = await _httpClient.PostAsJsonAsync($"/api/{GetAPIName().ToLower()}", entity);
             response.EnsureSuccessStatusCode();
@@ -63,5 +63,5 @@ namespace TicketHive.Bll.Services.Implementations
         {
             _httpClient.PostAsJsonAsync($"/api/{GetAPIName().ToLower()}/range/delete", entities);
         }
-	}
+    }
 }

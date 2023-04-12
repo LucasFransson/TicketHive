@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace TicketHive.Shared.DTOs
         public int Id { get; set; }
         public int EventId { get; set; }
         public EventDTO? Event { get; set; }
-        public required string Username { get; set; }
+        public string Username { get; set; }
         public decimal Price { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }

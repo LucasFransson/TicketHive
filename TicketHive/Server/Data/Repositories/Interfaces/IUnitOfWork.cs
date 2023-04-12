@@ -7,6 +7,7 @@
         public IEventTypeRepository EventTypes { get; set; }
         public ITicketRepository Tickets { get; set; }
         public ISoldTicketRepository SoldTickets { get; set; }
+
         Task CompleteAsync();
 
         void Dispose();
