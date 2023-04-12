@@ -17,7 +17,8 @@ namespace TicketHive.Server.Models
         public required int MaxUsers { get; set; }
         public int TicketsLeft => MaxUsers - ((SoldTickets is null) ? 0 : SoldTickets.Count());
         //public int TicketsLeft => MaxUsers - SoldTickets.Count();
-        public bool IsSoldOut => (MaxUsers <= SoldTickets?.Count) ? true : false; 
+        public bool IsSoldOut => (MaxUsers <= SoldTickets?.Count) ? true : false;
+        [Column(TypeName = "decimal(5, 2)")]
         public required decimal Price { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
