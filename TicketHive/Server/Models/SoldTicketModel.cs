@@ -11,7 +11,7 @@ namespace TicketHive.Server.Models
     {
         public int Id { get; set; }
         public required int EventId { get; set; }
-        public EventViewModel? Event { get; set; }
+        public EventModel? Event { get; set; }
         [MaxLength(100)]
         public required string Username { get; set; }
         public required decimal Price { get; set; }
