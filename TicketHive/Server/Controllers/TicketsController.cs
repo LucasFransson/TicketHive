@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
+using TicketHive.Server.StaticMethods;
 using TicketHive.Shared.DTOs;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -21,7 +22,7 @@ public class TicketsController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<TicketDTO>?>> Get()
     {
-        IEnumerable<TicketDTO>? tickets = (await _unitOfWork.Tickets.GetAllWithIncludesAsync())?.Select(CreateDTO);
+        IEnumerable<TicketDTO>? tickets = (await _unitOfWork.Tickets.GetAllWithIncludesAsync())?.Select(TransformToDTO.FromTicketModel);
 
         return Ok(tickets);
     }
@@ -34,7 +35,7 @@ public class TicketsController : ControllerBase
 
         if (ticketModel is not null)
         {
-            return Ok(CreateDTO(ticketModel));
+            return Ok(TransformToDTO.FromTicketModel(ticketModel));
         }
 
         return NotFound();
@@ -73,18 +74,5 @@ public class TicketsController : ControllerBase
         }
 
         return NotFound();
-    }
-
-        private TicketDTO CreateDTO(TicketModel ticketModel)
-    {
-        EventTypeDTO eventTypeDTO = new(ticketModel.Event.EventType.Name);
-
-        CountryDTO countryDTO = new(ticketModel.Event.Country.Name, ticketModel.Event.Country.Currency, ticketModel.Event.Country.IsAvailableForUserRegistration);
-
-        EventDTO eventDTO = new(ticketModel.Event.Id, ticketModel.Event.Name, ticketModel.Event.Description, ticketModel.Event.ImageString, ticketModel.Event.MaxUsers, ticketModel.Event.TicketsLeft, ticketModel.Event.Price, ticketModel.Event.StartTime, ticketModel.Event.EndTime, ticketModel.Event.CountryName, countryDTO, ticketModel.Event.EventTypeName, eventTypeDTO);
-
-        TicketDTO ticketDTO = new(ticketModel.Id, ticketModel.EventId, eventDTO, ticketModel.Price, ticketModel.StartTime, ticketModel.EndTime);
-
-        return ticketDTO;
     }
 }
