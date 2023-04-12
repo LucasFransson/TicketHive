@@ -17,7 +17,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
 
         public async Task<IEnumerable<EventModel>?> GetAllWithIncludesAsync()
         {
-            return (IEnumerable<EventModel>?) await _context.Events.Include(e => e.Country).Include(e => e.EventType).ToListAsync();
+            return (IEnumerable<EventModel>?) await _context.Events.Include(e => e.Country).Include(e => e.EventType).Include(e => e.SoldTickets).ToListAsync();
         }
 
         public async Task<EventModel?> GetOneWithIncludesAsync(int id)

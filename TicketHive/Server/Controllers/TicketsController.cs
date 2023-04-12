@@ -19,16 +19,9 @@ public class TicketsController : ControllerBase
 
     // GET: api/<TicketsController>
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<TicketDTO>>> Get()
+    public async Task<ActionResult<IEnumerable<TicketDTO>?>> Get()
     {
-        IEnumerable<TicketDTO> tickets = (await _unitOfWork.Tickets.GetAllAsync()).Select(tm => new TicketDTO
-        {
-            Id = tm.Id,
-            EventId = tm.EventId,
-            Price = tm.Price,
-            StartTime = tm.StartTime,
-            EndTime = tm.EndTime
-        });
+        IEnumerable<TicketDTO>? tickets = (await _unitOfWork.Tickets.GetAllWithIncludesAsync())?.Select(CreateDTO);
 
         return Ok(tickets);
     }
@@ -37,20 +30,11 @@ public class TicketsController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult<TicketDTO>> Get(int id)
     {
-        TicketModel? ticketModel = await _unitOfWork.Tickets.GetByIdAsync(id);
+        TicketModel? ticketModel = await _unitOfWork.Tickets.GetOneByIdWithIncludesAsync(id);
 
         if (ticketModel is not null)
         {
-            TicketDTO ticketDTO = new()
-            {
-                Id = ticketModel.Id,
-                EventId = ticketModel.EventId,
-                Price = ticketModel.Price,
-                StartTime = ticketModel.StartTime,
-                EndTime = ticketModel.EndTime
-            };
-
-            return Ok(ticketDTO);
+            return Ok(CreateDTO(ticketModel));
         }
 
         return NotFound();
@@ -59,17 +43,11 @@ public class TicketsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult> Post([FromBody] List<TicketDTO> ticketDTOs)
     {
-        IEnumerable<TicketModel> tickets = ticketDTOs.Select(tm => new TicketModel
-        {
-            EventId = tm.EventId,
-            Price = tm.Price,
-            StartTime = tm.StartTime,
-            EndTime = tm.EndTime
-        });
+        IEnumerable<TicketModel> ticketModels = ticketDTOs.Select(t => new TicketModel(t));
 
-        if (tickets is not null)
+        if (ticketModels is not null)
         {
-            await _unitOfWork.Tickets.AddRangeAsync(tickets);
+            await _unitOfWork.Tickets.AddRangeAsync(ticketModels);
 
             return Ok();
         }
@@ -95,5 +73,18 @@ public class TicketsController : ControllerBase
         }
 
         return NotFound();
+    }
+
+        private TicketDTO CreateDTO(TicketModel ticketModel)
+    {
+        EventTypeDTO eventTypeDTO = new(ticketModel.Event.EventType.Name);
+
+        CountryDTO countryDTO = new(ticketModel.Event.Country.Name, ticketModel.Event.Country.Currency, ticketModel.Event.Country.IsAvailableForUserRegistration);
+
+        EventDTO eventDTO = new(ticketModel.Event.Id, ticketModel.Event.Name, ticketModel.Event.Description, ticketModel.Event.ImageString, ticketModel.Event.MaxUsers, ticketModel.Event.TicketsLeft, ticketModel.Event.Price, ticketModel.Event.StartTime, ticketModel.Event.EndTime, ticketModel.Event.CountryName, countryDTO, ticketModel.Event.EventTypeName, eventTypeDTO);
+
+        TicketDTO ticketDTO = new(ticketModel.Id, ticketModel.EventId, eventDTO, ticketModel.Price, ticketModel.StartTime, ticketModel.EndTime);
+
+        return ticketDTO;
     }
 }
