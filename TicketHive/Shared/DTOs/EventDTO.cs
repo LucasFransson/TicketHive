@@ -26,7 +26,6 @@ namespace TicketHive.Shared.DTOs
         public string EventTypeName { get; set; }
         public EventTypeDTO EventType { get; set; }
 
-
         public EventDTO()
         {
             

@@ -18,6 +18,7 @@ namespace TicketHive.Server.Models
         public TicketModel()
         {
         }
+
         // Constructor for Model from recieving DTO
         [SetsRequiredMembers]
         public TicketModel(TicketDTO dto)
