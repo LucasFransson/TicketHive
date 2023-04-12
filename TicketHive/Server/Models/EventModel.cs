@@ -47,6 +47,6 @@ namespace TicketHive.Server.Models
             EndTime = dto.EndTime;   
             CountryName = dto.CountryName;
             EventTypeName = dto.EventTypeName;
-        }
+	}
     }
 }
