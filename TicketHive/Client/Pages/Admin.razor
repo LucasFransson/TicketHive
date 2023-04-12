@@ -1,4 +1,57 @@
-﻿<h3>Admin</h3>
+﻿@page "/admin"
+
+<h3>Admin</h3>
+
+
+<div class="container">
+    <h1 class="mb-4">Add New Event</h1>
+    <div class="card mb-4">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="event-name">Event Name</label>
+                    <input type="text" class="form-control" id="event-name">
+                </div>
+                <div class="form-group">
+                    <label for="event-type">Event Type</label>
+                    <select class="form-control" id="event-type">
+                        <option>Concert</option>
+                        <option>Seminar</option>
+                        <option>Conference</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="event-date">Event Date</label>
+                    <input type="date" class="form-control" id="event-date">
+                </div>
+                <div class="form-group">
+                    <label for="event-time">Event Time</label>
+                    <input type="time" class="form-control" id="event-time">
+                </div>
+                <div class="form-group">
+                    <label for="event-place">Event Place</label>
+                    <input type="text" class="form-control" id="event-place">
+                </div>
+                <div class="form-group">
+                    <label for="event-price">Event Price</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input type="text" class="form-control" id="event-price" placeholder="0.00">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="event-capacity">Event Capacity</label>
+                    <input type="number" class="form-control" id="event-capacity" step="10.00">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Event</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 
 @code {
 
