@@ -15,9 +15,5 @@ namespace TicketHive.Bll.Services.Implementations
         public CountryService(HttpClient httpClient) : base(httpClient)
         {
         }
-        //public async Task<CountryViewModel> GetByName(string name)
-        //{
-        //    return await _httpClient.GetFromJsonAsync($"/api/{typeof(TEntity).GetAPIName().ToLower()}/{name}");
-        //}
     }
 }
