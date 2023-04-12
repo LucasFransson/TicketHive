@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TicketHive.Bll.Services.Interfaces
 {
-    public interface IService<TEntity> 
+    public interface IService<TEntity> where TEntity : class
     {
         Task<TEntity> GetByIdAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();
