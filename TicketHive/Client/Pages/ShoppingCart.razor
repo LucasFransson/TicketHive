@@ -1,4 +1,5 @@
 ﻿@page "/cart"
+@inject NavigationManager NavigationManager
 
 <h3>ShoppingCart</h3>
 
@@ -26,6 +27,9 @@
         </div>
     </div>
 </div>
+<div>
+    <button class="btn btn-success btn-lg btn-block" @onclick="RedirectToConfirm">Buy</button>
+</div>
 
 
 @code {
@@ -40,6 +44,11 @@
         //await GetCartItems();
     }
 
+    private void RedirectToConfirm()
+    {
+        NavigationManager.NavigateTo("/confirm");
+    }
+
     private void IncrementCount()
     {
         if (currentCount <= 10)
@@ -50,7 +59,7 @@
 
     private void DecreaseCount()
     {
-        if(currentCount > 0)
+        if(currentCount >= 1)
         {
             currentCount--;
         }
