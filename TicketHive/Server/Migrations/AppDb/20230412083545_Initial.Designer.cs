@@ -12,8 +12,8 @@ using TicketHive.Server.Data.Databases;
 namespace TicketHive.Server.Migrations.AppDb
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230411093403_InitialAndSeedData")]
-    partial class InitialAndSeedData
+    [Migration("20230412083545_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -1232,6 +1232,9 @@ namespace TicketHive.Server.Migrations.AppDb
                     b.Property<string>("EventTypeName")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("ImageString")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("MaxUsers")
                         .HasColumnType("int");
@@ -5355,7 +5358,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         .IsRequired();
 
                     b.HasOne("TicketHive.Server.Models.EventTypeModel", "EventType")
-                        .WithMany("Events")
+                        .WithMany()
                         .HasForeignKey("EventTypeName")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -5390,11 +5393,6 @@ namespace TicketHive.Server.Migrations.AppDb
             modelBuilder.Entity("TicketHive.Server.Models.EventModel", b =>
                 {
                     b.Navigation("SoldTickets");
-                });
-
-            modelBuilder.Entity("TicketHive.Server.Models.EventTypeModel", b =>
-                {
-                    b.Navigation("Events");
                 });
 #pragma warning restore 612, 618
         }

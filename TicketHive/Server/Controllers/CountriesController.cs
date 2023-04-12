@@ -58,12 +58,8 @@ public class CountriesController : ControllerBase
     {
         if(countryDTO is not null)
         {
-            CountryModel countryModel = new()
-            {
-                Name = countryDTO.Name,
-                Currency = countryDTO.Currency,
-                IsAvailableForUserRegistration = countryDTO.IsAvailableForUserRegistration
-            };
+            CountryModel countryModel = new (countryDTO);
+           
             
             await _unitOfWork.Countries.Add(countryModel);
 
