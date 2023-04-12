@@ -22,23 +22,22 @@ public class EventTypesController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<EventTypeDTO>>> Get()
     {
-        IEnumerable<EventTypeDTO> eventTypes = (await _unitOfWork.EventTypes.GetAllAsync()).Select(etm => new EventTypeDTO
-        {
-            Name = etm.Name
-        });
+        IEnumerable<EventTypeDTO> eventTypeDTOs = (await _unitOfWork.EventTypes.GetAllAsync()).Select(etm => new EventTypeDTO(etm.Name));
 
-        return Ok(eventTypes);
+        return Ok(eventTypeDTOs);
     }
 
     // GET api/<EventTypesController>/5
     [HttpGet("{name}")]
     public async Task<ActionResult<EventTypeDTO>> Get(string name)
     {
-        EventTypeModel? result = await _unitOfWork.EventTypes.GetByNameAsync(name);
+        EventTypeModel? eventTypeModel = await _unitOfWork.EventTypes.GetByNameAsync(name);
 
-        if (result is not null)
+        if (eventTypeModel is not null)
         {
-            return Ok(result);
+            EventTypeDTO eventTypeDTO = new EventTypeDTO(eventTypeModel.Name);
+
+            return Ok(eventTypeDTO);
         }
 
         return NotFound();
@@ -50,10 +49,7 @@ public class EventTypesController : ControllerBase
     {
         if(eventTypeDTO is not null)
         {
-            EventTypeModel eventTypeModel = new()
-            {
-                Name = eventTypeDTO.Name
-            };
+            EventTypeModel eventTypeModel = new(eventTypeDTO);
             
             _unitOfWork.EventTypes.Add(eventTypeModel);
 
