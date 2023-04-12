@@ -6,6 +6,10 @@ namespace TicketHive.Server.Data.Databases
 {
     public class AppDbContext : DbContext
     {
+        public AppDbContext()   // Empty constructor for enabling access to unit of work from Models(for model ctor(dto))
+        {
+            
+        }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
             

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TicketHive.Shared.DTOs;
 
 namespace TicketHive.Server.Models
 {
@@ -7,6 +8,18 @@ namespace TicketHive.Server.Models
         [Key]
         [MaxLength(50)]
         public required string Name { get; set; }
-        public List<EventModel>? Events { get; set; }
+        //public List<EventModel>? Events { get; set; }
+
+
+        public EventTypeModel()
+        {
+            
+        }
+        // Constructor for Model from recieving DTO
+        public EventTypeModel(EventTypeDTO eDto) 
+        {
+            Name = eDto.Name;
+            //Events = eDto.Events;
+        }
     }
 }
