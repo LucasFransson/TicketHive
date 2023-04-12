@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using TicketHive.Shared.DTOs;
 
 namespace TicketHive.Server.Models
@@ -18,6 +19,7 @@ namespace TicketHive.Server.Models
         {
         }
         // Constructor for Model from recieving DTO
+        [SetsRequiredMembers]
         public TicketModel(TicketDTO dto)
         {
             Id = dto.Id;

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using TicketHive.Shared.DTOs;
 
 namespace TicketHive.Server.Models
@@ -16,10 +17,11 @@ namespace TicketHive.Server.Models
             
         }
         // Constructor for Model from recieving DTO
-        public EventTypeModel(EventTypeDTO eDto) 
+        [SetsRequiredMembers]
+        public EventTypeModel(EventTypeDTO dto) 
         {
-            Name = eDto.Name;
-            //Events = eDto.Events;
+            Name = dto.Name;
+            //Events = dto.Events;
         }
     }
 }

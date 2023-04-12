@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
 using TicketHive.Shared.DTOs;
-using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Server.Controllers;
 
@@ -22,12 +21,15 @@ public class CountriesController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<CountryDTO>>> Get()
     {
-        IEnumerable<CountryDTO> countries = (await _unitOfWork.Countries.GetAllAsync()).Select(cm => new CountryDTO
-        {
-            Name = cm.Name,
-            Currency = cm.Currency,
-            IsAvailableForUserRegistration = cm.IsAvailableForUserRegistration
-        });
+        IEnumerable<CountryDTO> countries = (await _unitOfWork.Countries.GetAllAsync())
+            .Select(cm => new CountryDTO(cm.Name, cm.Currency, cm.IsAvailableForUserRegistration));
+
+        //IEnumerable<CountryDTO> countries = (await _unitOfWork.Countries.GetAllAsync()).Select(cm => new CountryDTO
+        //{
+        //    Name = cm.Name,
+        //    Currency = cm.Currency,
+        //    IsAvailableForUserRegistration = cm.IsAvailableForUserRegistration
+        //});
 
         return Ok(countries);
     }
@@ -39,12 +41,7 @@ public class CountriesController : ControllerBase
 
         if (countryModel is not null)
         {
-            CountryDTO countryDTO = new()
-            {
-                Name = countryModel.Name,
-                Currency = countryModel.Currency,
-                IsAvailableForUserRegistration = countryModel.IsAvailableForUserRegistration
-            };
+            CountryDTO countryDTO = new(countryModel.Name, countryModel.Currency, countryModel.IsAvailableForUserRegistration);
 
             return Ok(countryDTO);
         }
@@ -56,11 +53,26 @@ public class CountriesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] CountryDTO countryDTO)
     {
-        if(countryDTO is not null)
+        //if(countryDTO is not null)
+        //{
+        //    CountryModel countryModel = new()
+        //    {
+        //        Name = countryDTO.Name,
+        //        Currency = countryDTO.Currency,
+        //        IsAvailableForUserRegistration = countryDTO.IsAvailableForUserRegistration
+        //    };
+
+        //    await _unitOfWork.Countries.Add(countryModel);
+
+        //    return Ok();
+        //}
+
+        //return BadRequest();
+
+        if (countryDTO is not null)
         {
-            CountryModel countryModel = new (countryDTO);
-           
-            
+            CountryModel countryModel = new(countryDTO);
+
             await _unitOfWork.Countries.Add(countryModel);
 
             return Ok();
@@ -68,6 +80,7 @@ public class CountriesController : ControllerBase
 
         return BadRequest();
     }
+
 
     // PUT api/<CountriesController>/5
     [HttpPut("{id}")]
