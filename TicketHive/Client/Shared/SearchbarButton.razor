@@ -1,0 +1,23 @@
+﻿@*@inherits LayoutComponentBase*@
+@inject IJSRuntime JSRuntime
+
+<div class="search">
+    <input type="search" class="search-box" />
+    <span class="search-button" @ref="searchButton">
+        <span class="search-icon"></span>
+    </span>
+</div>
+
+@code {
+    private ElementReference searchButton;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("window.Blazor.invokeMethodAsync", "registerSearchButton", searchButton);
+
+            //await JSRuntime.InvokeVoidAsync("registerSearchButton", searchButton);
+        }
+    }
+}

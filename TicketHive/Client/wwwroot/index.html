@@ -46,6 +46,27 @@
                 () => $('#carouselExampleIndicators').carousel('next'));
         }
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+    <script>
+        function registerSearchButton(searchButton) {
+            $('.search-button', searchButton).click(function () {
+                $(this).parent().toggleClass('open');
+            });
+        }
+
+        window.Blazor.registerFunction('registerSearchButton', registerSearchButton);
+    </script>
+
+    <!--<script>
+        function registerSearchButton(searchButton) {
+            $('.search-button', searchButton).click(function () {
+                $(this).parent().toggleClass('open');
+            });
+        }
+    </script>-->
 </body>
 
 </html>

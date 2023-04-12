@@ -8,15 +8,16 @@ namespace TicketHive.Extensions
         public static string GetAPIName<TEntity>(this TEntity entity) where TEntity : class
         {
             string typeName = typeof(TEntity).Name;
-            if (typeName.EndsWith("Model"))
+            if (typeName.EndsWith("ViewModel"))
             {
-                return typeName.Substring(0, typeName.Length - 5) + "s";
+                return typeName.Substring(0, typeName.Length - 10) + "s";
             }
             else
             {
-                throw new InvalidOperationException("Invalid entity name. Entity name must end with 'Model'.");
+                throw new InvalidOperationException($"Invalid entity name. Entity name must end with 'ViewModel'. The entity name you've entered is:{typeName}");
             }
         }
+
     }
 }
 
