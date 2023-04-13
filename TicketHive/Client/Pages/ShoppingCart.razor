@@ -35,10 +35,19 @@
     }
 }
 
+@if(cartItems?.Count != 0)
+{
+    <div>
+        <button class="btn btn-success btn-lg btn-block" @onclick="RedirectToConfirm">Checkout</button>
+    </div>
+}
+else
+{
+    <div>
+        <button class="btn btn-success btn-lg btn-block" disabled>Cart is empty</button>
+    </div>
+}
 
-<div>
-    <button class="btn btn-success btn-lg btn-block" @onclick="RedirectToConfirm">Checkout</button>
-</div>
 
 
 @code {
@@ -95,6 +104,4 @@
     {
         return await _localStorage.GetCartItems(username);
     }
-
-    
 }
