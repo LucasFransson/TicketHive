@@ -1,6 +1,7 @@
 ﻿@using TicketHive.Bll.Services;
 @using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Implementations;
+@using TicketHive.Bll.Services.Managers;
 @using TicketHive.Shared.ViewModels;
 @page "/"
 @inject AuthenticationStateProvider provider;
@@ -86,14 +87,15 @@
 			<div class="row">
 				<div class="card-group mx-auto">
 					@if (_allEvents is not null)
-					{
-						foreach (var e in _allEvents)
+			{
+				int picCounter = 1;
+				foreach (var e in _allEvents)
 						{
 					<div class="card mr-5">
-						<img src="/images/MicrosoftTeams-image (6).png"
+						<img src="/images/MicrosoftTeams-image (@picCounter).png"
 							 class="card-img-top"
 							 alt="Event Image" />
-						<div class="card-body">
+						<div class="card-body"> 
 							<h5 class="card-title red-foreground">@e.Name</h5>
 							<h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
 							<p class="card-text blue-foreground">@e.Description</p>
@@ -103,6 +105,7 @@
 							<a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
 						</div>
 					</div>
+					picCounter++;
 				}
 			}
 			else
@@ -115,36 +118,6 @@
 					</div>
 
 			}
-			<div class="card mr-5">
-						<img src="/images/MicrosoftTeams-image (12).png"
-							class="card-img-top"
-							alt="Event Image"
-						/>
-						<div class="card-body">
-							<h5 class="card-title">Event Name</h5>
-							<h6 class="card-subtitle mb-2 text-muted">Event Type Name</h6>
-							<p class="card-text">Event Description (optional)</p>
-							<p class="card-text">Event Start Time - Event End Time</p>
-							<p class="card-text">Event Country Name</p>
-							<p class="card-text font-weight-bold">$Event Price</p>
-							<a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
-						</div>
-					</div>
-					<div class="card mr-5">
-						<img src="/images/MicrosoftTeams-image (13).png"
-							class="card-img-top"
-							alt="Event Image"
-						/>
-						<div class="card-body">
-							<h5 class="card-title">Event Name</h5>
-							<h6 class="card-subtitle mb-2 text-muted">Event Type Name</h6>
-							<p class="card-text">Event Description (optional)</p>
-							<p class="card-text">Event Start Time - Event End Time</p>
-							<p class="card-text">Event Country Name</p>
-							<p class="card-text font-weight-bold">$Event Price</p>
-							<a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
-						</div>
-					</div>		
 				</div>
 			</div>
 		</div>
