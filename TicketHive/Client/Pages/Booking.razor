@@ -1,35 +1,47 @@
 ﻿@page "/Booking"
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col"> </th>
-            <th scope="col">Event</th>
-            <th scope="col">City</th>
-            <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row"> </th>
-            <td>Slayer</td>
-            <td>Göteborg</td>
-            <td><button class="button-buy">Buy Ticket</button></td>
-        </tr>
-        <tr>
-            <th scope="row"> </th>
-            <td>Abba</td>
-            <td>Karlshamn</td>
-            <td><button class="button-buy">Buy Ticket</button></td>
-        </tr>
-        <tr>
-            <th scope="row"></th>
-            <td>Nordman</td>
-            <td>Malmö</td>
-            <td><button class="button-buy">Buy Ticket</button></td>
-        </tr>
-    </tbody>
-</table>
+<SearchbarButton/>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col"> </th>
+                <th scope="col">Event</th>
+                <th scope="col">City</th>
+                <th scope="col"> </th>
+                <th scope="col">
+                    <select class="form-select form-select-sm w-50 p-3" aria-label=".form-select-sm example">
+                        <option selected>Sort by:</option>
+                        <option value="1">Date</option>
+                        <option value="2">Price: Low to high</option>
+                        <option value="3">Price: High to low</option>
+                    </select>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"> </th>
+                <td>Slayer</td>
+                <td>Göteborg</td>
+                <td><button class="button-buy">Buy Ticket</button></td>
+            </tr>
+            <tr>
+                <th scope="row"> </th>
+                <td>Abba</td>
+                <td>Karlshamn</td>
+                <td><button class="button-buy">Buy Ticket</button></td>
+            </tr>
+            <tr>
+                <th scope="row"></th>
+                <td>Nordman</td>
+                <td>Malmö</td>
+                <td><button class="button-buy">Buy Ticket</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 
 
 
