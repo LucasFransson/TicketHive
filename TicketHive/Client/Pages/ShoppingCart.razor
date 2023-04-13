@@ -43,13 +43,10 @@
 
 @code {
     private List<CartItemViewModel> cartItems = new();
-
     private string username;
 
-    //method that will be called when the page is loaded
     protected override async Task OnInitializedAsync()
     {
-
         var authState = await _provider.GetAuthenticationStateAsync();
 
         username = authState.User.Identity.Name;
@@ -77,11 +74,14 @@
 
     private async Task DecreaseCount(CartItemViewModel cartItem, int quantity)
     {
+        if (quantity > 0)
+        {
             quantity--;
 
             await _localStorage.RemoveCartItemAsync(cartItems, cartItem, username);
 
             cartItems = await GetCartItems(username);
+        }
     }
 
     private async Task RemoveEvent(CartItemViewModel cartItem)
@@ -91,7 +91,6 @@
         cartItems = await GetCartItems(username);
     }
 
-    //create the method GetCartItems
     private async Task<List<CartItemViewModel>?> GetCartItems(string username)
     {
         return await _localStorage.GetCartItems(username);

@@ -51,15 +51,6 @@ public class LocalStorageManager{
         await _localStorage.SetItemAsync($"{username}", cartItems);
     }
 
-    //public async Task<IGrouping<int, CartItemViewModel>?> GetCartItemsGroupedById(string username)
-    //{
-    //    List<CartItemViewModel>? cartItems = await _localStorage.GetItemAsync<List<CartItemViewModel>>(username);
-
-    //    IGrouping<int, CartItemViewModel>? test = (IGrouping<int, CartItemViewModel>?) cartItems.GroupBy(i => i.Id).ToList();
-        
-    //    return test;
-    //}
-
     public async Task<List<CartItemViewModel>?> GetCartItems(string username)
     {
         return await _localStorage.GetItemAsync<List<CartItemViewModel>>(username);
@@ -72,7 +63,14 @@ public class LocalStorageManager{
         await _localStorage.SetItemAsync($"{username}", cartItems);
     }
 
-    public async Task RemoveEventFromCartAsync
+    public async Task RemoveEventFromCartAsync(CartItemViewModel cartItem, string username)
+    {
+        List<CartItemViewModel>? cartItems = (await GetCartItems(username));
+
+        cartItems.RemoveAll(e => e.Id.Equals(cartItem.Id));
+
+        await _localStorage.SetItemAsync($"{username}", cartItems);
+    }
 
     public void AddExchangeRate()
     {
