@@ -1,4 +1,9 @@
 ﻿@page "/userdetails"
+@using TicketHive.Bll.Services.Interfaces;
+@inject IUnitOfService unitOfService;
+@inject NavigationManager NavigationManager;
+
+
 
 <h3>UserDetails</h3>
 
@@ -12,17 +17,17 @@
                     <form>
                         <div class="form-group">
                             <label for="current-password">Current Password</label>
-                            <input type="password" class="form-control" id="current-password">
+                            <input type="password" class="form-control" id="current-password" @bind-value="@currentPassword">
                         </div>
                         <div class="form-group">
                             <label for="new-password">New Password</label>
-                            <input type="password" class="form-control" id="new-password">
+                            <input type="password" class="form-control" id="new-password" @bind-value="@newPassword">
                         </div>
                         <div class="form-group">
                             <label for="confirm-password">Confirm Password</label>
-                            <input type="password" class="form-control" id="confirm-password">
+                            <input type="password" class="form-control" id="confirm-password" @bind-value="@confirmPassword">
                         </div>
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="submit" class="btn btn-primary" @onclick="ChangePassword">Save Changes</button>
                     </form>
                 </div>
             </div>
@@ -35,9 +40,13 @@
                         <div class="form-group">
                             <label for="country">Country</label>
                             <select class="form-control" id="country">
-                                <option>United States</option>
-                                <option>Canada</option>
-                                <option>Mexico</option>
+                                @if (_allCountries is not null)
+                                {
+                                    foreach (var e in _allCountries)
+                                    {
+                                        <option>@e.Name</option>
+                                    }
+                                }
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -48,7 +57,27 @@
     </div>
 </div>
 
+
+
 @code {
+    private IEnumerable<CountryViewModel> _allCountries = new List<CountryViewModel>();
+    private string currentPassword;
+    private string newPassword;
+    private string confirmPassword;
 
 
+    protected override async Task OnInitializedAsync()
+    {
+        await GetAllCountries();
+    }
+
+    private async Task GetAllCountries()
+    {
+        _allCountries = await unitOfService.CountryService.GetAllAsync();
+    }
+
+    private void ChangePassword()
+    {
+        
+    }
 }
