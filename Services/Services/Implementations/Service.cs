@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Http.Json;
 using System.Reflection;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using TicketHive.Bll.Services.Interfaces;
 using TicketHive.Extensions;
@@ -33,9 +35,16 @@ namespace TicketHive.Bll.Services.Implementations
             return typeName;
         }
 
-        public async Task<TEntity> GetByIdAsyncAPINameTest(int id)
+        public async Task<IEnumerable<TEntity>> Get<TEntity>(Expression<Func<TEntity, bool>> predicate)
         {
-            return await _httpClient.GetFromJsonAsync<TEntity>($"/api/{GetAPIName().ToLower()}/{id}");
+            var queryString = $"?predicate={predicate}";
+            var response = await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"api/myresource{queryString}");
+
+            if (response == null)
+            {
+                throw new Exception($"Failed to retrieve data.");
+            }
+            return response;
         }
         public async Task<TEntity> GetByIdAsync(int id)
         {
