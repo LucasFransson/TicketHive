@@ -1,4 +1,5 @@
-﻿using TicketHive.Server.Models;
+﻿using System;
+using TicketHive.Server.Models;
 
 namespace TicketHive.Server.StaticMethods
 {
@@ -206,8 +207,14 @@ namespace TicketHive.Server.StaticMethods
         // A List of all Event Types in the Database
         public static List<EventTypeModel> EventTypes = new()
         {
-            new EventTypeModel() { Name = "Music"}
-        };
+            new EventTypeModel() { Name = "Music Concerts"},
+			new EventTypeModel() { Name = "Sports Events"},
+			new EventTypeModel() { Name = "Musicals"},
+			new EventTypeModel() { Name = "Food and wine tastings"},
+			new EventTypeModel() { Name = "Festivals"},
+			new EventTypeModel() { Name = "Conferences and trade shows"},
+			new EventTypeModel() { Name = "Comedy shows"},
+		};
 
         // Method for creating seed data for an Event
         public static void AddData(int eventId,
@@ -251,10 +258,11 @@ namespace TicketHive.Server.StaticMethods
             for (int i = 1; i <= newEvent.MaxUsers; i++)
             {
                 var ticket = new TicketModel
-                {
-                    Id = i,
+                {   //Id = i,
+                   //Event = newEvent,
+
+                    Id = GuidGenerator.GenerateInt(),
                     EventId = newEvent.Id,
-                    //Event = newEvent,
                     Price = newEvent.Price,
                     StartTime = newEvent.StartTime,
                     EndTime = newEvent.EndTime
