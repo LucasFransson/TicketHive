@@ -1,4 +1,6 @@
-﻿<header class="headerbar">
+﻿@inject NavigationManager NavigationManager;
+
+<header class="headerbar">
     <h1>TicketHive</h1>
     <p>Buy Event Tickets Online</p>
 </header>
@@ -6,10 +8,10 @@
 <nav class="top-menu">
     <ol>
         <li class="top-menu-item">
-            <a href="#">Home</a>
+            <a href="/home">Home</a>
         </li>
         <li class="top-menu-item">
-            <a href="#">Event Info</a>
+            <a href="/booking">Events</a>
             <ol class="top-sub-menu">
                 <li class="top-menu-item">
                     <a href="#">Upcoming</a>
@@ -21,6 +23,9 @@
                     <a href="#">Policy</a>
                 </li>
             </ol>
+        </li>
+        <li class="top-menu-item">
+            <a href="/ShoppingCart">Shopping Cart</a>
         </li>
         <li class="top-menu-item">
             <a href="/Identity/Account/Login">Login</a>
