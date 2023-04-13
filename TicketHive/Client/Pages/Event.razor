@@ -1,18 +1,82 @@
-﻿@page "/Event"
+﻿@page "/event/{id:int}"
+@using TicketHive.Bll.Services.Interfaces;
+@using TicketHive.Bll.Services.Managers;
+@using TicketHive.Client.LocalStorage;
+@inject AuthenticationStateProvider _provider;
+@inject LocalStorageManager _localStorage
+@inject IUnitOfService _unitOfService
 
-<div class="card mb-3">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-body-secondary"></small></p>
-        <td><button class="button-buy">Buy Ticket</button></td>
+
+@if(eventViewModel is not null)
+{
+    <div class="card mb-3">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">@eventViewModel.Name</h5>
+            <p class="card-text">@eventViewModel.Description</p>
+            <p class="card-text"><small class="text-body-secondary">@username</small></p>
+            <td><button class="button-buy" @onclick="AddToCart">Buy Ticket</button></td>
+        </div>
     </div>
-</div>
+}
+
+<button class="button-buy" @onclick="GetCartItem">Show CartItem from local storage</button>
+
+@if(cartItemTests.Count != 0)
+{
+    foreach(var item in cartItemTests)
+    {
+        <div>
+            <h1>@item.Name</h1>
+        </div>
+    }
+
+}
+
 
 @code {
+    [Parameter]
+    public int Id { get; set; }
 
-    
+    private EventViewModel? eventViewModel = new();
 
+    private List<CartItemViewModel>? cartItemTests = new();
+
+    private string username;
+
+    protected override async Task OnInitializedAsync()
+    {
+        eventViewModel = await _unitOfService.EventService.GetByIdAsync(Id);
+
+        var authState = await _provider.GetAuthenticationStateAsync();
+
+        username = authState.User.Identity.Name;
+
+        //isAdmin = authState.User.IsInRole("Admin");
+
+        await _localStorage.InitializeUserAsync(username);
+    }
+
+    private async Task AddToCart()
+    {
+        
+        CartItemViewModel cartItem = new()
+        {
+            Id = eventViewModel.Id,
+            Name = eventViewModel.Name,
+            Price = eventViewModel.Price,
+            StartTime = eventViewModel.StartTime,
+            EndTime = eventViewModel.EndTime
+        };
+
+        await _localStorage.AddCartItemAsync(cartItem);
+    }
+
+    private async Task GetCartItem()
+    {
+        cartItemTests = await _localStorage.GetCartItems();
+
+        //StateHasChanged();
+    }
 
 }

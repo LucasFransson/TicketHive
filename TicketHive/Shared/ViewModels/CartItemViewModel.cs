@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 namespace TicketHive.Shared.ViewModels;
 public class CartItemViewModel
 {
-    public int EventId { get; set; }
-    public string? EventName { get; set; }
+    public int Id { get; set; }
+    public string? Name { get; set; }
     public decimal Price { get; set; }
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
-    public int Quantity { get; set; }
 }
