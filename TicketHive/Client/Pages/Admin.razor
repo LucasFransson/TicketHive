@@ -1,10 +1,14 @@
 ﻿@page "/admin"
+@using TicketHive.Bll.Services.Interfaces;
+@inject IUnitOfService unitOfService;
+@inject NavigationManager NavigationManager;
+
 
 <h3>Admin</h3>
 
 
 <div class="container">
-    <h1 class="mb-4">Add New Event</h1>
+    <h2 class="mb-4">Add new event</h2>
     <div class="card mb-4">
         <div class="card-body">
             <form>
@@ -15,9 +19,13 @@
                 <div class="form-group">
                     <label for="event-type">Event Type</label>
                     <select class="form-control" id="event-type">
-                        <option>Concert</option>
-                        <option>Seminar</option>
-                        <option>Conference</option>
+                        @if(_allEventTypes is not null)
+                        {
+                            foreach(var e in _allEventTypes)
+                            {
+                                <option>@e.Name</option>
+                            }
+                        }
                     </select>
                 </div>
                 <div class="form-group">
@@ -52,7 +60,63 @@
 </div>
 
 
+<div class="container">
+			<div class="row">
+				<div class="card-group mx-auto">
+					@if (_allEvents is not null)
+					{
+						foreach (var e in _allEvents)
+						{
+					<div class="card mr-5">
+						<div class="card-body">
+							<h5 class="card-title red-foreground">@e.Name</h5>
+							<h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
+							<p class="card-text blue-foreground">@e.StartTime - @e.EndTime</p>
+							<p class="card-text font-weight-bold">$@e.Price</p>
+                            <button type="button" value="Delete" @onclick="DeleteEvent"></button>
+						</div>
+					</div>
+				}
+			}
+			else
+			{
+				<div class="card mr-5">
+					<div class="card-body">
+						<h5 class="card-title">Something Went Wrong</h5>
+						<p class="card-text">Unable to load event information</p>
+						</div>
+					</div>
+
+			}
+
+            </div>
+    </div>
+</div>
+
+
 
 @code {
+    private IEnumerable<EventTypeViewModel> _allEventTypes = new List<EventTypeViewModel>();
+    private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetAllEventTypes();
+        await GetAllEvents();
+    }
+
+
+    private async Task GetAllEventTypes()
+    {
+        _allEventTypes = await unitOfService.EventTypeService.GetAllAsync();
+    }
+    private async Task GetAllEvents()
+    {
+        _allEvents = await unitOfService.EventService.GetAllAsync();
+    }
+    private void DeleteEvent()
+    {
+        //unitOfService.EventService.Remove(Id);
+    }
 
 }
