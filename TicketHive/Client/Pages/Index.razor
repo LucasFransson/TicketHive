@@ -5,12 +5,13 @@
 @page "/"
 @inject AuthenticationStateProvider provider;
 @inject IJSRuntime JsRuntime;
+@inject NavigationManager NavigationManager;
 @inject IUnitOfService unitOfService;
 
 
 <PageTitle>Index</PageTitle>
 
-<SearchbarButton/>
+
 <div class="container">
 			<div id="carouselExampleIndicators"
 				class="carousel slide"
@@ -27,8 +28,7 @@
 				</ol>
 				<div class="carousel-inner">
 					<div class="carousel-item active">
-						<img
-							src="https://via.placeholder.com/300x200.png?text=Event+Image"
+						<img src="/images/MicrosoftTeams-image (1).png"
 							class="d-block w-100"
 							alt="First Slide"
 						/>
@@ -39,8 +39,7 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img
-							src="https://via.placeholder.com/300x200.png?text=Event+Image"
+						<img src="/images/MicrosoftTeams-image (2).png"
 							class="d-block w-100"
 							alt="Second Slide"
 						/>
@@ -51,8 +50,7 @@
 						</div>
 					</div>
 					<div class="carousel-item">
-						<img
-							src="https://via.placeholder.com/300x200.png?text=Event+Image"
+						<img src="/images/MicrosoftTeams-image (11).png"
 							class="d-block w-100"
 							alt="Third Slide"
 						/>
@@ -82,6 +80,7 @@
 			</div>
 		</div>
 
+<SearchbarButton />
 
 		<div class="container">
 			<div class="row">
@@ -91,7 +90,7 @@
 						foreach (var e in _allEvents)
 						{
 					<div class="card mr-5">
-						<img src="https://via.placeholder.com/300x200.png?text=Event+Image"
+						<img src="/images/MicrosoftTeams-image (6).png"
 							 class="card-img-top"
 							 alt="Event Image" />
 						<div class="card-body">
@@ -117,8 +116,7 @@
 
 			}
 			<div class="card mr-5">
-						<img
-							src="https://via.placeholder.com/300x200.png?text=Event+Image"
+						<img src="/images/MicrosoftTeams-image (12).png"
 							class="card-img-top"
 							alt="Event Image"
 						/>
@@ -133,8 +131,7 @@
 						</div>
 					</div>
 					<div class="card mr-5">
-						<img
-							src="https://via.placeholder.com/300x200.png?text=Event+Image"
+						<img src="/images/MicrosoftTeams-image (13).png"
 							class="card-img-top"
 							alt="Event Image"
 						/>
