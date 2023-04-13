@@ -9,10 +9,10 @@ using TicketHive.Server.Data.Databases;
 
 #nullable disable
 
-namespace TicketHive.Server.Migrations.AppDb
+namespace TicketHive.Server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230412200955_Initial")]
+    [Migration("20230413074710_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -1245,7 +1245,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
@@ -1302,15 +1302,14 @@ namespace TicketHive.Server.Migrations.AppDb
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -1334,8 +1333,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasMaxLength(100)
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");

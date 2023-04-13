@@ -1242,7 +1242,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
@@ -1299,15 +1299,14 @@ namespace TicketHive.Server.Migrations.AppDb
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Username")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -1331,8 +1330,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
-                        .HasMaxLength(100)
-                        .HasColumnType("decimal(18,2)");
+                        .HasColumnType("decimal(5, 2)");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime2");
