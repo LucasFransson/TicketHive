@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using IdentityModel;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
+using TicketHive.Server.Data.Repositories.Implementations;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
 using TicketHive.Server.StaticMethods;
@@ -37,9 +41,20 @@ public class TicketsController : ControllerBase
         {
             return Ok(TransformToDTO.FromTicketModel(ticketModel));
         }
-
         return NotFound();
     }
+
+    //[HttpGet]
+    //public async Task<ActionResult<IEnumerable<TicketDTO>>> Get([FromQuery] Expression<Func<TicketDTO, bool>> predicate)
+    //{
+    //    var tickets = await _unitOfWork.Tickets.Where(predicate).ToListAsync();
+    //    var ticketDtos = tickets.Select(TransformToDTO.FromTicketModel);
+    //    return ticketDtos;
+
+    //    var data = await _unitOfWork.Tickets.GetAsync(predicate);
+    //    return Ok(data);
+    //}
+
     // POST api/<SoldTicketsController>
     [HttpPost]
     public async Task<ActionResult> Post([FromBody] List<TicketDTO> ticketDTOs)
