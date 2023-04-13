@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TicketHive.Server.Migrations
 {
+    // test
     /// <inheritdoc />
     public partial class Initial : Migration
     {
