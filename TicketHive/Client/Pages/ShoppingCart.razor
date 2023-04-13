@@ -1,82 +1,107 @@
 ﻿@page "/cart"
-@inject NavigationManager NavigationManager
+@using TicketHive.Bll.Services.Managers;
+@using TicketHive.Client.LocalStorage;
+@inject AuthenticationStateProvider _provider;
+@inject LocalStorageManager _localStorage
+@inject NavigationManager _navigationManager
 
 <h3>ShoppingCart</h3>
 
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-@*            <div class="col-md-4">
-                <img src="product-image.jpg" class="img-fluid">
-            </div>*@
-            <div class="col-md-8">
-                <h5 class="card-title">Product Name</h5>
-                <p class="card-text">Product Description</p>
-                <p class="card-text">Price: $19.99</p>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary" type="button" @onclick="DecreaseCount">-</button>
-                    </div>
-                    <input type="text" class="form-control" placeholder="@currentCount" aria-label="Quantity">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" @onclick="IncrementCount">+</button>
+@if(cartItems is not null)
+{
+    foreach(var group in cartItems.GroupBy(e => e.Id))
+    {
+        <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h5 class="card-title">@group.First().Name</h5>
+                            <p class="card-text">Date: @DateTimeFormatter.FormatDayNumberMonthText(group.First().StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(group.First().EndTime)</p>
+                            <p class="card-text">Price: @group.First().Price</p>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                <button class="btn btn-outline-secondary" type="button" @onclick="() => DecreaseCount(group.First(), group.Count())">-</button>
+                                </div>
+                            <input type="number" class="form-control" value="@group.Count()" aria-label="Quantity">
+                                <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button" @onclick="() => IncrementCount(group.First(), group.Count())">+</button>
+                                </div>
+                            </div>
+                            <button class="btn btn-danger" @onclick="() => RemoveEvent(group.First())">Remove Item</button>
+                        </div>
                     </div>
                 </div>
-                <button class="btn btn-danger">Remove Item</button>
             </div>
-        </div>
+    }
+}
+
+@if(cartItems?.Count != 0)
+{
+    <div>
+        <button class="btn btn-success btn-lg btn-block" @onclick="RedirectToConfirm">Checkout</button>
     </div>
-</div>
-<div>
-    <button class="btn btn-success btn-lg btn-block" @onclick="RedirectToConfirm">Buy</button>
-</div>
+}
+else
+{
+    <div>
+        <button class="btn btn-success btn-lg btn-block" disabled>Cart is empty</button>
+    </div>
+}
+
 
 
 @code {
+    private List<CartItemViewModel> cartItems = new();
+    private string username;
 
-    private int currentCount = 1;
-    private TicketViewModel? item;
-
-    //method that will be called when the page is loaded
     protected override async Task OnInitializedAsync()
     {
-        //call the method to get the cart items
-        //await GetCartItems();
+        var authState = await _provider.GetAuthenticationStateAsync();
+
+        username = authState.User.Identity.Name;
+
+        //isAdmin = authState.User.IsInRole("Admin");
+        cartItems = await GetCartItems(username);
     }
 
     private void RedirectToConfirm()
     {
-        NavigationManager.NavigateTo("/confirm");
+        _navigationManager.NavigateTo("/confirm");
     }
 
-    private void IncrementCount()
+    private async Task IncrementCount(CartItemViewModel cartItem, int quantity)
     {
-        if (currentCount <= 10)
+        if (quantity > 0)
         {
-            currentCount++;
+            quantity++;
+
+            await _localStorage.AddCartItemAsync(cartItem, username);
+
+            cartItems = await GetCartItems(username);
         }
     }
 
-    private void DecreaseCount()
+    private async Task DecreaseCount(CartItemViewModel cartItem, int quantity)
     {
-        if(currentCount >= 1)
+        if (quantity > 0)
         {
-            currentCount--;
+            quantity--;
+
+            await _localStorage.RemoveCartItemAsync(cartItems, cartItem, username);
+
+            cartItems = await GetCartItems(username);
         }
     }
 
-    //create the method GetCartItems
-    private async Task GetCartItems(int id)
+    private async Task RemoveEvent(CartItemViewModel cartItem)
     {
-        //call the method GetCartItems from the CartService
-        //var cartItems = await CartService.GetCartItems();
-        //assign the result to the CartItems property
-        //CartItems = cartItems;
-    }
-    //create the property CartItems
-    //public List<TicketViewModel> CartItems { get; set; } = new();
-    //create the property CartService
-//[Inject]
-//public ICartService CartService { get; set; }
+        await _localStorage.RemoveEventFromCartAsync(cartItem, username);
 
+        cartItems = await GetCartItems(username);
+    }
+
+    private async Task<List<CartItemViewModel>?> GetCartItems(string username)
+    {
+        return await _localStorage.GetCartItems(username);
+    }
 }

@@ -1,5 +1,4 @@
 ﻿using Blazored.LocalStorage;
-using Intersoft.Crosslight;
 using Microsoft.AspNetCore.Components.Authorization;
 using System;
 using System.Collections.Generic;
@@ -12,8 +11,7 @@ namespace TicketHive.Client.LocalStorage;
 public class LocalStorageManager{
 
     private readonly ILocalStorageService _localStorage;
-    private readonly AuthenticationStateProvider _provider;
-    private string _username;
+    //private readonly string _username;
 
     public LocalStorageManager(ILocalStorageService localStorage)
     {
@@ -22,40 +20,56 @@ public class LocalStorageManager{
 
     public async Task InitializeUserAsync(string username)
     {
-        _username = username;
+        //_username = username;
 
-        bool IsUserInLocalStorage = await CheckIfUserExistsAsync(_username);
+        bool IsUserInLocalStorage = await CheckIfUserExistsAsync(username);
 
         if (!IsUserInLocalStorage)
         {
-            await AddUser();
+            await AddUser(username);
         }
     }
 
     public async Task<bool> CheckIfUserExistsAsync(string username)
     {
-        return await _localStorage.ContainKeyAsync(_username);
+        return await _localStorage.ContainKeyAsync(username);
     }
 
-    public async Task AddUser()
+    public async Task AddUser(string username)
     {
         List<CartItemViewModel> cartItems = new();
 
-        await _localStorage.SetItemAsync($"{_username}", cartItems);
+        await _localStorage.SetItemAsync($"{username}", cartItems);
     }
 
-    public async Task AddCartItemAsync(CartItemViewModel cartItem)
+    public async Task AddCartItemAsync(CartItemViewModel cartItem, string username)
     {
-        List<CartItemViewModel>? cartItems = await GetCartItems();
+        List<CartItemViewModel>? cartItems = await GetCartItems(username);
         
         cartItems.Add(cartItem);
 
-        await _localStorage.SetItemAsync($"{_username}", cartItems);
+        await _localStorage.SetItemAsync($"{username}", cartItems);
     }
 
-    public async Task<List<CartItemViewModel>?> GetCartItems()
+    public async Task<List<CartItemViewModel>?> GetCartItems(string username)
     {
-        return await _localStorage.GetItemAsync<List<CartItemViewModel>>(_username);
+        return await _localStorage.GetItemAsync<List<CartItemViewModel>>(username);
+    }
+
+    public async Task RemoveCartItemAsync(List<CartItemViewModel> cartItems, CartItemViewModel cartItem, string username)
+    {
+        cartItems.Remove(cartItem);
+
+        await _localStorage.SetItemAsync($"{username}", cartItems);
+    }
+
+    public async Task RemoveEventFromCartAsync(CartItemViewModel cartItem, string username)
+    {
+        List<CartItemViewModel>? cartItems = (await GetCartItems(username));
+
+        cartItems.RemoveAll(e => e.Id.Equals(cartItem.Id));
+
+        await _localStorage.SetItemAsync($"{username}", cartItems);
     }
 
     public void AddExchangeRate()

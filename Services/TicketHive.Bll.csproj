@@ -7,11 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intersoft.Crosslight" Version="6.0.5000.975" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\TicketHive.Extensions\TicketHive.Extensions.csproj" />
     <ProjectReference Include="..\TicketHive\Shared\TicketHive.Shared.csproj" />
   </ItemGroup>
 
