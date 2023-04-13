@@ -7,89 +7,133 @@
 <h3>Admin</h3>
 
 
-<div class="container">
-    <h2 class="mb-4">Add new event</h2>
-    <div class="card mb-4">
-        <div class="card-body">
-            <form>
-                <div class="form-group">
-                    <label for="event-name">Event Name</label>
-                    <input type="text" class="form-control" id="event-name">
-                </div>
-                <div class="form-group">
-                    <label for="event-type">Event Type</label>
-                    <select class="form-control" id="event-type">
-                        @if(_allEventTypes is not null)
-                        {
-                            foreach(var e in _allEventTypes)
-                            {
-                                <option>@e.Name</option>
-                            }
-                        }
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="event-date">Event Date</label>
-                    <input type="date" class="form-control" id="event-date">
-                </div>
-                <div class="form-group">
-                    <label for="event-time">Event Time</label>
-                    <input type="time" class="form-control" id="event-time">
-                </div>
-                <div class="form-group">
-                    <label for="event-place">Event Place</label>
-                    <input type="text" class="form-control" id="event-place">
-                </div>
-                <div class="form-group">
-                    <label for="event-price">Event Price</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">$</span>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Add Event
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <h2 class="mb-4">Add new event</h2>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="event-name">Event Name</label>
+                                    <input type="text" class="form-control" id="event-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="event-type">Event Type</label>
+                                    <select class="form-control" id="event-type">
+                                        @if (_allEventTypes is not null)
+                                        {
+                                            foreach (var e in _allEventTypes)
+                                            {
+                                                <option>@e.Name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event-date">Event Date</label>
+                                    <input type="date" class="form-control" id="event-date">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="event-time">Event Time</label>
+                                    <input type="time" class="form-control" id="event-time">
+                                </div>
+                                <div class="form-group">
+                                    <label for="end-time">End Time</label>
+                                    <input type="time" class="form-control" id="end-time">
+                                </div>
+
+
+@*                                <div class="form-group">
+                                    <label for="event-country">Country</label>
+                                    <input type="text" class="form-control" id="event-country">
+                                </div>*@
+
+                                    <div class="form-group">
+                                    <label for="event-country">Country</label>
+                                    <select class="form-control" id="event-country">
+                                        @if (_allEventTypes is not null)
+                                        {
+                                            foreach (var e in _allCountries)
+                                            {
+                                                <option>@e.Name</option>
+                                            }
+                                        }
+                                    </select>
+                                  </div>
+
+
+                                <div class="form-group">
+                                    <label for="event-price">Event Price</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">$</span>
+                                        </div>
+                                        <input type="text" class="form-control" id="event-price" placeholder="0.00">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="event-capacity">Event Capacity</label>
+                                    <input type="number" class="form-control" id="event-capacity" step="10.00">
+                                </div>
+                            </form>
                         </div>
-                        <input type="text" class="form-control" id="event-price" placeholder="0.00">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="event-capacity">Event Capacity</label>
-                    <input type="number" class="form-control" id="event-capacity" step="10.00">
-                </div>
-                <button type="submit" class="btn btn-primary">Add Event</button>
-            </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" @onclick="AddEvent">Add Event</button>
+            </div>
         </div>
     </div>
 </div>
 
 
 <div class="container">
-			<div class="row">
-				<div class="card-group mx-auto">
-					@if (_allEvents is not null)
-					{
-						foreach (var e in _allEvents)
-						{
-					<div class="card mr-5">
-						<div class="card-body">
-							<h5 class="card-title red-foreground">@e.Name</h5>
-							<h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
-							<p class="card-text blue-foreground">@e.StartTime - @e.EndTime</p>
-							<p class="card-text font-weight-bold">$@e.Price</p>
-                            <button type="button" value="Delete" @onclick="DeleteEvent"></button>
-						</div>
-					</div>
-				}
-			}
-			else
-			{
-				<div class="card mr-5">
-					<div class="card-body">
-						<h5 class="card-title">Something Went Wrong</h5>
-						<p class="card-text">Unable to load event information</p>
-						</div>
-					</div>
+    <div class="row">
+        <div class="card-group mx-auto">
+             @if (_allEvents is not null)
+            {
+                @foreach (var e in _allEvents)
+                {
+                    <div class="card mr-5">
+                        <div class="card-body">
+                            <h5 class="card-title red-foreground">@e.Name</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
+                            <p class="card-text blue-foreground">@e.StartTime - @e.EndTime</p>
+                            <p class="card-text font-weight-bold">$@e.Price</p>
+                            <button type="button" class="btn btn-danger" @onclick="(() => DeleteEvent(e.Id))">Delete</button>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="card mr-5">
+                    <div class="card-body">
+                        <h5 class="card-title">Something Went Wrong</h5>
+                        <p class="card-text">Unable to load event information</p>
+                    </div>
+                </div>
 
-			}
+            }
 
-            </div>
+        </div>
     </div>
 </div>
 
@@ -98,13 +142,22 @@
 @code {
     private IEnumerable<EventTypeViewModel> _allEventTypes = new List<EventTypeViewModel>();
     private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
+    private IEnumerable<CountryViewModel> _allCountries = new List<CountryViewModel>();
+
 
     protected override async Task OnInitializedAsync()
     {
-        await GetAllEventTypes();
         await GetAllEvents();
+        await GetAllEventTypes();
+        await GetAllCountries();
+
+        StateHasChanged();
     }
 
+    private async Task GetAllCountries()
+    {
+        _allCountries = await unitOfService.CountryService.GetAllAsync();
+    }
 
     private async Task GetAllEventTypes()
     {
@@ -114,9 +167,13 @@
     {
         _allEvents = await unitOfService.EventService.GetAllAsync();
     }
-    private void DeleteEvent()
+    private void DeleteEvent(int id)
     {
-        //unitOfService.EventService.Remove(Id);
+        unitOfService.EventService.Remove(id);
+    }
+    private void AddEvent()
+    {
+        //unitOfService.EventService.AddAsync();
     }
 
 }

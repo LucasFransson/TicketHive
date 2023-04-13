@@ -27,7 +27,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         {
             return await _context.Set<TEntity>().ToListAsync();
         }
-        public async Task<IEnumerable<TEntity>> Get(Expression<Func<TEntity, bool>> predicate)
+        public async Task<IEnumerable<TEntity>> GetAsync(Expression<Func<TEntity, bool>> predicate)
         {
             return await _context.Set<TEntity>().Where(predicate).ToListAsync();
         }
