@@ -59,6 +59,10 @@ namespace TicketHive.Bll.Services.Implementations
         {
             _httpClient.DeleteAsync($"/api/{GetAPIName().ToLower()}/{entity}");
         }
+        public void Remove(int id)
+        {
+            _httpClient.DeleteAsync($"/api/{GetAPIName().ToLower()}/{id}");
+        }
         public void RemoveRange(IEnumerable<TEntity> entities)
         {
             _httpClient.PostAsJsonAsync($"/api/{GetAPIName().ToLower()}/range/delete", entities);

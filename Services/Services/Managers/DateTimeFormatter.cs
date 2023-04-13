@@ -16,13 +16,11 @@ namespace TicketHive.Bll.Services.Managers
 			string formattedTime = dateTime.ToString("HH:mm");
 			return $"{formattedDate} - {formattedTime}";
 		}
-
 		// July 2023
 		public static string FormatMonthNameYear(DateTime dateTime)
 		{
 			return dateTime.ToString("MMMM yyyy");
 		}
-
 		//19:30
 		public static string FormatTime(DateTime dateTime)
 		{
