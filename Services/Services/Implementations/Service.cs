@@ -8,7 +8,6 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using TicketHive.Bll.Services.Interfaces;
-using TicketHive.Extensions;
 
 namespace TicketHive.Bll.Services.Implementations
 {

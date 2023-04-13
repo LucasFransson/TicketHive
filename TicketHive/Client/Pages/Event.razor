@@ -69,12 +69,12 @@
             EndTime = eventViewModel.EndTime
         };
 
-        await _localStorage.AddCartItemAsync(cartItem);
+        await _localStorage.AddCartItemAsync(cartItem, username);
     }
 
     private async Task GetCartItem()
     {
-        cartItemTests = await _localStorage.GetCartItems();
+        cartItemTests = await _localStorage.GetCartItems(username);
 
         //StateHasChanged();
     }
