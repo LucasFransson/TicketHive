@@ -478,7 +478,6 @@ h1 {
     .footer-links li a {
         color: var(--black);
         text-decoration: none;
-        font-weight: 600;
         transition: color 0.2s ease-in-out;
     }
 
@@ -500,7 +499,7 @@ h1 {
 .headerbar {
     padding: 0;
     margin: 0;
-    height: 7vh;
+    height: 9vh;
     width: 100%;
     border-bottom: 5px solid #080e14;
     background-color: var(--blue-primary);
@@ -522,6 +521,7 @@ h1 {
     color: #fff;
     /*    padding-bottom: 1rem;*/
     z-index: 100;
+    padding-top:0px;
     /*  margin-bottom: 15vh;*/
     /*    display: flex;
     justify-content: flex-end;*/
@@ -532,7 +532,7 @@ h1 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 4.5vh;
+    height: 5vh;
     background-color: #323232;
     z-index: -1;
     /*    border-bottom: 5px solid #080e14;*/
@@ -565,7 +565,7 @@ h1 {
     height: 10vh;
     display: flex;
     justify-content: flex-end;
-    padding-right: 20vh;
+    padding-right: 5vh;
 }
 
     .top-menu > ol {
@@ -574,7 +574,8 @@ h1 {
     }
 
         .top-menu > ol > li {
-            margin: 0 15px 0 15px;
+            /* margin: 0 15px 0 15px;*/
+            margin: 0px;
             background: #3c3c3c;
             border-left: 5px solid var(--gradient-color);
             margin-bottom: 1px;
@@ -585,7 +586,8 @@ h1 {
             margin-bottom: 1px;
             position: relative;
             transition: 0.5s;*/
-            height: 4.5vh;
+            font-size: 18px;
+            height: 5vh;
         }
 
             .top-menu > ol > li:nth-child(1) {
