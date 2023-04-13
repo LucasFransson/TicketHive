@@ -49,7 +49,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         {
             _context.Set<TEntity>().Remove(entity);
         }
-        public async Task RemoveRange(IEnumerable<TEntity> entities)
+        public async Task RemoveRangeAsync(IEnumerable<TEntity> entities)
         {
             _context.Set<TEntity>().RemoveRange(entities);
             await _context.SaveChangesAsync();

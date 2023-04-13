@@ -35,17 +35,17 @@ namespace TicketHive.Bll.Services.Implementations
             return typeName;
         }
 
-        public async Task<IEnumerable<TEntity>> Get<TEntity>(Expression<Func<TEntity, bool>> predicate)
-        {
-            var queryString = $"?predicate={predicate}";
-            var response = await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"api/myresource{queryString}");
+        //public async Task<IEnumerable<TEntity>> Get<TEntity>(Expression<Func<TEntity, bool>> predicate)
+        //{
+        //    var queryString = $"?predicate={predicate}";
+        //    var response = await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"api/myresource{queryString}");
 
-            if (response == null)
-            {
-                throw new Exception($"Failed to retrieve data.");
-            }
-            return response;
-        }
+        //    if (response == null)
+        //    {
+        //        throw new Exception($"Failed to retrieve data.");
+        //    }
+        //    return response;
+        //}
         public async Task<TEntity> GetByIdAsync(int id)
         {
             return await _httpClient.GetFromJsonAsync<TEntity>($"/api/{GetAPIName().ToLower()}");
@@ -72,9 +72,10 @@ namespace TicketHive.Bll.Services.Implementations
         {
             _httpClient.DeleteAsync($"/api/{GetAPIName().ToLower()}/{id}");
         }
-        public void RemoveRange(IEnumerable<TEntity> entities)
+        public async Task RemoveRange(IEnumerable<TEntity> entities)
         {
-            _httpClient.PostAsJsonAsync($"/api/{GetAPIName().ToLower()}/range/delete", entities);
+           var response = await _httpClient.PostAsJsonAsync($"/api/{GetAPIName().ToLower()}/range/delete", entities);
+           response.EnsureSuccessStatusCode();
         }
     }
 }
