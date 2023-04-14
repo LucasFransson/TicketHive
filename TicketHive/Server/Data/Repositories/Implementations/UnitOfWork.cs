@@ -13,7 +13,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         public IEventTypeRepository EventTypes { get; set; }
         public ITicketRepository Tickets { get; set; }
         public ISoldTicketRepository SoldTickets { get; set; }
-        public UnitOfWork(AppDbContext context)
+		public UnitOfWork(AppDbContext context)
         {
             _context = context;
             Countries = new CountryRepository(context);

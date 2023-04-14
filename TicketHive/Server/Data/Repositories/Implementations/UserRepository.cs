@@ -12,7 +12,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
             _context = context;
         }
 
-        public void Dispose()
+		public void Dispose()
         {
             throw new NotImplementedException();
         }

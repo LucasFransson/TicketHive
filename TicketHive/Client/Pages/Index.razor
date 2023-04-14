@@ -1,13 +1,19 @@
-﻿@using TicketHive.Bll.Services;
+﻿@using System.Security.Claims;
+@using Newtonsoft.Json;
+@using System.Diagnostics;
+@using TicketHive.Bll.Services;
+@using TicketHive.Bll.Services.CurrencyApi;
 @using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Implementations;
 @using TicketHive.Bll.Services.Managers;
+@using TicketHive.Client.LocalStorage;
 @using TicketHive.Shared.ViewModels;
 @page "/"
 @inject AuthenticationStateProvider provider;
 @inject IJSRuntime JsRuntime;
 @inject NavigationManager NavigationManager;
 @inject IUnitOfService unitOfService;
+@inject LocalStorageManager localStorage;
 
 
 <PageTitle>Index</PageTitle>
@@ -120,7 +126,7 @@
 			}
 				</div>
 			</div>
-
+		</div>
 
 
 @code {
@@ -129,13 +135,28 @@
 
 	protected override async Task OnInitializedAsync()
 	{
-		//await GetAllEvents();
-	await GetAllCountries();
+		var authState = await provider.GetAuthenticationStateAsync();
+
+		var username = authState.User.Identity.Name;
+
+		if (!string.IsNullOrWhiteSpace(username))
+		{
+			UserViewModel? model = await unitOfService.UserService.GetByNameAsync(username);
+
+			double? userExchangeRate = await CurrencyApiHelper.MakeCallAsync(model.Currency);
+
+			await localStorage.AddExchangeRateAsync(userExchangeRate);
+			await localStorage.AddCurrencyForDisplayAsync(model.Currency);
+		}
+
+
+		await GetAllEvents();
 	}
 
 	private async Task GetAllEvents()
 	{
 		_allEvents = await unitOfService.EventService.GetAllAsync();
+		
 	}
 	
 
@@ -156,7 +177,7 @@
 		if (firstRender)
 		{ 
 			await JsRuntime.InvokeAsync<object>("initializeCarousel");
-		firstRender = false; 
+			firstRender = false; 
 		} 
 	}
   }

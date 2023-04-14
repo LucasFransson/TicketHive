@@ -241,7 +241,7 @@ namespace TicketHive.Server.StaticMethods
                 Id = eventId,
                 Name = eventName,
                 Description = eventDescription,
-                ImageString = null,
+                ImageString = $"MicrosoftTeams-image ({new Random().Next(1, 25)}).png",
                 MaxUsers = eventMaxUsers,
                 Price = eventPrice,
                 StartTime = eventStart,

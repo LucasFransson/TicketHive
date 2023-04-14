@@ -11,7 +11,6 @@ namespace TicketHive.Client.LocalStorage;
 public class LocalStorageManager{
 
     private readonly ILocalStorageService _localStorage;
-    //private readonly string _username;
 
     public LocalStorageManager(ILocalStorageService localStorage)
     {
@@ -20,8 +19,6 @@ public class LocalStorageManager{
 
     public async Task InitializeUserAsync(string username)
     {
-        //_username = username;
-
         bool IsUserInLocalStorage = await CheckIfUserExistsAsync(username);
 
         if (!IsUserInLocalStorage)
@@ -72,8 +69,23 @@ public class LocalStorageManager{
         await _localStorage.SetItemAsync($"{username}", cartItems);
     }
 
-    public void AddExchangeRate()
+    public async Task AddExchangeRateAsync(double? exchangeRate)
     {
+        await _localStorage.SetItemAsync("exchangeRate", exchangeRate);
+	}
 
+	public async Task<double> GetExchangeRateAsync()
+	{
+		return await _localStorage.GetItemAsync<double>("exchangeRate");
+	}
+
+    public async Task AddCurrencyForDisplayAsync(string currency)
+    {
+        await _localStorage.SetItemAsync("currency", currency);
+    }
+
+    public async Task<string> GetCurrencyForDisplayAsync()
+    {
+        return await _localStorage.GetItemAsync<string>("currency");
     }
 }

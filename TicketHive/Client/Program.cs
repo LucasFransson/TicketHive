@@ -2,6 +2,7 @@ using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using TicketHive.Bll.Services.CurrencyApi;
 using TicketHive.Bll.Services.Implementations;
 using TicketHive.Bll.Services.Interfaces;
 using TicketHive.Client;
@@ -24,5 +25,7 @@ builder.Services.AddScoped<IUnitOfService,UnitOfService>();
 builder.Services.AddScoped<LocalStorageManager>();
 
 builder.Services.AddApiAuthorization();
+
+CurrencyApiHelper.ApiInitializer();
 
 await builder.Build().RunAsync();

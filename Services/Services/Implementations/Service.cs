@@ -42,7 +42,11 @@ namespace TicketHive.Bll.Services.Implementations
         {
             return await _httpClient.GetFromJsonAsync<TEntity>($"/api/{GetAPIName().ToLower()}/{id}");
         }
-        public async Task<IEnumerable<TEntity>> GetAllAsync()
+		public async Task<TEntity> GetByNameAsync(string name)
+		{
+			return await _httpClient.GetFromJsonAsync<TEntity>($"/api/{GetAPIName().ToLower()}/{name}");
+		}
+		public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"/api/{GetAPIName().ToLower()}");
         }

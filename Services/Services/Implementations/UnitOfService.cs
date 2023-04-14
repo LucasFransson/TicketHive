@@ -20,8 +20,9 @@ namespace TicketHive.Bll.Services.Implementations
         public IService<EventTypeViewModel> EventTypeService { get; }
 
         public IService<EventViewModel> EventService { get; }
+		public IService<UserViewModel> UserService { get; }
 
-        public UnitOfService(HttpClient httpClient)
+		public UnitOfService(HttpClient httpClient)
         {
             _httpClient = httpClient;
 
@@ -29,6 +30,7 @@ namespace TicketHive.Bll.Services.Implementations
             CountryService = new CountryService(_httpClient);
             EventTypeService = new EventTypeService(_httpClient);
             EventService = new EventService(_httpClient);
-        }
+			UserService = new UserService(_httpClient);
+		}
     }
 }

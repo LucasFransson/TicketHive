@@ -1,4 +1,5 @@
 ﻿@page "/event/{id:int}"
+@using TicketHive.Bll.Services.CurrencyApi;
 @using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Managers;
 @using TicketHive.Client.LocalStorage;
@@ -6,77 +7,56 @@
 @inject LocalStorageManager _localStorage
 @inject IUnitOfService _unitOfService
 
-
-@if(eventViewModel is not null)
+@if(ev is not null)
 {
-    <div class="card mb-3">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">@eventViewModel.Name</h5>
-            <p class="card-text">@eventViewModel.Description</p>
-            <p class="card-text"><small class="text-body-secondary">@username</small></p>
-            <td><button class="button-buy" @onclick="AddToCart">Buy Ticket</button></td>
+    <div class="container w-50">
+        <div class="card">
+            <img src="/images/@ev.ImageString" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h2 class="card-title">@ev.Name</h2>
+                <p class="card-text">Date: @DateTimeFormatter.FormatDayNumberMonthText(ev.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(ev.EndTime)</p>
+                <p class="card-text">@ev.Description</p>
+                <p class="card-text">@Math.Round(ev.Price*(decimal)exchangeRate) @currency</p>
+                <button class="button-buy" @onclick="AddToCart">Buy Ticket</button>
+            </div>
         </div>
     </div>
 }
-
-<button class="button-buy" @onclick="GetCartItem">Show CartItem from local storage</button>
-
-@if(cartItemTests.Count != 0)
-{
-    foreach(var item in cartItemTests)
-    {
-        <div>
-            <h1>@item.Name</h1>
-        </div>
-    }
-
-}
-
 
 @code {
     [Parameter]
     public int Id { get; set; }
 
-    private EventViewModel? eventViewModel = new();
-
-    private List<CartItemViewModel>? cartItemTests = new();
-
+    private EventViewModel? ev = new();
     private string username;
+    private string currency;
+    private double exchangeRate; 
 
     protected override async Task OnInitializedAsync()
     {
-        eventViewModel = await _unitOfService.EventService.GetByIdAsync(Id);
+        ev = await _unitOfService.EventService.GetByIdAsync(Id);
 
         var authState = await _provider.GetAuthenticationStateAsync();
 
         username = authState.User.Identity.Name;
 
-        //isAdmin = authState.User.IsInRole("Admin");
-
         await _localStorage.InitializeUserAsync(username);
+
+        exchangeRate = await _localStorage.GetExchangeRateAsync();
+        currency = await _localStorage.GetCurrencyForDisplayAsync();
     }
 
     private async Task AddToCart()
-    {
-        
+    {    
         CartItemViewModel cartItem = new()
         {
-            Id = eventViewModel.Id,
-            Name = eventViewModel.Name,
-            Price = eventViewModel.Price,
-            StartTime = eventViewModel.StartTime,
-            EndTime = eventViewModel.EndTime
+            Id = ev.Id,
+            Name = ev.Name,
+            Price = ev.Price,
+            StartTime = ev.StartTime,
+            EndTime = ev.EndTime
         };
 
         await _localStorage.AddCartItemAsync(cartItem, username);
     }
-
-    private async Task GetCartItem()
-    {
-        cartItemTests = await _localStorage.GetCartItems(username);
-
-        //StateHasChanged();
-    }
-
 }
