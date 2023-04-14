@@ -120,21 +120,33 @@
 			}
 				</div>
 			</div>
-		</div>
+
 
 
 @code {
 	private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
+	private IEnumerable<CountryViewModel> _allCountries = new List<CountryViewModel>();
 
 	protected override async Task OnInitializedAsync()
 	{
-		await GetAllEvents();
+		//await GetAllEvents();
+	await GetAllCountries();
 	}
 
 	private async Task GetAllEvents()
 	{
 		_allEvents = await unitOfService.EventService.GetAllAsync();
 	}
+	
+
+	private async Task GetAllCountries()
+	{
+		_allCountries = await unitOfService.CountryService.GetAllAsync();
+	}
+	//private async Task GetAllCountries()
+	//{
+	//	_allCountries = (await unitOfService.CountryService.GetAllAsync()).ToList();
+	//}
 }
 
 
