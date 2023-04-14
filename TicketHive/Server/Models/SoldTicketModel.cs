@@ -34,5 +34,6 @@ namespace TicketHive.Server.Models
             StartTime = dto.StartTime;
             EndTime = dto.EndTime;
         }
+
     }
 }

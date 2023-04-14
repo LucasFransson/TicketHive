@@ -26,25 +26,18 @@ namespace TicketHive.Bll.Services.Implementations
         {
             string typeName = typeof(TEntity).Name;
 
-            if (typeName.EndsWith("ViewModel"))
+            if(typeName=="CountryViewModel") // Check for CountryViewModel because the generic method spells it wrong, to "countrys"
+            {
+                return "countries";
+            }
+            else if (typeName.EndsWith("ViewModel"))
             {
                 typeName = typeName.Substring(0, typeName.Length - 9) + "s";
             }
 
             return typeName;
         }
-
-        public async Task<IEnumerable<TEntity>> Get<TEntity>(Expression<Func<TEntity, bool>> predicate)
-        {
-            var queryString = $"?predicate={predicate}";
-            var response = await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"api/myresource{queryString}");
-
-            if (response == null)
-            {
-                throw new Exception($"Failed to retrieve data.");
-            }
-            return response;
-        }
+  
         public async Task<TEntity> GetByIdAsync(int id)
         {
             return await _httpClient.GetFromJsonAsync<TEntity>($"/api/{GetAPIName().ToLower()}/{id}");
@@ -79,5 +72,16 @@ namespace TicketHive.Bll.Services.Implementations
         {
             _httpClient.PostAsJsonAsync($"/api/{GetAPIName().ToLower()}/range/delete", entities);
         }
-    }
+		public async Task<IEnumerable<TEntity>> Get<TEntity>(Expression<Func<TEntity, bool>> predicate)  // Problematic due to overall design, remove
+		{
+			var queryString = $"?predicate={predicate}";
+			var response = await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"api/myresource{queryString}");
+
+			if (response == null)
+			{
+				throw new Exception($"Failed to retrieve data.");
+			}
+			return response;
+		}
+	}
 }

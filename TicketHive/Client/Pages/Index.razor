@@ -105,7 +105,7 @@
 							<h5 class="card-title red-foreground">@e.Name</h5>
 							<h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
 							<p class="card-text blue-foreground">@e.Description</p>
-							<p class="card-text blue-foreground">@e.StartTime - @e.EndTime</p>
+							<p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
 							<p class="card-text blue-foreground">@e.CountryName</p>
 							<p class="card-text font-weight-bold">$@e.Price</p>
 							<a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
@@ -126,11 +126,12 @@
 			}
 				</div>
 			</div>
-		</div>
+
 
 
 @code {
 	private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
+	private IEnumerable<CountryViewModel> _allCountries = new List<CountryViewModel>();
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -157,6 +158,16 @@
 		_allEvents = await unitOfService.EventService.GetAllAsync();
 		
 	}
+	
+
+	private async Task GetAllCountries()
+	{
+		_allCountries = await unitOfService.CountryService.GetAllAsync();
+	}
+	//private async Task GetAllCountries()
+	//{
+	//	_allCountries = (await unitOfService.CountryService.GetAllAsync()).ToList();
+	//}
 }
 
 

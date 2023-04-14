@@ -12,7 +12,7 @@ namespace TicketHive.Bll.Services.Managers
 		// 30th July - 19:30
 		public static string FormatDayNumberMonthText(DateTime dateTime)
 		{
-			string formattedDate = dateTime.ToString("dd')' MMMM");
+			string formattedDate = dateTime.ToString("dd'' MMMM");
 			string formattedTime = dateTime.ToString("HH:mm");
 			return $"{formattedDate} - {formattedTime}";
 		}

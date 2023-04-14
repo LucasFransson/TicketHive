@@ -9,7 +9,7 @@ using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Implementations
 {
-    public class UnitOfService : ViewModelManager, IUnitOfService
+    public class UnitOfService : IUnitOfService
     {
         private readonly HttpClient _httpClient;
 
