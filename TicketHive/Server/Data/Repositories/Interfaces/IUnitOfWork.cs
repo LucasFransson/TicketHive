@@ -8,7 +8,7 @@
         public ITicketRepository Tickets { get; set; }
         public ISoldTicketRepository SoldTickets { get; set; }
 
-        Task CompleteAsync();
+		Task CompleteAsync();
 
         void Dispose();
     }

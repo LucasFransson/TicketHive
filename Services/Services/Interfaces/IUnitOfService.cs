@@ -13,6 +13,7 @@ namespace TicketHive.Bll.Services.Interfaces
         IService<CountryViewModel> CountryService { get; }
         IService<EventTypeViewModel> EventTypeService { get; }
         IService<EventViewModel> EventService { get; }
+		IService<UserViewModel> UserService { get; }
 
-    }
+	}
 }

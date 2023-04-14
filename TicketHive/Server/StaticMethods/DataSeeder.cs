@@ -241,16 +241,14 @@ namespace TicketHive.Server.StaticMethods
                 Id = eventId,
                 Name = eventName,
                 Description = eventDescription,
-                ImageString = null,
+                ImageString = $"MicrosoftTeams-image ({new Random().Next(1, 25)}).png",
                 MaxUsers = eventMaxUsers,
                 Price = eventPrice,
                 StartTime = eventStart,
                 EndTime = eventEnd,
                 SoldTickets = null,
                 CountryName = countryName,
-                //Country = selectedCountry,
                 EventTypeName = eventType,
-                //EventType = selectedEventType
             };
             eventsList.Add(newEvent);   // Add the Event to list of Events
 

@@ -31,6 +31,11 @@ public abstract class ViewModelManager  // Made this class abstract and let Unit
         return new CountryViewModel(); 
     }
 
+    //public UserViewModel CreateUser(string CountryName, CountryViewModel country)
+    //{
+    //    return new UserViewModel();
+    //}
+
     // Random Sorting and Filtration methods are for the moment collectec here. The filtration methods should be moved to their respective Services,
     // but the sorting that doesn't involve any new API Calls will probably be kept here in an attempt to seperate the API calls from other methods in Services.
 
