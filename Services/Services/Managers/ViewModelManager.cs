@@ -11,22 +11,22 @@ using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Managers;
 
-public abstract class ViewModelManager  // Made this class abstract and let UnitOfService Inherit from it instead.
+public class ViewModelManager  // Made this class abstract and let UnitOfService Inherit from it instead.
 {
     // All of the "Create" Methods here should probably be removed, due to changes in design plan
-    public TicketViewModel CreateTicket()
+    public  TicketViewModel CreateTicket()
     {
         return new TicketViewModel();
     }
-    public EventTypeViewModel CreateEventType(string eventName)
+    public  EventTypeViewModel CreateEventType(string eventName)
     {
         return new EventTypeViewModel();
     }
-    public EventViewModel CreateEvent(string eventName,int maxUsers,decimal price,CountryViewModel country)
+    public  EventViewModel CreateEvent(string eventName,int maxUsers,decimal price,CountryViewModel country)
     {
         return new EventViewModel();
     }
-    public CountryViewModel CreateCountry(string name, string currency, bool isAvailableForUsers)
+    public  CountryViewModel CreateCountry(string name, string currency, bool isAvailableForUsers)
     {
         return new CountryViewModel(); 
     }
@@ -34,16 +34,19 @@ public abstract class ViewModelManager  // Made this class abstract and let Unit
     // Random Sorting and Filtration methods are for the moment collectec here. The filtration methods should be moved to their respective Services,
     // but the sorting that doesn't involve any new API Calls will probably be kept here in an attempt to seperate the API calls from other methods in Services.
 
-    public async Task<IEnumerable<EventViewModel>> SortEventsByDateAsync(IEnumerable<EventViewModel> events)
+    public  async Task<IEnumerable<EventViewModel>> SortEventsByDateAsync(IEnumerable<EventViewModel> events)
     {
         return await Task.FromResult(events.OrderBy(e => e.StartTime));
     }
 
-    public async Task<IEnumerable<EventViewModel>> SortEventsByPriceAsync(IEnumerable<EventViewModel> events)
+    public  async Task<IEnumerable<EventViewModel>> SortEventsByPriceAsync(IEnumerable<EventViewModel> events)
     {
         return await Task.FromResult(events.OrderBy(e => e.Price));
     }
-
+    //public IEnumerable<EventViewModel> SortEventsByName(IEnumerable<EventViewModel> events)
+    //{
+    //     return events.OrderBy(e => e.Name);
+    //}
     public async Task<IEnumerable<EventViewModel>> SortEventsByNameAsync(IEnumerable<EventViewModel> events)
     {
         return await Task.FromResult(events.OrderBy(e => e.Name));
@@ -70,7 +73,7 @@ public abstract class ViewModelManager  // Made this class abstract and let Unit
     {
         return await Task.FromResult(events.Where(e => e.StartTime >= startDate && e.EndTime <= endDate));
     }
-    public async Task<CountryViewModel> GetCountryViewModelByNameAsync(string name,UnitOfService uos)
+    public  async Task<CountryViewModel> GetCountryViewModelByNameAsync(string name,UnitOfService uos)
     {
         var countries = await uos.CountryService.GetAllAsync();
         return await Task.FromResult(countries.FirstOrDefault(c => c.Name == name));
@@ -81,16 +84,16 @@ public abstract class ViewModelManager  // Made this class abstract and let Unit
         var eventTypes = await uos.EventTypeService.GetAllAsync();
         return await Task.FromResult(eventTypes.FirstOrDefault(et => et.Name == name));
     }
-    public async Task<IEnumerable<TicketViewModel>> GetTicketsByEventAsync(EventViewModel eventViewModel, UnitOfService uos)
-    {
-        var events = await uos.EventService.GetAllAsync();
-        var selectedEvent = events.FirstOrDefault(e => e.Id == eventViewModel.Id);
-        if (selectedEvent == null)
-        {
-            // return null eller error eller något
-        }
+    //public async Task<IEnumerable<TicketViewModel>> GetTicketsByEventAsync(EventViewModel eventViewModel, UnitOfService uos)
+    //{
+    //    var events = await uos.EventService.GetAllAsync();
+    //    var selectedEvent = events.FirstOrDefault(e => e.Id == eventViewModel.Id);
+    //    if (selectedEvent == null)
+    //    {
+    //        // return null eller error eller något
+    //    }
 
-        var tickets = await uos.TicketService.GetAllAsync();
-        return await Task.FromResult(tickets.Where(t => t.Event.Id == selectedEvent.Id));
-    }
+    //    var tickets = await uos.TicketService.GetAllAsync();
+    //    return await Task.FromResult(tickets.Where(t => t.Event.Id == selectedEvent.Id));
+    //}
 }

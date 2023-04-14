@@ -7,7 +7,7 @@ using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Interfaces
 {
-    public interface IUnitOfService
+    public interface IUnitOfService 
     {
         IService<TicketViewModel> TicketService { get; }
         IService<CountryViewModel> CountryService { get; }
