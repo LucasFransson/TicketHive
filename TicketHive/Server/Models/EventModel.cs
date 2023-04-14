@@ -13,20 +13,24 @@ namespace TicketHive.Server.Models
         public required string Name { get; set; }
         [MaxLength(500)]
         public string? Description { get; set; }
-        public string? ImageString { get; set; }
+		[MaxLength(500)]
+		public string? ImageString { get; set; }
         public required int MaxUsers { get; set; }
         public int TicketsLeft => MaxUsers - ((SoldTickets is null) ? 0 : SoldTickets.Count());
-        //public int TicketsLeft => MaxUsers - SoldTickets.Count();
         public bool IsSoldOut => (MaxUsers <= SoldTickets?.Count) ? true : false;
         [Column(TypeName = "decimal(5, 2)")]
         public required decimal Price { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public List<SoldTicketModel>? SoldTickets { get; set; }
-        [ForeignKey(nameof(Country))]
+
+		[MaxLength(500)]
+		[ForeignKey(nameof(Country))]
         public required string CountryName { get; set; }
         public CountryModel? Country { get; set; }
-        [ForeignKey(nameof(EventType))]
+
+		[MaxLength(500)]
+		[ForeignKey(nameof(EventType))]
         public required string EventTypeName { get; set; }
         public EventTypeModel? EventType { get; set; }
 

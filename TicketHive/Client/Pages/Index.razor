@@ -99,7 +99,7 @@
 							<h5 class="card-title red-foreground">@e.Name</h5>
 							<h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
 							<p class="card-text blue-foreground">@e.Description</p>
-							<p class="card-text blue-foreground">@e.StartTime - @e.EndTime</p>
+							<p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
 							<p class="card-text blue-foreground">@e.CountryName</p>
 							<p class="card-text font-weight-bold">$@e.Price</p>
 							<a href="#" class="btn btn-buy btn-block">Buy Tickets</a>

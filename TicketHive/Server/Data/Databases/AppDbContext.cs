@@ -45,7 +45,7 @@ namespace TicketHive.Server.Data.Databases
                                300,
                                new DateTime(2023,07,30,19,30,0),
                                new DateTime(2023, 07, 30, 23, 0, 0),
-                               "Music Concerts",//eventTypes.First(et=>et.Name=="Music"),
+                               "Music Concerts",
                                events,
                                tickets);
 
