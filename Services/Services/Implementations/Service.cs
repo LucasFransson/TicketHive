@@ -26,7 +26,11 @@ namespace TicketHive.Bll.Services.Implementations
         {
             string typeName = typeof(TEntity).Name;
 
-            if (typeName.EndsWith("ViewModel"))
+            if(typeName=="CountryViewModel") // Check for CountryViewModel because the generic method spells it wrong, to "countrys"
+            {
+                return "countries";
+            }
+            else if (typeName.EndsWith("ViewModel"))
             {
                 typeName = typeName.Substring(0, typeName.Length - 9) + "s";
             }
