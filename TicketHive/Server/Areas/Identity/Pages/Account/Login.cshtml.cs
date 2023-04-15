@@ -37,7 +37,6 @@ namespace TicketHive.Server.Areas.Identity.Pages.Account
 					return Redirect("~/");
                 }
             }
-
             return Page();
         }
     }

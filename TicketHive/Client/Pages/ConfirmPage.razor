@@ -1,6 +1,12 @@
 ﻿@page "/confirm"
+@using TicketHive.Bll.Services.Interfaces;
+@using TicketHive.Bll.Services.Managers;
+@using TicketHive.Client.LocalStorage;
+@inject AuthenticationStateProvider _provider;
 @inject NavigationManager NavigationManager
-
+@inject IUnitOfService _unitOfService;
+@inject CheckOutManager _checkOutManager;
+@inject LocalStorageManager _localStorage
 <h3>ConfirmPage</h3>
 
 <div class="container">
@@ -14,34 +20,24 @@
                         <thead>
                             <tr>
                                 <th>Product</th>
-                                <th>Quantity</th>
+                      @*          <th>Quantity</th>*@
                                 <th>Price</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @if(_cartItems is not null)
+                            {
+                                foreach(var item in _cartItems)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>@item.Price</td>
+                                    </tr>
+                                }
+                            }
                             <tr>
-                                <!-- foreach() -->
-                                <td>Product 1</td>
-                                <td>2</td>
-                                <td>$19.99</td>
-                            </tr>
-                            <tr>
-                                <td>Product 2</td>
-                                <td>1</td>
-                                <td>$9.99</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Subtotal</td>
-                                <td>$49.97</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Shipping</td>
-                                <td>$5.00</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Total</td>
-                                <td>$54.97</td>
-                            </tr>
+                                <td>@_totalCost</td>
+                            </tr>         
                         </tbody>
                     </table>
                 </div>
@@ -50,9 +46,8 @@
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Billing Information</h5>
-                    <p class="card-text">Name</p>
-                    <p class="card-text">Username</p>
+                    <h5 class="card-title">Billing Information</h5>   
+                    <p class="card-text">@_username</p>
                     <p class="card-text">Country</p>
                 </div>
             </div>
@@ -67,12 +62,38 @@
         </div>
     </div>
 </div>
-
+ 
 @code {
+    private List<CartItemViewModel> _cartItems = new();
+    private string _username;
+    private decimal _totalCost;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await _provider.GetAuthenticationStateAsync();
+        _username = authState.User.Identity.Name;
+        _cartItems = await GetCartItems(_username);
+        //_totalCost = await _checkOutManager.GetTotalCost(_cartItems);
+        //await GetTotalCost();
+        GetTotalCost();
+    }
+
+    //private async Task GetTotalCost()
+    //{
+    //    _totalCost = await _checkOutManager.GetTotalCost(_cartItems);
+    //}
+    private void GetTotalCost()
+    {
+        _totalCost =  _checkOutManager.GetTotalCost(_cartItems);
+    }
 
     private void RedirectUser()
     {
         NavigationManager.NavigateTo("Booking");
     }
 
+    private async Task<List<CartItemViewModel>?> GetCartItems(string username)
+    {
+        return await _localStorage.GetCartItems(username);
+    }
 }
