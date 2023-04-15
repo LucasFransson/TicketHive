@@ -24,12 +24,12 @@ namespace TicketHive.Server.Models
         public DateTime EndTime { get; set; }
         public List<SoldTicketModel>? SoldTickets { get; set; }
 
-		[MaxLength(500)]
+		[MaxLength(100)]
 		[ForeignKey(nameof(Country))]
         public required string CountryName { get; set; }
         public CountryModel? Country { get; set; }
 
-		[MaxLength(500)]
+		[MaxLength(50)]
 		[ForeignKey(nameof(EventType))]
         public required string EventTypeName { get; set; }
         public EventTypeModel? EventType { get; set; }
