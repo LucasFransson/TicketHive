@@ -20,7 +20,6 @@
                         <thead>
                             <tr>
                                 <th>Product</th>
-                      @*          <th>Quantity</th>*@
                                 <th>Price</th>
                             </tr>
                         </thead>
@@ -34,15 +33,28 @@
                                         <td>@item.Price</td>
                                     </tr>
                                 }
-                            }
+                            }        
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        
+                            <thead>
+                                <tr>
+                                <th>
+                                    Total Cost
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <td>@_totalCost</td>
-                            </tr>         
+                            </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
@@ -57,7 +69,8 @@
                     <p class="card-text">Card info</p>
                 </div>
             </div>
-            <button class="btn btn-success btn-block my-4" style="width:100%;">Confirm Order </button>
+            <p>Total Cost: @_totalCost</p>
+            <button class="btn btn-success btn-block my-4" style="width:100%;" @onclick="CheckOut">Confirm Order </button>
             <button class="btn btn-primary btn-block my-4" style="width:100%;" @onclick="RedirectUser">Return </button>
         </div>
     </div>
@@ -67,12 +80,13 @@
     private List<CartItemViewModel> _cartItems = new();
     private string _username;
     private decimal _totalCost;
-
+    private List<TicketViewModel> _tickets = new();
     protected override async Task OnInitializedAsync()
     {
         var authState = await _provider.GetAuthenticationStateAsync();
         _username = authState.User.Identity.Name;
         _cartItems = await GetCartItems(_username);
+
         //_totalCost = await _checkOutManager.GetTotalCost(_cartItems);
         //await GetTotalCost();
         GetTotalCost();
@@ -84,7 +98,26 @@
     //}
     private void GetTotalCost()
     {
-        _totalCost =  _checkOutManager.GetTotalCost(_cartItems);
+        _totalCost = _checkOutManager.GetTotalCost(_cartItems);
+    }
+    private async Task ConfirmBuy()   // Are you sure etc?
+    {
+        // if yes 
+
+        _tickets = await _checkOutManager.GetTickets(_cartItems);
+        // else 
+    }
+    private async Task CheckOut()
+    {
+        if(_tickets is not null)
+        {
+            await _checkOutManager.CheckOut(_tickets);
+            //_localStorage.Clear();
+        }
+        else
+        {
+            // Error message
+        }
     }
 
     private void RedirectUser()

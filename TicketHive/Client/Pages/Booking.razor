@@ -7,9 +7,11 @@
 @page "/Booking"
 @using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Managers;
+@using TicketHive.Shared.Extensions;
+
 
 <h1>Events</h1>
-<div class="container">
+@*<div class="container">
 			<div class="row">
 				<div class="card-group mx-auto">
 					@if (_allEvents is not null)
@@ -32,6 +34,33 @@
 }
         </div>
     </div>
+</div>*@
+<div class="container">
+    @if (_allEvents is not null)
+    {
+        @foreach (var chunk in _allEvents.ChunkBy(5))
+        {
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                @foreach (var e in chunk)
+                {
+                    <div class="col mb-4">
+                        <div class="card">
+                            <img src="@e.ImageString" class="card-img-top" alt="Event Image" />
+                            <div class="card-body">
+                                <h5 class="card-title red-foreground">@e.Name</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
+                                <p class="card-text blue-foreground">@e.Description</p>
+                                <p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
+                                <p class="card-text blue-foreground">@e.CountryName</p>
+                                <p class="card-text font-weight-bold">$@e.Price</p>
+                                <a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    }
 </div>
 <SearchbarButton />
 <div class="container">
@@ -89,7 +118,7 @@
     ViewModelManager viewManager = new();
 
     private IEnumerable<EventViewModel> _usersEvents = new List<EventViewModel>();
-    private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
+    private List<EventViewModel> _allEvents = new List<EventViewModel>();
     private IEnumerable<EventViewModel> _filteredEvents = new List<EventViewModel>();
     
     protected override async Task OnInitializedAsync()
@@ -100,7 +129,7 @@
 
     private async Task GetAllEvents()
     {
-        _allEvents = await unitOfService.EventService.GetAllAsync();
+        _allEvents = (await unitOfService.EventService.GetAllAsync()).ToList();
     }
     private async Task SortByDate()
     {
