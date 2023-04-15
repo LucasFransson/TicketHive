@@ -26,20 +26,23 @@ public static class CurrencyApiHelper
         {
 			var json = await response.Content.ReadAsStringAsync();
 
-			Root root = JsonConvert.DeserializeObject<Root>(json);
+			Root? root = JsonConvert.DeserializeObject<Root>(json);
 
-            if(userCurrency == "SEK" )
+            if (root is not null)
             {
-                return root.Rates.SEK;
+                if (userCurrency == "SEK")
+                {
+                    return root.Rates.SEK;
+                }
+                else if (userCurrency == "GBP")
+                {
+                    return root.Rates.GBP;
+                }
+                else
+                {
+                    return root.Rates.EUR;
+                }
             }
-			else if (userCurrency == "GBP")
-			{
-                return root.Rates.GBP;
-			}
-            else
-            {
-				return root.Rates.EUR;
-			}
 		}
 
         return 1;
