@@ -18,7 +18,7 @@ public static class CurrencyApiHelper
         HttpClient.DefaultRequestHeaders.Add("apikey", "9JMMGz1hmq0qbBfazIE9tIq7KVFgxqEq");
     }
 
-    public static async Task<double?> MakeCallAsync(string userCurrency)
+    public static async Task<double> MakeCallAsync(string userCurrency)
     {
         HttpResponseMessage response = await HttpClient.GetAsync("exchangerates_data/latest?symbols=EUR,GBP,HRK,CZK,DKK,HUF,PLN,RON,SEK,BGN,ISK&base=USD");
 

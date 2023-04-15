@@ -77,8 +77,13 @@ public class LocalStorageManager{
         await _localStorage.SetItemAsync($"{username}_cart", cartItems);
     }
 
-    public async Task AddExchangeRateAsync(double? exchangeRate, string username)
+    public async Task AddExchangeRateAsync(double exchangeRate, string username)
     {
+        if(exchangeRate == 0)
+        {
+            exchangeRate = 1;
+        }
+
         await _localStorage.SetItemAsync($"{username}_exchangeRate", exchangeRate);
 	}
 
@@ -91,7 +96,7 @@ public class LocalStorageManager{
     {
         double exchangeRate = await GetExchangeRateAsync(username);
 
-        if (exchangeRate == 0)
+        if (exchangeRate == 1)
         {
             currency = "USD";
         }
