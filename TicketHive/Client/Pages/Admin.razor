@@ -1,10 +1,11 @@
 ﻿@page "/admin"
-@using Newtonsoft.Json;
+@using System.ComponentModel;
 @using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Managers;
 @inject IUnitOfService unitOfService;
 @inject NavigationManager NavigationManager;
 @inject AuthenticationStateProvider _provider;
+@inject IJSRuntime jsRuntime;
 
 
 
@@ -28,18 +29,18 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="container">
+                <div class="container" style="color: #305076;">
                     <h2 class="mb-4">Add new event</h2>
                     <div class="card mb-4">
                         <div class="card-body">
                             <form>
                                 <div class="form-group">
                                     <label for="event-name">Event Name</label>
-                                    <input type="text" class="form-control" id="event-name">
+                                    <input type="text" class="form-control" id="event-name" @bind-value="@_eventName" @bind-value:event="oninput" />
                                 </div>
                                 <div class="form-group">
                                     <label for="event-type">Event Type</label>
-                                    <select class="form-control" id="event-type">
+                                    <select class="form-control" id="event-type" @bind-value="@_eventType" @bind-value:event="oninput">
                                         @if (_allEventTypes is not null)
                                         {
                                             foreach (var e in _allEventTypes)
@@ -56,22 +57,16 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="event-time">Event Time</label>
-                                    <input type="time" class="form-control" id="event-time">
+                                    <input type="time" class="form-control" id="event-time" @bind-value="@_eventTime" @bind-value:event="oninput">
                                 </div>
                                 <div class="form-group">
                                     <label for="end-time">End Time</label>
-                                    <input type="time" class="form-control" id="end-time">
+                                    <input type="time" class="form-control" id="end-time" @bind-value="@_endTime" @bind-value:event="oninput">
                                 </div>
-
-
-@*                                <div class="form-group">
-                                    <label for="event-country">Country</label>
-                                    <input type="text" class="form-control" id="event-country">
-                                </div>*@
 
                                     <div class="form-group">
                                     <label for="event-country">Country</label>
-                                    <select class="form-control" id="event-country">
+                                    <select class="form-control" id="event-country" @bind-value="@_eventCountry" @bind-value:event="oninput">
                                         @if (_allEventTypes is not null)
                                         {
                                             foreach (var e in _allCountries)
@@ -89,12 +84,12 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">$</span>
                                         </div>
-                                        <input type="text" class="form-control" id="event-price" placeholder="0.00">
+                                        <input type="text" class="form-control" id="event-price" placeholder="0.00" @bind-value="@_eventPrice" @bind-value:event="oninput">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="event-capacity">Event Capacity</label>
-                                    <input type="number" class="form-control" id="event-capacity" step="10.00">
+                                    <input type="number" class="form-control" id="event-capacity" step="10.00" @bind-value="@_eventCapacity" @bind-value:event="oninput">
                                 </div>
                             </form>
                         </div>
@@ -110,7 +105,7 @@
 </div>
 
 
-<div class="container">
+<div class="container" style="background-color: #fbe89c;">
     <div class="row row-cols-8">
         <div class="card-group mx-auto">
              @if (_allEvents is not null)
@@ -131,23 +126,6 @@
                             <button type="button" class="btn btn-danger position-absolute bottom-0" @onclick="(() => DeleteEvent(e.Id))">Delete</button>
                         </div>
                     </div>
-@*                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                            <div class="col mb-4">
-                                <div class="card position-relative">
-                                    <img src="/images/MicrosoftTeams-image (@picCounter).png" class="card-img-top" alt="Event Image" />
-                                    <div class="card-body">
-                                        <h5 class="card-title red-foreground">@e.Name</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
-                                        <p class="card-text blue-foreground">@e.StartTime - @e.EndTime</p>
-                                        <p class="card-text font-weight-bold">$@e.Price</p>
-                                        <button type="button" class="btn btn-danger position-absolute bottom-0" @onclick="(() => DeleteEvent(e.Id))">Delete</button>
-                                    </div>
-                                </div>
-                            </div>*@
-                    @*</div>*@
-           
-
-
                     picCounter++;
 
                 }
@@ -173,6 +151,30 @@
     private IEnumerable<EventTypeViewModel>? _allEventTypes = new List<EventTypeViewModel>();
     private IEnumerable<EventViewModel>? _allEvents = new List<EventViewModel>();
     private IEnumerable<CountryViewModel>? _allCountries = new List<CountryViewModel>();
+
+    //create variables of the user inputs
+    private string _eventName;
+    private EventTypeViewModel _eventType;
+    private DateTime _eventTime;
+    private DateTime _endTime;
+    private CountryViewModel _eventCountry;
+    private decimal _eventPrice;
+    private int _eventCapacity;
+
+    //EventViewModel newEvent = new EventViewModel
+    //    {
+    //        Name = null,
+    //        ImageString = $"MicrosoftTeams-image({new Random().Next(1, 25)}).png",
+    //        EventType = null,
+    //        StartTime = default,
+    //        EndTime = default,
+    //        Country = null,
+    //        Price = 0,
+    //        MaxUsers = 0
+    //    };
+
+
+
 
     private bool isAdmin;
 
@@ -203,15 +205,45 @@
     }
     private async Task GetAllEvents()
     {
-        _allEvents = /*(List<EventViewModel>?) */await unitOfService.EventService.GetAllAsync();
+        _allEvents = await unitOfService.EventService.GetAllAsync();
     }
     private void DeleteEvent(int id)
     {
-        unitOfService.EventService.Remove(id);
+        HandleButtonClick(id);
+
     }
     private void AddEvent()
     {
-        //unitOfService.EventService.AddAsync();
+        var newEvent = new EventViewModel
+            {
+            Name = _eventName,
+            ImageString = $"MicrosoftTeams-image({new Random().Next(1, 25)}).png",
+            EventType = _eventType,
+            StartTime = _eventTime,
+            EndTime = _endTime,
+            Country = _eventCountry,
+            Price = _eventPrice,
+            MaxUsers = _eventCapacity
+        };
+
+        unitOfService.EventService.AddAsync(newEvent);
     }
 
+    private async Task HandleButtonClick(int id)
+    {
+        bool confirmed = await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to proceed?");
+
+        if (confirmed)
+        {
+            unitOfService.EventService.Remove(id);
+        }
+        else
+        {
+           
+        }
+    }
+
+
+
 }
+
