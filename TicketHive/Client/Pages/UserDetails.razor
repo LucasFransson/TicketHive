@@ -1,7 +1,9 @@
 ﻿@page "/userdetails"
 @using TicketHive.Bll.Services.Interfaces;
+@using TicketHive.Client.LocalStorage;
 @inject IUnitOfService unitOfService;
 @inject NavigationManager NavigationManager;
+@inject LocalStorageManager _localStorageStorage;
 
 
 
@@ -27,7 +29,7 @@
                             <label for="confirm-password">Confirm Password</label>
                             <input type="password" class="form-control" id="confirm-password" @bind-value="@confirmPassword">
                         </div>
-                        <button type="submit" class="btn btn-primary" @onclick="ChangePassword">Save Changes</button>
+                        <button type="submit" class="btn btn-primary" @onclick:preventDefault @onclick="@ChangePassword">Save Changes</button>
                     </form>
                 </div>
             </div>
@@ -39,7 +41,7 @@
                     <form>
                         <div class="form-group">
                             <label for="country">Country</label>
-                            <select class="form-control" id="country">
+                            <select class="form-control" @bind="@countryName" id="country">
                                 @if (_allCountries is not null)
                                 {
                                     foreach (var e in _allCountries)
@@ -49,7 +51,7 @@
                                 }
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="submit" class="btn btn-primary" @onclick:preventDefault @onclick="@ChangeCountry">Save Changes</button>
                     </form>
                 </div>
             </div>
@@ -64,6 +66,7 @@
     private string currentPassword;
     private string newPassword;
     private string confirmPassword;
+    private string countryName;
 
 
     protected override async Task OnInitializedAsync()
@@ -76,8 +79,26 @@
         _allCountries = await unitOfService.CountryService.GetAllAsync();
     }
 
-    private void ChangePassword()
+    private async Task ChangePassword()
     {
-        
+        if (newPassword == currentPassword && string.IsNullOrEmpty(currentPassword) == false
+            && string.IsNullOrEmpty(currentPassword) == false)
+        {
+            await unitOfService.UserService.UpdateAsync(new UserViewModel
+                {
+                    CurrentPassword = currentPassword,
+                    NewPassword = newPassword,
+                });
+        }
+    }
+    private async Task ChangeCountry()
+    {
+        if (string.IsNullOrEmpty(countryName) == false)
+        {
+            await unitOfService.UserService.UpdateAsync(new UserViewModel
+                {
+                    CountryName = countryName,
+                });
+        }
     }
 }

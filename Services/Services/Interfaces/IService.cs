@@ -16,5 +16,6 @@ namespace TicketHive.Bll.Services.Interfaces
         void Remove(TEntity entity);
         void Remove(int id);
         void RemoveRange(IEnumerable<TEntity> entities);
+        Task UpdateAsync(TEntity entity);
     }
 }

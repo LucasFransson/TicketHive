@@ -83,5 +83,10 @@ namespace TicketHive.Bll.Services.Implementations
 			}
 			return response;
 		}
-	}
+        public async Task UpdateAsync(TEntity entity)
+        {
+            var response = await _httpClient.PutAsJsonAsync($"/api/{GetAPIName().ToLower()}", entity);
+            response.EnsureSuccessStatusCode();
+        }
+    }
 }

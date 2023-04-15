@@ -12,6 +12,8 @@ public class UserDTO
 	{
 		public string? CountryName { get; set; }
 		public string? Currency { get; set; }
+        public string? CurrentPassword { get; set; }
+        public string? NewPassword { get; set; }
 
 
     public UserDTO(string countryName, string currency)

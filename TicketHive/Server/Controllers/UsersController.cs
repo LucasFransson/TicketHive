@@ -16,14 +16,16 @@ public class usersController : ControllerBase
 	private readonly SignInManager<UserModel> _signInManager;
 	private readonly AppDbContext _appDbContext;
     private readonly IUnitOfWork _unitOfWork;
+    private readonly UserManager<UserModel> _userManager;
 
     public IUnitOfWork UnitOfWork { get; }
 
-	public usersController(SignInManager<UserModel> signInManager, AppDbContext appDbContext, IUnitOfWork unitOfWork)
+	public usersController(SignInManager<UserModel> signInManager, AppDbContext appDbContext, IUnitOfWork unitOfWork, UserManager<UserModel> userManager)
 	{
 		_signInManager = signInManager;
 		_appDbContext = appDbContext;
 		_unitOfWork = unitOfWork;
+		_userManager = userManager;
 
 	}
 
@@ -63,8 +65,27 @@ public class usersController : ControllerBase
 
 	// PUT api/<usersController>/5
 	[HttpPut("{id}")]
-	public void Put(int id, [FromBody] string value)
+	public async Task<ActionResult> Put(string id, [FromBody] UserDTO userDto)
 	{
+		var user = await _userManager.GetUserAsync(HttpContext.User);
+
+		ArgumentNullException.ThrowIfNull(user);
+
+		if (user.Id != id)
+		{
+			return new UnauthorizedResult();
+		}
+
+		if (string.IsNullOrEmpty(userDto.CurrentPassword) == false && string.IsNullOrEmpty(userDto.NewPassword) == false)
+		{
+			var result = await _userManager.ChangePasswordAsync(user, userDto.CurrentPassword, userDto.NewPassword);
+
+			if (result.Succeeded == false)
+			{
+				return new BadRequestObjectResult(result.Errors);
+			}
+		}
+		return new OkResult();
 	}
 
 	// DELETE api/<usersController>/5

@@ -11,6 +11,8 @@ public class UserViewModel
 {
 	public string? CountryName { get; set; }
 	public string? Currency { get; set; }
+    public string? CurrentPassword { get; set; }
+    public string? NewPassword { get; set; }
 
     public UserViewModel()
     {
