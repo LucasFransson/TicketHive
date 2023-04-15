@@ -1,7 +1,5 @@
 ﻿@page
 @model TicketHive.Server.Areas.Identity.Pages.Account.RegistrationModel
-@{
-}
 
 <h1>Register</h1>
 
@@ -10,6 +8,19 @@
     <input id="input-username" type="text" asp-for="Username" />
     <label for="input-password">Password:</label>
     <input id="input-password" type="password" asp-for="Password" />
+    <label for="input-country">Country:</label>
+    <select id="input-country" asp-for="SelectedCountry">
+        @if (Model.Countries is not null)
+        {
+            @foreach (var country in Model.Countries)
+            {
+                if (country.IsAvailableForUserRegistration)
+                {
+                    <option>@country.Name</option>
+                }
+            }
+        }
+    </select>
     <input type="submit" value="Register" />
     <div>
         <span class="text-danger" asp-validation-for="Username"></span>
