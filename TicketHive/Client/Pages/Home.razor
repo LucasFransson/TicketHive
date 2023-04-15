@@ -1,12 +1,13 @@
 ﻿@using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Managers;
+@using TicketHive.Shared.Extensions;
 
 @inject AuthenticationStateProvider provider;
 @inject NavigationManager NavigationManager;
 @inject IUnitOfService unitOfService;
 @page "/Home"
 
-<div class="container">
+@*<div class="container">
 @foreach(var e in _allEvents)
 {
 <div class="card mr-5">
@@ -25,7 +26,89 @@
 </div>
 
 }
+</div>*@
+@*<div class="container">
+    <div class="row">
+        @foreach(var e in _allEvents)
+        {
+            <div class="col-md-3">
+                <div class="card mr-5">
+                    <img src="@e.ImageString" class="card-img-top" alt="Event Image" />
+                    <div class="card-body">
+                        <h5 class="card-title red-foreground">@e.Name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
+                        <p class="card-text blue-foreground">@e.Description</p>
+                        <p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
+                        <p class="card-text blue-foreground">@e.CountryName</p>
+                        <p class="card-text font-weight-bold">$@e.Price</p>
+                        <a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+            counter++;
+            if (count % 4 == 0)
+            {
+                <div class="row">
+            }
+        }
+    </div>
+</div>*@
+
+
+@*<div class="container">
+    @foreach (var chunk in _allEvents.ChunkBy(4))
+    {
+        <div class="row">
+            @foreach (var e in chunk)
+            {
+                <div class="col-md-3">
+                    <div class="card mr-5">
+                        <img src="@e.ImageString"
+                             class="card-img-top"
+                             alt="Event Image" />
+                        <div class="card-body">
+                            <h5 class="card-title red-foreground">@e.Name</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
+                            <p class="card-text blue-foreground">@e.Description</p>
+                            <p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
+                            <p class="card-text blue-foreground">@e.CountryName</p>
+                            <p class="card-text font-weight-bold">$@e.Price</p>
+                            <a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>*@
+
+<div class="container">
+    @foreach(var chunk in _allEvents.ChunkBy(4))
+    {
+        <div class="row">
+            @foreach(var e in chunk)
+            {
+                <div class="@($"col-md-{Math.Max(12 / chunk.Count, 3)}")">
+                    <div class="card mr-5">
+                        <img src="@e.ImageString"
+                             class="card-img-top"
+                             alt="Event Image" />
+                        <div class="card-body">
+                            <h5 class="card-title red-foreground">@e.Name</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
+                            <p class="card-text blue-foreground">@e.Description</p>
+                            <p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
+                            <p class="card-text blue-foreground">@e.CountryName</p>
+                            <p class="card-text font-weight-bold">$@e.Price</p>
+                            <a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 </div>
+
 <SearchbarButton/>
 
 <div>
@@ -43,7 +126,10 @@
 
 
 @code {
-    private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
+    //private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
+
+        
+    private List<EventViewModel> _allEvents = new List<EventViewModel>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -52,6 +138,6 @@
 
     private async Task GetAllEvents()
     {
-        _allEvents = await unitOfService.EventService.GetAllAsync();
+        _allEvents = (await unitOfService.EventService.GetAllAsync()).ToList();
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Net.Security;
-using TicketHive.Shared.DTO;
+
 using TicketHive.Shared.DTOs;
 
 namespace TicketHive.Shared.ViewModels

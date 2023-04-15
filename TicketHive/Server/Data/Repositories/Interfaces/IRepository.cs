@@ -11,6 +11,6 @@ namespace TicketHive.Server.Data.Repositories.Interfaces
         Task AddRangeAsync(IEnumerable<TEntity> entities);
         void Update(TEntity entity);
         void Remove(TEntity entity);
-        Task RemoveRange(IEnumerable<TEntity> entities);
+        Task RemoveRangeAsync(IEnumerable<TEntity> entities);
     }
 }

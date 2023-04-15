@@ -28,10 +28,21 @@ namespace TicketHive.Bll.Services.Managers
                 TicketViewModel newTicket = await _unitOfService.TicketService.GetByIdAsync(item.Id);
                 tickets.Add(newTicket);
             }
-            return tickets;
 
+            return tickets;
         }
-		public async Task<decimal> GetTotalCost(params CartItemViewModel[] items)
+        public async Task<List<TicketViewModel>> GetTickets(List<CartItemViewModel> items)
+        {
+            List<TicketViewModel> tickets = new();
+            foreach (var item in items)
+            {
+                TicketViewModel newTicket = await _unitOfService.TicketService.GetByIdAsync(item.Id);
+                tickets.Add(newTicket);
+            }
+
+            return tickets;
+        }
+        public decimal GetTotalCost(params CartItemViewModel[] items)
 		{
 			decimal totalCost = 0;
 			foreach (var item in items)
@@ -90,7 +101,7 @@ namespace TicketHive.Bll.Services.Managers
 			// Removes all the tickets from the db
 			foreach (var ticket in tickets)
 			{
-				_unitOfService.TicketService.RemoveRange(tickets); // Await for some confirmation? 
+				await _unitOfService.TicketService.RemoveRange(tickets); // Await for some confirmation? 
 			}
 		}
 		public void ConfirmBuy()
