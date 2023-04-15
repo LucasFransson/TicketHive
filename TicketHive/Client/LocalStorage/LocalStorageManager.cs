@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using TicketHive.Shared.ViewModels;
@@ -29,14 +30,14 @@ public class LocalStorageManager{
 
     public async Task<bool> CheckIfUserExistsAsync(string username)
     {
-        return await _localStorage.ContainKeyAsync(username);
+        return await _localStorage.ContainKeyAsync($"{username}_cart");
     }
 
-    public async Task AddUser(string username)
+    private async Task AddUser(string username)
     {
         List<CartItemViewModel> cartItems = new();
 
-        await _localStorage.SetItemAsync($"{username}", cartItems);
+        await _localStorage.SetItemAsync($"{username}_cart", cartItems);
     }
 
     public async Task AddCartItemAsync(CartItemViewModel cartItem, string username)
@@ -45,19 +46,26 @@ public class LocalStorageManager{
         
         cartItems.Add(cartItem);
 
-        await _localStorage.SetItemAsync($"{username}", cartItems);
+        await _localStorage.SetItemAsync($"{username}_cart", cartItems);
     }
 
     public async Task<List<CartItemViewModel>?> GetCartItems(string username)
     {
-        return await _localStorage.GetItemAsync<List<CartItemViewModel>>(username);
+        return await _localStorage.GetItemAsync<List<CartItemViewModel>>($"{username}_cart");
     }
 
     public async Task RemoveCartItemAsync(List<CartItemViewModel> cartItems, CartItemViewModel cartItem, string username)
     {
         cartItems.Remove(cartItem);
 
-        await _localStorage.SetItemAsync($"{username}", cartItems);
+        await _localStorage.SetItemAsync($"{username}_cart", cartItems);
+    }
+
+    public async Task ClearCartAsync(string username)
+    {
+        List<CartItemViewModel> cartItems = new();
+
+        await _localStorage.SetItemAsync($"{username}_cart", cartItems);
     }
 
     public async Task RemoveEventFromCartAsync(CartItemViewModel cartItem, string username)
@@ -66,26 +74,33 @@ public class LocalStorageManager{
 
         cartItems.RemoveAll(e => e.Id.Equals(cartItem.Id));
 
-        await _localStorage.SetItemAsync($"{username}", cartItems);
+        await _localStorage.SetItemAsync($"{username}_cart", cartItems);
     }
 
-    public async Task AddExchangeRateAsync(double? exchangeRate)
+    public async Task AddExchangeRateAsync(double? exchangeRate, string username)
     {
-        await _localStorage.SetItemAsync("exchangeRate", exchangeRate);
+        await _localStorage.SetItemAsync($"{username}_exchangeRate", exchangeRate);
 	}
 
-	public async Task<double> GetExchangeRateAsync()
+	public async Task<double> GetExchangeRateAsync(string username)
 	{
-		return await _localStorage.GetItemAsync<double>("exchangeRate");
+		return await _localStorage.GetItemAsync<double>($"{username}_exchangeRate");
 	}
 
-    public async Task AddCurrencyForDisplayAsync(string currency)
+    public async Task AddCurrencyForDisplayAsync(string currency, string username)
     {
-        await _localStorage.SetItemAsync("currency", currency);
+        double exchangeRate = await GetExchangeRateAsync(username);
+
+        if (exchangeRate == 0)
+        {
+            currency = "USD";
+        }
+
+        await _localStorage.SetItemAsync($"{username}_currency", currency);
     }
 
-    public async Task<string> GetCurrencyForDisplayAsync()
+    public async Task<string> GetCurrencyForDisplayAsync(string username)
     {
-        return await _localStorage.GetItemAsync<string>("currency");
+        return await _localStorage.GetItemAsync<string>($"{username}_currency");
     }
 }

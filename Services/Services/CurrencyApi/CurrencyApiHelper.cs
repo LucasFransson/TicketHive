@@ -10,10 +10,7 @@ namespace TicketHive.Bll.Services.CurrencyApi;
 
 public static class CurrencyApiHelper
 {
-    public static HttpClient HttpClient { get; set; } = new()
-    {
-
-    };
+    public static HttpClient HttpClient { get; set; } = new();
 
     public static void ApiInitializer()
     {
@@ -45,6 +42,6 @@ public static class CurrencyApiHelper
 			}
 		}
 
-        return 0;
+        return 1;
     }
 }
