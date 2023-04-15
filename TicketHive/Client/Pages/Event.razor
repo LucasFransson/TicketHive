@@ -35,15 +35,13 @@
     protected override async Task OnInitializedAsync()
     {
         ev = await _unitOfService.EventService.GetByIdAsync(Id);
-
         var authState = await _provider.GetAuthenticationStateAsync();
-
         username = authState.User.Identity.Name;
 
         await _localStorage.InitializeUserAsync(username);
 
-        exchangeRate = await _localStorage.GetExchangeRateAsync();
-        currency = await _localStorage.GetCurrencyForDisplayAsync();
+        exchangeRate = await _localStorage.GetExchangeRateAsync(username);
+        currency = await _localStorage.GetCurrencyForDisplayAsync(username);
     }
 
     private async Task AddToCart()

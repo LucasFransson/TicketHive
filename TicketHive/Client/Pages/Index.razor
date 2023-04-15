@@ -140,10 +140,10 @@
 		{
 			UserViewModel? model = await unitOfService.UserService.GetByNameAsync(username);
 
-			double? userExchangeRate = await CurrencyApiHelper.MakeCallAsync(model.Currency);
+			double userExchangeRate = await CurrencyApiHelper.MakeCallAsync(model.Currency);
 
-			await localStorage.AddExchangeRateAsync(userExchangeRate);
-			await localStorage.AddCurrencyForDisplayAsync(model.Currency);
+			await localStorage.AddExchangeRateAsync(userExchangeRate,username);
+			await localStorage.AddCurrencyForDisplayAsync(model.Currency,username);
 		}
 
 		await GetAllEvents();
