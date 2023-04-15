@@ -16,9 +16,9 @@
 @foreach (var e in _allEvents)
 {
     <div class="card mr-5">
-        <img src="/images/MicrosoftTeams-image (@e.ImageString).png"
-             class="card-img-top"
-             alt="Event Image" />
+                        <img src=@e.ImageString
+                             class="card-img-top"
+                             alt="Event Image" />
         <div class="card-body">
             <h5 class="card-title red-foreground">@e.Name</h5>
             <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
@@ -45,7 +45,6 @@
     <table class="table">
         <thead>
 
-          
             <tr>
                 <th scope="col"> </th>
                 <th scope="col">Event</th>

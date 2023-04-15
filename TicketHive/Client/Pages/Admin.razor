@@ -63,7 +63,6 @@
                                     <input type="time" class="form-control" id="end-time">
                                 </div>
 
-
 @*                                <div class="form-group">
                                     <label for="event-country">Country</label>
                                     <input type="text" class="form-control" id="event-country">
@@ -81,7 +80,6 @@
                                         }
                                     </select>
                                   </div>
-
 
                                 <div class="form-group">
                                     <label for="event-price">Event Price</label>
@@ -117,11 +115,10 @@
             {
                 @foreach (var e in _allEvents)
                 {
-                      int picCounter = 1;
 
                     <div class="card mr-5 position-relative">
                         <div class="card-body">
-                             <img src="/images/MicrosoftTeams-image (@picCounter).png"
+                             <img src=@e.ImageString
                                  class="card-img-top"
                                  alt="Event Image" />
                             <h5 class="card-title red-foreground">@e.Name</h5>
@@ -146,9 +143,6 @@
                             </div>*@
                     @*</div>*@
            
-
-
-                    picCounter++;
 
                 }
             }

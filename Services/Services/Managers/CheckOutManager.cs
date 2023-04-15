@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TicketHive.Bll.Services.Implementations;
+using TicketHive.Bll.Services.Interfaces;
 using TicketHive.Shared.DTO;
 using TicketHive.Shared.DTOs;
 using TicketHive.Shared.ViewModels;
@@ -13,8 +14,8 @@ namespace TicketHive.Bll.Services.Managers
 {
     public class CheckOutManager
     {
-        private readonly UnitOfService _unitOfService;
-        public CheckOutManager(UnitOfService unitOfService)
+        private readonly IUnitOfService _unitOfService;
+        public CheckOutManager(IUnitOfService unitOfService)
         {
             _unitOfService = unitOfService;
         }
@@ -28,8 +29,9 @@ namespace TicketHive.Bll.Services.Managers
                 tickets.Add(newTicket);
             }
             return tickets;
+
         }
-		public decimal GetTotalCost(params CartItemViewModel[] items)
+		public async Task<decimal> GetTotalCost(params CartItemViewModel[] items)
 		{
 			decimal totalCost = 0;
 			foreach (var item in items)
@@ -44,7 +46,37 @@ namespace TicketHive.Bll.Services.Managers
 
 			return totalCost;
 		}
-		public void CheckOut(List<TicketViewModel> tickets)
+        //public async Task<decimal> GetTotalCost(List<CartItemViewModel>items)
+        //{
+        //    decimal totalCost = 0;
+        //    foreach (var item in items)
+        //    {
+        //        totalCost += item.Price;
+        //    }
+
+        //    if (totalCost <= 0)
+        //    {
+        //        return 0;
+        //    }
+
+        //    return totalCost;
+        //}
+        public decimal GetTotalCost(List<CartItemViewModel> items)
+        {
+            decimal totalCost = 0;
+            foreach (var item in items)
+            {
+                totalCost += item.Price;
+            }
+
+            if (totalCost <= 0)
+            {
+                return 0;
+            }
+
+            return totalCost;
+        }
+        public async Task CheckOut(List<TicketViewModel> tickets)
 		{
 			List<SoldTicketViewModel> usersTickets = new();
 

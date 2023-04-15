@@ -10,9 +10,9 @@
 @foreach(var e in _allEvents)
 {
 <div class="card mr-5">
-    <img src="/images/MicrosoftTeams-image (@e.ImageString).png"
-         class="card-img-top"
-         alt="Event Image" />
+            <img src=@e.ImageString
+                 class="card-img-top"
+                 alt="Event Image" />
     <div class="card-body">
         <h5 class="card-title red-foreground">@e.Name</h5>
         <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
@@ -37,62 +37,7 @@
         <li class="list-group-item">And a fifth one</li>
     </ul>
 </div>
-@*<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card">
-      <img src="/images/MicrosoftTeams-image (1).png" class="card-img-top" alt="eventbild">
-      <div class="card-body">
-        <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="/images/MicrosoftTeams-image (10).png" class="card-img-top" alt="eventbild">
-      <div class="card-body">
-        <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-      </div>
-    </div>
-  </div>
-    <div class="col">
-        <div class="card">
-            <img src="/images/MicrosoftTeams-image (11).png" class="card-img-top" alt="eventbild">
-            <div class="card-body">
-                <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card">
-            <img src="/images/MicrosoftTeams-image (12).png" class="card-img-top" alt="eventbild">
-            <div class="card-body">
-                <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card">
-            <img src="/images/MicrosoftTeams-image (13).png" class="card-img-top" alt="eventbild">
-            <div class="card-body">
-                <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card">
-            <img src="/images/MicrosoftTeams-image (14).png" class="card-img-top" alt="eventbild">
-            <div class="card-body">
-                <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-            </div>
-        </div>
-    </div>*@
-@*</div>*@
+
 <br />
 
 

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using TicketHive.Bll.Services.CurrencyApi;
 using TicketHive.Bll.Services.Implementations;
 using TicketHive.Bll.Services.Interfaces;
+using TicketHive.Bll.Services.Managers;
 using TicketHive.Client;
 using TicketHive.Client.LocalStorage;
 
@@ -23,6 +24,7 @@ builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().Cre
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 builder.Services.AddScoped<IUnitOfService,UnitOfService>();
 builder.Services.AddScoped<LocalStorageManager>();
+builder.Services.AddScoped<CheckOutManager>();
 
 builder.Services.AddApiAuthorization();
 
