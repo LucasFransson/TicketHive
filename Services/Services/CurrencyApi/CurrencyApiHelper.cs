@@ -10,10 +10,7 @@ namespace TicketHive.Bll.Services.CurrencyApi;
 
 public static class CurrencyApiHelper
 {
-    public static HttpClient HttpClient { get; set; } = new()
-    {
-
-    };
+    public static HttpClient HttpClient { get; set; } = new();
 
     public static void ApiInitializer()
     {
@@ -21,7 +18,7 @@ public static class CurrencyApiHelper
         HttpClient.DefaultRequestHeaders.Add("apikey", "9JMMGz1hmq0qbBfazIE9tIq7KVFgxqEq");
     }
 
-    public static async Task<double?> MakeCallAsync(string userCurrency)
+    public static async Task<double> MakeCallAsync(string userCurrency)
     {
         HttpResponseMessage response = await HttpClient.GetAsync("exchangerates_data/latest?symbols=EUR,GBP,HRK,CZK,DKK,HUF,PLN,RON,SEK,BGN,ISK&base=USD");
 
@@ -29,22 +26,25 @@ public static class CurrencyApiHelper
         {
 			var json = await response.Content.ReadAsStringAsync();
 
-			Root root = JsonConvert.DeserializeObject<Root>(json);
+			Root? root = JsonConvert.DeserializeObject<Root>(json);
 
-            if(userCurrency == "SEK" )
+            if (root is not null)
             {
-                return root.Rates.SEK;
+                if (userCurrency == "SEK")
+                {
+                    return root.Rates.SEK;
+                }
+                else if (userCurrency == "GBP")
+                {
+                    return root.Rates.GBP;
+                }
+                else
+                {
+                    return root.Rates.EUR;
+                }
             }
-			else if (userCurrency == "GBP")
-			{
-                return root.Rates.GBP;
-			}
-            else
-            {
-				return root.Rates.EUR;
-			}
 		}
 
-        return 0;
+        return 1;
     }
 }
