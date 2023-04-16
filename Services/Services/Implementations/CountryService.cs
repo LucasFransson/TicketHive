@@ -13,16 +13,16 @@ namespace TicketHive.Bll.Services.Implementations
     public class CountryService : Service<CountryViewModel>, ICountryService
     {
         //private readonly HttpClient _httpClient;
-        private readonly HttpClient _httpClient;
+        //private readonly HttpClient _httpClient;
 
         public CountryService(HttpClient httpClient) : base(httpClient)
         {
-            _httpClient = httpClient;
+            //_httpClient = httpClient;
         }
 
-        public async Task<CountryViewModel?> GetByNameAsync(string name)
-        {
-			return await _httpClient.GetFromJsonAsync<CountryViewModel>($"/api/countries/{name}");
-		}
+  //      public async Task<CountryViewModel?> GetByNameAsync(string name)
+  //      {
+		//	return await _httpClient.GetFromJsonAsync<CountryViewModel>($"/api/countries/{name}");
+		//}
 	}
 }

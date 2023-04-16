@@ -13,17 +13,17 @@ namespace TicketHive.Bll.Services.Implementations
 {
     public class TicketService : Service<TicketViewModel>, ITicketService
     {
-        private readonly HttpClient _httpClient;
+        //private readonly HttpClient _httpClient;
         public TicketService(HttpClient httpClient) : base(httpClient)
         {
-            _httpClient = httpClient;
+            //_httpClient = httpClient;
         }
 
-        public async Task<TicketViewModel?> GetByEventId(int id)
-        {
+        //public async Task<TicketViewModel?> GetByEventId(int id)
+        //{
 
-            return await _httpClient.GetFromJsonAsync<TicketViewModel>($"/api/tickets/{id}");
+        //    return await _httpClient.GetFromJsonAsync<TicketViewModel>($"/api/tickets/{id}");
 
-        }
+        //}
     }
 }
