@@ -58,7 +58,7 @@ public class RegistrationModel : PageModel
 
                 if (signInResult.Succeeded)
                 {
-                    return Redirect("~/");
+                    return Redirect("/Home");
                 }
             }
         }

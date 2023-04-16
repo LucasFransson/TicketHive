@@ -10,7 +10,6 @@
 @using TicketHive.Client.LocalStorage;
 @using TicketHive.Shared.ViewModels;
 @page "/"
-@attribute [Authorize]
 @inject AuthenticationStateProvider provider;
 @inject IJSRuntime JsRuntime;
 @inject NavigationManager NavigationManager;
@@ -19,8 +18,6 @@
 
 
 <PageTitle>Index</PageTitle>
-
-<a href="/Identity/Account/UserDetails/user">UserDetails</a>
 
 
 <div class="container">
@@ -44,9 +41,7 @@
 							alt="First Slide"
 						/>
 						<div class="carousel-caption d-none d-md-block">
-							<h5 class="card-title">Event Name</h5>
-							<p class="card-text">Event Start Time - Event End Time</p>
-							<a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
+					<a href="/Identity/Account/Login" class="btn btn-buy btn-block">Buy Tickets</a>
 						</div>
 					</div>
 					<div class="carousel-item">
@@ -55,9 +50,7 @@
 							alt="Second Slide"
 						/>
 						<div class="carousel-caption d-none d-md-block">
-							<h5 class="card-title">Event Name</h5>
-							<p class="card-text">Event Start Time - Event End Time</p>
-							<a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
+					<a href="/Identity/Account/Login" class="btn btn-buy btn-block">Buy Tickets</a>
 						</div>
 					</div>
 					<div class="carousel-item">
@@ -66,9 +59,7 @@
 							alt="Third Slide"
 						/>
 						<div class="carousel-caption d-none d-md-block">
-							<h5 class="card-title">Event Name</h5>
-							<p class="card-text">Event Start Time - Event End Time</p>
-							<a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
+					<a href="/Identity/Account/Login" class="btn btn-buy btn-block">Buy Tickets</a>
 						</div>
 					</div>
 				</div>
@@ -91,64 +82,12 @@
 			</div>
 		</div>
 
-<SearchbarButton />
-
-		<div class="container">
-			<div class="row">
-				<div class="card-group mx-auto">
-					@if (_allEvents is not null)
-			{
-				foreach (var e in _allEvents)
-						{
-					<div class="card mr-5">
-						<img src=@e.ImageString
-							 class="card-img-top"
-							 alt="Event Image" />
-						<div class="card-body"> 
-							<h5 class="card-title red-foreground">@e.Name</h5>
-							<h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
-							<p class="card-text blue-foreground">@e.Description</p>
-							<p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
-							<p class="card-text blue-foreground">@e.CountryName</p>
-			@*				<p class="card-text font-weight-bold">$@e.Price</p>*@
-							<button class="btn btn-buy btn-block" @onclick="(()=>GoToEvent(e.Id))">Buy Tickets</button>
-						</div>
-					</div>
-				}
-			}
-			else
-			{
-				<div class="card mr-5">
-					<div class="card-body">
-						<h5 class="card-title">Something Went Wrong</h5>
-						<p class="card-text">Unable to load event information</p>
-						</div>
-					</div>
-			}
-				</div>
-			</div>
-		</div>
-
-
 @code {
 	private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
 	private IEnumerable<CountryViewModel> _allCountries = new List<CountryViewModel>();
 
 	protected override async Task OnInitializedAsync()
 	{
-		var authState = await provider.GetAuthenticationStateAsync();
-
-		var username = authState.User.Identity.Name;
-
-		if (!string.IsNullOrWhiteSpace(username))
-		{
-			UserViewModel? model = await unitOfService.UserService.GetByNameAsync(username);
-
-			double userExchangeRate = await CurrencyApiHelper.MakeCallAsync(model.Currency);
-
-			await localStorage.AddExchangeRateAsync(userExchangeRate,username);
-			await localStorage.AddCurrencyForDisplayAsync(model.Currency,username);
-		}
 
 		await GetAllEvents();
 	}
@@ -182,14 +121,3 @@
 	}
   }
 
-
-@*    private bool isAdmin;
-
-    protected override async Task OnInitializedAsync()
-    {
-        var authState = await provider.GetAuthenticationStateAsync();
-
-        var name = authState.User.Identity.Name;
-
-        isAdmin = authState.User.IsInRole("Admin");
-    }*@
