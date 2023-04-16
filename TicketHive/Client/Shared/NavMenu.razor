@@ -1,4 +1,4 @@
-﻿@inject NavigationManager NavigationManager;
+﻿@inject AuthenticationStateProvider _provider
 
 <header class="headerbar">
     <h1>TicketHive</h1>
@@ -6,7 +6,9 @@
 </header>
 <div class="navbar">
 <nav class="top-menu">
-    <ol>
+        <ol>
+        <AuthorizeView>
+        <Authorized>
         <li class="top-menu-item">
             <a href="/home">Home</a>
         </li>
@@ -27,18 +29,47 @@
         <li class="top-menu-item">
             <a href="/ShoppingCart">Shopping Cart</a>
         </li>
+                <li class="top-menu-item">
+            <a>@username</a>
+            <ol class="top-sub-menu">
+                <li class="top-menu-item">
+                    <a href="/Identity/Account/UserDetails/@username">My details</a>
+                </li>
+            </ol>
+        </li>
+        <li class="top-menu-item">
+            <a href="/Identity/Account/Logout">Log Out</a>
+        </li>
+        </Authorized>
+        </AuthorizeView>
+        <AuthorizeView Roles="Admin">
+            <li class="top-menu-item">
+                <a href="/Admin">Admin</a>
+            </li>
+        </AuthorizeView>
+        <AuthorizeView>
+        <NotAuthorized>
         <li class="top-menu-item">
             <a href="/Identity/Account/Login">Login</a>
         </li>
         <li class="top-menu-item">
             <a href="/Identity/Account/Register">Register</a>
         </li>
+        </NotAuthorized>
+        </AuthorizeView>
     </ol>
-   
+    
 </nav>
     <div class="nav-filler"></div>
 </div>
 
 @code {
+    private string username;
 
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await _provider.GetAuthenticationStateAsync();
+
+        username = authState.User.Identity.Name;
+    }
 }
