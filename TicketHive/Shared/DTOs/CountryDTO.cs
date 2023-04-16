@@ -16,10 +16,10 @@ namespace TicketHive.Shared.DTOs
         public bool IsAvailableForUserRegistration { get; set; }
 
 
-        public CountryDTO()
-        {
+        //public CountryDTO()
+        //{
             
-        }
+        //}
 
         // Constructor for DTO from Model Input Parameters
      

@@ -6,7 +6,7 @@
 @inject IUnitOfService unitOfService;
 @inject NavigationManager NavigationManager;
 @inject AuthenticationStateProvider _provider;
-@inject IJSRuntime jsRuntime;
+@*@inject IJSRuntime jsRuntime;*@
 
 
 <h3>Admin</h3>
@@ -219,7 +219,7 @@
     }
     private async Task DeleteEvent(int id)
     {
-        await HandleButtonClick(id);
+        //await HandleButtonClick(id);
 
     }
     private async Task AddEvent()
@@ -239,17 +239,17 @@
         //jsRuntime.InvokeAsync("$('#myModal').modal('hide');");
     }
 
-    private async Task HandleButtonClick(int id)
-    {
-        bool confirmed = await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to proceed?");
+    //private async Task HandleButtonClick(int id)
+    //{
+    //    bool confirmed = await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to proceed?");
 
-        if (confirmed)
-        {
-            unitOfService.EventService.Remove(id);
-        }
-        else
-        {
+    //    if (confirmed)
+    //    {
+    //        unitOfService.EventService.Remove(id);
+    //    }
+    //    else
+    //    {
            
-        }
-    }
+    //    }
+    //}
 }

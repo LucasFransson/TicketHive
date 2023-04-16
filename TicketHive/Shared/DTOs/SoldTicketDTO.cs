@@ -18,10 +18,10 @@ namespace TicketHive.Shared.DTOs
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
 
-        public SoldTicketDTO()
-        {
+        //public SoldTicketDTO()
+        //{
             
-        }
+        //}
         // Constructor for DTO from Model Input Parameters
         public SoldTicketDTO(int id, int eventId, EventDTO? eventDTO, string username, decimal price, DateTime startTime, DateTime endTime)
         {
