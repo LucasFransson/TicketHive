@@ -30,6 +30,7 @@ public class EventsController : ControllerBase
                                                                         em.ImageString,
                                                                         em.MaxUsers,
                                                                         em.TicketsLeft,
+                                                                        em.SoldTickets?.Count() ?? 0,
                                                                         em.Price,
                                                                         em.StartTime,
                                                                         em.EndTime,
@@ -94,6 +95,7 @@ public class EventsController : ControllerBase
                                     eventModel.ImageString,
                                     eventModel.MaxUsers,
                                     eventModel.TicketsLeft,
+                                    eventModel.SoldTickets?.Count() ?? 0,
                                     eventModel.Price,
                                     eventModel.StartTime,
                                     eventModel.EndTime,
@@ -104,7 +106,7 @@ public class EventsController : ControllerBase
                                                    ),
                                     eventModel.EventTypeName,
                                     new EventTypeDTO(eventModel.EventType.Name)
-                                    );
+                                    ) ;
 
             //EventDTO eventDTO = new()
             //{
