@@ -8,7 +8,7 @@
 @inject IUnitOfService unitOfService;
 @inject NavigationManager NavigationManager;
 @inject AuthenticationStateProvider _provider;
-@*@inject IJSRuntime jsRuntime;*@
+@inject IJSRuntime jsRuntime;
 
 
 <h2>Admin</h2>
@@ -205,23 +205,27 @@
     }
     private async Task AddEvent()
     {
-            newEvent.ImageString = $"MicrosoftTeams-image({new Random().Next(1, 25)}).png";
+        newEvent.ImageString = $"MicrosoftTeams-image ({new Random().Next(1, 25)}).png";
+
+        newEvent.Country = _allCountries.FirstOrDefault(c => c.Name.Equals(newEvent.CountryName))!;
+        newEvent.EventType = _allEventTypes.FirstOrDefault(et => et.Name.Equals(newEvent.EventTypeName))!;
+
 
         await unitOfService.EventService.AddAsync(newEvent);
         //jsRuntime.InvokeAsync("$('#myModal').modal('hide');");
     }
 
-    //private async Task HandleButtonClick(int id)
-    //{
-    //    bool confirmed = await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to proceed?");
+    private async Task HandleButtonClick(int id)
+    {
+        bool confirmed = await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to proceed?");
 
-    //    if (confirmed)
-    //    {
-    //        unitOfService.EventService.Remove(id);
-    //    }
-    //    else
-    //    {
+        if (confirmed)
+        {
+            unitOfService.EventService.Remove(id);
+        }
+        else
+        {
            
-    //    }
-    //}
+        }
+    }
 }
