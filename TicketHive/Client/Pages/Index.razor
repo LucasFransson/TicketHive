@@ -108,8 +108,8 @@
 							<p class="card-text blue-foreground">@e.Description</p>
 							<p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
 							<p class="card-text blue-foreground">@e.CountryName</p>
-							<p class="card-text font-weight-bold">$@e.Price</p>
-							<a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
+			@*				<p class="card-text font-weight-bold">$@e.Price</p>*@
+							<button class="btn btn-buy btn-block" @onclick="(()=>GoToEvent(e.Id))">Buy Tickets</button>
 						</div>
 					</div>
 				}
@@ -160,6 +160,11 @@
 	private async Task GetAllCountries()
 	{
 		_allCountries = await unitOfService.CountryService.GetAllAsync();
+	}
+
+	private void GoToEvent(int id)
+	{
+		NavigationManager.NavigateTo($"/event/{id}");
 	}
 }
 
