@@ -25,7 +25,6 @@ namespace TicketHive.Server.Data.Repositories.Implementations
                 .ToListAsync();
         }
 
-
         public async Task<TicketModel?> GetOneByIdWithIncludesAsync(int id)
         {
             return await _context.Tickets
@@ -34,6 +33,16 @@ namespace TicketHive.Server.Data.Repositories.Implementations
                 .Include(t => t.Event)
                 .ThenInclude(e => e.EventType)
                 .FirstOrDefaultAsync(t => t.Id.Equals(id));
+        }
+
+        public async Task<TicketModel?> GetByEventIdAsync(int id)
+        {
+            return await _context.Tickets
+                .Include(t => t.Event)
+                .ThenInclude(e => e.Country)
+                .Include(t => t.Event)
+                .ThenInclude(e => e.EventType)
+                .FirstOrDefaultAsync(t => t.EventId.Equals(id));
         }
 
         public async Task<bool> RemoveByIdAsync(int id)

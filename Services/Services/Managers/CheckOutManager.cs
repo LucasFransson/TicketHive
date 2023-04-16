@@ -33,10 +33,13 @@ namespace TicketHive.Bll.Services.Managers
         }
         public async Task<List<TicketViewModel>> GetTickets(List<CartItemViewModel> items)
         {
+            
+            
             List<TicketViewModel> tickets = new();
             foreach (var item in items)
             {
-                TicketViewModel newTicket = await _unitOfService.TicketService.GetByIdAsync(item.Id);
+                TicketViewModel newTicket = await _unitOfService.TicketService.GetByEventId(item.Id);
+               
                 tickets.Add(newTicket);
             }
 
@@ -57,21 +60,7 @@ namespace TicketHive.Bll.Services.Managers
 
 			return totalCost;
 		}
-        //public async Task<decimal> GetTotalCost(List<CartItemViewModel>items)
-        //{
-        //    decimal totalCost = 0;
-        //    foreach (var item in items)
-        //    {
-        //        totalCost += item.Price;
-        //    }
 
-        //    if (totalCost <= 0)
-        //    {
-        //        return 0;
-        //    }
-
-        //    return totalCost;
-        //}
         public decimal GetTotalCost(List<CartItemViewModel> items)
         {
             decimal totalCost = 0;

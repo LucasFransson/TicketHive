@@ -11,8 +11,11 @@ namespace TicketHive.Bll.Services.Implementations
 {
     public class SoldTicketService : Service<SoldTicketViewModel>, ISoldTicketService
     {
+        //private readonly HttpClient _httpClient;
+        private readonly HttpClient _httpClient;
         public SoldTicketService(HttpClient httpClient) : base(httpClient)
         {
+            _httpClient = httpClient;
         }
     }
 }

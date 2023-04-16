@@ -109,6 +109,7 @@
     }
     private async Task CheckOut()
     {
+        await _checkOutManager.GetTickets(_cartItems);
         if(_tickets is not null)
         {
             await _checkOutManager.CheckOut(_tickets);

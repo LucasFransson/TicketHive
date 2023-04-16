@@ -10,8 +10,11 @@ namespace TicketHive.Bll.Services.Implementations
 {
     public class EventService : Service<EventViewModel>, IEventService
     {
+        //private readonly HttpClient _httpClient;
+        private readonly HttpClient _httpClient;
         public EventService(HttpClient httpClient) : base(httpClient)
         {
+            _httpClient = httpClient;
         }
     }
 }
