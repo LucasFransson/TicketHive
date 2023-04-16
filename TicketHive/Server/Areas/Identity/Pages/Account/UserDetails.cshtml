@@ -41,9 +41,12 @@
                             <select class="form-control" asp-for="SelectedCountry" id="country">
                                 @if (Model.Countries is not null)
                                 {
-                                    foreach (var e in Model.Countries)
+                                    foreach (var country in Model.Countries)
                                     {
-                                        <option>@e.Name</option>
+                                        if (country.IsAvailableForUserRegistration)
+                                        {
+                                            <option>@country.Name</option>
+                                        }
                                     }
                                 }
                             </select>
