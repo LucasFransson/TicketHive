@@ -1,4 +1,5 @@
 ﻿@page "/confirm"
+@using Microsoft.AspNetCore.Authorization;
 @using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Managers;
 @using TicketHive.Client.LocalStorage;
@@ -7,6 +8,8 @@
 @inject IUnitOfService _unitOfService;
 @inject CheckOutManager _checkOutManager;
 @inject LocalStorageManager _localStorage
+@attribute [Authorize]
+
 <h3>ConfirmPage</h3>
 
 <div class="container">

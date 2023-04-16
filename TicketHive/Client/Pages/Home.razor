@@ -1,11 +1,16 @@
-﻿@using TicketHive.Bll.Services.Interfaces;
+﻿@using Microsoft.AspNetCore.Authorization;
+@using TicketHive.Bll.Services.CurrencyApi;
+@using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Managers;
+@using TicketHive.Client.LocalStorage;
 @using TicketHive.Shared.Extensions;
 
 @inject AuthenticationStateProvider provider;
+@inject LocalStorageManager localStorage;
 @inject NavigationManager NavigationManager;
 @inject IUnitOfService unitOfService;
 @page "/Home"
+@attribute [Authorize]
 
 
 <div class="container">
@@ -59,6 +64,20 @@
 
     protected override async Task OnInitializedAsync()
     {
+        var authState = await provider.GetAuthenticationStateAsync();
+
+        var username = authState.User.Identity.Name;
+
+        if (!string.IsNullOrWhiteSpace(username))
+        {
+            UserViewModel? model = await unitOfService.UserService.GetByNameAsync(username);
+
+            double userExchangeRate = await CurrencyApiHelper.MakeCallAsync(model.Currency);
+
+            await localStorage.AddExchangeRateAsync(userExchangeRate, username);
+            await localStorage.AddCurrencyForDisplayAsync(model.Currency, username);
+        }
+
         await GetAllEvents();
     }
 

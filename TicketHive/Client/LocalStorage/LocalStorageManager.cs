@@ -24,7 +24,7 @@ public class LocalStorageManager{
 
         if (!IsUserInLocalStorage)
         {
-            await AddUser(username);
+            await AddCartToUser(username);
         }
     }
 
@@ -33,7 +33,7 @@ public class LocalStorageManager{
         return await _localStorage.ContainKeyAsync($"{username}_cart");
     }
 
-    private async Task AddUser(string username)
+    private async Task AddCartToUser(string username)
     {
         List<CartItemViewModel> cartItems = new();
 

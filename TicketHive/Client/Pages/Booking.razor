@@ -1,10 +1,11 @@
 ﻿@inject AuthenticationStateProvider provider;
 @inject NavigationManager NavigationManager;
 @inject IUnitOfService unitOfService;
-
+@attribute [Authorize]
 
 
 @page "/Booking"
+@using Microsoft.AspNetCore.Authorization;
 @using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Managers;
 @using TicketHive.Shared.Extensions;
