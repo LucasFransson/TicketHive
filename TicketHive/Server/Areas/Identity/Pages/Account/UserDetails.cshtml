@@ -1,5 +1,7 @@
-﻿@page "/Userdetails"
+﻿@page "{username}"
 @model TicketHive.Server.Areas.Identity.Pages.Account.UserDetailsModel
+@using Microsoft.AspNetCore.Authorization;
+@using Microsoft.AspNetCore.Components.Authorization;
 @using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Client.LocalStorage;
 
@@ -58,3 +60,20 @@
         </div>
     </div>
 </div>
+
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+            </div>
+            <div class="modal-body">
+                <p>Your changes have been saved!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Go back to Home</button>
+            </div>
+        </div>
+    </div>
+</div>
+
