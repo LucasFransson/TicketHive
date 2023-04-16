@@ -1,11 +1,12 @@
-﻿@page "/admin"
-@using Newtonsoft.Json;
+@page "/admin"
+@using System.ComponentModel;
+@using System.ComponentModel.DataAnnotations;
 @using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Managers;
 @inject IUnitOfService unitOfService;
 @inject NavigationManager NavigationManager;
 @inject AuthenticationStateProvider _provider;
-
+@inject IJSRuntime jsRuntime;
 
 
 <h3>Admin</h3>
@@ -28,18 +29,19 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="container">
+                <div class="container" style="color: #305076;">
                     <h2 class="mb-4">Add new event</h2>
                     <div class="card mb-4">
                         <div class="card-body">
-                            <form>
-                                <div class="form-group">
+                            <EditForm Model="newEvent" OnValidSubmit="AddEvent" OnInvalidSubmit="HandleInvalidSubmit">
+                                <DataAnnotationsValidator/>
+                                <div class="form-group"> 
                                     <label for="event-name">Event Name</label>
-                                    <input type="text" class="form-control" id="event-name">
+                                    <InputText class="form-control" id="event-name" @bind-Value="newEvent.Name"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="event-type">Event Type</label>
-                                    <select class="form-control" id="event-type">
+                                    <InputSelect class="form-control" id="event-type" @bind-Value="newEvent.EventType">
                                         @if (_allEventTypes is not null)
                                         {
                                             foreach (var e in _allEventTypes)
@@ -47,7 +49,7 @@
                                                 <option>@e.Name</option>
                                             }
                                         }
-                                    </select>
+                                    </InputSelect>
                                 </div>
                                 <div class="form-group">
                                     <label for="event-date">Event Date</label>
@@ -55,22 +57,18 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <label for="event-time">Event Time</label>
-                                    <input type="time" class="form-control" id="event-time">
+                                    <label for="event-time">Start Date</label>
+                                    <input type="date" class="form-control" id="event-time" @bind-value="newEvent.StartTime">
                                 </div>
                                 <div class="form-group">
-                                    <label for="end-time">End Time</label>
-                                    <input type="time" class="form-control" id="end-time">
+                                    <label for="end-time">End Date</label>
+                                    <input type="date" class="form-control" id="end-time" @bind-value="newEvent.EndTime">
                                 </div>
 
-@*                                <div class="form-group">
-                                    <label for="event-country">Country</label>
-                                    <input type="text" class="form-control" id="event-country">
-                                </div>*@
 
                                     <div class="form-group">
                                     <label for="event-country">Country</label>
-                                    <select class="form-control" id="event-country">
+                                    <InputSelect class="form-control" id="event-country" @bind-Value="newEvent.Country">
                                         @if (_allEventTypes is not null)
                                         {
                                             foreach (var e in _allCountries)
@@ -78,7 +76,7 @@
                                                 <option>@e.Name</option>
                                             }
                                         }
-                                    </select>
+                                    </InputSelect>
                                   </div>
 
                                 <div class="form-group">
@@ -87,14 +85,14 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">$</span>
                                         </div>
-                                        <input type="text" class="form-control" id="event-price" placeholder="0.00">
+                                        <input type="text" class="form-control" id="event-price" placeholder="0.00" @bind="newEvent.Price">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="event-capacity">Event Capacity</label>
-                                    <input type="number" class="form-control" id="event-capacity" step="10.00">
+                                    <input type="number" class="form-control" id="event-capacity" step="10.00" @bind="newEvent.MaxUsers">
                                 </div>
-                            </form>
+                            </EditForm>
                         </div>
                     </div>
                 </div>
@@ -108,7 +106,7 @@
 </div>
 
 
-<div class="container">
+<div class="container" style="background-color: #fbe89c;">
     <div class="row row-cols-8">
         <div class="card-group mx-auto">
              @if (_allEvents is not null)
@@ -128,21 +126,6 @@
                             <button type="button" class="btn btn-danger position-absolute bottom-0" @onclick="(() => DeleteEvent(e.Id))">Delete</button>
                         </div>
                     </div>
-@*                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                            <div class="col mb-4">
-                                <div class="card position-relative">
-                                    <img src="/images/MicrosoftTeams-image (@picCounter).png" class="card-img-top" alt="Event Image" />
-                                    <div class="card-body">
-                                        <h5 class="card-title red-foreground">@e.Name</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
-                                        <p class="card-text blue-foreground">@e.StartTime - @e.EndTime</p>
-                                        <p class="card-text font-weight-bold">$@e.Price</p>
-                                        <button type="button" class="btn btn-danger position-absolute bottom-0" @onclick="(() => DeleteEvent(e.Id))">Delete</button>
-                                    </div>
-                                </div>
-                            </div>*@
-                    @*</div>*@
-           
 
                 }
             }
@@ -168,6 +151,33 @@
     private IEnumerable<EventViewModel>? _allEvents = new List<EventViewModel>();
     private IEnumerable<CountryViewModel>? _allCountries = new List<CountryViewModel>();
 
+    //create variables of the user inputs
+    EventViewModel newEvent = new();
+
+    //[Required(ErrorMessage = "Please enter the name.")]
+    //private string _eventName;
+    //[Required(ErrorMessage = "Please enter the Type of the event.")]
+    //private EventTypeViewModel _eventType;
+    //[Required(ErrorMessage = "Please enter the starting time of the event.")]
+    //private DateTime _eventTime;
+    //[Required(ErrorMessage = "Please enter the finishing time of the event.")]
+    //private DateTime _endTime;
+    //[Required(ErrorMessage = "Please select a country.")]
+    //private CountryViewModel _eventCountry;
+    //[Required(ErrorMessage = "Please enter the price.")]
+    //private decimal _eventPrice;
+    //[Required(ErrorMessage = "Please enter the capacity of the event.")]
+    //private int _eventCapacity;
+
+    //public EventModel? newEvent { get; set; } = new();
+    //public List<string> categories = new();
+    //public List<EventModel>? events = new();
+    //private AuthenticationState? authState;
+    //private UserModel? _User { get; set; }
+    //private string? userCountry { get; set; }
+    //private string? userCurrency { get; set; }
+
+
     private bool isAdmin;
 
 
@@ -186,6 +196,11 @@
         StateHasChanged();
     }
 
+    private void HandleInvalidSubmit()
+    {
+        
+    }
+
     private async Task GetAllCountries()
     {
         _allCountries = await unitOfService.CountryService.GetAllAsync();
@@ -197,15 +212,53 @@
     }
     private async Task GetAllEvents()
     {
-        _allEvents = /*(List<EventViewModel>?) */await unitOfService.EventService.GetAllAsync();
+        _allEvents = await unitOfService.EventService.GetAllAsync();
     }
-    private void DeleteEvent(int id)
+    private async Task DeleteEvent(int id)
     {
-        unitOfService.EventService.Remove(id);
+        await HandleButtonClick(id);
+
     }
     private void AddEvent()
     {
-        //unitOfService.EventService.AddAsync();
+            //Name = _eventName,
+            //ImageString = $"MicrosoftTeams-image({new Random().Next(1, 25)}).png",
+            //EventType = _eventType,
+            //StartTime = _eventTime,
+            //EndTime = _endTime,
+            //Country = _eventCountry,
+            //Price = _eventPrice,
+            //MaxUsers = _eventCapacity
+
+        unitOfService.EventService.AddAsync(newEvent);
+        //JSRuntime.InvokeVoidAsync("$('#myModal').modal('hide');");
     }
 
-}
+    private async Task HandleButtonClick(int id)
+    {
+        bool confirmed = await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to proceed?");
+
+        if (confirmed)
+        {
+            unitOfService.EventService.Remove(id);
+        }
+        else
+        {
+           
+        }
+    }
+}*@
+
+
+@page "/admin" 
+@attribute [Authorize(Roles = "Admin")]
+@inject IAppService appService;
+@inject IJSRuntime JSRuntime;
+@inject AuthenticationStateProvider authStateProvider; 
+<h1 class="text-center text-danger">Admin Area</h1>
+<hr />
+<div class="container"> 
+    <div class="row"> 
+        <div class="col-5">
+            <EditForm Model="newEvent" OnValidSubmit="SubmitEvent" OnInvalidSubmit="HandleInvalidSubmit">
+                <DataAnnotationsValidator/> <h2 class="text-center mb-3">New event</h2> <label for="name-input">Name</label> <InputText class="form-control mb-2" id="name-input" @bind-Value="newEvent!.Name" /> <label for="type-input">Category</label> <InputSelect class="form-control mb-2" id="type-input" @bind-Value="newEvent.Type"> @foreach (var type in categories) { <option value="@type.ToString()">@type.ToString()</option> } </InputSelect> <label for="date-input">Date</label> <InputDate class="form-control mb-2" id="date-input" @bind-Value="newEvent.Date" /> <label for="venue-input">Venue</label> <InputText class="form-control mb-2" id="venue-input" @bind-Value="newEvent.Venue" /> <label for="price-input">Price</label> <InputNumber class="form-control mb-2" id="price-input" @bind-Value="newEvent.Price" /> <label for="capacity-input">Capacity</label> <InputNumber class="form-control mb-2" id="capacity-input" @bind-Value="newEvent.Capacity" /> <label for="image-input">Image (Url)</label> <InputText class="form-control mb-3" id="image-input" @bind-Value="newEvent.ImageUrl" /> <input type="submit" value="Add" /> <hr /> <ValidationSummary /></EditForm> </div> <div class="col-2"> @if(userCountry != null) { <em>@userCountry</em> } </div> <div class="col-5"> <h2 class="text-center mb-3">Event list</h2> @if(events == null) { <div class="spinner-border"></div> } <ul class="list-group"> @foreach (var happening in events!) { <li class="list-group-item"> <h5>@happening.Name</h5> <input class="btn btn-danger float-end" type="submit" value="Remove" @onclick="@(async e => await RemoveEvent(@happening.Id))" /> <span>@happening.Venue |</span> <span>@happening.Date.ToString("yyyy-MM-dd")</span> <br /> </li> } </ul> <hr /> </div> </div></div>@code { public EventModel? newEvent { get; set; } = new(); public List<string> categories = new(); public List<EventModel>? events = new(); private AuthenticationState? authState; private UserModel? _User { get; set; } private string? userCountry { get; set; } private string? userCurrency { get; set; } protected override async Task OnInitializedAsync() { await GetEvents(); authState = await authStateProvider.GetAuthenticationStateAsync(); var user = authState.User; @foreach(var type in Enum.GetNames(typeof(CategoryEnum))) { categories.Add(type); } } private async Task GetEvents() { events = await appService.GetEventsAsync(); } private void CreateEvent() { newEvent = new EventModel(); } private async void SubmitEvent() { @if(newEvent != null) { await appService.PostEventAsync(newEvent); await GetEvents(); StateHasChanged(); CreateEvent(); } } private void HandleInvalidSubmit() { } private async Task RemoveEvent(int id) { var eventToRemove = id; bool confirmed = await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure?"); if (confirmed) { // Delete! await appService.DeleteEventAsync(eventToRemove); // Uppdatera display-listan med events events!.Remove(events.First(e => e.Id == id)); } } }
