@@ -38,9 +38,9 @@ namespace TicketHive.Bll.Services.Managers
             List<TicketViewModel> tickets = new();
             foreach (var item in items)
             {
-                TicketViewModel newTicket = await _unitOfService.TicketService.GetByEventId(item.Id);
+                //TicketViewModel newTicket = await _unitOfService.TicketService.GetByEventId(item.Id);
                
-                tickets.Add(newTicket);
+                //tickets.Add(newTicket);
             }
 
             return tickets;
