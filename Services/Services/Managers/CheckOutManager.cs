@@ -97,12 +97,15 @@ namespace TicketHive.Bll.Services.Managers
 				SoldTicketViewModel soldTicket = new(ticket, "Username");    // Placeholder string for This.loggedin username
 				usersTickets.Add(soldTicket);
 			}
+            await _unitOfService.SoldTicketService.AddRangeAsync(usersTickets);
 
 			// Removes all the tickets from the db
 			foreach (var ticket in tickets)
 			{
 				await _unitOfService.TicketService.RemoveRange(tickets); // Await for some confirmation? 
 			}
+            
+            
 		}
 		public void ConfirmBuy()
 		{

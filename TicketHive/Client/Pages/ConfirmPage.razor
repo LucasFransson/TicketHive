@@ -112,6 +112,7 @@
         if(_tickets is not null)
         {
             await _checkOutManager.CheckOut(_tickets);
+            await _localStorage.ClearCartAsync(_username);
             //_localStorage.Clear();
         }
         else
