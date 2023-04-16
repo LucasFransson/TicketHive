@@ -1,0 +1,57 @@
+﻿@page "/Userdetails"
+@model TicketHive.Server.Areas.Identity.Pages.Account.UserDetailsModel
+@using TicketHive.Bll.Services.Interfaces;
+@using TicketHive.Client.LocalStorage;
+
+<h3>UserDetails</h3>
+
+<div class="container">
+    <h1 class="mb-4">User Settings</h1>
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Change Password</h5>
+                    <form method="post" asp-page-handler="ChangePassword">
+                        <div class="form-group">
+                            <label for="current-password">Current Password</label>
+                            <input type="password" class="form-control" id="current-password" asp-for="CurrentPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">New Password</label>
+                            <input type="password" class="form-control" id="new-password" asp-for="NewPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirm-password" asp-for="ConfirmPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save new password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">Change Country</h5>
+                    <form method="post" asp-page-handler="ChangeCountry">
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select class="form-control" asp-for="SelectedCountry" id="country">
+                                @if (Model.Countries is not null)
+                                {
+                                    foreach (var e in Model.Countries)
+                                    {
+                                        <option>@e.Name</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save new country</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
