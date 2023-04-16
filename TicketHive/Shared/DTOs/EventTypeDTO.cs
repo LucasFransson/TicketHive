@@ -12,10 +12,10 @@ public class EventTypeDTO
     //public List<EventTypeDTO>? Events { get; set; }   // See ViewModel for info
 
 
-    public EventTypeDTO()
-    {
+    //public EventTypeDTO()
+    //{
         
-    }
+    //}
     // Constructor for DTO from Model Input Parameters
     public EventTypeDTO(string name)
     {

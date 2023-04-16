@@ -90,8 +90,8 @@
         _username = authState.User.Identity.Name;
         _cartItems = await GetCartItems(_username);
 
-        //_totalCost = await _checkOutManager.GetTotalCost(_cartItems);
-        //await GetTotalCost();
+
+
         GetTotalCost();
     }
 
@@ -112,7 +112,8 @@
     }
     private async Task CheckOut()
     {
-        await _checkOutManager.GetTickets(_cartItems);
+        //await _checkOutManager.GetTickets(_cartItems);
+        await ConfirmBuy();
         if(_tickets is not null)
         {
             await _checkOutManager.CheckOut(_tickets);

@@ -22,6 +22,8 @@ namespace TicketHive.Server.Data.Repositories.Implementations
                 .ThenInclude(e => e.Country)
                 .Include(t => t.Event)
                 .ThenInclude(e => e.EventType)
+                 .Include(t => t.Event)
+                .ThenInclude(e => e.SoldTickets)
                 .ToListAsync();
         }
 
@@ -32,6 +34,8 @@ namespace TicketHive.Server.Data.Repositories.Implementations
                 .ThenInclude(e => e.Country)
                 .Include(t => t.Event)
                 .ThenInclude(e => e.EventType)
+                .Include(t => t.Event)
+                .ThenInclude(e => e.SoldTickets)
                 .FirstOrDefaultAsync(t => t.Id.Equals(id));
         }
 
@@ -42,6 +46,8 @@ namespace TicketHive.Server.Data.Repositories.Implementations
                 .ThenInclude(e => e.Country)
                 .Include(t => t.Event)
                 .ThenInclude(e => e.EventType)
+                .Include(t=>t.Event)
+                .ThenInclude(e=>e.SoldTickets)
                 .FirstOrDefaultAsync(t => t.EventId.Equals(id));
         }
 

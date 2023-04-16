@@ -27,10 +27,10 @@ namespace TicketHive.Shared.DTOs
         public string EventTypeName { get; set; }
         public EventTypeDTO EventType { get; set; }
 
-        public EventDTO()
-        {
+        //public EventDTO()
+        //{
             
-        }
+        //}
 
         // Constructor for DTO from Model Input Parameters
         public EventDTO(int id, string name, string description, string? imageString, int maxUsers, int ticketsLeft,int soldTicketsCount, decimal price, DateTime startTime, DateTime endTime, string countryName, CountryDTO country, string eventTypeName, EventTypeDTO eventType)
@@ -40,7 +40,7 @@ namespace TicketHive.Shared.DTOs
             Description = description;
             ImageString = imageString;
             MaxUsers = maxUsers;
-            SoldTicketsCount = SoldTicketsCount;
+            SoldTicketsCount = soldTicketsCount;
             TicketsLeft = ticketsLeft;
             Price = price;
             StartTime = startTime;
