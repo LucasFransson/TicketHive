@@ -205,7 +205,11 @@
     }
     private async Task AddEvent()
     {
-            newEvent.ImageString = $"MicrosoftTeams-image({new Random().Next(1, 25)}).png";
+        newEvent.ImageString = $"MicrosoftTeams-image ({new Random().Next(1, 25)}).png";
+
+        newEvent.Country = _allCountries.FirstOrDefault(c => c.Name.Equals(newEvent.CountryName))!;
+        newEvent.EventType = _allEventTypes.FirstOrDefault(et => et.Name.Equals(newEvent.EventTypeName))!;
+
 
         await unitOfService.EventService.AddAsync(newEvent);
 
