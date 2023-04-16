@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TicketHive.Bll.Services.Interfaces;
 using TicketHive.Bll.Services.Managers;
+using TicketHive.Shared.DTO;
 using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Implementations
@@ -21,6 +22,7 @@ namespace TicketHive.Bll.Services.Implementations
 
         public IService<EventViewModel> EventService { get; }
 		public IService<UserViewModel> UserService { get; }
+        public IService<SoldTicketViewModel> SoldTicketService { get; }
 
 		public UnitOfService(HttpClient httpClient)
         {
@@ -31,6 +33,7 @@ namespace TicketHive.Bll.Services.Implementations
             EventTypeService = new EventTypeService(_httpClient);
             EventService = new EventService(_httpClient);
 			UserService = new UserService(_httpClient);
+            SoldTicketService = new SoldTicketService(_httpClient);
 		}
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TicketHive.Shared.DTO;
 using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Interfaces
@@ -14,6 +15,7 @@ namespace TicketHive.Bll.Services.Interfaces
         IService<EventTypeViewModel> EventTypeService { get; }
         IService<EventViewModel> EventService { get; }
 		IService<UserViewModel> UserService { get; }
+        IService<SoldTicketViewModel> SoldTicketService { get; } 
 
 	}
 }

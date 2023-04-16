@@ -68,6 +68,21 @@ public class SoldTicketsController : ControllerBase
         return BadRequest();
     }
 
+    [HttpPost]
+    public async Task<ActionResult> Post([FromBody] List<TicketDTO> ticketDTOs)
+    {
+        IEnumerable<TicketModel> ticketModels = ticketDTOs.Select(t => new TicketModel(t));
+
+        if (ticketModels is not null)
+        {
+            await _unitOfWork.Tickets.AddRangeAsync(ticketModels);
+
+            return Ok();
+        }
+
+        return BadRequest();
+    }
+
     // PUT api/<SoldTicketsController>/5
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] string value)

@@ -32,10 +32,24 @@ public class TicketsController : ControllerBase
     }
 
     // GET api/<TicketsController>/5
+    //[HttpGet("{id}")]
+    //public async Task<ActionResult<TicketDTO>> Get(int id)
+    //{
+    //    TicketModel? ticketModel = await _unitOfWork.Tickets.GetOneByIdWithIncludesAsync(id);
+
+    //    if (ticketModel is not null)
+    //    {
+    //        return Ok(TransformToDTO.FromTicketModel(ticketModel));
+    //    }
+    //    return NotFound();
+    //}
+
+    // Get by eventId
     [HttpGet("{id}")]
     public async Task<ActionResult<TicketDTO>> Get(int id)
     {
-        TicketModel? ticketModel = await _unitOfWork.Tickets.GetOneByIdWithIncludesAsync(id);
+
+        TicketModel? ticketModel = await _unitOfWork.Tickets.GetByEventIdAsync(id);
 
         if (ticketModel is not null)
         {

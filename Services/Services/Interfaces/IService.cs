@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Interfaces
 {
@@ -16,5 +17,6 @@ namespace TicketHive.Bll.Services.Interfaces
         void Remove(TEntity entity);
         void Remove(int id);
         Task RemoveRange(IEnumerable<TEntity> entities);
+        Task<TicketViewModel> GetByEventId(int id);
     }
 }

@@ -9,9 +9,12 @@ using TicketHive.Shared.ViewModels;
 namespace TicketHive.Bll.Services.Implementations
 {
     public class EventTypeService : Service<EventTypeViewModel>, IEventTypeService
-    {
+    {  
+        //private readonly HttpClient _httpClient;
+        private readonly HttpClient _httpClient;
         public EventTypeService(HttpClient httpClient) : base(httpClient)
-        {
+        {   
+            _httpClient = httpClient;
         }
     }
 }

@@ -109,9 +109,11 @@
     }
     private async Task CheckOut()
     {
+        await _checkOutManager.GetTickets(_cartItems);
         if(_tickets is not null)
         {
             await _checkOutManager.CheckOut(_tickets);
+            await _localStorage.ClearCartAsync(_username);
             //_localStorage.Clear();
         }
         else
