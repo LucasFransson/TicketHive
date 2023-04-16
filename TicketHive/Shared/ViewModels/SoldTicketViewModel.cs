@@ -39,6 +39,7 @@ public class SoldTicketViewModel
 	public SoldTicketViewModel(TicketViewModel ticket, string username)
 	{
 		Id = ticket.Id;
+        Event = ticket.Event;
 		EventID = ticket.EventId;
 		Username = username;
 		Price = ticket.Price;

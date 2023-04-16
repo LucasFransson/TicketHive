@@ -37,27 +37,27 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-8">
-            <EditForm Model="@this" OnValidSubmit="@HandleSearch">
+          
                 <div class="card card-sm">
                     <div class="card-body row no-gutters align-items-center">
                         <div class="col-auto">
                             <i class="fas fa-search h4 text-body"></i>
                         </div>
                         <div class="col">
-                            <InputText class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search events..." @bind-Value="@_searchTerm" />
+                            <input type="text" class="form-control form-control-lg form-control-borderless" placeholder="Search events..." @oninput="HandleSearch" />
                         </div>
-                        <div class="col-auto">
+            @*            <div class="col-auto">
                             <button class="btn btn-lg btn-success" type="submit">Search</button>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
-            </EditForm>
+        
         </div>
     </div>
 </div>
 
 <div class="container">
-    <select class="form-select form-select-sm w-50 p-3" aria-label=".form-select-sm example" @onchange="@(async (e) => await HandleSortChanged(e))">
+    <select class="form-select form-select-sm w-50 p-3" aria-label=".form-select-sm example" @onchange="HandleSortChanged">
         <option selected>@_selectedSortMethod</option>
         <option>Date</option>
         <option>Name</option>
@@ -150,21 +150,28 @@
 
         StateHasChanged();
     }
-    private void HandleSearch()
-    {
-        Console.WriteLine(_searchTerm);  // for debugging purposes
-        if (!string.IsNullOrEmpty(_searchTerm))
-        {
-            //_filteredEvents = _allEvents.Where(e => e.Name.ToLower().Contains(_searchTerm.ToLower())).ToList();
-            _filteredEvents = _allEvents.Where(e => e.Name.ToLower()==_searchTerm.ToLower()).ToList();
-        }
-        else
-        {
-            _filteredEvents = _allEvents;
-        }
 
-        StateHasChanged();
+    private void HandleSearch(ChangeEventArgs e)
+    {
+   
+        _filteredEvents = _allEvents.Where(ev => ev.Name!.ToLower().Contains(e.Value!.ToString()!.ToLower())).ToList();
+     
     }
+    //private void HandleSearch()
+    //{
+
+    //    if (!string.IsNullOrEmpty(_searchTerm))
+    //    {
+    //        //_filteredEvents = _allEvents.Where(e => e.Name.ToLower().Contains(_searchTerm.ToLower())).ToList();
+    //        _filteredEvents = _allEvents.Where(e => e.Name.ToLower() == _searchTerm.ToLower()).ToList();
+    //    }
+    //    else
+    //    {
+    //        _filteredEvents = _allEvents;
+    //    }
+
+    //    StateHasChanged();
+    //}
     private void GoToEvent(int id)
     {
         NavigationManager.NavigateTo($"/event/{id}");
