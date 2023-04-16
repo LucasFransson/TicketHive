@@ -20,10 +20,10 @@ public class SoldTicketViewModel
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
 
-    public SoldTicketViewModel()
-    {
+    //public SoldTicketViewModel()
+    //{
 
-    }
+    //}
     // Constructor for ViewModel from DTO
     public SoldTicketViewModel(SoldTicketDTO dto)
     {
@@ -39,6 +39,7 @@ public class SoldTicketViewModel
 	public SoldTicketViewModel(TicketViewModel ticket, string username)
 	{
 		Id = ticket.Id;
+        Event = ticket.Event;
 		EventID = ticket.EventId;
 		Username = username;
 		Price = ticket.Price;

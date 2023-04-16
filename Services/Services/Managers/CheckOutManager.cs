@@ -76,18 +76,23 @@ namespace TicketHive.Bll.Services.Managers
 
             return totalCost;
         }
-        public async Task CheckOut(List<TicketViewModel> tickets)
+        public async Task CheckOut(List<TicketViewModel> tickets, string username)
 		{
 			List<SoldTicketViewModel> usersTickets = new();
 
 			// Set the properties from the ticket to the SoldTicket
 			foreach (var ticket in tickets)
 			{
-				SoldTicketViewModel soldTicket = new(ticket, "Username");    // Placeholder string for This.loggedin username
+				SoldTicketViewModel soldTicket = new(ticket, username);    
 				usersTickets.Add(soldTicket);
 			}
-            await _unitOfService.SoldTicketService.AddRangeAsync(usersTickets);
 
+            //await _unitOfService.SoldTicketService.AddRangeAsync(usersTickets);
+            foreach(var t in usersTickets)
+            {
+                await _unitOfService.SoldTicketService.AddAsync(t);
+            }
+            
 			// Removes all the tickets from the db
 			foreach (var ticket in tickets)
 			{

@@ -68,20 +68,20 @@ public class SoldTicketsController : ControllerBase
         return BadRequest();
     }
 
-    [HttpPost]
-    public async Task<ActionResult> Post([FromBody] List<TicketDTO> ticketDTOs)
-    {
-        IEnumerable<TicketModel> ticketModels = ticketDTOs.Select(t => new TicketModel(t));
+    //[HttpPost]
+    //public async Task<ActionResult> Post([FromBody] List<SoldTicketDTO> soldTicketDTOs)
+    //{
+    //    IEnumerable<SoldTicketModel> soldTicketModels = soldTicketDTOs.Select(t => new SoldTicketModel(t));
 
-        if (ticketModels is not null)
-        {
-            await _unitOfWork.Tickets.AddRangeAsync(ticketModels);
+    //    if (soldTicketModels is not null)
+    //    {
+    //        await _unitOfWork.SoldTickets.AddRangeAsync(soldTicketModels);
 
-            return Ok();
-        }
+    //        return Ok();
+    //    }
 
-        return BadRequest();
-    }
+    //    return BadRequest();
+    //}
 
     // PUT api/<SoldTicketsController>/5
     [HttpPut("{id}")]
