@@ -1,9 +1,11 @@
 ﻿@page "/shoppingcart"
+@using Microsoft.AspNetCore.Authorization;
 @using TicketHive.Bll.Services.Managers;
 @using TicketHive.Client.LocalStorage;
 @inject AuthenticationStateProvider _provider;
 @inject LocalStorageManager _localStorage
 @inject NavigationManager _navigationManager
+@attribute [Authorize]
 
 <h3>ShoppingCart</h3>
 

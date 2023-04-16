@@ -1,7 +1,9 @@
 ﻿@page "/userdetails"
+@using Microsoft.AspNetCore.Authorization;
 @using TicketHive.Bll.Services.Interfaces;
 @inject IUnitOfService unitOfService;
 @inject NavigationManager NavigationManager;
+@attribute [Authorize]
 
 
 
