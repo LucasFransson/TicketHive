@@ -16,7 +16,8 @@ namespace TicketHive.Shared.DTOs
         public string Description { get; set; }
         public string? ImageString { get; set; }
         public int MaxUsers { get; set; }
-        public int TicketsLeft { get;  }    
+        public int TicketsLeft { get; set; }    
+        public int SoldTicketsCount { get; set; }
         public bool IsSoldOut { get => TicketsLeft <= 0; } 
         public decimal Price { get; set; }
         public DateTime StartTime { get; set; }
@@ -32,13 +33,14 @@ namespace TicketHive.Shared.DTOs
         }
 
         // Constructor for DTO from Model Input Parameters
-        public EventDTO(int id, string name, string description, string? imageString, int maxUsers, int ticketsLeft, decimal price, DateTime startTime, DateTime endTime, string countryName, CountryDTO country, string eventTypeName, EventTypeDTO eventType)
+        public EventDTO(int id, string name, string description, string? imageString, int maxUsers, int ticketsLeft,int soldTicketsCount, decimal price, DateTime startTime, DateTime endTime, string countryName, CountryDTO country, string eventTypeName, EventTypeDTO eventType)
         {
             Id = id;
             Name = name;
-            Description = description; 
+            Description = description;
             ImageString = imageString;
             MaxUsers = maxUsers;
+            SoldTicketsCount = SoldTicketsCount;
             TicketsLeft = ticketsLeft;
             Price = price;
             StartTime = startTime;
@@ -47,7 +49,26 @@ namespace TicketHive.Shared.DTOs
             Country = country;
             EventTypeName = eventTypeName;
             EventType = eventType;
-          
+
         }
+        // Constructor for DTO from Model Input Parameters
+        //public EventDTO(int id, string name, string description, string? imageString, int maxUsers, int soldTicketsCount, decimal price, DateTime startTime, DateTime endTime, string countryName, CountryDTO country, string eventTypeName, EventTypeDTO eventType)
+        //{
+        //    Id = id;
+        //    Name = name;
+        //    Description = description;
+        //    ImageString = imageString;
+        //    MaxUsers = maxUsers;
+        //    TicketsLeft = maxUsers-soldTicketsCount;
+        //    Price = price;
+        //    StartTime = startTime;
+        //    EndTime = endTime;
+        //    CountryName = countryName;
+        //    Country = country;
+        //    EventTypeName = eventTypeName;
+        //    EventType = eventType;
+
+        //}
     }
+
 }

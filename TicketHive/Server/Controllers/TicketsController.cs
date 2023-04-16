@@ -90,4 +90,20 @@ public class TicketsController : ControllerBase
 
         return NotFound();
     }
+
+    //  Delete Range
+    //[HttpDelete("[action]")]
+    [HttpDelete("range/delete")]
+    public async Task<IActionResult> DeleteRange([FromBody] IEnumerable<TicketDTO> ticketDTOs)
+    {
+        IEnumerable<TicketModel> ticketModels = ticketDTOs.Select(t => new TicketModel(t));
+
+        if (ticketModels is not null)
+        {
+            await _unitOfWork.Tickets.RemoveRangeAsync(ticketModels);
+
+            return Ok();
+        }
+        return BadRequest();
+    }
 }

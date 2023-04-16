@@ -1,31 +1,40 @@
 ﻿@using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Managers;
+@using TicketHive.Shared.Extensions;
 
 @inject AuthenticationStateProvider provider;
 @inject NavigationManager NavigationManager;
 @inject IUnitOfService unitOfService;
 @page "/Home"
 
+
 <div class="container">
-@foreach(var e in _allEvents)
-{
-<div class="card mr-5">
-    <img src="/images/MicrosoftTeams-image (@e.ImageString).png"
-         class="card-img-top"
-         alt="Event Image" />
-    <div class="card-body">
-        <h5 class="card-title red-foreground">@e.Name</h5>
-        <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
-        <p class="card-text blue-foreground">@e.Description</p>
-        <p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
-        <p class="card-text blue-foreground">@e.CountryName</p>
-        <p class="card-text font-weight-bold">$@e.Price</p>
-        <a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
-    </div>
+    @foreach(var chunk in _allEvents.ChunkBy(4))
+    {
+        <div class="row">
+            @foreach(var e in chunk)
+            {
+                <div class="@($"col-md-{Math.Max(12 / chunk.Count, 3)}")">
+                    <div class="card mr-5">
+                        <img src="@e.ImageString"
+                             class="card-img-top"
+                             alt="Event Image" />
+                        <div class="card-body">
+                            <h5 class="card-title red-foreground">@e.Name</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
+                            <p class="card-text blue-foreground">@e.Description</p>
+                            <p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
+                            <p class="card-text blue-foreground">@e.CountryName</p>
+                   @*         <p class="card-text font-weight-bold">$@e.Price</p>*@
+                            <button class="btn btn-buy btn-block" @onclick="(()=>GoToEvent(e.Id))">Buy Tickets</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
 </div>
 
-}
-</div>
 <SearchbarButton/>
 
 <div>
@@ -37,68 +46,16 @@
         <li class="list-group-item">And a fifth one</li>
     </ul>
 </div>
-@*<div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
-    <div class="card">
-      <img src="/images/MicrosoftTeams-image (1).png" class="card-img-top" alt="eventbild">
-      <div class="card-body">
-        <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="/images/MicrosoftTeams-image (10).png" class="card-img-top" alt="eventbild">
-      <div class="card-body">
-        <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-      </div>
-    </div>
-  </div>
-    <div class="col">
-        <div class="card">
-            <img src="/images/MicrosoftTeams-image (11).png" class="card-img-top" alt="eventbild">
-            <div class="card-body">
-                <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card">
-            <img src="/images/MicrosoftTeams-image (12).png" class="card-img-top" alt="eventbild">
-            <div class="card-body">
-                <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card">
-            <img src="/images/MicrosoftTeams-image (13).png" class="card-img-top" alt="eventbild">
-            <div class="card-body">
-                <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-            </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card">
-            <img src="/images/MicrosoftTeams-image (14).png" class="card-img-top" alt="eventbild">
-            <div class="card-body">
-                <h5 class="card-title">Eventnamn</h5>
-                <p class="card-text">Kort info om event</p>
-            </div>
-        </div>
-    </div>*@
-@*</div>*@
+
 <br />
 
 
 
 @code {
-    private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
+    //private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
+
+
+    private List<EventViewModel> _allEvents = new List<EventViewModel>();
 
     protected override async Task OnInitializedAsync()
     {
@@ -107,6 +64,10 @@
 
     private async Task GetAllEvents()
     {
-        _allEvents = await unitOfService.EventService.GetAllAsync();
+        _allEvents = (await unitOfService.EventService.GetAllAsync()).ToList();
+    }
+    private void GoToEvent(int id)
+    {
+        NavigationManager.NavigateTo($"/event/{id}");
     }
 }

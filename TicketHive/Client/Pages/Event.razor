@@ -16,8 +16,9 @@
                 <h2 class="card-title">@ev.Name</h2>
                 <p class="card-text">Date: @DateTimeFormatter.FormatDayNumberMonthText(ev.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(ev.EndTime)</p>
                 <p class="card-text">@ev.Description</p>
+                <p class="card-text">Tickets Left: @ev.TicketsLeft</p>
                 <p class="card-text">@Math.Round(ev.Price*(decimal)exchangeRate) @currency</p>
-                <button class="button-buy" @onclick="AddToCart">Buy Ticket</button>
+                <button class="button-buy" @onclick="AddToCart">Add To Cart</button>
             </div>
         </div>
     </div>
@@ -35,15 +36,13 @@
     protected override async Task OnInitializedAsync()
     {
         ev = await _unitOfService.EventService.GetByIdAsync(Id);
-
         var authState = await _provider.GetAuthenticationStateAsync();
-
         username = authState.User.Identity.Name;
 
         await _localStorage.InitializeUserAsync(username);
 
-        exchangeRate = await _localStorage.GetExchangeRateAsync();
-        currency = await _localStorage.GetCurrencyForDisplayAsync();
+        exchangeRate = await _localStorage.GetExchangeRateAsync(username);
+        currency = await _localStorage.GetCurrencyForDisplayAsync(username);
     }
 
     private async Task AddToCart()
