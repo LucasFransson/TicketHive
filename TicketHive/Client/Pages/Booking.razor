@@ -58,7 +58,7 @@
                             <p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
                             <p class="card-text blue-foreground">@e.CountryName</p>
                             <p class="card-text font-weight-bold">$@e.Price</p>
-                            <a href="#" class="btn btn-buy btn-block">Buy Tickets</a>
+                            <button class="btn btn-buy btn-block" @onclick="(()=>GoToEvent(e.Id))">Buy Tickets</button>
                         </div>
                     </div>
                 </div>
@@ -129,7 +129,7 @@
     }
     private void HandleSearch()
     {
-        Console.WriteLine(_searchTerm);
+        Console.WriteLine(_searchTerm);  // for debugging purposes
         if (!string.IsNullOrEmpty(_searchTerm))
         {
             //_filteredEvents = _allEvents.Where(e => e.Name.ToLower().Contains(_searchTerm.ToLower())).ToList();
@@ -141,6 +141,10 @@
         }
 
         StateHasChanged();
+    }
+    private void GoToEvent(int id)
+    {
+        NavigationManager.NavigateTo($"/event/{id}");
     }
   
 }

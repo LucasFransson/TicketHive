@@ -17,7 +17,7 @@
                 <p class="card-text">Date: @DateTimeFormatter.FormatDayNumberMonthText(ev.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(ev.EndTime)</p>
                 <p class="card-text">@ev.Description</p>
                 <p class="card-text">@Math.Round(ev.Price*(decimal)exchangeRate) @currency</p>
-                <button class="button-buy" @onclick="AddToCart">Buy Ticket</button>
+                <button class="button-buy" @onclick="AddToCart">Add To Cart</button>
             </div>
         </div>
     </div>
