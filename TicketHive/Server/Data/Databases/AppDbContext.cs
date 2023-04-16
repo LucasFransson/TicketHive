@@ -23,9 +23,9 @@ namespace TicketHive.Server.Data.Databases
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Ensures that the ID is not automatically created and set
-            modelBuilder.Entity<SoldTicketModel>()
-                .Property(t => t.Id)
-                .ValueGeneratedNever();
+            //modelBuilder.Entity<SoldTicketModel>()
+            //    .Property(t => t.Id)
+            //    .ValueGeneratedNever();
 
             // Add seed data for CountryModel
             modelBuilder.Entity<CountryModel>().HasData(DataSeeder.Countries);

@@ -95,10 +95,7 @@
         GetTotalCost();
     }
 
-    //private async Task GetTotalCost()
-    //{
-    //    _totalCost = await _checkOutManager.GetTotalCost(_cartItems);
-    //}
+
     private void GetTotalCost()
     {
         _totalCost = _checkOutManager.GetTotalCost(_cartItems);
@@ -116,13 +113,13 @@
         await ConfirmBuy();
         if(_tickets is not null)
         {
-            await _checkOutManager.CheckOut(_tickets);
+            await _checkOutManager.CheckOut(_tickets,_username);
             await _localStorage.ClearCartAsync(_username);
-            //_localStorage.Clear();
         }
         else
         {
             // Error message
+            Console.WriteLine("Hit error");
         }
     }
 

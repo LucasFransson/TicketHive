@@ -20,10 +20,10 @@ public class SoldTicketViewModel
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
 
-    public SoldTicketViewModel()
-    {
+    //public SoldTicketViewModel()
+    //{
 
-    }
+    //}
     // Constructor for ViewModel from DTO
     public SoldTicketViewModel(SoldTicketDTO dto)
     {

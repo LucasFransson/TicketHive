@@ -8,7 +8,7 @@
 @inject IUnitOfService unitOfService;
 @inject NavigationManager NavigationManager;
 @inject AuthenticationStateProvider _provider;
-@*@inject IJSRuntime jsRuntime;*@
+@inject IJSRuntime jsRuntime;
 
 
 <h2>Admin</h2>
@@ -208,20 +208,20 @@
             newEvent.ImageString = $"MicrosoftTeams-image({new Random().Next(1, 25)}).png";
 
         await unitOfService.EventService.AddAsync(newEvent);
-        //jsRuntime.InvokeAsync("$('#myModal').modal('hide');");
+
     }
 
-    //private async Task HandleButtonClick(int id)
-    //{
-    //    bool confirmed = await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to proceed?");
+    private async Task HandleButtonClick(int id)
+    {
+        bool confirmed = await jsRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to proceed?");
 
-    //    if (confirmed)
-    //    {
-    //        unitOfService.EventService.Remove(id);
-    //    }
-    //    else
-    //    {
+        if (confirmed)
+        {
+            unitOfService.EventService.Remove(id);
+        }
+        else
+        {
            
-    //    }
-    //}
+        }
+    }
 }

@@ -1266,7 +1266,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Heavy Metal Concert",
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Music Concerts",
-                            ImageString = "MicrosoftTeams-image (7).png",
+                            ImageString = "MicrosoftTeams-image (9).png",
                             MaxUsers = 500,
                             Name = "Slayer",
                             Price = 300m,
@@ -1279,7 +1279,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Football Match between Real Madrid and Barcelona",
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Sports Events",
-                            ImageString = "MicrosoftTeams-image (3).png",
+                            ImageString = "MicrosoftTeams-image (7).png",
                             MaxUsers = 300,
                             Name = "El Clásico",
                             Price = 100m,
@@ -1292,7 +1292,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Music Festival featuring top artists",
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Festivals",
-                            ImageString = "MicrosoftTeams-image (12).png",
+                            ImageString = "MicrosoftTeams-image (11).png",
                             MaxUsers = 200,
                             Name = "Glastonbury",
                             Price = 150m,
@@ -1305,7 +1305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Wine Tasting event featuring top Bordeaux wines",
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Food and wine tastings",
-                            ImageString = "MicrosoftTeams-image (3).png",
+                            ImageString = "MicrosoftTeams-image (2).png",
                             MaxUsers = 50,
                             Name = "Bordeaux Wine Tasting",
                             Price = 200m,
@@ -1318,7 +1318,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Comedy Show featuring top German comedians",
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Comedy shows",
-                            ImageString = "MicrosoftTeams-image (16).png",
+                            ImageString = "MicrosoftTeams-image (1).png",
                             MaxUsers = 100,
                             Name = "German Stand-Up Comedy Night",
                             Price = 50m,
@@ -1331,7 +1331,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Trade Show showcasing top fashion brands",
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Conferences and trade shows",
-                            ImageString = "MicrosoftTeams-image (16).png",
+                            ImageString = "MicrosoftTeams-image (11).png",
                             MaxUsers = 130,
                             Name = "Milan Fashion Week",
                             Price = 500m,
@@ -1344,7 +1344,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Classical Music Concert by the Vienna Philharmonic Orchestra",
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Music Concerts",
-                            ImageString = "MicrosoftTeams-image (4).png",
+                            ImageString = "MicrosoftTeams-image (3).png",
                             MaxUsers = 100,
                             Name = "Vienna Philharmonic Orchestra",
                             Price = 100m,
@@ -1370,7 +1370,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Rugby Match between Ireland and England",
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Sports Events",
-                            ImageString = "MicrosoftTeams-image (19).png",
+                            ImageString = "MicrosoftTeams-image (14).png",
                             MaxUsers = 250,
                             Name = "Ireland vs. England Rugby Match",
                             Price = 80m,
@@ -1383,7 +1383,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Musical Theater Show based on the novel by Gaston Leroux",
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Musicals",
-                            ImageString = "MicrosoftTeams-image (14).png",
+                            ImageString = "MicrosoftTeams-image (13).png",
                             MaxUsers = 100,
                             Name = "The Phantom of the Opera",
                             Price = 120m,
@@ -1396,7 +1396,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Wine and Cheese Tasting event in Geneva",
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Food and wine tastings",
-                            ImageString = "MicrosoftTeams-image (18).png",
+                            ImageString = "MicrosoftTeams-image (11).png",
                             MaxUsers = 200,
                             Name = "Wine and Cheese Tasting in Geneva",
                             Price = 80m,
@@ -1448,7 +1448,10 @@ namespace TicketHive.Server.Migrations.AppDb
             modelBuilder.Entity("TicketHive.Server.Models.SoldTicketModel", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");
@@ -1502,7 +1505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                     b.HasData(
                         new
                         {
-                            Id = 729836676,
+                            Id = 1821479247,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1510,7 +1513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1990582506,
+                            Id = 2025667954,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1518,7 +1521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1953920043,
+                            Id = 1339296174,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1526,7 +1529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 970532982,
+                            Id = 1509110722,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1534,7 +1537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 787395,
+                            Id = 1640820796,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1542,7 +1545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1347076404,
+                            Id = -456934568,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1550,7 +1553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -766752671,
+                            Id = 205245011,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1558,7 +1561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1194323509,
+                            Id = -1974051692,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1566,7 +1569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -771251425,
+                            Id = -1177586412,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1574,7 +1577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1489165276,
+                            Id = 1771727872,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1582,7 +1585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 559982430,
+                            Id = -2119202074,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1590,7 +1593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -672078226,
+                            Id = 236324406,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1598,7 +1601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1459566,
+                            Id = 250590288,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1606,7 +1609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 694284620,
+                            Id = -216818770,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1614,7 +1617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 149598940,
+                            Id = -807402417,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1622,7 +1625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1625610064,
+                            Id = -39089681,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1630,7 +1633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -812257351,
+                            Id = -1563335219,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1638,7 +1641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1881676181,
+                            Id = 950736300,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1646,7 +1649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1063260044,
+                            Id = 782685798,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1654,7 +1657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1446588329,
+                            Id = -1565074213,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1662,7 +1665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2063213215,
+                            Id = 2094434416,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1670,7 +1673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1162560558,
+                            Id = 861876283,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1678,7 +1681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 599958441,
+                            Id = -806547969,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1686,7 +1689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1832641368,
+                            Id = 1772965355,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1694,7 +1697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1596993487,
+                            Id = -1528886035,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1702,7 +1705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 996181596,
+                            Id = 730166817,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1710,7 +1713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1295389532,
+                            Id = -2002961084,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1718,7 +1721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1455170484,
+                            Id = -1788027495,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1726,7 +1729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 518385366,
+                            Id = 648118558,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1734,7 +1737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 418721345,
+                            Id = 1777266293,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1742,7 +1745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1892748201,
+                            Id = -501354044,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1750,7 +1753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 966955999,
+                            Id = -462613264,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1758,7 +1761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -248982127,
+                            Id = 1424760067,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1766,7 +1769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1650598183,
+                            Id = 73434460,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1774,7 +1777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2102770212,
+                            Id = 1122212943,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1782,7 +1785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1083827609,
+                            Id = 892244962,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1790,7 +1793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1468903416,
+                            Id = 713221416,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1798,7 +1801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1475329127,
+                            Id = -1438731483,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1806,7 +1809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 226841090,
+                            Id = 993636306,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1814,7 +1817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1382006053,
+                            Id = -6746240,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1822,7 +1825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1781687271,
+                            Id = -352235986,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1830,7 +1833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -234605341,
+                            Id = -1715637858,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1838,7 +1841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 110774371,
+                            Id = 1407158153,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1846,7 +1849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1769132960,
+                            Id = 1163758458,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1854,7 +1857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 588201261,
+                            Id = 1697570908,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1862,7 +1865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2104400145,
+                            Id = 84626217,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1870,7 +1873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -132777149,
+                            Id = -1475181212,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1878,7 +1881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 983984229,
+                            Id = 609221218,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1886,7 +1889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1241004327,
+                            Id = -1300602931,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1894,7 +1897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1454786432,
+                            Id = -705622358,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1902,7 +1905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1072930350,
+                            Id = 510924239,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1910,7 +1913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1902371235,
+                            Id = -1249643385,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1918,7 +1921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 807128048,
+                            Id = -123772496,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1926,7 +1929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -456497005,
+                            Id = -1405404414,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1934,7 +1937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1248132246,
+                            Id = -1531867300,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1942,7 +1945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1338628682,
+                            Id = 843827178,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1950,7 +1953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -484243325,
+                            Id = 479274087,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1958,7 +1961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1345995828,
+                            Id = -1735619102,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1966,7 +1969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -343747139,
+                            Id = 4827066,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1974,7 +1977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1404091301,
+                            Id = 11850471,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1982,7 +1985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1152992363,
+                            Id = 1379537397,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1990,7 +1993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 31268648,
+                            Id = -211521975,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -1998,7 +2001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -825553236,
+                            Id = 1218238015,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2006,7 +2009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1233379597,
+                            Id = 892448088,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2014,7 +2017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -892169141,
+                            Id = -1608383129,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2022,7 +2025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 143671821,
+                            Id = 74326677,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2030,7 +2033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 249834948,
+                            Id = -291260704,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2038,7 +2041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1075324687,
+                            Id = 1332217349,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2046,7 +2049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 823716673,
+                            Id = -154029074,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2054,7 +2057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1555925667,
+                            Id = 914962093,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2062,7 +2065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2054219571,
+                            Id = -1732541731,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2070,7 +2073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2099722448,
+                            Id = 489104898,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2078,7 +2081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 454506782,
+                            Id = 1232779447,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2086,7 +2089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1436088225,
+                            Id = 1240355124,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2094,7 +2097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2077612519,
+                            Id = -380469914,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2102,7 +2105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1180630852,
+                            Id = -1432392389,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2110,7 +2113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 31302390,
+                            Id = -1252045122,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2118,7 +2121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1905897283,
+                            Id = -1360973085,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2126,7 +2129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2059348737,
+                            Id = -100359553,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2134,7 +2137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -912637743,
+                            Id = -1798643086,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2142,7 +2145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -568980902,
+                            Id = -875480919,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2150,7 +2153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1617772127,
+                            Id = -1100880929,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2158,7 +2161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1946485515,
+                            Id = -215729823,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2166,7 +2169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 400592253,
+                            Id = -685092116,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2174,7 +2177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 885566787,
+                            Id = 623665266,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2182,7 +2185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 387619662,
+                            Id = -856042746,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2190,7 +2193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1503442390,
+                            Id = 2106789100,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2198,7 +2201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1545565033,
+                            Id = 2118869849,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2206,7 +2209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1482587077,
+                            Id = 2114982554,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2214,7 +2217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -414512529,
+                            Id = 1795445263,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2222,7 +2225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 382296988,
+                            Id = -1455500346,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2230,7 +2233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1250302697,
+                            Id = -1570751262,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2238,7 +2241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -374973295,
+                            Id = 796066044,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2246,7 +2249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 979239656,
+                            Id = -159714444,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2254,7 +2257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -772851179,
+                            Id = 1068535606,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2262,7 +2265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -130448730,
+                            Id = -632665912,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2270,7 +2273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -627236637,
+                            Id = -381435306,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2278,7 +2281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1882922754,
+                            Id = 1461519586,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2286,7 +2289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 471774281,
+                            Id = -2037529139,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2294,7 +2297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1153623043,
+                            Id = 539083012,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2302,7 +2305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -705682769,
+                            Id = 2135509131,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2310,7 +2313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1716552170,
+                            Id = -233382434,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2318,7 +2321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2119005042,
+                            Id = -984190811,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2326,7 +2329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1976889931,
+                            Id = 563705016,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2334,7 +2337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1454386026,
+                            Id = 1758072005,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2342,7 +2345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1210966940,
+                            Id = -2054876757,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2350,7 +2353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 321548638,
+                            Id = 386434970,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2358,7 +2361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 296108594,
+                            Id = -1180665324,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2366,7 +2369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1039967052,
+                            Id = -1672251035,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2374,7 +2377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1432614256,
+                            Id = 1215144069,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2382,7 +2385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2102977655,
+                            Id = -1088209280,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2390,7 +2393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 274569833,
+                            Id = -1564119563,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2398,7 +2401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1679711394,
+                            Id = 1661540678,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2406,7 +2409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -524843229,
+                            Id = 230430506,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2414,7 +2417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 836351587,
+                            Id = -958883858,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2422,7 +2425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1125174987,
+                            Id = 1921457354,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2430,7 +2433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -547743071,
+                            Id = 1638296127,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2438,7 +2441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 592817047,
+                            Id = -64353891,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2446,7 +2449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -600569375,
+                            Id = -685106804,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2454,7 +2457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -774167775,
+                            Id = -376850700,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2462,7 +2465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1836344798,
+                            Id = -1065625689,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2470,7 +2473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 515356904,
+                            Id = -391606239,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2478,7 +2481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1545998818,
+                            Id = -115748549,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2486,7 +2489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1302712003,
+                            Id = -511355449,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2494,7 +2497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1310948841,
+                            Id = 1834178199,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2502,7 +2505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1467833531,
+                            Id = 2073114821,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2510,7 +2513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 72542352,
+                            Id = 2017448409,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2518,7 +2521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 40862838,
+                            Id = 546025969,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2526,7 +2529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1763988599,
+                            Id = -1332603502,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2534,7 +2537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1295556117,
+                            Id = 1632694659,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2542,7 +2545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 879610599,
+                            Id = -1696560967,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2550,7 +2553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 293362907,
+                            Id = -335177929,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2558,7 +2561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1698379408,
+                            Id = -1223110908,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2566,7 +2569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1840799985,
+                            Id = 158377915,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2574,7 +2577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -729237017,
+                            Id = -2038520904,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2582,7 +2585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1426758362,
+                            Id = 671424220,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2590,7 +2593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1940412425,
+                            Id = -122708288,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2598,7 +2601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1106054777,
+                            Id = 851812304,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2606,7 +2609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1222448360,
+                            Id = -287299362,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2614,7 +2617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1498162716,
+                            Id = -2118730212,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2622,7 +2625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 884497321,
+                            Id = -535081322,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2630,7 +2633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1430207803,
+                            Id = 536655164,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2638,7 +2641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -698245844,
+                            Id = -808119524,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2646,7 +2649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -253524989,
+                            Id = 1760347788,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2654,7 +2657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1047969562,
+                            Id = -499188348,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2662,7 +2665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1132685612,
+                            Id = -1246104459,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2670,7 +2673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1549375658,
+                            Id = -1014291995,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2678,7 +2681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -36467384,
+                            Id = 1228659386,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2686,7 +2689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 640799088,
+                            Id = 884971764,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2694,7 +2697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 966274567,
+                            Id = 492716451,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2702,7 +2705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 637183388,
+                            Id = -302309404,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2710,7 +2713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 203242412,
+                            Id = -990281507,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2718,7 +2721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -666169661,
+                            Id = -216744010,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2726,7 +2729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -81699828,
+                            Id = 754075134,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2734,7 +2737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1036640789,
+                            Id = -1387829542,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2742,7 +2745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1025121576,
+                            Id = -906025129,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2750,7 +2753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 158287576,
+                            Id = 1142997210,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2758,7 +2761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1016917003,
+                            Id = -1994257605,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2766,7 +2769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -570885456,
+                            Id = 1671569434,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2774,7 +2777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1443316650,
+                            Id = -787075059,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2782,7 +2785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1279792562,
+                            Id = -1668392248,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2790,7 +2793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1991870294,
+                            Id = -1964103155,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2798,7 +2801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -161969184,
+                            Id = -154213402,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2806,7 +2809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1243302893,
+                            Id = 295215432,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2814,7 +2817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1348285133,
+                            Id = -175156175,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2822,7 +2825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2036599994,
+                            Id = 195060930,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2830,7 +2833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -255204284,
+                            Id = 987343952,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2838,7 +2841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1418404273,
+                            Id = 1824247219,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2846,7 +2849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1910172180,
+                            Id = -374334936,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2854,7 +2857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -614196626,
+                            Id = -1071959511,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2862,7 +2865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 931167254,
+                            Id = -253209857,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2870,7 +2873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1369781809,
+                            Id = -1835305082,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2878,7 +2881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -339500969,
+                            Id = -1061274584,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2886,7 +2889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 101640228,
+                            Id = -1251494142,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2894,7 +2897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1631053841,
+                            Id = -1922683382,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2902,7 +2905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 28829423,
+                            Id = 145192373,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2910,7 +2913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1748091871,
+                            Id = 1946605905,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2918,7 +2921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 199567177,
+                            Id = 1102693402,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2926,7 +2929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 629885517,
+                            Id = 315414373,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2934,7 +2937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 66147549,
+                            Id = 1709093351,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2942,7 +2945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -41382829,
+                            Id = 2006239614,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2950,7 +2953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2133950267,
+                            Id = -1386342135,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2958,7 +2961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -198399205,
+                            Id = 2102615620,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2966,7 +2969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 736324350,
+                            Id = -2003340544,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2974,7 +2977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2074203088,
+                            Id = 615996434,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2982,7 +2985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -673484021,
+                            Id = -1705817536,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2990,7 +2993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1282499967,
+                            Id = -468397660,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -2998,7 +3001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1697178471,
+                            Id = 1220968606,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3006,7 +3009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 226194536,
+                            Id = -354460383,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3014,7 +3017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1366106397,
+                            Id = -1999116345,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3022,7 +3025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 803059892,
+                            Id = 1161830496,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3030,7 +3033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1004308706,
+                            Id = 433357366,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3038,7 +3041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -184830691,
+                            Id = -802000583,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3046,7 +3049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2128843949,
+                            Id = 2064612459,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3054,7 +3057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -260768440,
+                            Id = 2024182519,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3062,7 +3065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 600634378,
+                            Id = -133826263,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3070,7 +3073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1997518251,
+                            Id = 704436913,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3078,7 +3081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 446276626,
+                            Id = 919098603,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3086,7 +3089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1721627966,
+                            Id = 1735336883,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3094,7 +3097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1605463621,
+                            Id = 219558300,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3102,7 +3105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1112635171,
+                            Id = -1330074709,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3110,7 +3113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 307217031,
+                            Id = -136352939,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3118,7 +3121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1968351229,
+                            Id = -1665928500,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3126,7 +3129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 614403208,
+                            Id = -644760840,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3134,7 +3137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1799952617,
+                            Id = 1915424168,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3142,7 +3145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1587044908,
+                            Id = 1734702172,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3150,7 +3153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -952721343,
+                            Id = -532441399,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3158,7 +3161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 498525858,
+                            Id = -974245836,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3166,7 +3169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 894051270,
+                            Id = -783760098,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3174,7 +3177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 844375494,
+                            Id = -1362246860,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3182,7 +3185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1682547550,
+                            Id = 353185581,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3190,7 +3193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1599511354,
+                            Id = 1589968887,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3198,7 +3201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1091272047,
+                            Id = 802981645,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3206,7 +3209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -739238479,
+                            Id = 1145910819,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3214,7 +3217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 777619883,
+                            Id = -836207373,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3222,7 +3225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1272287021,
+                            Id = 1705724484,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3230,7 +3233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -668700333,
+                            Id = 1807022567,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3238,7 +3241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 164410906,
+                            Id = 570876205,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3246,7 +3249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -481524612,
+                            Id = 371605881,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3254,7 +3257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1040725496,
+                            Id = -941204911,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3262,7 +3265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2028813918,
+                            Id = -263071249,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3270,7 +3273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1441906742,
+                            Id = 1218977502,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3278,7 +3281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1871553787,
+                            Id = 363698094,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3286,7 +3289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1537584300,
+                            Id = 1654837869,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3294,7 +3297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -719671644,
+                            Id = -1821876605,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3302,7 +3305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -909370887,
+                            Id = 1714628373,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3310,7 +3313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1017783856,
+                            Id = 1160459258,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3318,7 +3321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1613071560,
+                            Id = 1239359840,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3326,7 +3329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1670509342,
+                            Id = -186376138,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3334,7 +3337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -68072763,
+                            Id = 61008910,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3342,7 +3345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 875950281,
+                            Id = 118444543,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3350,7 +3353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -598048883,
+                            Id = 1321869204,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3358,7 +3361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1801496982,
+                            Id = 391001560,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3366,7 +3369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -134390735,
+                            Id = -1589651678,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3374,7 +3377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 537799979,
+                            Id = 818961373,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3382,7 +3385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2090204670,
+                            Id = -501602566,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3390,7 +3393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1610498105,
+                            Id = 859779454,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3398,7 +3401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 414313306,
+                            Id = 116378427,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3406,7 +3409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -219957216,
+                            Id = 386421847,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3414,7 +3417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -787983686,
+                            Id = 1388783193,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3422,7 +3425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -283070082,
+                            Id = -851602849,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3430,7 +3433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1472548169,
+                            Id = 1445399279,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3438,7 +3441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 996257011,
+                            Id = -928338074,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3446,7 +3449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1659668430,
+                            Id = -1144804148,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3454,7 +3457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1381599076,
+                            Id = 549000955,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3462,7 +3465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1053014909,
+                            Id = 825352484,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3470,7 +3473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -974325505,
+                            Id = 1156598059,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3478,7 +3481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1104678913,
+                            Id = 403699624,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3486,7 +3489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -609702945,
+                            Id = 1970551678,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3494,7 +3497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1049396317,
+                            Id = 2008973124,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3502,7 +3505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1220941278,
+                            Id = 238426165,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3510,7 +3513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1814447540,
+                            Id = 1187089966,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3518,7 +3521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -349663323,
+                            Id = 173208004,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3526,7 +3529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1430315499,
+                            Id = 444842481,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3534,7 +3537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1659876297,
+                            Id = -2036983021,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3542,7 +3545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1834317769,
+                            Id = -219076467,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3550,7 +3553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -284603610,
+                            Id = 1279811455,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3558,7 +3561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1709638539,
+                            Id = 1513756307,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3566,7 +3569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1008263555,
+                            Id = 1598160063,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3574,7 +3577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1053036130,
+                            Id = -139343564,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3582,7 +3585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1851274233,
+                            Id = -2011407213,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3590,7 +3593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2125675967,
+                            Id = -1576804067,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3598,7 +3601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1285382727,
+                            Id = -1172293473,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3606,7 +3609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1302643554,
+                            Id = 1180014666,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3614,7 +3617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 762171600,
+                            Id = -1346698488,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3622,7 +3625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 825190665,
+                            Id = 310249092,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3630,7 +3633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1097699158,
+                            Id = 1047979878,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3638,7 +3641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1669731157,
+                            Id = -223002035,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3646,7 +3649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 788467953,
+                            Id = 1393535876,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3654,7 +3657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1129607041,
+                            Id = 233411359,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3662,7 +3665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -29078548,
+                            Id = -704370596,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3670,7 +3673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 797474815,
+                            Id = 1696753717,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3678,7 +3681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1270506496,
+                            Id = 334452479,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3686,7 +3689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1232722912,
+                            Id = -1421617965,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3694,7 +3697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1006691340,
+                            Id = 1857899323,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3702,7 +3705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 242404350,
+                            Id = 1311796425,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3710,7 +3713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1718235770,
+                            Id = 2079680553,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3718,7 +3721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -715417518,
+                            Id = -1881752323,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3726,7 +3729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -432983994,
+                            Id = -1184372568,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3734,7 +3737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1255393947,
+                            Id = 307081668,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3742,7 +3745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -403378419,
+                            Id = 1901689198,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3750,7 +3753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 880078400,
+                            Id = -1209710552,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3758,7 +3761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1654865376,
+                            Id = 1619938282,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3766,7 +3769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1071422603,
+                            Id = -1936896339,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3774,7 +3777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1028332866,
+                            Id = 820547788,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3782,7 +3785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1507390861,
+                            Id = -112341061,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3790,7 +3793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1979633757,
+                            Id = -1138979556,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3798,7 +3801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1380468059,
+                            Id = 1594614252,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3806,7 +3809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 165236018,
+                            Id = -1858654463,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3814,7 +3817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -566344722,
+                            Id = 1289817324,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3822,7 +3825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2104978877,
+                            Id = -1822630655,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3830,7 +3833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 17530311,
+                            Id = 1972024654,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3838,7 +3841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1974803937,
+                            Id = -1109310489,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3846,7 +3849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1099194660,
+                            Id = 980365407,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3854,7 +3857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -488940011,
+                            Id = -1405745603,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3862,7 +3865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1405081290,
+                            Id = 261122248,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3870,7 +3873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -427374519,
+                            Id = -985161715,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3878,7 +3881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1580073491,
+                            Id = -277315694,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3886,7 +3889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1113480598,
+                            Id = 58986497,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3894,7 +3897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -865113538,
+                            Id = 1536741690,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3902,7 +3905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1984320414,
+                            Id = -287093955,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3910,7 +3913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 513853573,
+                            Id = -1222737681,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3918,7 +3921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 903365413,
+                            Id = -1459711506,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3926,7 +3929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1304279700,
+                            Id = 1039106120,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3934,7 +3937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2138161495,
+                            Id = 1462726976,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3942,7 +3945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -316742794,
+                            Id = -1435862299,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3950,7 +3953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 762227021,
+                            Id = -404196549,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3958,7 +3961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1904788161,
+                            Id = 1202411963,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3966,7 +3969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -78823734,
+                            Id = 1530887996,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3974,7 +3977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1378794355,
+                            Id = 1101231650,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3982,7 +3985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2135537239,
+                            Id = 941697847,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3990,7 +3993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1698644110,
+                            Id = 563175028,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -3998,7 +4001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1089450955,
+                            Id = -693861313,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4006,7 +4009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1831316688,
+                            Id = -116092406,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4014,7 +4017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1301353474,
+                            Id = -1699321241,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4022,7 +4025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 850438960,
+                            Id = 1637772398,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4030,7 +4033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1323914587,
+                            Id = 470098114,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4038,7 +4041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -699136659,
+                            Id = -300187347,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4046,7 +4049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1565505287,
+                            Id = 2052122540,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4054,7 +4057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -20516576,
+                            Id = -1126915508,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4062,7 +4065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1528234551,
+                            Id = 463264273,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4070,7 +4073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1600628844,
+                            Id = 2003190816,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4078,7 +4081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -905987384,
+                            Id = -1026313311,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4086,7 +4089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -196605045,
+                            Id = 1377575658,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4094,7 +4097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1229755672,
+                            Id = 227089180,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4102,7 +4105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1290487745,
+                            Id = 62366121,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4110,7 +4113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1797374893,
+                            Id = -1839591602,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4118,7 +4121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1217821116,
+                            Id = 1550718024,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4126,7 +4129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -133619035,
+                            Id = 328799043,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4134,7 +4137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -885878038,
+                            Id = -896763750,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4142,7 +4145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2066607912,
+                            Id = -439045292,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4150,7 +4153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -553546714,
+                            Id = -1085038958,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4158,7 +4161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1270837894,
+                            Id = -436535553,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4166,7 +4169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 865529485,
+                            Id = -1687504680,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4174,7 +4177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1674820326,
+                            Id = -1608036844,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4182,7 +4185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 821534952,
+                            Id = -204631335,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4190,7 +4193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -207669868,
+                            Id = -946274203,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4198,7 +4201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -823362685,
+                            Id = -2109362162,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4206,7 +4209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -524443843,
+                            Id = -942088922,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4214,7 +4217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1576758388,
+                            Id = 23987708,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4222,7 +4225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 68436486,
+                            Id = 1672273831,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4230,7 +4233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 524219493,
+                            Id = -1509953707,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4238,7 +4241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1241813007,
+                            Id = -410996129,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4246,7 +4249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1953849391,
+                            Id = -273320021,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4254,7 +4257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 479625471,
+                            Id = 1034122551,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4262,7 +4265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1536143391,
+                            Id = -887224041,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4270,7 +4273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2087314979,
+                            Id = -1579541310,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4278,7 +4281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1089033753,
+                            Id = 2037305859,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4286,7 +4289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -408532547,
+                            Id = -1182833159,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4294,7 +4297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1235458158,
+                            Id = -1705487455,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4302,7 +4305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1419273605,
+                            Id = 54989025,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4310,7 +4313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -127988716,
+                            Id = 354063284,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4318,7 +4321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1780936094,
+                            Id = 102768508,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4326,7 +4329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 710919861,
+                            Id = -1307821464,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4334,7 +4337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1031971970,
+                            Id = -1268340441,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4342,7 +4345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 731284135,
+                            Id = 1563234111,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4350,7 +4353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -686209708,
+                            Id = -1948903937,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4358,7 +4361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1659355653,
+                            Id = 597520754,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4366,7 +4369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 500872258,
+                            Id = 1854270897,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4374,7 +4377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -565473520,
+                            Id = 582191539,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4382,7 +4385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 861206846,
+                            Id = 1816135097,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4390,7 +4393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1858405506,
+                            Id = -770582644,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4398,7 +4401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1622763722,
+                            Id = 2042065702,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4406,7 +4409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -951544975,
+                            Id = 1332153533,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4414,7 +4417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 599055944,
+                            Id = 1150326687,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4422,7 +4425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -673481824,
+                            Id = -1738958396,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4430,7 +4433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1534951678,
+                            Id = -1715444967,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4438,7 +4441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 754179545,
+                            Id = 1432283827,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4446,7 +4449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 957420946,
+                            Id = 531114630,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4454,7 +4457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -682320962,
+                            Id = -1570629609,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4462,7 +4465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2096102867,
+                            Id = -992203686,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4470,7 +4473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -766133946,
+                            Id = -60412874,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4478,7 +4481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -252649617,
+                            Id = 360761913,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4486,7 +4489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1783198012,
+                            Id = 1718541740,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4494,7 +4497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1197994544,
+                            Id = 1200374649,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4502,7 +4505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1606183484,
+                            Id = 1642121390,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4510,7 +4513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1919875132,
+                            Id = 1917081410,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4518,7 +4521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -817597963,
+                            Id = -963772777,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4526,7 +4529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1354505932,
+                            Id = -770364612,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4534,7 +4537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 447175962,
+                            Id = -1645775751,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4542,7 +4545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1475376519,
+                            Id = -640146180,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4550,7 +4553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 203888041,
+                            Id = -2102152617,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4558,7 +4561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1561808183,
+                            Id = 1816836737,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4566,7 +4569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2063986229,
+                            Id = 610843875,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4574,7 +4577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 227792943,
+                            Id = -316168466,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4582,7 +4585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1386561244,
+                            Id = 2050792266,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4590,7 +4593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1743870725,
+                            Id = 1320649083,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4598,7 +4601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1066724456,
+                            Id = 1426849170,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4606,7 +4609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1943456651,
+                            Id = -1227501787,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4614,7 +4617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 270671206,
+                            Id = -560183197,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4622,7 +4625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 867007050,
+                            Id = 1660628855,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4630,7 +4633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 612688991,
+                            Id = 828188787,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4638,7 +4641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -485242961,
+                            Id = 411954265,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4646,7 +4649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2051913384,
+                            Id = -1362042274,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4654,7 +4657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -940625655,
+                            Id = 1568919800,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4662,7 +4665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1365363938,
+                            Id = -865863802,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4670,7 +4673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 948114869,
+                            Id = -503782605,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4678,7 +4681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1731659522,
+                            Id = -1981621239,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4686,7 +4689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 30429881,
+                            Id = 1891696241,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4694,7 +4697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1860769504,
+                            Id = -154749862,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4702,7 +4705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2139683504,
+                            Id = 242656555,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4710,7 +4713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1721144437,
+                            Id = 2100566013,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4718,7 +4721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -506517855,
+                            Id = -934085745,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4726,7 +4729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 223005681,
+                            Id = -1019957850,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4734,7 +4737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1731530484,
+                            Id = 367564428,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4742,7 +4745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 537504456,
+                            Id = 1978381683,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4750,7 +4753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 783967721,
+                            Id = 1868843949,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4758,7 +4761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1252896767,
+                            Id = -1122948588,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4766,7 +4769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -487395129,
+                            Id = 1462177010,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4774,7 +4777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2146027185,
+                            Id = 1547802260,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4782,7 +4785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 227728335,
+                            Id = 1451294856,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4790,7 +4793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1338658533,
+                            Id = 304298346,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4798,7 +4801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1899667160,
+                            Id = 16521373,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4806,7 +4809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1710597647,
+                            Id = 32684841,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4814,7 +4817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1567433542,
+                            Id = 55040103,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4822,7 +4825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1936495722,
+                            Id = 432525684,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4830,7 +4833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -384828569,
+                            Id = -1107274689,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4838,7 +4841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1826918151,
+                            Id = -602532612,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4846,7 +4849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -196219610,
+                            Id = -132847926,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4854,7 +4857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -73989822,
+                            Id = 638673101,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4862,7 +4865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1954994356,
+                            Id = 1391033749,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4870,7 +4873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2008409857,
+                            Id = -1961939143,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4878,7 +4881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1310458479,
+                            Id = -319318769,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4886,7 +4889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 262212640,
+                            Id = 321367559,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4894,7 +4897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1772965573,
+                            Id = 387362677,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4902,7 +4905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1067970578,
+                            Id = -156812209,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4910,7 +4913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -523300287,
+                            Id = 1478697062,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4918,7 +4921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 775128234,
+                            Id = -390451343,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4926,7 +4929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1845253580,
+                            Id = -1398609631,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4934,7 +4937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -402067071,
+                            Id = -1905363182,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4942,7 +4945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -196476758,
+                            Id = -644200333,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4950,7 +4953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1313769147,
+                            Id = -1182212468,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4958,7 +4961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -600066077,
+                            Id = 434080063,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4966,7 +4969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 99661158,
+                            Id = -336984052,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4974,7 +4977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 815438334,
+                            Id = -1714166524,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4982,7 +4985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -412826142,
+                            Id = 1083398261,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4990,7 +4993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -311816464,
+                            Id = 1330535722,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -4998,7 +5001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1182211499,
+                            Id = -1170132302,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5006,7 +5009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -101275269,
+                            Id = 669857064,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5014,7 +5017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 276763475,
+                            Id = 1615682983,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5022,7 +5025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 458074535,
+                            Id = 1079710325,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5030,7 +5033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1291074626,
+                            Id = -163058354,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5038,7 +5041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1086292096,
+                            Id = -867708509,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5046,7 +5049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1028407442,
+                            Id = 1305158855,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5054,7 +5057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -594063607,
+                            Id = -191711636,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5062,7 +5065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 631186182,
+                            Id = -2046986915,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5070,7 +5073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1858205217,
+                            Id = 1808052734,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5078,7 +5081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1010155896,
+                            Id = -602704773,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5086,7 +5089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1058622833,
+                            Id = -1029564912,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5094,7 +5097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 681611342,
+                            Id = -115226906,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5102,7 +5105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1347168992,
+                            Id = -1231562184,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5110,7 +5113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1434677969,
+                            Id = -360087526,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5118,7 +5121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1646673384,
+                            Id = -1681326555,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5126,7 +5129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -298336189,
+                            Id = -1305903694,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5134,7 +5137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1509043406,
+                            Id = 188388480,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5142,7 +5145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2104075725,
+                            Id = -1074482077,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5150,7 +5153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1960427341,
+                            Id = -1510749634,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5158,7 +5161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1046867023,
+                            Id = -12588215,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5166,7 +5169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1290562105,
+                            Id = -1881411676,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5174,7 +5177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 356767101,
+                            Id = -1552893639,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5182,7 +5185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -445582389,
+                            Id = -2130648145,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5190,7 +5193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -12772024,
+                            Id = -264825888,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5198,7 +5201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1203154566,
+                            Id = -407114937,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5206,7 +5209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -334653540,
+                            Id = -1427878483,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5214,7 +5217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 946159586,
+                            Id = 627486930,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5222,7 +5225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1587324463,
+                            Id = 1806817681,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5230,7 +5233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1128782719,
+                            Id = 555597794,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5238,7 +5241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 994838976,
+                            Id = 1386838822,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5246,7 +5249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 542933821,
+                            Id = 1701662236,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5254,7 +5257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1350683082,
+                            Id = -2494529,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5262,7 +5265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2136453878,
+                            Id = -1940049176,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5270,7 +5273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -390554636,
+                            Id = -1006171815,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5278,7 +5281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 895514050,
+                            Id = 1766503214,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5286,7 +5289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1769127722,
+                            Id = 1201688626,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5294,7 +5297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1668667505,
+                            Id = 719518253,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5302,7 +5305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1899176035,
+                            Id = -2043300799,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5310,7 +5313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1292897609,
+                            Id = 868487419,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5318,7 +5321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 508138794,
+                            Id = -1401311489,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5326,7 +5329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1735802381,
+                            Id = -1838605255,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5334,7 +5337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1620484441,
+                            Id = 862303569,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5342,7 +5345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1348495532,
+                            Id = 2115302035,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5350,7 +5353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1332886652,
+                            Id = 1545289393,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5358,7 +5361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1766470613,
+                            Id = 1188160947,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5366,7 +5369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1478214323,
+                            Id = -1342983583,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5374,7 +5377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1289292876,
+                            Id = -790759428,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5382,7 +5385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1587508253,
+                            Id = -316839880,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5390,7 +5393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 108973495,
+                            Id = -1641229354,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5398,7 +5401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1582321714,
+                            Id = 1112191102,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5406,7 +5409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1989815150,
+                            Id = -1568343362,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5414,7 +5417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1723093860,
+                            Id = 629669221,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5422,7 +5425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1978926911,
+                            Id = -1876375430,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5430,7 +5433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1965586564,
+                            Id = 2143034760,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5438,7 +5441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1994969077,
+                            Id = -1733516212,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5446,7 +5449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 411812841,
+                            Id = -76476191,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5454,7 +5457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1574410344,
+                            Id = 2036368016,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5462,7 +5465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -380025019,
+                            Id = 779214255,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5470,7 +5473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -690068300,
+                            Id = 188377610,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5478,7 +5481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1701965480,
+                            Id = 124010768,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5486,7 +5489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 558269253,
+                            Id = 804987817,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5494,7 +5497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -140113807,
+                            Id = 317185358,
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 1,
                             Price = 300m,
@@ -5502,7 +5505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -639787599,
+                            Id = 1367193815,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5510,7 +5513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 169435936,
+                            Id = -441017508,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5518,7 +5521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1891854782,
+                            Id = 558154546,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5526,7 +5529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1378093208,
+                            Id = -662817340,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5534,7 +5537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1955344979,
+                            Id = 1354638477,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5542,7 +5545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1292424825,
+                            Id = 1909017127,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5550,7 +5553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1512469851,
+                            Id = -184822187,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5558,7 +5561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1987427320,
+                            Id = -1286421935,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5566,7 +5569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1862519080,
+                            Id = -276636739,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5574,7 +5577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 118546139,
+                            Id = 1934876419,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5582,7 +5585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1814230056,
+                            Id = -610138810,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5590,7 +5593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -87019010,
+                            Id = 533007558,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5598,7 +5601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 25421113,
+                            Id = 1070237963,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5606,7 +5609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 380649446,
+                            Id = 595579260,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5614,7 +5617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -682619687,
+                            Id = -1147430255,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5622,7 +5625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1753498808,
+                            Id = -478045813,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5630,7 +5633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -271647173,
+                            Id = 773171808,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5638,7 +5641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1253232193,
+                            Id = 1953269919,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5646,7 +5649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1909217123,
+                            Id = 1898635790,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5654,7 +5657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1392082401,
+                            Id = -1860867785,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5662,7 +5665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2093056052,
+                            Id = -808759975,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5670,7 +5673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -214131246,
+                            Id = 1625133333,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5678,7 +5681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 890097320,
+                            Id = 666791830,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5686,7 +5689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1682824560,
+                            Id = -1003272388,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5694,7 +5697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -823640734,
+                            Id = -1981303702,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5702,7 +5705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1105675360,
+                            Id = -1797600536,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5710,7 +5713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -182021932,
+                            Id = 1480974377,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5718,7 +5721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -962781700,
+                            Id = -1073044592,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5726,7 +5729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1358785052,
+                            Id = 833984419,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5734,7 +5737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -6706253,
+                            Id = 1747672373,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5742,7 +5745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -879679169,
+                            Id = 2092030613,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5750,7 +5753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1567854976,
+                            Id = -1737517317,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5758,7 +5761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1752098946,
+                            Id = 374891600,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5766,7 +5769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -824720704,
+                            Id = -633584655,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5774,7 +5777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -182452583,
+                            Id = -1468429203,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5782,7 +5785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 556115176,
+                            Id = -1286872357,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5790,7 +5793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1173323824,
+                            Id = 479409145,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5798,7 +5801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -468620624,
+                            Id = -261530263,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5806,7 +5809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2131323265,
+                            Id = 1207619067,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5814,7 +5817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 5589127,
+                            Id = 693558306,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5822,7 +5825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -483288867,
+                            Id = -1658518202,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5830,7 +5833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1423182723,
+                            Id = -148638759,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5838,7 +5841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1910935210,
+                            Id = 944996751,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5846,7 +5849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1703079721,
+                            Id = 1639573209,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5854,7 +5857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1513971120,
+                            Id = 1386140007,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5862,7 +5865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1970200560,
+                            Id = -141088945,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5870,7 +5873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2144447699,
+                            Id = -203530622,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5878,7 +5881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1016422728,
+                            Id = -742707499,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5886,7 +5889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2067267007,
+                            Id = 1267379755,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5894,7 +5897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1500719298,
+                            Id = 1544857619,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5902,7 +5905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1600219078,
+                            Id = 415580664,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5910,7 +5913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1212850626,
+                            Id = 707118983,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5918,7 +5921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1117838013,
+                            Id = 939361923,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5926,7 +5929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1452900116,
+                            Id = 161574002,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5934,7 +5937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1548223184,
+                            Id = -1009681996,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5942,7 +5945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -644761907,
+                            Id = -690762622,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5950,7 +5953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -681772309,
+                            Id = -398013530,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5958,7 +5961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1465938839,
+                            Id = -2064494791,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5966,7 +5969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1416984362,
+                            Id = -1318334401,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5974,7 +5977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 764809675,
+                            Id = -61572706,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5982,7 +5985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1211995950,
+                            Id = -60718601,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5990,7 +5993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -143947326,
+                            Id = -893236032,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -5998,7 +6001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -694825461,
+                            Id = -358434701,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6006,7 +6009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -834974687,
+                            Id = 373382912,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6014,7 +6017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2019089507,
+                            Id = 13162498,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6022,7 +6025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -297608989,
+                            Id = 686784592,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6030,7 +6033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 553393230,
+                            Id = 992144597,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6038,7 +6041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 343403247,
+                            Id = 85080889,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6046,7 +6049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 639131343,
+                            Id = 1397451711,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6054,7 +6057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -713782478,
+                            Id = 2024490593,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6062,7 +6065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 153974301,
+                            Id = 1352245821,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6070,7 +6073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1523500329,
+                            Id = 959977656,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6078,7 +6081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 526421293,
+                            Id = 381793710,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6086,7 +6089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1275580286,
+                            Id = 18733091,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6094,7 +6097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1594148592,
+                            Id = -818856421,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6102,7 +6105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1251777244,
+                            Id = 878489935,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6110,7 +6113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 285227616,
+                            Id = -1525240217,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6118,7 +6121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -565446055,
+                            Id = -1250749702,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6126,7 +6129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 258636069,
+                            Id = 1156564601,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6134,7 +6137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -269719279,
+                            Id = -361704396,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6142,7 +6145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1086796671,
+                            Id = 1978276753,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6150,7 +6153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -854602624,
+                            Id = 2050232272,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6158,7 +6161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 125351761,
+                            Id = -431315213,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6166,7 +6169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1104669747,
+                            Id = -75281464,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6174,7 +6177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1949308758,
+                            Id = -1961007818,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6182,7 +6185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2112747340,
+                            Id = 1668669545,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6190,7 +6193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -882163914,
+                            Id = -1393711699,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6198,7 +6201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 658408209,
+                            Id = 844102529,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6206,7 +6209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1856156480,
+                            Id = 1417950724,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6214,7 +6217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1192900627,
+                            Id = 248374377,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6222,7 +6225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2023598789,
+                            Id = -2027637147,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6230,7 +6233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1232963565,
+                            Id = -395856040,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6238,7 +6241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -848128867,
+                            Id = -336722293,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6246,7 +6249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 762379467,
+                            Id = 1329914855,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6254,7 +6257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -231838520,
+                            Id = -219918954,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6262,7 +6265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -32836239,
+                            Id = 503447542,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6270,7 +6273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1891669664,
+                            Id = -650251535,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6278,7 +6281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1428581056,
+                            Id = -426382291,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6286,7 +6289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -579933638,
+                            Id = 13504208,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6294,7 +6297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -696249280,
+                            Id = -1621519657,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6302,7 +6305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 385742646,
+                            Id = 1266865741,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6310,7 +6313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1905706789,
+                            Id = 525747953,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6318,7 +6321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1907053952,
+                            Id = -1079894773,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6326,7 +6329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2040193555,
+                            Id = 474198014,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6334,7 +6337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1451257834,
+                            Id = -2142735950,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6342,7 +6345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 941792892,
+                            Id = 1809680640,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6350,7 +6353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2037617363,
+                            Id = 828898748,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6358,7 +6361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1770842259,
+                            Id = -841495857,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6366,7 +6369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1063022340,
+                            Id = -987213108,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6374,7 +6377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2124955221,
+                            Id = -250304046,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6382,7 +6385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2108686332,
+                            Id = -516075473,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6390,7 +6393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1892374456,
+                            Id = -1777935407,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6398,7 +6401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1133262424,
+                            Id = 2529004,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6406,7 +6409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -737585749,
+                            Id = -1745082202,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6414,7 +6417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1162876716,
+                            Id = -1083994987,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6422,7 +6425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -952687741,
+                            Id = -578150907,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6430,7 +6433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 663159333,
+                            Id = 1395496651,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6438,7 +6441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -214458708,
+                            Id = -1468276418,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6446,7 +6449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1610536267,
+                            Id = -808633359,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6454,7 +6457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -576723061,
+                            Id = 919395782,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6462,7 +6465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1989870079,
+                            Id = -1000938947,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6470,7 +6473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1745782808,
+                            Id = -624482627,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6478,7 +6481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 35450633,
+                            Id = -456299497,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6486,7 +6489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1346576588,
+                            Id = -1464577747,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6494,7 +6497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 995430952,
+                            Id = 744757730,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6502,7 +6505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 608288244,
+                            Id = 743926906,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6510,7 +6513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 85672540,
+                            Id = 1374035030,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6518,7 +6521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -224723219,
+                            Id = -398810668,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6526,7 +6529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 987193296,
+                            Id = -837705804,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6534,7 +6537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1796796631,
+                            Id = 386217496,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6542,7 +6545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -845075825,
+                            Id = 182605332,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6550,7 +6553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1520951719,
+                            Id = -1545215986,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6558,7 +6561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 941158232,
+                            Id = -1615278866,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6566,7 +6569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1390039709,
+                            Id = 387845348,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6574,7 +6577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2021854398,
+                            Id = 1383257135,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6582,7 +6585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1699205489,
+                            Id = -1289043166,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6590,7 +6593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -113040007,
+                            Id = -2064207204,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6598,7 +6601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1512059672,
+                            Id = -1403677545,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6606,7 +6609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1699938031,
+                            Id = 809851040,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6614,7 +6617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1339168436,
+                            Id = -661065036,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6622,7 +6625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2120816204,
+                            Id = -1720272404,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6630,7 +6633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -631287133,
+                            Id = 1214045089,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6638,7 +6641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1799233476,
+                            Id = -225656155,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6646,7 +6649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -600660641,
+                            Id = -362096681,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6654,7 +6657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1810552975,
+                            Id = -939180056,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6662,7 +6665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 698773363,
+                            Id = 1115680982,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6670,7 +6673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2083018451,
+                            Id = 1492215468,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6678,7 +6681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -464561047,
+                            Id = -405363428,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6686,7 +6689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1112043371,
+                            Id = 1024185998,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6694,7 +6697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 837028650,
+                            Id = -1521284730,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6702,7 +6705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1368100302,
+                            Id = 1588868627,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6710,7 +6713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1457403253,
+                            Id = 71631912,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6718,7 +6721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1680733222,
+                            Id = -1295297994,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6726,7 +6729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1024855259,
+                            Id = -1858856017,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6734,7 +6737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -365318315,
+                            Id = 16710315,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6742,7 +6745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1910528162,
+                            Id = -2112048208,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6750,7 +6753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2097501893,
+                            Id = 722812960,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6758,7 +6761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -499843289,
+                            Id = -1228450247,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6766,7 +6769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1701658913,
+                            Id = 1918888585,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6774,7 +6777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1468888686,
+                            Id = 790661883,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6782,7 +6785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1406018809,
+                            Id = -353630445,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6790,7 +6793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1982709580,
+                            Id = -1895793719,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6798,7 +6801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -454162559,
+                            Id = 890716640,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6806,7 +6809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1660029093,
+                            Id = 66418748,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6814,7 +6817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1148133911,
+                            Id = -2008209103,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6822,7 +6825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2140441763,
+                            Id = 2095002557,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6830,7 +6833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1410897240,
+                            Id = -593068884,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6838,7 +6841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 101992738,
+                            Id = -755583027,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6846,7 +6849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 680329028,
+                            Id = 1553575958,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6854,7 +6857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -499057523,
+                            Id = 32981318,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6862,7 +6865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1623881130,
+                            Id = 66965713,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6870,7 +6873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1242978587,
+                            Id = 501028109,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6878,7 +6881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2118070462,
+                            Id = -939375717,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6886,7 +6889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -434420643,
+                            Id = 275626449,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6894,7 +6897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -760173983,
+                            Id = 1693023952,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6902,7 +6905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -153065828,
+                            Id = 1516913486,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6910,7 +6913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1380147029,
+                            Id = -95859321,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6918,7 +6921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2109769372,
+                            Id = 763283970,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6926,7 +6929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 767043164,
+                            Id = -1580164481,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6934,7 +6937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1071559490,
+                            Id = 1068141299,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6942,7 +6945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1970386612,
+                            Id = 152921621,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6950,7 +6953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1377933413,
+                            Id = 246871526,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6958,7 +6961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1414256118,
+                            Id = -1843003478,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6966,7 +6969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2136997702,
+                            Id = 307888006,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6974,7 +6977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 831182948,
+                            Id = 1484627721,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6982,7 +6985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1373428853,
+                            Id = 1390719234,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6990,7 +6993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1739042093,
+                            Id = -600394760,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -6998,7 +7001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1178347052,
+                            Id = -1315154992,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7006,7 +7009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -604122069,
+                            Id = -1328724211,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7014,7 +7017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1644512534,
+                            Id = 1813413125,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7022,7 +7025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 13723555,
+                            Id = 1111267536,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7030,7 +7033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1558267035,
+                            Id = -1147197400,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7038,7 +7041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 132912876,
+                            Id = 2129901169,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7046,7 +7049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -672170587,
+                            Id = -1525541768,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7054,7 +7057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1264301297,
+                            Id = 179557137,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7062,7 +7065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 903709660,
+                            Id = 455639700,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7070,7 +7073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1185707911,
+                            Id = -50345854,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7078,7 +7081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1328064462,
+                            Id = 881754516,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7086,7 +7089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 378310125,
+                            Id = 1169574373,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7094,7 +7097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -3998216,
+                            Id = 381122083,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7102,7 +7105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1891321917,
+                            Id = 399380164,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7110,7 +7113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 228478,
+                            Id = -714786682,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7118,7 +7121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 515750903,
+                            Id = 1659751417,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7126,7 +7129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -267956056,
+                            Id = 1917341797,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7134,7 +7137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1236554360,
+                            Id = -1508893556,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7142,7 +7145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -642169083,
+                            Id = -1726417678,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7150,7 +7153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 797755112,
+                            Id = 1946592633,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7158,7 +7161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -465202639,
+                            Id = -1560220323,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7166,7 +7169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 443898329,
+                            Id = 657337457,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7174,7 +7177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -204334582,
+                            Id = 89984486,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7182,7 +7185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1236051801,
+                            Id = 656940288,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7190,7 +7193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1113420449,
+                            Id = -1395073568,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7198,7 +7201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -525437849,
+                            Id = 1281067061,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7206,7 +7209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1470830073,
+                            Id = -1046191601,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7214,7 +7217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1833859834,
+                            Id = -2073300049,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7222,7 +7225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 933004044,
+                            Id = -850698524,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7230,7 +7233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -575088154,
+                            Id = 643548901,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7238,7 +7241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1662938195,
+                            Id = 279004437,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7246,7 +7249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -185371317,
+                            Id = 935649656,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7254,7 +7257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1002843442,
+                            Id = -1259683880,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7262,7 +7265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -107848783,
+                            Id = 287199084,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7270,7 +7273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -970961695,
+                            Id = 212030963,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7278,7 +7281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1316778389,
+                            Id = -304347218,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7286,7 +7289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1805222811,
+                            Id = 1748159353,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7294,7 +7297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 398052404,
+                            Id = 1920036051,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7302,7 +7305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1912216831,
+                            Id = -1072479207,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7310,7 +7313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 7743550,
+                            Id = 176814669,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7318,7 +7321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 238602351,
+                            Id = 1212550998,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7326,7 +7329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1751479003,
+                            Id = -1354899328,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7334,7 +7337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -469836897,
+                            Id = 159331026,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7342,7 +7345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 515159570,
+                            Id = 297622621,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7350,7 +7353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -983667839,
+                            Id = 1539703015,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7358,7 +7361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2035157488,
+                            Id = 1944831516,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7366,7 +7369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1909762441,
+                            Id = -245654052,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7374,7 +7377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 321716800,
+                            Id = -1091441260,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7382,7 +7385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1935688544,
+                            Id = 1812660,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7390,7 +7393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1796074771,
+                            Id = -327788674,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7398,7 +7401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 387341633,
+                            Id = -1376288133,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7406,7 +7409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1796360085,
+                            Id = -1203967250,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7414,7 +7417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 405123224,
+                            Id = 856937971,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7422,7 +7425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1131667072,
+                            Id = -1275776592,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7430,7 +7433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1220628361,
+                            Id = 166813492,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7438,7 +7441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -788233909,
+                            Id = 1418115456,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7446,7 +7449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1141009757,
+                            Id = 939402933,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7454,7 +7457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 184633703,
+                            Id = 944458685,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7462,7 +7465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 346514231,
+                            Id = 630787864,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7470,7 +7473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 897116955,
+                            Id = 1250437011,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7478,7 +7481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 553408161,
+                            Id = -900343639,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7486,7 +7489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -983226782,
+                            Id = -193015612,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7494,7 +7497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 248650367,
+                            Id = 420092971,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7502,7 +7505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1112319713,
+                            Id = 2137957101,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7510,7 +7513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1409798563,
+                            Id = 474884978,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7518,7 +7521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -594349799,
+                            Id = -1552254098,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7526,7 +7529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1611710129,
+                            Id = 911885170,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7534,7 +7537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2145560195,
+                            Id = 67762214,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7542,7 +7545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1110743380,
+                            Id = -1359482221,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7550,7 +7553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -280010979,
+                            Id = -1063596339,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7558,7 +7561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -91103835,
+                            Id = -805956990,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7566,7 +7569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1258734731,
+                            Id = -1190149465,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7574,7 +7577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1504904855,
+                            Id = -586954495,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7582,7 +7585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1397922667,
+                            Id = 1610524602,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7590,7 +7593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 134355952,
+                            Id = -1439410941,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7598,7 +7601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 184713129,
+                            Id = -672690670,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7606,7 +7609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -104372946,
+                            Id = 1477839657,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7614,7 +7617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2120687934,
+                            Id = 1836737740,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7622,7 +7625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -996675493,
+                            Id = 1152463964,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7630,7 +7633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1513262298,
+                            Id = -1601393790,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7638,7 +7641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 345702578,
+                            Id = -1335111410,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7646,7 +7649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1454304533,
+                            Id = 1419004980,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7654,7 +7657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1637419528,
+                            Id = -535781959,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7662,7 +7665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1892390728,
+                            Id = 754811305,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7670,7 +7673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1103319504,
+                            Id = 1911981772,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7678,7 +7681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1281453149,
+                            Id = -445228505,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7686,7 +7689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1648222250,
+                            Id = 1031961215,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7694,7 +7697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1056149660,
+                            Id = -804826832,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7702,7 +7705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 703569686,
+                            Id = -2005353624,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7710,7 +7713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1402334359,
+                            Id = -2084557449,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7718,7 +7721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 907767806,
+                            Id = 1095767288,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7726,7 +7729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 165159315,
+                            Id = 1009140281,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7734,7 +7737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 645426700,
+                            Id = 2020571326,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7742,7 +7745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -825413113,
+                            Id = 220481944,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7750,7 +7753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 319771896,
+                            Id = -1908648167,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7758,7 +7761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1702322431,
+                            Id = 1484777769,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7766,7 +7769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1455176498,
+                            Id = 1971474608,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7774,7 +7777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 924032255,
+                            Id = -1502519491,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7782,7 +7785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2081084700,
+                            Id = -842132969,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7790,7 +7793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -461941462,
+                            Id = 758991525,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7798,7 +7801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1183410064,
+                            Id = -1645585947,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7806,7 +7809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 251785633,
+                            Id = -400167561,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7814,7 +7817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2057976548,
+                            Id = 1173665153,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7822,7 +7825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 685897184,
+                            Id = 1033800570,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7830,7 +7833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1045193563,
+                            Id = 1916971021,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7838,7 +7841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1493761624,
+                            Id = -384880542,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7846,7 +7849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1178799205,
+                            Id = -829592105,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7854,7 +7857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1000561829,
+                            Id = 39729210,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7862,7 +7865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -220056272,
+                            Id = 1948777781,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7870,7 +7873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -296207017,
+                            Id = 2057005482,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7878,7 +7881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 813623354,
+                            Id = 662735896,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7886,7 +7889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1507214212,
+                            Id = -1949755788,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7894,7 +7897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1376011528,
+                            Id = 988539530,
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 2,
                             Price = 100m,
@@ -7902,7 +7905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1961881305,
+                            Id = -721395803,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7910,7 +7913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1465064044,
+                            Id = 2127190090,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7918,7 +7921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 370712325,
+                            Id = 1581446547,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7926,7 +7929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1512365004,
+                            Id = -319535327,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7934,7 +7937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1180158285,
+                            Id = -1281275459,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7942,7 +7945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1928588140,
+                            Id = 961424999,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7950,7 +7953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 798177126,
+                            Id = 1361124103,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7958,7 +7961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1683698887,
+                            Id = -1892610505,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7966,7 +7969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1501802649,
+                            Id = -1729619557,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7974,7 +7977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1339657986,
+                            Id = 1657861348,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7982,7 +7985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1169373874,
+                            Id = 2026108967,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7990,7 +7993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 708618909,
+                            Id = 1361177241,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -7998,7 +8001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2098417494,
+                            Id = 1230003106,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8006,7 +8009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -97814422,
+                            Id = -270058549,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8014,7 +8017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2119419766,
+                            Id = 1837647514,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8022,7 +8025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1039234905,
+                            Id = 751595332,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8030,7 +8033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 633625037,
+                            Id = 1452923461,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8038,7 +8041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1552969178,
+                            Id = -872908650,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8046,7 +8049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -191943335,
+                            Id = 1005376069,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8054,7 +8057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 333643154,
+                            Id = 337655383,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8062,7 +8065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1868412297,
+                            Id = -1422067264,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8070,7 +8073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1936174909,
+                            Id = -1064531805,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8078,7 +8081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 309886003,
+                            Id = 439184436,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8086,7 +8089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1296477530,
+                            Id = 70264139,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8094,7 +8097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1104399685,
+                            Id = -1053130129,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8102,7 +8105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 422622482,
+                            Id = -1482585798,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8110,7 +8113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -292984264,
+                            Id = 757533183,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8118,7 +8121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -7463363,
+                            Id = 1673534725,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8126,7 +8129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -193393704,
+                            Id = -1084656578,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8134,7 +8137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1685070588,
+                            Id = -592793676,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8142,7 +8145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1564686519,
+                            Id = -42339114,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8150,7 +8153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 561736870,
+                            Id = 1128307359,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8158,7 +8161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1695621297,
+                            Id = 281279317,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8166,7 +8169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 111738930,
+                            Id = 264680839,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8174,7 +8177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2105719972,
+                            Id = 1645073300,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8182,7 +8185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1763064038,
+                            Id = -1245070369,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8190,7 +8193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 357121712,
+                            Id = 737363500,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8198,7 +8201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -738081367,
+                            Id = 839811456,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8206,7 +8209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 794829528,
+                            Id = 1238000869,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8214,7 +8217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 487742379,
+                            Id = 1013336278,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8222,7 +8225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1454116202,
+                            Id = 1146992081,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8230,7 +8233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 307423129,
+                            Id = 1129148532,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8238,7 +8241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 6113423,
+                            Id = 401618707,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8246,7 +8249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -973243059,
+                            Id = -469519641,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8254,7 +8257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1542874977,
+                            Id = 584950006,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8262,7 +8265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -110462779,
+                            Id = 205359556,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8270,7 +8273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -777285401,
+                            Id = 1451862444,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8278,7 +8281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1874550328,
+                            Id = 711555393,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8286,7 +8289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 538308178,
+                            Id = -974803483,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8294,7 +8297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -804278163,
+                            Id = -2018268701,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8302,7 +8305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1860545675,
+                            Id = 2068920060,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8310,7 +8313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1576502056,
+                            Id = -1248350709,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8318,7 +8321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1748328311,
+                            Id = -1784828163,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8326,7 +8329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1215667729,
+                            Id = -1913444961,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8334,7 +8337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -541035437,
+                            Id = 1305964307,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8342,7 +8345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 505428675,
+                            Id = 1671150330,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8350,7 +8353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1799720058,
+                            Id = -1545273091,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8358,7 +8361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1568834903,
+                            Id = -787177427,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8366,7 +8369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1207594196,
+                            Id = -2086100789,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8374,7 +8377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2106023924,
+                            Id = 408052800,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8382,7 +8385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -801947031,
+                            Id = 1420061190,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8390,7 +8393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1084881605,
+                            Id = 468421802,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8398,7 +8401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 367728471,
+                            Id = 879711716,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8406,7 +8409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2074092765,
+                            Id = 1148366096,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8414,7 +8417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 553331062,
+                            Id = 1838003789,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8422,7 +8425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -954919717,
+                            Id = -1804695493,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8430,7 +8433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1452545605,
+                            Id = -1169130186,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8438,7 +8441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -565854859,
+                            Id = -1801903746,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8446,7 +8449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1014626943,
+                            Id = -997050503,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8454,7 +8457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 236409436,
+                            Id = 225385158,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8462,7 +8465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1950739081,
+                            Id = -1087239501,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8470,7 +8473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -100882283,
+                            Id = -785580482,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8478,7 +8481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1305513209,
+                            Id = -1774020256,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8486,7 +8489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1650482251,
+                            Id = 1888348062,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8494,7 +8497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -479022134,
+                            Id = -576278550,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8502,7 +8505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 424158745,
+                            Id = 1346613222,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8510,7 +8513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1312228976,
+                            Id = -241167723,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8518,7 +8521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 159909093,
+                            Id = 1133538605,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8526,7 +8529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1144310480,
+                            Id = -48979003,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8534,7 +8537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1901264699,
+                            Id = -162317245,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8542,7 +8545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -890201300,
+                            Id = -2022716222,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8550,7 +8553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1655154350,
+                            Id = 1051282312,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8558,7 +8561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -210171902,
+                            Id = 721680337,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8566,7 +8569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 896235322,
+                            Id = 1061185107,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8574,7 +8577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1376024278,
+                            Id = 918445484,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8582,7 +8585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 887857868,
+                            Id = 901671038,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8590,7 +8593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 520750528,
+                            Id = -599088400,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8598,7 +8601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1684497659,
+                            Id = -1598639709,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8606,7 +8609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 215545540,
+                            Id = -431249802,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8614,7 +8617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1688256110,
+                            Id = 315106306,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8622,7 +8625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2059416987,
+                            Id = -1576202395,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8630,7 +8633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1568621316,
+                            Id = 370685211,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8638,7 +8641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 460668051,
+                            Id = 914818746,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8646,7 +8649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2136406576,
+                            Id = 1853198669,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8654,7 +8657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2048777361,
+                            Id = -220493993,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8662,7 +8665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1030490903,
+                            Id = -869312071,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8670,7 +8673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1732477387,
+                            Id = 2106312684,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8678,7 +8681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1824016799,
+                            Id = 107620469,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8686,7 +8689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2111502402,
+                            Id = 452966354,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8694,7 +8697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -40226006,
+                            Id = 466329176,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8702,7 +8705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1273240149,
+                            Id = 1481366535,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8710,7 +8713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -744849471,
+                            Id = 1223426609,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8718,7 +8721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -363909365,
+                            Id = -130983664,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8726,7 +8729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 297713343,
+                            Id = -1616107794,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8734,7 +8737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -979580143,
+                            Id = -500689171,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8742,7 +8745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2085265647,
+                            Id = -892501976,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8750,7 +8753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 944135964,
+                            Id = -1573523672,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8758,7 +8761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -626860777,
+                            Id = 1792833978,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8766,7 +8769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1049257045,
+                            Id = 850047991,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8774,7 +8777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1979241450,
+                            Id = -1178821406,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8782,7 +8785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 116683312,
+                            Id = -506515655,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8790,7 +8793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1995242607,
+                            Id = 1888923162,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8798,7 +8801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -31188210,
+                            Id = 254439693,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8806,7 +8809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1031125416,
+                            Id = 1611293386,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8814,7 +8817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1015720444,
+                            Id = -908566083,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8822,7 +8825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1162463363,
+                            Id = 58762683,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8830,7 +8833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -571015548,
+                            Id = 71778853,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8838,7 +8841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1524781826,
+                            Id = -496865358,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8846,7 +8849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 342022236,
+                            Id = -1560156859,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8854,7 +8857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2079991629,
+                            Id = 860001323,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8862,7 +8865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2039867295,
+                            Id = -1076617546,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8870,7 +8873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 994074569,
+                            Id = -1986284701,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8878,7 +8881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -729555328,
+                            Id = -345736577,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8886,7 +8889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1502708476,
+                            Id = -54861640,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8894,7 +8897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -746170962,
+                            Id = 1136666329,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8902,7 +8905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -897225260,
+                            Id = -2042602791,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8910,7 +8913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 404859446,
+                            Id = 1044691784,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8918,7 +8921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -13213815,
+                            Id = 38387785,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8926,7 +8929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1984686117,
+                            Id = 479291883,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8934,7 +8937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -318066770,
+                            Id = -291941499,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8942,7 +8945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1876877640,
+                            Id = 1130741067,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8950,7 +8953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 798155896,
+                            Id = 1609292441,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8958,7 +8961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 482932646,
+                            Id = -562515082,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8966,7 +8969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 417885024,
+                            Id = 247291500,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8974,7 +8977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -157221163,
+                            Id = -1640039514,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8982,7 +8985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1034536336,
+                            Id = -1642990416,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8990,7 +8993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1667648626,
+                            Id = -451236024,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -8998,7 +9001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1154285621,
+                            Id = -1853512118,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9006,7 +9009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 324148965,
+                            Id = 391740878,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9014,7 +9017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1852838578,
+                            Id = -1351246241,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9022,7 +9025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -994079131,
+                            Id = 1329260073,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9030,7 +9033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 372732985,
+                            Id = 794984633,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9038,7 +9041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1177415540,
+                            Id = 1569459451,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9046,7 +9049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1084745565,
+                            Id = 1847855506,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9054,7 +9057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1674366298,
+                            Id = 939329091,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9062,7 +9065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 468312688,
+                            Id = 822670728,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9070,7 +9073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1835384776,
+                            Id = -2006736789,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9078,7 +9081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1818448788,
+                            Id = -1456369317,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9086,7 +9089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1512709093,
+                            Id = -541067262,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9094,7 +9097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 902103142,
+                            Id = -747551118,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9102,7 +9105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 28663164,
+                            Id = -640222411,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9110,7 +9113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1412251613,
+                            Id = -1135846408,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9118,7 +9121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2075212832,
+                            Id = -255628245,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9126,7 +9129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1230722070,
+                            Id = -398244702,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9134,7 +9137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1500313246,
+                            Id = -112114707,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9142,7 +9145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1056889655,
+                            Id = 850882318,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9150,7 +9153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1112933900,
+                            Id = -1409900179,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9158,7 +9161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -575923978,
+                            Id = 1411174140,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9166,7 +9169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -570999134,
+                            Id = 1832573629,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9174,7 +9177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 419476233,
+                            Id = 572248844,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9182,7 +9185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 288567679,
+                            Id = 1943713533,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9190,7 +9193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -988007790,
+                            Id = -508228227,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9198,7 +9201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2055501728,
+                            Id = 1646933070,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9206,7 +9209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1068105835,
+                            Id = 1316792902,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9214,7 +9217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -949902473,
+                            Id = -467196122,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9222,7 +9225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 891995138,
+                            Id = -660489725,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9230,7 +9233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -619756941,
+                            Id = -1344024565,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9238,7 +9241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 571281657,
+                            Id = -1473144089,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9246,7 +9249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1538315836,
+                            Id = 1173851700,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9254,7 +9257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1783128296,
+                            Id = -1876414149,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9262,7 +9265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -647556945,
+                            Id = -1882345058,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9270,7 +9273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1573174637,
+                            Id = -294462690,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9278,7 +9281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 184420959,
+                            Id = -978517425,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9286,7 +9289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1109441190,
+                            Id = 1741373416,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9294,7 +9297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 923993462,
+                            Id = 292766598,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9302,7 +9305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1353257112,
+                            Id = -185061360,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9310,7 +9313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -809750796,
+                            Id = -1596055357,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9318,7 +9321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 437390130,
+                            Id = -1540418971,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9326,7 +9329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 507831328,
+                            Id = 1194544595,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9334,7 +9337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1686456892,
+                            Id = 1479694919,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9342,7 +9345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1544102697,
+                            Id = -273930868,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9350,7 +9353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1665038960,
+                            Id = -1117984341,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9358,7 +9361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1823717172,
+                            Id = 1033568803,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9366,7 +9369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 92577268,
+                            Id = -449485415,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9374,7 +9377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1914583137,
+                            Id = 886355736,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9382,7 +9385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1207687025,
+                            Id = 498002667,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9390,7 +9393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1885681743,
+                            Id = -1828579586,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9398,7 +9401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -407010628,
+                            Id = -424314896,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9406,7 +9409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1363007343,
+                            Id = 1865090353,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9414,7 +9417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2096430871,
+                            Id = 1958198841,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9422,7 +9425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 780716729,
+                            Id = 734836015,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9430,7 +9433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2131338807,
+                            Id = 1650040035,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9438,7 +9441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1983553809,
+                            Id = 1566806622,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9446,7 +9449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1512936590,
+                            Id = 541524911,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9454,7 +9457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1683454416,
+                            Id = 616913719,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9462,7 +9465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1524453205,
+                            Id = -1623174364,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9470,7 +9473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 817358447,
+                            Id = -1896250412,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9478,7 +9481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1511763749,
+                            Id = 532236686,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9486,7 +9489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -284624244,
+                            Id = -975336245,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9494,7 +9497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 872375426,
+                            Id = 1387645126,
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventId = 3,
                             Price = 150m,
@@ -9502,7 +9505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -688816198,
+                            Id = -1223716867,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9510,7 +9513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2144228314,
+                            Id = -256243315,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9518,7 +9521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2022457492,
+                            Id = 459640910,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9526,7 +9529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -829369524,
+                            Id = 787249172,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9534,7 +9537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1544797109,
+                            Id = -553330913,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9542,7 +9545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1975776325,
+                            Id = 1948240816,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9550,7 +9553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -958974547,
+                            Id = 737242430,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9558,7 +9561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 983549619,
+                            Id = -2097712600,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9566,7 +9569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1988312651,
+                            Id = 912161689,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9574,7 +9577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -873807671,
+                            Id = -1876713810,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9582,7 +9585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1979825199,
+                            Id = 1016404481,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9590,7 +9593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -519284847,
+                            Id = 1298708613,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9598,7 +9601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1726004498,
+                            Id = 2120179493,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9606,7 +9609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1388702991,
+                            Id = 1095712164,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9614,7 +9617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1260155619,
+                            Id = 873390070,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9622,7 +9625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1710911548,
+                            Id = -1158281379,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9630,7 +9633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -346513039,
+                            Id = -996703371,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9638,7 +9641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -393705944,
+                            Id = 10034107,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9646,7 +9649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 428370966,
+                            Id = -705565321,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9654,7 +9657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1069640007,
+                            Id = -498320495,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9662,7 +9665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 535106943,
+                            Id = 831767409,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9670,7 +9673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1937867968,
+                            Id = -776214470,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9678,7 +9681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 748166216,
+                            Id = 1565570808,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9686,7 +9689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 550358296,
+                            Id = 1888911549,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9694,7 +9697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -325955593,
+                            Id = 587839643,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9702,7 +9705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2093727194,
+                            Id = -1616568326,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9710,7 +9713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1167320113,
+                            Id = 7506432,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9718,7 +9721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1750168097,
+                            Id = -1687702727,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9726,7 +9729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 69826186,
+                            Id = 1907590912,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9734,7 +9737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1583617582,
+                            Id = 1289046071,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9742,7 +9745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1321167764,
+                            Id = -1440649938,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9750,7 +9753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1910025941,
+                            Id = 528887891,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9758,7 +9761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1207275317,
+                            Id = -861181048,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9766,7 +9769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1400068221,
+                            Id = -501956483,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9774,7 +9777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1401945453,
+                            Id = 2005275108,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9782,7 +9785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 520182433,
+                            Id = -12005910,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9790,7 +9793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1379062943,
+                            Id = -1215437084,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9798,7 +9801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 812664012,
+                            Id = 187641345,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9806,7 +9809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -291251175,
+                            Id = -193274201,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9814,7 +9817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1483289540,
+                            Id = -556204796,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9822,7 +9825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -633555715,
+                            Id = -1320264349,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9830,7 +9833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1378800351,
+                            Id = 5299015,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9838,7 +9841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1484937467,
+                            Id = -1117057910,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9846,7 +9849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -403525921,
+                            Id = 1180883977,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9854,7 +9857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1822507168,
+                            Id = 909989787,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9862,7 +9865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1314533803,
+                            Id = -486016637,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9870,7 +9873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 674321665,
+                            Id = -808470475,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9878,7 +9881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2147435393,
+                            Id = 1502331340,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9886,7 +9889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 923209950,
+                            Id = -559031431,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9894,7 +9897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1874330401,
+                            Id = -856510603,
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 4,
                             Price = 200m,
@@ -9902,7 +9905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 455837069,
+                            Id = -983857466,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9910,7 +9913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -167805122,
+                            Id = -1227673279,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9918,7 +9921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 747168789,
+                            Id = 921431420,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9926,7 +9929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -238352477,
+                            Id = -74731759,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9934,7 +9937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 294143583,
+                            Id = 1322714541,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9942,7 +9945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -897742468,
+                            Id = -525236705,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9950,7 +9953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 961258029,
+                            Id = -563462025,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9958,7 +9961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -68905777,
+                            Id = 1449431501,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9966,7 +9969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -746211290,
+                            Id = -1444082361,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9974,7 +9977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1429669021,
+                            Id = -624899391,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9982,7 +9985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -861722288,
+                            Id = -258446428,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9990,7 +9993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 877460338,
+                            Id = -166384945,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -9998,7 +10001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1471049800,
+                            Id = 244970736,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10006,7 +10009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1880345720,
+                            Id = -1542085805,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10014,7 +10017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 519147977,
+                            Id = -1588132041,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10022,7 +10025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 783268151,
+                            Id = 1298510230,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10030,7 +10033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 826175056,
+                            Id = 2088932142,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10038,7 +10041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -883247228,
+                            Id = -1682920495,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10046,7 +10049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -145010763,
+                            Id = -621285206,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10054,7 +10057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2118817311,
+                            Id = -251048914,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10062,7 +10065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1475192367,
+                            Id = 1645334474,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10070,7 +10073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -282422997,
+                            Id = 1419601670,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10078,7 +10081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2000206208,
+                            Id = -2021759148,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10086,7 +10089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -289538082,
+                            Id = -339187074,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10094,7 +10097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1564295624,
+                            Id = -907065638,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10102,7 +10105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 732394121,
+                            Id = 1901502311,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10110,7 +10113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1317547237,
+                            Id = -583934927,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10118,7 +10121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1478765716,
+                            Id = -61067481,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10126,7 +10129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1821829665,
+                            Id = -1620875343,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10134,7 +10137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1799871045,
+                            Id = -2058625569,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10142,7 +10145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1971314342,
+                            Id = 916723375,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10150,7 +10153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1990078925,
+                            Id = -1082947126,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10158,7 +10161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -728910361,
+                            Id = 1951370467,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10166,7 +10169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1276896553,
+                            Id = -1571718306,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10174,7 +10177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -208666863,
+                            Id = -880950235,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10182,7 +10185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1761863510,
+                            Id = 2146126429,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10190,7 +10193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 586844443,
+                            Id = 1274477216,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10198,7 +10201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 547520353,
+                            Id = 311341347,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10206,7 +10209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1721880906,
+                            Id = 695605551,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10214,7 +10217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2059822328,
+                            Id = 331311285,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10222,7 +10225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1215120454,
+                            Id = -1148199385,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10230,7 +10233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 412335660,
+                            Id = -1496143968,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10238,7 +10241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1732337823,
+                            Id = -1108245969,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10246,7 +10249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1830182258,
+                            Id = -1922684644,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10254,7 +10257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 26355572,
+                            Id = -1520644,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10262,7 +10265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2064778132,
+                            Id = 949768356,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10270,7 +10273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1238186227,
+                            Id = -476648806,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10278,7 +10281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1540183464,
+                            Id = -321917892,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10286,7 +10289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 450761308,
+                            Id = 760394417,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10294,7 +10297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -383247729,
+                            Id = -1567767382,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10302,7 +10305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 909607442,
+                            Id = 1162351438,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10310,7 +10313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -159668690,
+                            Id = -958947062,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10318,7 +10321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2136664635,
+                            Id = -634839560,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10326,7 +10329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1128317298,
+                            Id = 5991521,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10334,7 +10337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2092723834,
+                            Id = 2039163381,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10342,7 +10345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 746930281,
+                            Id = -1460671518,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10350,7 +10353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1354103438,
+                            Id = 511908302,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10358,7 +10361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 650279676,
+                            Id = -2114005322,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10366,7 +10369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1404421242,
+                            Id = -1757917332,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10374,7 +10377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -801581217,
+                            Id = 1115973828,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10382,7 +10385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 31003391,
+                            Id = -153289985,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10390,7 +10393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -283828293,
+                            Id = -153798597,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10398,7 +10401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1666228823,
+                            Id = 457428791,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10406,7 +10409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1872137340,
+                            Id = -1229152070,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10414,7 +10417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1914785886,
+                            Id = -958458955,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10422,7 +10425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 39454266,
+                            Id = 1509436508,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10430,7 +10433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2106580666,
+                            Id = 1099353486,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10438,7 +10441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 497455936,
+                            Id = 785643994,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10446,7 +10449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1085406990,
+                            Id = -1641553664,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10454,7 +10457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 946768698,
+                            Id = 1910639394,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10462,7 +10465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 796432580,
+                            Id = 1712005618,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10470,7 +10473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2105222343,
+                            Id = -814617471,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10478,7 +10481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1224188423,
+                            Id = -2134475003,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10486,7 +10489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1881799021,
+                            Id = 1620028335,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10494,7 +10497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 326320092,
+                            Id = -1065266644,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10502,7 +10505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 47403522,
+                            Id = -225830569,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10510,7 +10513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1537093313,
+                            Id = -1384379822,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10518,7 +10521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1114412723,
+                            Id = 695618186,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10526,7 +10529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -677160801,
+                            Id = -393723329,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10534,7 +10537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1712581147,
+                            Id = -1351206879,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10542,7 +10545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1997673372,
+                            Id = 2125068935,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10550,7 +10553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1808037324,
+                            Id = 504804223,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10558,7 +10561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 633296614,
+                            Id = -1470606694,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10566,7 +10569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1202999082,
+                            Id = -2065228939,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10574,7 +10577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1524786649,
+                            Id = 1314850860,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10582,7 +10585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1267069667,
+                            Id = 222641286,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10590,7 +10593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1898117213,
+                            Id = -177070896,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10598,7 +10601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -399843466,
+                            Id = -1715495355,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10606,7 +10609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1972406147,
+                            Id = 105941545,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10614,7 +10617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1308633143,
+                            Id = 1355815129,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10622,7 +10625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1457741069,
+                            Id = -1293820081,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10630,7 +10633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1910213033,
+                            Id = 1221575561,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10638,7 +10641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1359848049,
+                            Id = 921894987,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10646,7 +10649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -189771252,
+                            Id = -1693467783,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10654,7 +10657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -630006074,
+                            Id = 610967522,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10662,7 +10665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -250405592,
+                            Id = 313602579,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10670,7 +10673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1388963713,
+                            Id = -1567922970,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10678,7 +10681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 260873024,
+                            Id = -501599384,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10686,7 +10689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -810542812,
+                            Id = -201819417,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10694,7 +10697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1638136026,
+                            Id = 1348288664,
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 5,
                             Price = 50m,
@@ -10702,7 +10705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -642758881,
+                            Id = 449785311,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10710,7 +10713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 781742117,
+                            Id = -1742484125,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10718,7 +10721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -876874535,
+                            Id = -554543337,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10726,7 +10729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2053648588,
+                            Id = -1670301162,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10734,7 +10737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 855835248,
+                            Id = -1157365734,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10742,7 +10745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1362021799,
+                            Id = 916111133,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10750,7 +10753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1927319572,
+                            Id = 445702013,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10758,7 +10761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1411729231,
+                            Id = 1825415305,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10766,7 +10769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1049201130,
+                            Id = -1371097733,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10774,7 +10777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1678181891,
+                            Id = 70476784,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10782,7 +10785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1789622335,
+                            Id = -1658227759,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10790,7 +10793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1889074094,
+                            Id = 385465146,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10798,7 +10801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1797341768,
+                            Id = -845601800,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10806,7 +10809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1336267062,
+                            Id = -591966745,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10814,7 +10817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -43185017,
+                            Id = -8212695,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10822,7 +10825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1596896417,
+                            Id = -1893396353,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10830,7 +10833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -611877571,
+                            Id = 2113108110,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10838,7 +10841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 953232844,
+                            Id = -1699268125,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10846,7 +10849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1680402522,
+                            Id = 1174021036,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10854,7 +10857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -105602040,
+                            Id = -1699900795,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10862,7 +10865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 711592288,
+                            Id = -1170174456,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10870,7 +10873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -795239206,
+                            Id = 643998986,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10878,7 +10881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 379556878,
+                            Id = -278339059,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10886,7 +10889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 796647013,
+                            Id = -398529715,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10894,7 +10897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1531006753,
+                            Id = -1836212329,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10902,7 +10905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1612417810,
+                            Id = 1097917738,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10910,7 +10913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -112444268,
+                            Id = 1200687582,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10918,7 +10921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1323278445,
+                            Id = 920389984,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10926,7 +10929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1470147047,
+                            Id = 388167026,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10934,7 +10937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 516745638,
+                            Id = -383978645,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10942,7 +10945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -513891962,
+                            Id = -331730117,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10950,7 +10953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -808927059,
+                            Id = 1436682082,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10958,7 +10961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1705747487,
+                            Id = -284047824,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10966,7 +10969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 474708539,
+                            Id = 168611204,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10974,7 +10977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -756569685,
+                            Id = 247497965,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10982,7 +10985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 935621640,
+                            Id = 370303984,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10990,7 +10993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1108643685,
+                            Id = 1512053196,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -10998,7 +11001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 910226090,
+                            Id = -638273577,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11006,7 +11009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1161281008,
+                            Id = -1792274340,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11014,7 +11017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -484097785,
+                            Id = -1329149903,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11022,7 +11025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1773088522,
+                            Id = -2014333914,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11030,7 +11033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1382822241,
+                            Id = -234159877,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11038,7 +11041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -490311204,
+                            Id = -397207646,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11046,7 +11049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -466408777,
+                            Id = -537321063,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11054,7 +11057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -170200373,
+                            Id = -1155912404,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11062,7 +11065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1293042542,
+                            Id = -1717837944,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11070,7 +11073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -456334655,
+                            Id = -110531908,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11078,7 +11081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2027672188,
+                            Id = -1153165762,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11086,7 +11089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2093172180,
+                            Id = 1670798919,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11094,7 +11097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1377297326,
+                            Id = 1822475427,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11102,7 +11105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1180069456,
+                            Id = -1932528632,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11110,7 +11113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -311763292,
+                            Id = 1829529998,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11118,7 +11121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -926682637,
+                            Id = -1787190137,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11126,7 +11129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 12261194,
+                            Id = 1912519476,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11134,7 +11137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1722025395,
+                            Id = -1079972206,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11142,7 +11145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 30355514,
+                            Id = -8191216,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11150,7 +11153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1547078877,
+                            Id = -1208259755,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11158,7 +11161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -382178616,
+                            Id = 1944389813,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11166,7 +11169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2061460626,
+                            Id = 583008372,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11174,7 +11177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1776616300,
+                            Id = -111652790,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11182,7 +11185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1431029689,
+                            Id = 114921092,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11190,7 +11193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 430338435,
+                            Id = -778049410,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11198,7 +11201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2016608799,
+                            Id = -66994723,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11206,7 +11209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1645573865,
+                            Id = -1310285125,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11214,7 +11217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1353189281,
+                            Id = -20484143,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11222,7 +11225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 104096367,
+                            Id = 1282073154,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11230,7 +11233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -153216589,
+                            Id = -468809217,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11238,7 +11241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1572055667,
+                            Id = 1306351215,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11246,7 +11249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 950701995,
+                            Id = -700954483,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11254,7 +11257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2126058396,
+                            Id = 12228619,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11262,7 +11265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2036981123,
+                            Id = 944070889,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11270,7 +11273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1858616723,
+                            Id = -2105114651,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11278,7 +11281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -882878585,
+                            Id = 174242580,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11286,7 +11289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1457139423,
+                            Id = -1743736249,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11294,7 +11297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 323000415,
+                            Id = -820960071,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11302,7 +11305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1144056423,
+                            Id = -1690046419,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11310,7 +11313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1961739057,
+                            Id = 1159237695,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11318,7 +11321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1048341010,
+                            Id = -1583964143,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11326,7 +11329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1815122134,
+                            Id = -1615113984,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11334,7 +11337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1190924599,
+                            Id = 1150043915,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11342,7 +11345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -830072543,
+                            Id = -1800304825,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11350,7 +11353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -843194397,
+                            Id = 1949001504,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11358,7 +11361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1871505,
+                            Id = 492339274,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11366,7 +11369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1046973439,
+                            Id = -722691867,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11374,7 +11377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 947126921,
+                            Id = -1587573320,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11382,7 +11385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 37302704,
+                            Id = 774885749,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11390,7 +11393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1502850611,
+                            Id = 1566079220,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11398,7 +11401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -71679061,
+                            Id = 1221668491,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11406,7 +11409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -225234433,
+                            Id = 1571506367,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11414,7 +11417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2000851224,
+                            Id = -653326436,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11422,7 +11425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -695963294,
+                            Id = -1270565597,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11430,7 +11433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1524936474,
+                            Id = -960832743,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11438,7 +11441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 980483658,
+                            Id = 2038122833,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11446,7 +11449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -152335623,
+                            Id = 71136856,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11454,7 +11457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1224643358,
+                            Id = -985861358,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11462,7 +11465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1033282179,
+                            Id = 1002085380,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11470,7 +11473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -164884134,
+                            Id = -1905103898,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11478,7 +11481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 245862415,
+                            Id = 1487524355,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11486,7 +11489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 466159275,
+                            Id = 994461076,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11494,7 +11497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -269303259,
+                            Id = -251816338,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11502,7 +11505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1764670765,
+                            Id = -409985086,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11510,7 +11513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -899249609,
+                            Id = 1564711237,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11518,7 +11521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2098277041,
+                            Id = -41086735,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11526,7 +11529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2038530518,
+                            Id = 1565238570,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11534,7 +11537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1402142898,
+                            Id = 514009036,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11542,7 +11545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -675849364,
+                            Id = -1540506901,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11550,7 +11553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1937879184,
+                            Id = -1395693100,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11558,7 +11561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1481490718,
+                            Id = -941779771,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11566,7 +11569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 432494330,
+                            Id = -1676054153,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11574,7 +11577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 260620738,
+                            Id = -196441492,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11582,7 +11585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1223966320,
+                            Id = -779526586,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11590,7 +11593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -70999010,
+                            Id = 413250891,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11598,7 +11601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -47295467,
+                            Id = -653231485,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11606,7 +11609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1411515517,
+                            Id = -1420746272,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11614,7 +11617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -685320399,
+                            Id = 178586738,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11622,7 +11625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -79156592,
+                            Id = -165396819,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11630,7 +11633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1367160419,
+                            Id = 941064069,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11638,7 +11641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1542382257,
+                            Id = 1829689177,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11646,7 +11649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1384214090,
+                            Id = 148760731,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11654,7 +11657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1696389198,
+                            Id = -1661488000,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11662,7 +11665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -869674555,
+                            Id = 294094509,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11670,7 +11673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2018873145,
+                            Id = -66742361,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11678,7 +11681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -586273350,
+                            Id = -1838413958,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11686,7 +11689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1380553590,
+                            Id = -1674770906,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11694,7 +11697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -915302811,
+                            Id = 315439955,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11702,7 +11705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1011126935,
+                            Id = -974326388,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11710,7 +11713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 209798847,
+                            Id = 394648819,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11718,7 +11721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -741841842,
+                            Id = -1150268025,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11726,7 +11729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1938744177,
+                            Id = 1232249533,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11734,7 +11737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1901556227,
+                            Id = 1222534763,
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 6,
                             Price = 500m,
@@ -11742,7 +11745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 734507698,
+                            Id = 337907577,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11750,7 +11753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1840697581,
+                            Id = -441366821,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11758,7 +11761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1088777726,
+                            Id = 497947009,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11766,7 +11769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1292183657,
+                            Id = -574914086,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11774,7 +11777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 933966681,
+                            Id = 483953338,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11782,7 +11785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1682059720,
+                            Id = -1897415669,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11790,7 +11793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1157006763,
+                            Id = 1098760820,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11798,7 +11801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1505648897,
+                            Id = 1091290115,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11806,7 +11809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2072345334,
+                            Id = 862905666,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11814,7 +11817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 828968659,
+                            Id = 424795833,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11822,7 +11825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 349798390,
+                            Id = -435553383,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11830,7 +11833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 211261524,
+                            Id = -1904120210,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11838,7 +11841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1976144217,
+                            Id = -23965637,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11846,7 +11849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1156553218,
+                            Id = 481214260,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11854,7 +11857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -786260071,
+                            Id = -1199915545,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11862,7 +11865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1716692275,
+                            Id = 1701768974,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11870,7 +11873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 57734599,
+                            Id = -1532668737,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11878,7 +11881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1463464260,
+                            Id = -2089568871,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11886,7 +11889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1414635699,
+                            Id = 551605161,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11894,7 +11897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -63701002,
+                            Id = 2078985778,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11902,7 +11905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 264233116,
+                            Id = 1948727780,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11910,7 +11913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -494316626,
+                            Id = -1709868234,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11918,7 +11921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1565947489,
+                            Id = 109919696,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11926,7 +11929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -137256185,
+                            Id = 30464899,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11934,7 +11937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 377670835,
+                            Id = 111662644,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11942,7 +11945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 201584723,
+                            Id = -1022905016,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11950,7 +11953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -821312722,
+                            Id = 1285153033,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11958,7 +11961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1096705102,
+                            Id = 823425227,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11966,7 +11969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1959803448,
+                            Id = 1601657069,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11974,7 +11977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 572104777,
+                            Id = 1025868489,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11982,7 +11985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1527079822,
+                            Id = 1905273080,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11990,7 +11993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 524167774,
+                            Id = -670661539,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -11998,7 +12001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -914502908,
+                            Id = -1327753027,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12006,7 +12009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1366351572,
+                            Id = 185357506,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12014,7 +12017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -339825482,
+                            Id = -759978789,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12022,7 +12025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1808160511,
+                            Id = -829301377,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12030,7 +12033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1533379243,
+                            Id = 507757846,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12038,7 +12041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -492456611,
+                            Id = 738690362,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12046,7 +12049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2014087659,
+                            Id = -772477741,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12054,7 +12057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 668065801,
+                            Id = 766412299,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12062,7 +12065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1010329593,
+                            Id = -1588606855,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12070,7 +12073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -475976621,
+                            Id = 762808107,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12078,7 +12081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1581446162,
+                            Id = 241820170,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12086,7 +12089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1878967043,
+                            Id = -2110653360,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12094,7 +12097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -351385350,
+                            Id = -362557255,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12102,7 +12105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1727620871,
+                            Id = 1266504323,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12110,7 +12113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -446119344,
+                            Id = 1464635769,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12118,7 +12121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1228662626,
+                            Id = -2061338919,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12126,7 +12129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2055019111,
+                            Id = 1550161535,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12134,7 +12137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 300105026,
+                            Id = -268373137,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12142,7 +12145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -403682765,
+                            Id = 1846462534,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12150,7 +12153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -432277664,
+                            Id = 464065534,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12158,7 +12161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 43740905,
+                            Id = 1513629144,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12166,7 +12169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 556902542,
+                            Id = 1537993958,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12174,7 +12177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 970084260,
+                            Id = 1965814640,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12182,7 +12185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1651029877,
+                            Id = 1702867316,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12190,7 +12193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2019072628,
+                            Id = -1655538338,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12198,7 +12201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1130237608,
+                            Id = -44550007,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12206,7 +12209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -677389766,
+                            Id = -1090678008,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12214,7 +12217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -287899372,
+                            Id = 342686565,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12222,7 +12225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1350314236,
+                            Id = -1810300148,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12230,7 +12233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1245135854,
+                            Id = 8364399,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12238,7 +12241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1210921490,
+                            Id = -1373446020,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12246,7 +12249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1432162785,
+                            Id = 514165114,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12254,7 +12257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1819717449,
+                            Id = -1929969682,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12262,7 +12265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -607887797,
+                            Id = 707614854,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12270,7 +12273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -45047122,
+                            Id = 759381231,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12278,7 +12281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 892268715,
+                            Id = -1984813178,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12286,7 +12289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1339624375,
+                            Id = -42188995,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12294,7 +12297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -807377658,
+                            Id = -1179790236,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12302,7 +12305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 563466334,
+                            Id = 941336451,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12310,7 +12313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1120896487,
+                            Id = 212382218,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12318,7 +12321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1951182657,
+                            Id = 1962770041,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12326,7 +12329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 784527609,
+                            Id = -803090651,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12334,7 +12337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1232313258,
+                            Id = -576407176,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12342,7 +12345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1973281630,
+                            Id = -447197391,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12350,7 +12353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 837864167,
+                            Id = 618855483,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12358,7 +12361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -829548373,
+                            Id = -517201172,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12366,7 +12369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -107177825,
+                            Id = 815646691,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12374,7 +12377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -451335582,
+                            Id = 1717679163,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12382,7 +12385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1937661584,
+                            Id = 1353596674,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12390,7 +12393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -95091501,
+                            Id = 1578786882,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12398,7 +12401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2002982654,
+                            Id = -1839254131,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12406,7 +12409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1168164939,
+                            Id = 489803041,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12414,7 +12417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -16242940,
+                            Id = 134403318,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12422,7 +12425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 99634649,
+                            Id = -562298552,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12430,7 +12433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -484078161,
+                            Id = 831695420,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12438,7 +12441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 255782014,
+                            Id = 1908436915,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12446,7 +12449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -334767365,
+                            Id = 1479285572,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12454,7 +12457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 534771125,
+                            Id = 2100573269,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12462,7 +12465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 619887776,
+                            Id = 205659717,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12470,7 +12473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -204074429,
+                            Id = -412064903,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12478,7 +12481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1809200038,
+                            Id = 32201248,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12486,7 +12489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1312714284,
+                            Id = -1088772581,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12494,7 +12497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1093829198,
+                            Id = -607966937,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12502,7 +12505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -612892029,
+                            Id = 858876889,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12510,7 +12513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 103086256,
+                            Id = -1552762278,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12518,7 +12521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -928929574,
+                            Id = -1580186708,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12526,7 +12529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1118286379,
+                            Id = -334282822,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12534,7 +12537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 997290434,
+                            Id = -1212136986,
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 7,
                             Price = 100m,
@@ -12542,7 +12545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 698246624,
+                            Id = -1107542101,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12550,7 +12553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1728688340,
+                            Id = -1667279578,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12558,7 +12561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 737475636,
+                            Id = -534546201,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12566,7 +12569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1926502243,
+                            Id = 948353193,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12574,7 +12577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1291380294,
+                            Id = 830369415,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12582,7 +12585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2009053727,
+                            Id = 21909664,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12590,7 +12593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1567484348,
+                            Id = 1671849212,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12598,7 +12601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 639999512,
+                            Id = -1195901511,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12606,7 +12609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1995189962,
+                            Id = -641216178,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12614,7 +12617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 456141757,
+                            Id = 1309504960,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12622,7 +12625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1199207508,
+                            Id = 150086165,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12630,7 +12633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 592423314,
+                            Id = 1673186570,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12638,7 +12641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1302675677,
+                            Id = -36770045,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12646,7 +12649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1817464672,
+                            Id = -1438086689,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12654,7 +12657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -705090349,
+                            Id = 1978143629,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12662,7 +12665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1633637980,
+                            Id = -513410781,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12670,7 +12673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -818694824,
+                            Id = 1369562338,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12678,7 +12681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1190554961,
+                            Id = -230771143,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12686,7 +12689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1016378214,
+                            Id = -2008112228,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12694,7 +12697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1575609430,
+                            Id = 2124129554,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12702,7 +12705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1530227052,
+                            Id = -1514931751,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12710,7 +12713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1137858684,
+                            Id = 780788857,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12718,7 +12721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -845752735,
+                            Id = -1520189490,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12726,7 +12729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1006514996,
+                            Id = -1078327120,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12734,7 +12737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -840502736,
+                            Id = 1288141358,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12742,7 +12745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 415783793,
+                            Id = 1760636236,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12750,7 +12753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -154410683,
+                            Id = 295541501,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12758,7 +12761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -958206409,
+                            Id = 967002137,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12766,7 +12769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 443284505,
+                            Id = -1357604992,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12774,7 +12777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1244857457,
+                            Id = -1815577220,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12782,7 +12785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -115465861,
+                            Id = -338587550,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12790,7 +12793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -64558959,
+                            Id = -1724345912,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12798,7 +12801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1302702097,
+                            Id = -1244680488,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12806,7 +12809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1870175796,
+                            Id = 344200813,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12814,7 +12817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1153235049,
+                            Id = 1903900032,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12822,7 +12825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 771887916,
+                            Id = 1843559988,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12830,7 +12833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1861086455,
+                            Id = 993351662,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12838,7 +12841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 613945922,
+                            Id = 1806054467,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12846,7 +12849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -597906964,
+                            Id = -795666471,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12854,7 +12857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -822861896,
+                            Id = -725099692,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12862,7 +12865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1503519780,
+                            Id = -172862028,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12870,7 +12873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1533897302,
+                            Id = -1607889002,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12878,7 +12881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 711970163,
+                            Id = -1897225791,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12886,7 +12889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -725457131,
+                            Id = 1884288275,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12894,7 +12897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2008415817,
+                            Id = -1065717578,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12902,7 +12905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1098263109,
+                            Id = 911544558,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12910,7 +12913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1157256853,
+                            Id = 1256789905,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12918,7 +12921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -808906662,
+                            Id = 1386157274,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12926,7 +12929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1695919573,
+                            Id = -1387325688,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12934,7 +12937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -863728060,
+                            Id = -333833511,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12942,7 +12945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -620655785,
+                            Id = -1066379055,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12950,7 +12953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 327401433,
+                            Id = -96209932,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12958,7 +12961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -407372232,
+                            Id = 305789304,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12966,7 +12969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -338076699,
+                            Id = 1183070841,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12974,7 +12977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1669139196,
+                            Id = -1519036986,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12982,7 +12985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 475675601,
+                            Id = 1083416563,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12990,7 +12993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1221722397,
+                            Id = -290097990,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -12998,7 +13001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1061261694,
+                            Id = 1860577538,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13006,7 +13009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 507039434,
+                            Id = 343401807,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13014,7 +13017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1131621017,
+                            Id = 812041829,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13022,7 +13025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -803329620,
+                            Id = -1933628957,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13030,7 +13033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1143889194,
+                            Id = 518994313,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13038,7 +13041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1474025997,
+                            Id = -20655226,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13046,7 +13049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 382979588,
+                            Id = 740704817,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13054,7 +13057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2097319716,
+                            Id = -1863062055,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13062,7 +13065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1706739000,
+                            Id = 1672477160,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13070,7 +13073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1006968596,
+                            Id = -1425617827,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13078,7 +13081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 922992239,
+                            Id = 1201201538,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13086,7 +13089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1345762082,
+                            Id = -1128546638,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13094,7 +13097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1125833353,
+                            Id = -640210654,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13102,7 +13105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1867337559,
+                            Id = -2056693842,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13110,7 +13113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1415811686,
+                            Id = 782252064,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13118,7 +13121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 997049906,
+                            Id = 569167735,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13126,7 +13129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 116805304,
+                            Id = -1083920727,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13134,7 +13137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2072082278,
+                            Id = 1283048721,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13142,7 +13145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1977680440,
+                            Id = -2005776860,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13150,7 +13153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -929387604,
+                            Id = 1885283949,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13158,7 +13161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -900015366,
+                            Id = -505677138,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13166,7 +13169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -13538801,
+                            Id = -1457909706,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13174,7 +13177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1227201662,
+                            Id = 270917513,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13182,7 +13185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1132677822,
+                            Id = -1923682527,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13190,7 +13193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 85484619,
+                            Id = 1295932325,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13198,7 +13201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1207155610,
+                            Id = -148415568,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13206,7 +13209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1400373126,
+                            Id = -440274299,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13214,7 +13217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1917530272,
+                            Id = 2135635063,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13222,7 +13225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1904873131,
+                            Id = -744691919,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13230,7 +13233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 314154430,
+                            Id = 1844694043,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13238,7 +13241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1250100254,
+                            Id = 959374112,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13246,7 +13249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -839203741,
+                            Id = 760538238,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13254,7 +13257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -429495450,
+                            Id = 1114900379,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13262,7 +13265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1289532876,
+                            Id = -451149508,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13270,7 +13273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 501272204,
+                            Id = 830421953,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13278,7 +13281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2114154125,
+                            Id = -508118522,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13286,7 +13289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1146869022,
+                            Id = -1186484540,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13294,7 +13297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1904874120,
+                            Id = 826573289,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13302,7 +13305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 148736880,
+                            Id = -1065913461,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13310,7 +13313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1467486937,
+                            Id = -1853972234,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13318,7 +13321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1590792708,
+                            Id = -1976149086,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13326,7 +13329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -988758149,
+                            Id = -449644505,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13334,7 +13337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1800050926,
+                            Id = -653596298,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13342,7 +13345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1233598367,
+                            Id = -401537513,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13350,7 +13353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1173005033,
+                            Id = 1553574205,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13358,7 +13361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 467663065,
+                            Id = 690778366,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13366,7 +13369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 333323120,
+                            Id = -517852518,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13374,7 +13377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 853711875,
+                            Id = -835694480,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13382,7 +13385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1254302882,
+                            Id = -1775697171,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13390,7 +13393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 891663312,
+                            Id = -2005983114,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13398,7 +13401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -757513166,
+                            Id = 1990512126,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13406,7 +13409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1590438287,
+                            Id = -1078915606,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13414,7 +13417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1860129149,
+                            Id = -2008925899,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13422,7 +13425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1467526454,
+                            Id = -1966960592,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13430,7 +13433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -217229238,
+                            Id = -1380118156,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13438,7 +13441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -938796732,
+                            Id = 859894297,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13446,7 +13449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1945790187,
+                            Id = -820834932,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13454,7 +13457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -982533582,
+                            Id = 987564176,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13462,7 +13465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1634549863,
+                            Id = 91590432,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13470,7 +13473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -128545867,
+                            Id = -1397095394,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13478,7 +13481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -17832632,
+                            Id = 1244517126,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13486,7 +13489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 888204144,
+                            Id = -2027934199,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13494,7 +13497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 740775849,
+                            Id = 1668529055,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13502,7 +13505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1955972740,
+                            Id = -1267901917,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13510,7 +13513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -166854731,
+                            Id = -908032418,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13518,7 +13521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1869595332,
+                            Id = -632217074,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13526,7 +13529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2017399393,
+                            Id = 1907415222,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13534,7 +13537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -444362971,
+                            Id = 403307006,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13542,7 +13545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2028811567,
+                            Id = 372527842,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13550,7 +13553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 154900044,
+                            Id = -999912551,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13558,7 +13561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1422384550,
+                            Id = -326310672,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13566,7 +13569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -802330015,
+                            Id = -1795258908,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13574,7 +13577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1348512492,
+                            Id = 684494248,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13582,7 +13585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 224282733,
+                            Id = -1821927918,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13590,7 +13593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1482453756,
+                            Id = -665928937,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13598,7 +13601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 942033439,
+                            Id = -817145761,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13606,7 +13609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -12572799,
+                            Id = -1791336600,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13614,7 +13617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 923918569,
+                            Id = -2146286546,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13622,7 +13625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2065754329,
+                            Id = 1635123183,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13630,7 +13633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1510135744,
+                            Id = -1020878317,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13638,7 +13641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1473638105,
+                            Id = -1617826603,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13646,7 +13649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 149419699,
+                            Id = 256958372,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13654,7 +13657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1456095398,
+                            Id = 1526203791,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13662,7 +13665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1011271707,
+                            Id = -935155258,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13670,7 +13673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -617808394,
+                            Id = -56205248,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13678,7 +13681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 422850676,
+                            Id = 923414535,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13686,7 +13689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1873120760,
+                            Id = 2083057958,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13694,7 +13697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -237431146,
+                            Id = 1955838654,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13702,7 +13705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -984897791,
+                            Id = -1295887594,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13710,7 +13713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1070422860,
+                            Id = 583088828,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13718,7 +13721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1831840810,
+                            Id = 684034167,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13726,7 +13729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 593599194,
+                            Id = -1242492815,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13734,7 +13737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1362595394,
+                            Id = 1981847661,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13742,7 +13745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -873933884,
+                            Id = 1055615043,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13750,7 +13753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 623083932,
+                            Id = -446953158,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13758,7 +13761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -364648880,
+                            Id = -1081301749,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13766,7 +13769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 958445784,
+                            Id = -737622991,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13774,7 +13777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1275729295,
+                            Id = -944648371,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13782,7 +13785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1867910894,
+                            Id = -454743218,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13790,7 +13793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 503016352,
+                            Id = 1605099560,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13798,7 +13801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1027805041,
+                            Id = 1130712519,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13806,7 +13809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 304708255,
+                            Id = 325949897,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13814,7 +13817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1184189098,
+                            Id = -1201539209,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13822,7 +13825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -730373481,
+                            Id = -1302033766,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13830,7 +13833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -786118985,
+                            Id = 1013131107,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13838,7 +13841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1925504490,
+                            Id = 105532134,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13846,7 +13849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1839209592,
+                            Id = -1562305034,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13854,7 +13857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1773952070,
+                            Id = -51271457,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13862,7 +13865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -374736764,
+                            Id = 416333085,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13870,7 +13873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 161076986,
+                            Id = 2078139448,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13878,7 +13881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2096954272,
+                            Id = -625219966,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13886,7 +13889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2102470590,
+                            Id = -1583268341,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13894,7 +13897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 170089972,
+                            Id = 576899190,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13902,7 +13905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1407658921,
+                            Id = 1841207552,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13910,7 +13913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 802342356,
+                            Id = 752284881,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13918,7 +13921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -647532005,
+                            Id = -905895851,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13926,7 +13929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1452891360,
+                            Id = 1888006891,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13934,7 +13937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -926481942,
+                            Id = -1721592310,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13942,7 +13945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -192937948,
+                            Id = -1397077662,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13950,7 +13953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1634752655,
+                            Id = -758209228,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13958,7 +13961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1396819943,
+                            Id = 63990287,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13966,7 +13969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2099290461,
+                            Id = 1748886177,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13974,7 +13977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1766672536,
+                            Id = 1547173366,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13982,7 +13985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1520604895,
+                            Id = 536853992,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13990,7 +13993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -468531320,
+                            Id = -198262482,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -13998,7 +14001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1813458792,
+                            Id = -884292335,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14006,7 +14009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1212856952,
+                            Id = 2058751692,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14014,7 +14017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1317155889,
+                            Id = 1588854038,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14022,7 +14025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2028658314,
+                            Id = 2117634995,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14030,7 +14033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1845351875,
+                            Id = 948627889,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14038,7 +14041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -742061765,
+                            Id = 431657877,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14046,7 +14049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -581404347,
+                            Id = -265169232,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14054,7 +14057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 655353455,
+                            Id = 8078731,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14062,7 +14065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -690259810,
+                            Id = -1688756861,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14070,7 +14073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 915049285,
+                            Id = -37991538,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14078,7 +14081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -31760417,
+                            Id = 1682595988,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14086,7 +14089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -242761756,
+                            Id = 2059063527,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14094,7 +14097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 108674553,
+                            Id = 1039822090,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14102,7 +14105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -921576449,
+                            Id = 169253842,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14110,7 +14113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 126993013,
+                            Id = -1015389307,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14118,7 +14121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -974940280,
+                            Id = 1820523021,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14126,7 +14129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 309656174,
+                            Id = 2098222225,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14134,7 +14137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1124355907,
+                            Id = 281441934,
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 8,
                             Price = 50m,
@@ -14142,7 +14145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -490835920,
+                            Id = -781696133,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14150,7 +14153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 712313586,
+                            Id = -1296409007,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14158,7 +14161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1957652074,
+                            Id = 2031855037,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14166,7 +14169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1021513355,
+                            Id = -1476122335,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14174,7 +14177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1919651667,
+                            Id = 503186070,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14182,7 +14185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -827246866,
+                            Id = -1337897686,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14190,7 +14193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1076500747,
+                            Id = -798365210,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14198,7 +14201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1068468037,
+                            Id = -1079975735,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14206,7 +14209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 585719604,
+                            Id = 1726391910,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14214,7 +14217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -88057373,
+                            Id = 174179992,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14222,7 +14225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 48120293,
+                            Id = 1614624075,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14230,7 +14233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2071649992,
+                            Id = 1634910440,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14238,7 +14241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -262908795,
+                            Id = -628638191,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14246,7 +14249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1105420889,
+                            Id = -2109282996,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14254,7 +14257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 772197737,
+                            Id = -179107626,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14262,7 +14265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1971063651,
+                            Id = -765531313,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14270,7 +14273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1201994713,
+                            Id = 1456420616,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14278,7 +14281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -574807107,
+                            Id = -1443919184,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14286,7 +14289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -911279622,
+                            Id = 819162442,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14294,7 +14297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1668538832,
+                            Id = 157809954,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14302,7 +14305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -872238006,
+                            Id = -842589533,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14310,7 +14313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1009787647,
+                            Id = 40796063,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14318,7 +14321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1047068768,
+                            Id = -1299452859,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14326,7 +14329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 449698927,
+                            Id = -41676939,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14334,7 +14337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1483718032,
+                            Id = 1605291809,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14342,7 +14345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1446370926,
+                            Id = 1911186367,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14350,7 +14353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 589199846,
+                            Id = -1194192557,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14358,7 +14361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -916075521,
+                            Id = -749420039,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14366,7 +14369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1244122005,
+                            Id = -1774263062,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14374,7 +14377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 708045637,
+                            Id = 944120580,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14382,7 +14385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1111276122,
+                            Id = -884101576,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14390,7 +14393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1438530781,
+                            Id = 724137256,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14398,7 +14401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -931838066,
+                            Id = -1292713011,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14406,7 +14409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1958050237,
+                            Id = 762600689,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14414,7 +14417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1571121839,
+                            Id = 1364252724,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14422,7 +14425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1235359165,
+                            Id = -224665449,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14430,7 +14433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -16028615,
+                            Id = 749104058,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14438,7 +14441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1959359200,
+                            Id = -547094906,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14446,7 +14449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2021976793,
+                            Id = -963037128,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14454,7 +14457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 89534530,
+                            Id = 333326907,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14462,7 +14465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 346469563,
+                            Id = -1887486877,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14470,7 +14473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -783256438,
+                            Id = -532663162,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14478,7 +14481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 7727192,
+                            Id = -1548030750,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14486,7 +14489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1370085283,
+                            Id = 1806594158,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14494,7 +14497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1708258201,
+                            Id = 2029558807,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14502,7 +14505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -29768543,
+                            Id = 1050949699,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14510,7 +14513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 156293960,
+                            Id = 1334501824,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14518,7 +14521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1068192248,
+                            Id = -1609516810,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14526,7 +14529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1406923695,
+                            Id = -524663352,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14534,7 +14537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1201017106,
+                            Id = 1451519657,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14542,7 +14545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 935076991,
+                            Id = 511549315,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14550,7 +14553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1887770568,
+                            Id = 4137800,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14558,7 +14561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1106372730,
+                            Id = -2137016439,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14566,7 +14569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -27300966,
+                            Id = 398326840,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14574,7 +14577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2089528861,
+                            Id = -1752845250,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14582,7 +14585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 109556822,
+                            Id = -556762965,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14590,7 +14593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2028384737,
+                            Id = -600719962,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14598,7 +14601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1559201499,
+                            Id = 228199262,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14606,7 +14609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 794819260,
+                            Id = 285520881,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14614,7 +14617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -584591590,
+                            Id = -1694743097,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14622,7 +14625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -875787471,
+                            Id = -359732928,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14630,7 +14633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 562533298,
+                            Id = 1633878082,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14638,7 +14641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1688129230,
+                            Id = -176749317,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14646,7 +14649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1744810294,
+                            Id = -237596722,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14654,7 +14657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1142377242,
+                            Id = -2128834561,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14662,7 +14665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1191508319,
+                            Id = 1532087781,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14670,7 +14673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1194700607,
+                            Id = -852923781,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14678,7 +14681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1764126149,
+                            Id = -2062120548,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14686,7 +14689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1041963805,
+                            Id = -188387450,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14694,7 +14697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1954994471,
+                            Id = -739751951,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14702,7 +14705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2055736080,
+                            Id = -1319492444,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14710,7 +14713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2014883269,
+                            Id = 1549018650,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14718,7 +14721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 935013306,
+                            Id = 490050268,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14726,7 +14729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1529641986,
+                            Id = -622167277,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14734,7 +14737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -714054592,
+                            Id = 630922422,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14742,7 +14745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 809265451,
+                            Id = -2003882214,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14750,7 +14753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 576946175,
+                            Id = 963387287,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14758,7 +14761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1792045157,
+                            Id = 647369329,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14766,7 +14769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -340226809,
+                            Id = -1268420918,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14774,7 +14777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -119790451,
+                            Id = -1435874669,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14782,7 +14785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1706937379,
+                            Id = -1218343711,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14790,7 +14793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -158905096,
+                            Id = 525243022,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14798,7 +14801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1556595118,
+                            Id = -1803573224,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14806,7 +14809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1643807392,
+                            Id = -1060729170,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14814,7 +14817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 109929437,
+                            Id = 756943504,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14822,7 +14825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 586056656,
+                            Id = -140973564,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14830,7 +14833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -581822182,
+                            Id = 1619115683,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14838,7 +14841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -204218581,
+                            Id = -1631123772,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14846,7 +14849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1216281434,
+                            Id = 1429766970,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14854,7 +14857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -618664724,
+                            Id = 1128254348,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14862,7 +14865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1595098674,
+                            Id = -635192210,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14870,7 +14873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1688108259,
+                            Id = -1759697352,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14878,7 +14881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -512935128,
+                            Id = 800446116,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14886,7 +14889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1824419838,
+                            Id = -2049144959,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14894,7 +14897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 377097291,
+                            Id = 250021789,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14902,7 +14905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1798572633,
+                            Id = 148275089,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14910,7 +14913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -593679980,
+                            Id = 416720839,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14918,7 +14921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -883416579,
+                            Id = 1328161834,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14926,7 +14929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2108969328,
+                            Id = -279416379,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14934,7 +14937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1173810798,
+                            Id = -2086091619,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14942,7 +14945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1905706220,
+                            Id = 481095273,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14950,7 +14953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1874933818,
+                            Id = 1617089758,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14958,7 +14961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 741874101,
+                            Id = 1586008446,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14966,7 +14969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -682728125,
+                            Id = 1892123318,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14974,7 +14977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -374822981,
+                            Id = 2017726884,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14982,7 +14985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 301161510,
+                            Id = 750995105,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14990,7 +14993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1706984455,
+                            Id = -1758185686,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -14998,7 +15001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2114705015,
+                            Id = 1335223154,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15006,7 +15009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -653240275,
+                            Id = -1245586811,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15014,7 +15017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 713996886,
+                            Id = -2141212112,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15022,7 +15025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2108208845,
+                            Id = 290227032,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15030,7 +15033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 600028024,
+                            Id = 986437413,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15038,7 +15041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1323620179,
+                            Id = 1894322422,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15046,7 +15049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2471674,
+                            Id = -1263707229,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15054,7 +15057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1616476981,
+                            Id = -1902734675,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15062,7 +15065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1661893853,
+                            Id = 927635469,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15070,7 +15073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1091206068,
+                            Id = 1620968889,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15078,7 +15081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1715195719,
+                            Id = 1809563920,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15086,7 +15089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -246332945,
+                            Id = -1925482275,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15094,7 +15097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2059990853,
+                            Id = 1759367316,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15102,7 +15105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 913064013,
+                            Id = 2014969203,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15110,7 +15113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1194326769,
+                            Id = 744313666,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15118,7 +15121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -194877408,
+                            Id = 241192809,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15126,7 +15129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1585147952,
+                            Id = 416510617,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15134,7 +15137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2126971474,
+                            Id = 1911462014,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15142,7 +15145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1714141223,
+                            Id = 900760314,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15150,7 +15153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -680874814,
+                            Id = -2044663673,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15158,7 +15161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1273317503,
+                            Id = 35982128,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15166,7 +15169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -307163883,
+                            Id = -1491405500,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15174,7 +15177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1585595573,
+                            Id = 223305778,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15182,7 +15185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 84307180,
+                            Id = -1814890235,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15190,7 +15193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1515513711,
+                            Id = 474437541,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15198,7 +15201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1267002144,
+                            Id = 1698761059,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15206,7 +15209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 505591570,
+                            Id = -787397941,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15214,7 +15217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -954358929,
+                            Id = -174228140,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15222,7 +15225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1748325972,
+                            Id = 1269978847,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15230,7 +15233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1235752023,
+                            Id = -350892141,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15238,7 +15241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1266801227,
+                            Id = 134779419,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15246,7 +15249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1637972964,
+                            Id = -95144750,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15254,7 +15257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1473207016,
+                            Id = 104028079,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15262,7 +15265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1160266700,
+                            Id = -856111310,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15270,7 +15273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1684262127,
+                            Id = 223704257,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15278,7 +15281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -652721094,
+                            Id = -14863932,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15286,7 +15289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1639677738,
+                            Id = 693846111,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15294,7 +15297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1304499427,
+                            Id = -1071073487,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15302,7 +15305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -878590110,
+                            Id = -375936875,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15310,7 +15313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1855339596,
+                            Id = -45177381,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15318,7 +15321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -791209873,
+                            Id = -937747665,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15326,7 +15329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1534674118,
+                            Id = 2106180952,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15334,7 +15337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1366614945,
+                            Id = 284626502,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15342,7 +15345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1386246112,
+                            Id = 619615864,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15350,7 +15353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1302315180,
+                            Id = 591223932,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15358,7 +15361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 844355898,
+                            Id = -734766385,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15366,7 +15369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1102942122,
+                            Id = 929583869,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15374,7 +15377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 990996486,
+                            Id = -2146370032,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15382,7 +15385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1289423239,
+                            Id = 295475932,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15390,7 +15393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1774218132,
+                            Id = 451798125,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15398,7 +15401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1480010284,
+                            Id = 714795633,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15406,7 +15409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1693989228,
+                            Id = 184357665,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15414,7 +15417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 177864034,
+                            Id = -1998484910,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15422,7 +15425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 296427156,
+                            Id = -1701932717,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15430,7 +15433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1230803785,
+                            Id = 497589358,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15438,7 +15441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1225297112,
+                            Id = -1779778115,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15446,7 +15449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1859322234,
+                            Id = 1147321706,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15454,7 +15457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -310175471,
+                            Id = 401312893,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15462,7 +15465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 274800469,
+                            Id = -972301890,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15470,7 +15473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1121370441,
+                            Id = 1010311786,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15478,7 +15481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 759995530,
+                            Id = -458474862,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15486,7 +15489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -170929212,
+                            Id = 1920734679,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15494,7 +15497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -695364468,
+                            Id = -1560919613,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15502,7 +15505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1640354709,
+                            Id = 1472610157,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15510,7 +15513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 930988643,
+                            Id = -1598109294,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15518,7 +15521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 284008065,
+                            Id = 1328171250,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15526,7 +15529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1352380736,
+                            Id = 717685573,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15534,7 +15537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 792372576,
+                            Id = -1692958976,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15542,7 +15545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -333040056,
+                            Id = 1820593496,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15550,7 +15553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -397938173,
+                            Id = 1811608777,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15558,7 +15561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -687561172,
+                            Id = -704231008,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15566,7 +15569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1977619652,
+                            Id = -973677735,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15574,7 +15577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -816360311,
+                            Id = -1499674615,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15582,7 +15585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1528871376,
+                            Id = 1646957197,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15590,7 +15593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1584742821,
+                            Id = 807068157,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15598,7 +15601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1621407211,
+                            Id = -1480672447,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15606,7 +15609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 265247460,
+                            Id = 1115025692,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15614,7 +15617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1388543303,
+                            Id = 1794643406,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15622,7 +15625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1901434761,
+                            Id = -214275636,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15630,7 +15633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1543058367,
+                            Id = -457553989,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15638,7 +15641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -262661323,
+                            Id = 62975426,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15646,7 +15649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1335745675,
+                            Id = 720892387,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15654,7 +15657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -907452744,
+                            Id = -57401069,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15662,7 +15665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -377529114,
+                            Id = 999520273,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15670,7 +15673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 980520977,
+                            Id = 979446395,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15678,7 +15681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1832384903,
+                            Id = -625158900,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15686,7 +15689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 673777280,
+                            Id = -215985086,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15694,7 +15697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -431475019,
+                            Id = -2083612776,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15702,7 +15705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -196302949,
+                            Id = -367381616,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15710,7 +15713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 485541113,
+                            Id = -995644253,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15718,7 +15721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -105652776,
+                            Id = -1174143228,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15726,7 +15729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 244509660,
+                            Id = -841878690,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15734,7 +15737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 962203105,
+                            Id = 710913725,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15742,7 +15745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2139153732,
+                            Id = 2038472517,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15750,7 +15753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1612128877,
+                            Id = -1347683069,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15758,7 +15761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1234885375,
+                            Id = 754830763,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15766,7 +15769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1902458115,
+                            Id = 764637065,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15774,7 +15777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1196751996,
+                            Id = -2068402267,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15782,7 +15785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 917310887,
+                            Id = -1752813965,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15790,7 +15793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1599443754,
+                            Id = 1699910575,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15798,7 +15801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -59511473,
+                            Id = -2034596745,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15806,7 +15809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1965325114,
+                            Id = 532534846,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15814,7 +15817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -253811589,
+                            Id = 558672969,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15822,7 +15825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1680397148,
+                            Id = -1858024090,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15830,7 +15833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -930563341,
+                            Id = -1710664452,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15838,7 +15841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2144697178,
+                            Id = -1038535389,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15846,7 +15849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -271471464,
+                            Id = -822258031,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15854,7 +15857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1216911957,
+                            Id = 1041617129,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15862,7 +15865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 410344225,
+                            Id = 1601520224,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15870,7 +15873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1022209714,
+                            Id = 643567104,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15878,7 +15881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1494104018,
+                            Id = -2013602891,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15886,7 +15889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -510805020,
+                            Id = -1067545924,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15894,7 +15897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -909396633,
+                            Id = 1187129068,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15902,7 +15905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -153251364,
+                            Id = 899599322,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15910,7 +15913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 313779439,
+                            Id = 1242889071,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15918,7 +15921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 741087898,
+                            Id = 2132428020,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15926,7 +15929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1482872976,
+                            Id = -158744926,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15934,7 +15937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1240377549,
+                            Id = 2064254688,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15942,7 +15945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1882628162,
+                            Id = 2073960903,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15950,7 +15953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1150919632,
+                            Id = 688302263,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15958,7 +15961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1712359049,
+                            Id = 1915194797,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15966,7 +15969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -839340631,
+                            Id = 305328987,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15974,7 +15977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2004858623,
+                            Id = 920572542,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15982,7 +15985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1253423768,
+                            Id = -396074719,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15990,7 +15993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1104646936,
+                            Id = -1671244816,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -15998,7 +16001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1292985952,
+                            Id = -300701192,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16006,7 +16009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 210252782,
+                            Id = 855643738,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16014,7 +16017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1597891900,
+                            Id = -1661894880,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16022,7 +16025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 535803930,
+                            Id = 69834404,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16030,7 +16033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2071750055,
+                            Id = -686798504,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16038,7 +16041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 129478727,
+                            Id = 417078843,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16046,7 +16049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -894919724,
+                            Id = 528497797,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16054,7 +16057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1340004380,
+                            Id = -1185530245,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16062,7 +16065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1073699337,
+                            Id = -578414505,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16070,7 +16073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1904021098,
+                            Id = -1108006084,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16078,7 +16081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 304081576,
+                            Id = 2135304287,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16086,7 +16089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1536644779,
+                            Id = -683381424,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16094,7 +16097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1827362999,
+                            Id = -594536093,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16102,7 +16105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1198534916,
+                            Id = -257917688,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16110,7 +16113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 143642239,
+                            Id = -932957367,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16118,7 +16121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 52836672,
+                            Id = 1832318777,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16126,7 +16129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1122182005,
+                            Id = 1178931078,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16134,7 +16137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1546395162,
+                            Id = -132969448,
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 9,
                             Price = 80m,
@@ -16142,7 +16145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1002252505,
+                            Id = 970417981,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16150,7 +16153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1310065750,
+                            Id = -876644693,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16158,7 +16161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 602572924,
+                            Id = -287867953,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16166,7 +16169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1538468199,
+                            Id = -1489389738,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16174,7 +16177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -641801061,
+                            Id = -66388869,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16182,7 +16185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1017304620,
+                            Id = 1811729014,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16190,7 +16193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 126195782,
+                            Id = 1994428479,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16198,7 +16201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1532222978,
+                            Id = 2006213536,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16206,7 +16209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1400940134,
+                            Id = 989279590,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16214,7 +16217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1300682724,
+                            Id = 675119564,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16222,7 +16225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1265275294,
+                            Id = 1084489466,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16230,7 +16233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -119571421,
+                            Id = 815745661,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16238,7 +16241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1224235211,
+                            Id = 1610816643,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16246,7 +16249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1120674079,
+                            Id = -1161118403,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16254,7 +16257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1748388836,
+                            Id = 1841975259,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16262,7 +16265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -176992712,
+                            Id = 904584587,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16270,7 +16273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1028409157,
+                            Id = 1048586456,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16278,7 +16281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 907544272,
+                            Id = -803871466,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16286,7 +16289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1849485505,
+                            Id = 2052456390,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16294,7 +16297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1604581815,
+                            Id = -720616491,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16302,7 +16305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -261398883,
+                            Id = 3571963,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16310,7 +16313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 795612302,
+                            Id = -875880838,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16318,7 +16321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -110132984,
+                            Id = -1826942809,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16326,7 +16329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1311796526,
+                            Id = -746617251,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16334,7 +16337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 759812692,
+                            Id = 1994564751,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16342,7 +16345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1128263351,
+                            Id = -320331153,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16350,7 +16353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1147084059,
+                            Id = -1845224812,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16358,7 +16361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -195947420,
+                            Id = 1132750081,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16366,7 +16369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2070332737,
+                            Id = 1947163441,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16374,7 +16377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1332673797,
+                            Id = 503158661,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16382,7 +16385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -802808434,
+                            Id = 1968451045,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16390,7 +16393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1799658524,
+                            Id = -1369539105,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16398,7 +16401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1554897707,
+                            Id = -158614261,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16406,7 +16409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 498002159,
+                            Id = -1254680549,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16414,7 +16417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1145269840,
+                            Id = 1898138081,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16422,7 +16425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -574212818,
+                            Id = 266309012,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16430,7 +16433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 675540841,
+                            Id = -1204459563,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16438,7 +16441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1513727763,
+                            Id = 1816510844,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16446,7 +16449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -352690368,
+                            Id = -1723084867,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16454,7 +16457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 12587944,
+                            Id = 1563634164,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16462,7 +16465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 94670886,
+                            Id = 1113730127,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16470,7 +16473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1889878635,
+                            Id = 1076982369,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16478,7 +16481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1194593143,
+                            Id = 918848756,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16486,7 +16489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1325375958,
+                            Id = 2019055005,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16494,7 +16497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -40360345,
+                            Id = -579693037,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16502,7 +16505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1010495559,
+                            Id = 960805403,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16510,7 +16513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1551173550,
+                            Id = 1038021934,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16518,7 +16521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1592275177,
+                            Id = -804636923,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16526,7 +16529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1054121680,
+                            Id = -1402590850,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16534,7 +16537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1705582459,
+                            Id = 252583786,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16542,7 +16545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -378232778,
+                            Id = 39017480,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16550,7 +16553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1731993631,
+                            Id = 1731264693,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16558,7 +16561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 277914333,
+                            Id = 377918449,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16566,7 +16569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2065474346,
+                            Id = 1993621986,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16574,7 +16577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 417114135,
+                            Id = -2060100489,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16582,7 +16585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1973898018,
+                            Id = 1598698824,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16590,7 +16593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -822734401,
+                            Id = -993465006,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16598,7 +16601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1024232583,
+                            Id = 663352931,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16606,7 +16609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1805869736,
+                            Id = -987303551,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16614,7 +16617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1491332765,
+                            Id = 800221983,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16622,7 +16625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -256852447,
+                            Id = -1278870798,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16630,7 +16633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 535780805,
+                            Id = 1327665599,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16638,7 +16641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1177306181,
+                            Id = 1456252490,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16646,7 +16649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -446669765,
+                            Id = -1970196725,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16654,7 +16657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1431781126,
+                            Id = 1377750099,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16662,7 +16665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1669892504,
+                            Id = 312951969,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16670,7 +16673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -635067382,
+                            Id = 140562417,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16678,7 +16681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1509740934,
+                            Id = -1900679607,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16686,7 +16689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 806799953,
+                            Id = -1448758842,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16694,7 +16697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1508165504,
+                            Id = -374192776,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16702,7 +16705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1605086057,
+                            Id = 1070937153,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16710,7 +16713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1490989578,
+                            Id = -626742014,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16718,7 +16721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 358566898,
+                            Id = 559417984,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16726,7 +16729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1216004788,
+                            Id = 2087833653,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16734,7 +16737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1832966477,
+                            Id = -954688219,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16742,7 +16745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1239603519,
+                            Id = -313092075,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16750,7 +16753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1451411897,
+                            Id = -758720520,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16758,7 +16761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 888718943,
+                            Id = -1601575466,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16766,7 +16769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -914249818,
+                            Id = 1312007620,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16774,7 +16777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1452508023,
+                            Id = 367629640,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16782,7 +16785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1975200631,
+                            Id = 2034492625,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16790,7 +16793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2011999754,
+                            Id = -1885457672,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16798,7 +16801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 709383544,
+                            Id = 1696519236,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16806,7 +16809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1228015639,
+                            Id = 28823237,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16814,7 +16817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -275906405,
+                            Id = 1849066029,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16822,7 +16825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1031998687,
+                            Id = -1671816690,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16830,7 +16833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1204733721,
+                            Id = 489500060,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16838,7 +16841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 116426444,
+                            Id = -1670280044,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16846,7 +16849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2055900669,
+                            Id = 1111388387,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16854,7 +16857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1375126610,
+                            Id = -2013669827,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16862,7 +16865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 349882076,
+                            Id = 401368025,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16870,7 +16873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -421278701,
+                            Id = -843095982,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16878,7 +16881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -950737108,
+                            Id = -2063447156,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16886,7 +16889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 429413072,
+                            Id = -609876836,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16894,7 +16897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1370613676,
+                            Id = 1895694338,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16902,7 +16905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1473230577,
+                            Id = 1482250491,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16910,7 +16913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1049375612,
+                            Id = -298916725,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16918,7 +16921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1811321904,
+                            Id = 289522737,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16926,7 +16929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -114029496,
+                            Id = -745760146,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16934,7 +16937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1011283270,
+                            Id = 620396137,
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 10,
                             Price = 120m,
@@ -16942,7 +16945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1185545454,
+                            Id = -1481361561,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -16950,7 +16953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 838836007,
+                            Id = 1197635180,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -16958,7 +16961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 442936856,
+                            Id = 1740530510,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -16966,7 +16969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1625514128,
+                            Id = -770516216,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -16974,7 +16977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2123059179,
+                            Id = -638626546,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -16982,7 +16985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 235136980,
+                            Id = 1520388441,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -16990,7 +16993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1133019418,
+                            Id = 232945719,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -16998,7 +17001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -306234652,
+                            Id = -728738778,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17006,7 +17009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1748930846,
+                            Id = 1648336992,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17014,7 +17017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 888469556,
+                            Id = 291551666,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17022,7 +17025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 65925256,
+                            Id = 1593304173,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17030,7 +17033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1056903790,
+                            Id = -1928177198,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17038,7 +17041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1885767505,
+                            Id = 596494769,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17046,7 +17049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 391130463,
+                            Id = -2110787310,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17054,7 +17057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1531352944,
+                            Id = -577109684,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17062,7 +17065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1421997857,
+                            Id = 799775739,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17070,7 +17073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -931241563,
+                            Id = 623633142,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17078,7 +17081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -308906558,
+                            Id = 1306313114,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17086,7 +17089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2012165360,
+                            Id = 1069759712,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17094,7 +17097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -317298181,
+                            Id = -284464220,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17102,7 +17105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -255176306,
+                            Id = -2128502322,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17110,7 +17113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 507547791,
+                            Id = -2144641172,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17118,7 +17121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2088274144,
+                            Id = -1575496615,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17126,7 +17129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1048547048,
+                            Id = 501451606,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17134,7 +17137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2068457866,
+                            Id = -2133052238,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17142,7 +17145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2023085461,
+                            Id = -1272688109,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17150,7 +17153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1643511466,
+                            Id = -471743026,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17158,7 +17161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 654730854,
+                            Id = 968856919,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17166,7 +17169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1392564560,
+                            Id = -667706848,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17174,7 +17177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 240690555,
+                            Id = 503991829,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17182,7 +17185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1941189155,
+                            Id = -1071975500,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17190,7 +17193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1779527813,
+                            Id = 1563678877,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17198,7 +17201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -578585324,
+                            Id = -1485543758,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17206,7 +17209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 993645735,
+                            Id = -1160288926,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17214,7 +17217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -223724497,
+                            Id = -1420944453,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17222,7 +17225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1799766359,
+                            Id = 366876841,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17230,7 +17233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -979438243,
+                            Id = 1957283325,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17238,7 +17241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1243964005,
+                            Id = -409378048,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17246,7 +17249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -952262719,
+                            Id = 1497066530,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17254,7 +17257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -672682922,
+                            Id = -802854155,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17262,7 +17265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -516757616,
+                            Id = 1542684666,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17270,7 +17273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1305007760,
+                            Id = -1044655899,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17278,7 +17281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 233303630,
+                            Id = -160180043,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17286,7 +17289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -305439213,
+                            Id = -1261057370,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17294,7 +17297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 57317851,
+                            Id = 1947771153,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17302,7 +17305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1908831652,
+                            Id = -1872324524,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17310,7 +17313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 371673332,
+                            Id = 1146251880,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17318,7 +17321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 321001964,
+                            Id = -1647943498,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17326,7 +17329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 530647480,
+                            Id = 1840957645,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17334,7 +17337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -578183529,
+                            Id = -115003309,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17342,7 +17345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 313226916,
+                            Id = -173331896,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17350,7 +17353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 509284000,
+                            Id = 369254783,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17358,7 +17361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1443663813,
+                            Id = 1816500529,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17366,7 +17369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1572567865,
+                            Id = 744055744,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17374,7 +17377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 676219833,
+                            Id = -1570220527,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17382,7 +17385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1098490207,
+                            Id = -173205120,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17390,7 +17393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1331988874,
+                            Id = -1923018578,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17398,7 +17401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1127361934,
+                            Id = -598459471,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17406,7 +17409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1152922907,
+                            Id = -969253702,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17414,7 +17417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1200303839,
+                            Id = -1587983511,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17422,7 +17425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1519803032,
+                            Id = -1175298328,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17430,7 +17433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2086840330,
+                            Id = 1765567746,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17438,7 +17441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 693210206,
+                            Id = -730975924,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17446,7 +17449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1570522795,
+                            Id = -1341388549,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17454,7 +17457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -260516547,
+                            Id = -1292239755,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17462,7 +17465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -966255112,
+                            Id = -1948017127,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17470,7 +17473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -841955685,
+                            Id = 1333204682,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17478,7 +17481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -74305209,
+                            Id = 1087474567,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17486,7 +17489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1572950033,
+                            Id = -134497153,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17494,7 +17497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1859638862,
+                            Id = -1446808870,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17502,7 +17505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -721516627,
+                            Id = 713736466,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17510,7 +17513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1266069941,
+                            Id = 918135971,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17518,7 +17521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1902616620,
+                            Id = 1877173898,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17526,7 +17529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1045493131,
+                            Id = -2046032784,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17534,7 +17537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1481771431,
+                            Id = 1869310648,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17542,7 +17545,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1887495997,
+                            Id = 1111493176,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17550,7 +17553,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 741505806,
+                            Id = -2103932027,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17558,7 +17561,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1906396508,
+                            Id = -1300935379,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17566,7 +17569,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1627267410,
+                            Id = -410446789,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17574,7 +17577,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -635929773,
+                            Id = 1888988285,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17582,7 +17585,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 642607563,
+                            Id = 1462152837,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17590,7 +17593,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 266665852,
+                            Id = 970741814,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17598,7 +17601,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1981388955,
+                            Id = -1955299818,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17606,7 +17609,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 140254617,
+                            Id = 58897172,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17614,7 +17617,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1342345308,
+                            Id = 742309150,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17622,7 +17625,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1512414318,
+                            Id = 219531841,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17630,7 +17633,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1598836770,
+                            Id = -518315489,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17638,7 +17641,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 115910814,
+                            Id = 1313269560,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17646,7 +17649,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -281347628,
+                            Id = 692757586,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17654,7 +17657,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1182231529,
+                            Id = 841793507,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17662,7 +17665,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 212358723,
+                            Id = -1845699199,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17670,7 +17673,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 456517902,
+                            Id = 1090521387,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17678,7 +17681,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -402949756,
+                            Id = 1799100683,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17686,7 +17689,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1672830261,
+                            Id = 869888549,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17694,7 +17697,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -251240304,
+                            Id = -604043151,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17702,7 +17705,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -836450509,
+                            Id = -1778624890,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17710,7 +17713,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 878133678,
+                            Id = 1401283249,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17718,7 +17721,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1691417314,
+                            Id = -1594373502,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17726,7 +17729,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1081092154,
+                            Id = -454463635,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17734,7 +17737,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1995263641,
+                            Id = 1787857762,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17742,7 +17745,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1956062057,
+                            Id = -1316563734,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17750,7 +17753,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 555729453,
+                            Id = 58728879,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17758,7 +17761,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1260865856,
+                            Id = 2125811287,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17766,7 +17769,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -757876876,
+                            Id = 700127940,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17774,7 +17777,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1771310772,
+                            Id = -1924864158,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17782,7 +17785,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1516822731,
+                            Id = 1836141370,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17790,7 +17793,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1393756610,
+                            Id = -28377786,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17798,7 +17801,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1151681129,
+                            Id = -2146771541,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17806,7 +17809,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 126581680,
+                            Id = -1387477353,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17814,7 +17817,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -79053972,
+                            Id = 1013427828,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17822,7 +17825,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -97930892,
+                            Id = -466446240,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17830,7 +17833,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 729580626,
+                            Id = 1097026669,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17838,7 +17841,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1340154586,
+                            Id = -1152497030,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17846,7 +17849,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -335533026,
+                            Id = 1819720298,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17854,7 +17857,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 136761357,
+                            Id = -89040142,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17862,7 +17865,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -771756722,
+                            Id = 1886947777,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17870,7 +17873,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2087425289,
+                            Id = 494695660,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17878,7 +17881,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 2007805533,
+                            Id = 945187395,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17886,7 +17889,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1711853619,
+                            Id = 314483957,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17894,7 +17897,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -880140247,
+                            Id = 1124612032,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17902,7 +17905,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1356895699,
+                            Id = -759419507,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17910,7 +17913,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1270131011,
+                            Id = -1933556146,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17918,7 +17921,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1538983283,
+                            Id = -2033981543,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17926,7 +17929,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1027254073,
+                            Id = -1528339283,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17934,7 +17937,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1504437302,
+                            Id = 1424564524,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17942,7 +17945,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1749103390,
+                            Id = -1726678771,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17950,7 +17953,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -660159099,
+                            Id = 1174885877,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17958,7 +17961,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1886604422,
+                            Id = 256277303,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17966,7 +17969,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -2027978466,
+                            Id = 779363733,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17974,7 +17977,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1947648140,
+                            Id = 1752402918,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17982,7 +17985,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1509758266,
+                            Id = -1991596461,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17990,7 +17993,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -191899248,
+                            Id = 634107310,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -17998,7 +18001,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1329274272,
+                            Id = 1757694206,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18006,7 +18009,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1702307499,
+                            Id = -994110297,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18014,7 +18017,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 806182430,
+                            Id = -521681269,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18022,7 +18025,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -256966480,
+                            Id = 914054607,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18030,7 +18033,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -488415573,
+                            Id = -1553388067,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18038,7 +18041,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1173163212,
+                            Id = -2048547342,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18046,7 +18049,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1766012570,
+                            Id = -234216302,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18054,7 +18057,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -477638580,
+                            Id = -324961097,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18062,7 +18065,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1670412249,
+                            Id = -1432294920,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18070,7 +18073,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -370524572,
+                            Id = -1750917139,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18078,7 +18081,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1543358114,
+                            Id = -1190354133,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18086,7 +18089,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 343980111,
+                            Id = -493091460,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18094,7 +18097,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1194719730,
+                            Id = 1621293840,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18102,7 +18105,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1767884919,
+                            Id = 1502009895,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18110,7 +18113,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1868248820,
+                            Id = 901511048,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18118,7 +18121,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -416399296,
+                            Id = -472236305,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18126,7 +18129,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1890402649,
+                            Id = -757287163,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18134,7 +18137,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -88906370,
+                            Id = 1961675757,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18142,7 +18145,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -454722256,
+                            Id = -122944468,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18150,7 +18153,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -212986411,
+                            Id = -852905319,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18158,7 +18161,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1918787979,
+                            Id = -1608107441,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18166,7 +18169,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -254615177,
+                            Id = 1381696296,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18174,7 +18177,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -283931156,
+                            Id = 132996510,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18182,7 +18185,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1695492615,
+                            Id = -58590814,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18190,7 +18193,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1263309999,
+                            Id = -885115544,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18198,7 +18201,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 183382553,
+                            Id = 1873048056,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18206,7 +18209,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1582414637,
+                            Id = 1342821301,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18214,7 +18217,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1189905090,
+                            Id = -1101299734,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18222,7 +18225,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 199156010,
+                            Id = -1514046103,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18230,7 +18233,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 245101394,
+                            Id = -186403699,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18238,7 +18241,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 939938069,
+                            Id = 273462617,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18246,7 +18249,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -629788128,
+                            Id = 1047855974,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18254,7 +18257,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1351105404,
+                            Id = -294519274,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18262,7 +18265,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -419164120,
+                            Id = 1256370496,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18270,7 +18273,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1228339134,
+                            Id = -712404394,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18278,7 +18281,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1544852078,
+                            Id = 1276375151,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18286,7 +18289,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1582958902,
+                            Id = -1616779248,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18294,7 +18297,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1279585178,
+                            Id = -1832457855,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18302,7 +18305,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1723390990,
+                            Id = 277142995,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18310,7 +18313,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1709237489,
+                            Id = -354485801,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18318,7 +18321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1452024757,
+                            Id = -1358139295,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18326,7 +18329,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1628582044,
+                            Id = -46916080,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18334,7 +18337,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1444038279,
+                            Id = -1577372390,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18342,7 +18345,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1011004970,
+                            Id = -14896132,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18350,7 +18353,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1630074596,
+                            Id = -916465868,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18358,7 +18361,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -353712702,
+                            Id = 611611502,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18366,7 +18369,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1191678753,
+                            Id = 1033826075,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18374,7 +18377,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1302231769,
+                            Id = 1331652039,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18382,7 +18385,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -74892026,
+                            Id = -1797645073,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18390,7 +18393,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1560385167,
+                            Id = -35817595,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18398,7 +18401,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 916244115,
+                            Id = -1284688516,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18406,7 +18409,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 811735734,
+                            Id = -1816649277,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18414,7 +18417,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1063795199,
+                            Id = 448721740,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18422,7 +18425,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1802667065,
+                            Id = 816709049,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18430,7 +18433,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1354474024,
+                            Id = 397931088,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18438,7 +18441,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 619362646,
+                            Id = 313955212,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18446,7 +18449,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1767081350,
+                            Id = -2083932808,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18454,7 +18457,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 16917559,
+                            Id = 768309929,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18462,7 +18465,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1877082760,
+                            Id = -1272139960,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18470,7 +18473,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 586381421,
+                            Id = 1452775279,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18478,7 +18481,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 204337564,
+                            Id = 1454527464,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18486,7 +18489,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1844433312,
+                            Id = -205010186,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18494,7 +18497,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1871048919,
+                            Id = -1149534622,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18502,7 +18505,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1382522270,
+                            Id = -1782118375,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18510,7 +18513,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = -1659282231,
+                            Id = 184690376,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18518,7 +18521,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 1997420874,
+                            Id = -696954353,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18526,7 +18529,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 210888529,
+                            Id = 40109231,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
@@ -18534,7 +18537,7 @@ namespace TicketHive.Server.Migrations.AppDb
                         },
                         new
                         {
-                            Id = 28935244,
+                            Id = 762679016,
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventId = 11,
                             Price = 80m,
