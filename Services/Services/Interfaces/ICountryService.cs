@@ -9,6 +9,5 @@ namespace TicketHive.Bll.Services.Interfaces
 {
     public interface ICountryService : IService<CountryViewModel>
     {
-		//Task<CountryViewModel?> GetByNameAsync(string name);
 	}
 }

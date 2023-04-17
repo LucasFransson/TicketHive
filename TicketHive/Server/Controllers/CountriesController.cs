@@ -24,13 +24,6 @@ public class CountriesController : ControllerBase
         IEnumerable<CountryDTO> countries = (await _unitOfWork.Countries.GetAllAsync())
             .Select(cm => new CountryDTO(cm.Name, cm.Currency, cm.IsAvailableForUserRegistration));
 
-        //IEnumerable<CountryDTO> countries = (await _unitOfWork.Countries.GetAllAsync()).Select(cm => new CountryDTO
-        //{
-        //    Name = cm.Name,
-        //    Currency = cm.Currency,
-        //    IsAvailableForUserRegistration = cm.IsAvailableForUserRegistration
-        //});
-
         return Ok(countries);
     }
 
@@ -53,22 +46,6 @@ public class CountriesController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] CountryDTO countryDTO)
     {
-        //if(countryDTO is not null)
-        //{
-        //    CountryModel countryModel = new()
-        //    {
-        //        Name = countryDTO.Name,
-        //        Currency = countryDTO.Currency,
-        //        IsAvailableForUserRegistration = countryDTO.IsAvailableForUserRegistration
-        //    };
-
-        //    await _unitOfWork.Countries.Add(countryModel);
-
-        //    return Ok();
-        //}
-
-        //return BadRequest();
-
         if (countryDTO is not null)
         {
             CountryModel countryModel = new(countryDTO);
@@ -80,7 +57,6 @@ public class CountriesController : ControllerBase
 
         return BadRequest();
     }
-
 
     // PUT api/<CountriesController>/5
     [HttpPut("{id}")]

@@ -31,19 +31,6 @@ public class TicketsController : ControllerBase
         return Ok(tickets);
     }
 
-    // GET api/<TicketsController>/5
-    //[HttpGet("{id}")]
-    //public async Task<ActionResult<TicketDTO>> Get(int id)
-    //{
-    //    TicketModel? ticketModel = await _unitOfWork.Tickets.GetOneByIdWithIncludesAsync(id);
-
-    //    if (ticketModel is not null)
-    //    {
-    //        return Ok(TransformToDTO.FromTicketModel(ticketModel));
-    //    }
-    //    return NotFound();
-    //}
-
     // Get by eventId
     [HttpGet("{id}")]
     public async Task<ActionResult<TicketDTO>> Get(int id)
@@ -57,17 +44,6 @@ public class TicketsController : ControllerBase
         }
         return NotFound();
     }
-
-    //[HttpGet]
-    //public async Task<ActionResult<IEnumerable<TicketDTO>>> Get([FromQuery] Expression<Func<TicketDTO, bool>> predicate)
-    //{
-    //    var tickets = await _unitOfWork.Tickets.Where(predicate).ToListAsync();
-    //    var ticketDtos = tickets.Select(TransformToDTO.FromTicketModel);
-    //    return ticketDtos;
-
-    //    var data = await _unitOfWork.Tickets.GetAsync(predicate);
-    //    return Ok(data);
-    //}
 
     // POST api/<SoldTicketsController>
     [HttpPost]
