@@ -21,16 +21,13 @@
             {
                 <div class="@($"col-md-{Math.Max(12 / chunk.Count, 3)}")">
                     <div class="card mr-5">
-                        <img src="@e.ImageString"
-                             class="card-img-top"
-                             alt="Event Image" />
+                        <img src="/images/@e.ImageString" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title red-foreground">@e.Name</h5>
                             <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
                             <p class="card-text blue-foreground">@e.Description</p>
                             <p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
                             <p class="card-text blue-foreground">@e.CountryName</p>
-                   @*         <p class="card-text font-weight-bold">$@e.Price</p>*@
                             <button class="btn btn-buy btn-block" @onclick="(()=>GoToEvent(e.Id))">Buy Tickets</button>
                         </div>
                     </div>
@@ -40,7 +37,6 @@
     }
 </div>
 
-<SearchbarButton/>
 
 <div>
     <ul class="list-group">
@@ -57,7 +53,7 @@
 
 
 @code {
-    //private IEnumerable<EventViewModel> _allEvents = new List<EventViewModel>();
+   
 
 
     private List<EventViewModel> _allEvents = new List<EventViewModel>();

@@ -86,7 +86,6 @@ namespace TicketHive.Bll.Services.Managers
 				usersTickets.Add(soldTicket);
 			}
 
-            //await _unitOfService.SoldTicketService.AddRangeAsync(usersTickets);
             foreach(var t in usersTickets)
             {
                 await _unitOfService.SoldTicketService.AddAsync(t);
@@ -97,9 +96,18 @@ namespace TicketHive.Bll.Services.Managers
             {
                 _unitOfService.TicketService.Remove(ticket.Id);
             }
-
-
         }
+
+        public List<string> ReturnReciept(List<TicketViewModel> userTickets)
+        {
+            List<string> orderedTickets = new();
+            foreach(var ticket in userTickets)
+            {
+                orderedTickets.Add(ticket.Event.Name);
+            }
+            return orderedTickets;
+        }
+        
 		public void ConfirmBuy()
 		{
 

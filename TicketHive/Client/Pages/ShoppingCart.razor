@@ -2,9 +2,9 @@
 @using Microsoft.AspNetCore.Authorization;
 @using TicketHive.Bll.Services.Managers;
 @using TicketHive.Client.LocalStorage;
-@inject AuthenticationStateProvider _provider;
-@inject LocalStorageManager _localStorage
-@inject NavigationManager _navigationManager
+@inject AuthenticationStateProvider provider;
+@inject LocalStorageManager localStorage
+@inject NavigationManager navigationManager
 @attribute [Authorize]
 
 <h3>ShoppingCart</h3>
@@ -54,22 +54,21 @@ else
 
 @code {
     private List<CartItemViewModel> cartItems = new();
-    private string username;
+    private string _username;
 
     protected override async Task OnInitializedAsync()
     {
-        var authState = await _provider.GetAuthenticationStateAsync();
+        var authState = await provider.GetAuthenticationStateAsync();
 
-        username = authState.User.Identity.Name;
+        _username = authState.User.Identity.Name;
 
-        await _localStorage.InitializeUserCartAsync(username);
-
-        cartItems = await GetCartItems(username);
+        //isAdmin = authState.User.IsInRole("Admin");
+        cartItems = await GetCartItems(_username);
     }
 
     private void RedirectToConfirm()
     {
-        _navigationManager.NavigateTo("/confirm");
+        navigationManager.NavigateTo("/confirm");
     }
 
     private async Task IncrementCount(CartItemViewModel cartItem, int quantity)
@@ -78,9 +77,9 @@ else
         {
             quantity++;
 
-            await _localStorage.AddCartItemAsync(cartItem, username);
+            await localStorage.AddCartItemAsync(cartItem, _username);
 
-            cartItems = await GetCartItems(username);
+            cartItems = await GetCartItems(_username);
         }
     }
 
@@ -90,21 +89,21 @@ else
         {
             quantity--;
 
-            await _localStorage.RemoveCartItemAsync(cartItems, cartItem, username);
+            await localStorage.RemoveCartItemAsync(cartItems, cartItem, _username);
 
-            cartItems = await GetCartItems(username);
+            cartItems = await GetCartItems(_username);
         }
     }
 
     private async Task RemoveEvent(CartItemViewModel cartItem)
     {
-        await _localStorage.RemoveEventFromCartAsync(cartItem, username);
+        await localStorage.RemoveEventFromCartAsync(cartItem, _username);
 
-        cartItems = await GetCartItems(username);
+        cartItems = await GetCartItems(_username);
     }
 
     private async Task<List<CartItemViewModel>?> GetCartItems(string username)
     {
-        return await _localStorage.GetCartItems(username);
+        return await localStorage.GetCartItems(username);
     }
 }

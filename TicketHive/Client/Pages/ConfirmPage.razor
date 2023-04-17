@@ -3,11 +3,11 @@
 @using TicketHive.Bll.Services.Interfaces;
 @using TicketHive.Bll.Services.Managers;
 @using TicketHive.Client.LocalStorage;
-@inject AuthenticationStateProvider _provider;
+@inject AuthenticationStateProvider provider;
 @inject NavigationManager NavigationManager
-@inject IUnitOfService _unitOfService;
-@inject CheckOutManager _checkOutManager;
-@inject LocalStorageManager _localStorage
+@inject IUnitOfService unitOfService;
+@inject CheckOutManager checkOutManager;
+@inject LocalStorageManager localStorage
 @attribute [Authorize]
 
 <h3>ConfirmPage</h3>
@@ -33,7 +33,7 @@
                                 {
                                     <tr>
                                         <td>@item.Name</td>
-                                        <td>@item.Price</td>
+                                        <td>@Math.Round(item.Price*(decimal)_exchangeRate) @_currency</td>
                                     </tr>
                                 }
                             }        
@@ -50,7 +50,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>@_totalCost</td>
+                                <td>@Math.Round(_totalCost*(decimal)_exchangeRate) @_currency</td>
                             </tr>
                         </tbody>
                     </table>
@@ -72,7 +72,7 @@
                     <p class="card-text">Card info</p>
                 </div>
             </div>
-            <p>Total Cost: @_totalCost</p>
+            <p>Total Cost: @Math.Round(_totalCost*(decimal)_exchangeRate) @_currency</p>
             <button class="btn btn-success btn-block my-4" style="width:100%;" @onclick="@(async() => await CheckOut())">Confirm Order </button>
             <button class="btn btn-primary btn-block my-4" style="width:100%;" @onclick="RedirectUser">Return </button>
         </div>
@@ -81,48 +81,54 @@
  
 @code {
     private List<CartItemViewModel> _cartItems = new();
-    private string _username;
+    private string _currency = "";
+    private double _exchangeRate;
+    private string _username = null;
     private decimal _totalCost;
     private List<TicketViewModel> _tickets = new();
+
     protected override async Task OnInitializedAsync()
     {
-        var authState = await _provider.GetAuthenticationStateAsync();
+        var authState = await provider.GetAuthenticationStateAsync();
         _username = authState.User.Identity.Name;
-        _cartItems = await GetCartItems(_username);
+        if (_username is not null)
+        {
+            _currency = await localStorage.GetCurrencyForDisplayAsync(_username);
+            _exchangeRate = await localStorage.GetExchangeRateAsync(_username);
+            _cartItems = await GetCartItems(_username);
 
-
-
-        GetTotalCost();
+            GetTotalCost();
+        }
     }
 
 
     private void GetTotalCost()
     {
-        _totalCost = _checkOutManager.GetTotalCost(_cartItems);
+        _totalCost = checkOutManager.GetTotalCost(_cartItems);
     }
     private async Task ConfirmBuy()   // Are you sure etc?
     {
         // if yes 
 
-        _tickets = await _checkOutManager.GetTickets(_cartItems);
+        _tickets = await checkOutManager.GetTickets(_cartItems);
         // else 
     }
     private async Task CheckOut()
     {
-    
+
         await ConfirmBuy();
         if(_tickets is not null)
         {
-            await _checkOutManager.CheckOut(_tickets,_username);
-            await _localStorage.ClearCartAsync(_username);
+            await checkOutManager.CheckOut(_tickets,_username);
+            await localStorage.ClearCartAsync(_username);
         }
         else
         {
             // Error message
             Console.WriteLine("Hit error");
         }
-    }
 
+    }
     private void RedirectUser()
     {
         NavigationManager.NavigateTo("Booking");
@@ -130,6 +136,10 @@
 
     private async Task<List<CartItemViewModel>?> GetCartItems(string username)
     {
-        return await _localStorage.GetCartItems(username);
+        return await localStorage.GetCartItems(username);
+    }
+    private void ClearPage()
+    {
+
     }
 }

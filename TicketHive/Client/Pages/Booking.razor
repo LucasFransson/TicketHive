@@ -1,39 +1,19 @@
-﻿@inject AuthenticationStateProvider provider;
+﻿@page "/Booking"
+@using Microsoft.AspNetCore.Authorization;
+@using TicketHive.Bll.Services.Interfaces;
+@using TicketHive.Bll.Services.Managers;
+@using TicketHive.Shared.Extensions;
+@using TicketHive.Client.LocalStorage;
+@inject LocalStorageManager localStorage
+@inject AuthenticationStateProvider provider;
 @inject NavigationManager NavigationManager;
 @inject IUnitOfService unitOfService;
 @attribute [Authorize]
 
 
-@page "/Booking"
-@using Microsoft.AspNetCore.Authorization;
-@using TicketHive.Bll.Services.Interfaces;
-@using TicketHive.Bll.Services.Managers;
-@using TicketHive.Shared.Extensions;
-
-
-
 
 <h1>Events</h1>
 
-@*<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-8">
-            <form class="card card-sm">
-                <div class="card-body row no-gutters align-items-center">
-                    <div class="col-auto">
-                        <i class="fas fa-search h4 text-body"></i>
-                    </div>
-                    <div class="col">
-                        <input class="form-control form-control-lg form-control-borderless" type="search" placeholder="Search events..." @bind-value="@_searchTerm" @oninput="@HandleSearch">
-                    </div>
-                   <div class="col-auto">
-                        <button class="btn btn-lg btn-success" type="submit" @onclick="@HandleSearch">Search</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>*@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-8">
@@ -46,12 +26,8 @@
                         <div class="col">
                             <input type="text" class="form-control form-control-lg form-control-borderless" placeholder="Search events..." @oninput="HandleSearch" />
                         </div>
-            @*            <div class="col-auto">
-                            <button class="btn btn-lg btn-success" type="submit">Search</button>
-                        </div>*@
                     </div>
                 </div>
-        
         </div>
     </div>
 </div>
@@ -72,7 +48,7 @@
             {
                 <div class="col mb-4">
                     <div class="card">
-                        <img src="@e.ImageString" class="card-img-top" alt="Event Image" />
+                        <img src="/images/@e.ImageString" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title red-foreground">@e.Name</h5>
                             <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
@@ -80,7 +56,7 @@
                             <p class="card-text blue-foreground">@DateTimeFormatter.FormatDayNumberMonthText(e.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(e.EndTime)</p>
                             <p class="card-text blue-foreground">@e.CountryName</p>
                             <p class=" card-text blue-foreground">Tickets Left: @e.TicketsLeft</p>
-                            <p class="card-text font-weight-bold">$@e.Price</p>
+                            <p class="card-text font-weight-bold">@Math.Round(e.Price*(decimal)_exchangeRate) @_currency</p>
                             <button class="btn btn-buy btn-block" @onclick="(()=>GoToEvent(e.Id))">Buy Tickets</button>
                         </div>
                     </div>
@@ -96,16 +72,28 @@
 
 
 @code {
-    ViewModelManager viewManager = new();
 
+    ViewModelManager viewManager = new();
 
     private List<EventViewModel> _allEvents = new List<EventViewModel>();
     private IEnumerable<EventViewModel> _filteredEvents = new List<EventViewModel>();
     private string _selectedSortMethod = "Sort by:";
     private string _searchTerm = "";
+    private string? _username= null;
+    private string _currency = "";
+    private double _exchangeRate;
 
     protected override async Task OnInitializedAsync()
-    {
+    {   
+        var authState = await provider.GetAuthenticationStateAsync();
+        _username = authState.User.Identity.Name;
+
+        if (_username is not null)
+        {
+            _currency = await localStorage.GetCurrencyForDisplayAsync(_username);
+            _exchangeRate = await localStorage.GetExchangeRateAsync(_username);
+        }
+
         await GetAllEvents();
         _filteredEvents = _allEvents;
         await HandleSortChanged(new ChangeEventArgs { Value = _selectedSortMethod });
