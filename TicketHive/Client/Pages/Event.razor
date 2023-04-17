@@ -41,7 +41,7 @@
         var authState = await _provider.GetAuthenticationStateAsync();
         username = authState.User.Identity.Name;
 
-        await _localStorage.InitializeUserAsync(username);
+        await _localStorage.InitializeUserCartAsync(username);
 
         exchangeRate = await _localStorage.GetExchangeRateAsync(username);
         currency = await _localStorage.GetCurrencyForDisplayAsync(username);
