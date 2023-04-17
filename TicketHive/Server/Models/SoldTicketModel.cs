@@ -13,7 +13,6 @@ namespace TicketHive.Server.Models
     {
         public int Id { get; set; }
         public required int EventId { get; set; }
-        public EventModel? Event { get; set; }
         public required string Username { get; set; }
         [Column(TypeName = "decimal(5, 2)")]
         public required decimal Price { get; set; }
@@ -30,7 +29,6 @@ namespace TicketHive.Server.Models
         {
             Id = dto.Id;
             EventId = dto.EventId;
-            //Event = new EventModel(dto.Event);
             Username = dto.Username;
             Price = dto.Price;
             StartTime = dto.StartTime;

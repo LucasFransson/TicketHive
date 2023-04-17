@@ -15,23 +15,12 @@ namespace TicketHive.Server.Data.Repositories.Implementations
 
         public async Task<IEnumerable<SoldTicketModel>?> GetUserTicketsAsync(string username)
         {
-            return await _context.SoldTickets
-                .Include(st => st.Event)
-                .ThenInclude(e => e.Country)
-                .Include(st => st.Event)
-                .ThenInclude(e => e.EventType)
-                .Where(st => st.Username.Equals(username))
-                .ToListAsync();
+            return await _context.SoldTickets.Where(st => st.Username.Equals(username)).ToListAsync();
         }
 
         public async Task<SoldTicketModel?> GetOneByIdWithIncludesAsync(int id)
         {
-            return await _context.SoldTickets
-                .Include(st => st.Event)
-                .ThenInclude(e => e.Country)
-                .Include(st => st.Event)
-                .ThenInclude(e => e.EventType)
-                .FirstOrDefaultAsync(st => st.Id.Equals(id));
+            return await _context.SoldTickets.FirstOrDefaultAsync(st => st.Id.Equals(id));
         }
     }
 }

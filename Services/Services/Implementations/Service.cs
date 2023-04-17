@@ -7,7 +7,10 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using TicketHive.Bll.Services.Interfaces;
+using TicketHive.Shared.DTOs;
+using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Implementations
 {
@@ -46,7 +49,17 @@ namespace TicketHive.Bll.Services.Implementations
 		{
 			return await _httpClient.GetFromJsonAsync<TEntity>($"/api/{GetAPIName().ToLower()}/{name}");
 		}
-		public async Task<IEnumerable<TEntity>> GetAllAsync()
+        public async Task<IEnumerable<TEntity>> GetAllByNameAsync(string name)
+        {
+            if (typeof(TEntity) == typeof(SoldTicketViewModel)) // This should be put in the specific service instead
+            {
+                // Call the UserTickets endpoint instead of the default generic endpoint
+                return await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"/api/{GetAPIName().ToLower()}/usertickets/{name}");
+            }
+
+            return await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"/api/{GetAPIName().ToLower()}/{name}");
+        }
+        public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"/api/{GetAPIName().ToLower()}");
         }

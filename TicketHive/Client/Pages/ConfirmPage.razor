@@ -80,12 +80,15 @@
 </div>
  
 @code {
-    private List<CartItemViewModel> _cartItems = new();
+
+    private List<CartItemViewModel> _cartItems = new(); 
+    private List<TicketViewModel> _tickets = new();
+
     private string _currency = "";
     private double _exchangeRate;
     private string _username = null;
     private decimal _totalCost;
-    private List<TicketViewModel> _tickets = new();
+  
 
     protected override async Task OnInitializedAsync()
     {
@@ -101,11 +104,11 @@
         }
     }
 
-
     private void GetTotalCost()
     {
         _totalCost = checkOutManager.GetTotalCost(_cartItems);
     }
+
     private async Task ConfirmBuy()   // Are you sure etc?
     {
         // if yes 
@@ -113,6 +116,7 @@
         _tickets = await checkOutManager.GetTickets(_cartItems);
         // else 
     }
+
     private async Task CheckOut()
     {
 
@@ -129,6 +133,7 @@
         }
 
     }
+
     private void RedirectUser()
     {
         NavigationManager.NavigateTo("Booking");
@@ -138,6 +143,7 @@
     {
         return await localStorage.GetCartItems(username);
     }
+
     private void ClearPage()
     {
 

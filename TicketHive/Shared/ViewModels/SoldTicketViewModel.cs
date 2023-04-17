@@ -11,7 +11,6 @@ namespace TicketHive.Shared.ViewModels
     {
         public int Id { get; set; }
         public int EventId { get; set; }
-        //public EventViewModel? Event { get; set; }
         public string Username { get; set; }
         public decimal Price { get; set; }
         public DateTime StartTime { get; set; }
@@ -26,7 +25,6 @@ namespace TicketHive.Shared.ViewModels
         {
             Id = dto.Id;
             EventId = dto.EventId;
-            //Event = new EventViewModel(dto.Event);
             Username = dto.Username;
             Price = dto.Price;
             StartTime = dto.StartTime;
@@ -36,7 +34,6 @@ namespace TicketHive.Shared.ViewModels
         public SoldTicketViewModel(TicketViewModel ticket, string username)
         {
             Id = ticket.Id;
-            //Event = ticket.Event;
             EventId = ticket.EventId;
             Username = username;
             Price = ticket.Price;

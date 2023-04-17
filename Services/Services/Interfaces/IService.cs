@@ -11,8 +11,9 @@ namespace TicketHive.Bll.Services.Interfaces
     {
         Task<TEntity> GetByIdAsync(int id);
 		Task<TEntity> GetByNameAsync(string name);
-		Task<IEnumerable<TEntity>> GetAllAsync();
-		Task AddAsync(TEntity entity);
+        Task<IEnumerable<TEntity>> GetAllAsync();
+        Task<IEnumerable<TEntity>> GetAllByNameAsync(string name);
+        Task AddAsync(TEntity entity);
         Task AddRangeAsync(IEnumerable<TEntity> entities);
         void Remove(TEntity entity);
         void Remove(int id);

@@ -23,7 +23,7 @@ public class EventsController : ControllerBase
     {
 
         IEnumerable<EventDTO>? eventDTOs = (await _unitOfWork.Events.GetAllWithIncludesAsync())?
-                                                                 .Select(em => new EventDTO(
+                                                                 .Select(em => new EventDTO(    // Add to TransformDTO class
                                                                         em.Id,
                                                                         em.Name,
                                                                         em.Description,
@@ -55,7 +55,7 @@ public class EventsController : ControllerBase
         
         if (eventModel is not null)
         {
-            EventDTO eventDTO = new(eventModel.Id,
+            EventDTO eventDTO = new(eventModel.Id,      // Add to TransformDTO class
                                     eventModel.Name,
                                     eventModel.Description,
                                     eventModel.ImageString,
@@ -73,7 +73,6 @@ public class EventsController : ControllerBase
                                     eventModel.EventTypeName,
                                     new EventTypeDTO(eventModel.EventType.Name)
                                     ) ;
-
             return Ok(eventDTO);
         }
 

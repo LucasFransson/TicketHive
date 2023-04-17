@@ -14,10 +14,10 @@
 
 
 <div class="container">
-    @foreach(var chunk in _allEvents.ChunkBy(4))
+    @foreach (var chunk in _allEvents.ChunkBy(4))
     {
         <div class="row">
-            @foreach(var e in chunk)
+            @foreach (var e in chunk)
             {
                 <div class="@($"col-md-{Math.Max(12 / chunk.Count, 3)}")">
                     <div class="card mr-5">
@@ -38,24 +38,50 @@
 </div>
 
 
-<div>
+
+<div class="container mt-4">
+    <h5 class="mb-3">My Events</h5>
     <ul class="list-group">
-        <li class="list-group-item"><h5>My Events</h5></li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
+        @if (_usersTickets.Any())
+        {
+            @foreach (var ticket in _usersTickets)
+            {
+                var eventViewModel = _allEvents.FirstOrDefault(e => e.Id == ticket.EventId);
+                if (eventViewModel != null)
+                {
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <img src="/images/@eventViewModel.ImageString" alt="Event image" class="img-fluid rounded">
+                            </div>
+                            <div class="col-sm-8">
+                                <h5 class="card-title">@eventViewModel.Name</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">@eventViewModel.EventType.Name</h6>
+                                <p class="card-text">@eventViewModel.Description</p>
+                                <p class="card-text">@DateTimeFormatter.FormatDayNumberMonthText(ticket.StartTime) - @DateTimeFormatter.FormatDayNumberMonthText(ticket.EndTime)</p>
+                                <p class="card-text">@eventViewModel.CountryName</p>
+                            </div>
+                        </div>
+                    </li>
+                }
+            }
+        }
+        else
+        {
+            <li class="list-group-item">You haven't bought any events yet.</li>
+        }
     </ul>
 </div>
 
-<br />
 
 
 
 @code {
-   
 
 
+
+    private List<SoldTicketViewModel> _usersTickets = new List<SoldTicketViewModel>();
+    private List<EventViewModel> _usersEvents = new();
     private List<EventViewModel> _allEvents = new List<EventViewModel>();
 
     protected override async Task OnInitializedAsync()
@@ -72,6 +98,9 @@
 
             await localStorage.AddExchangeRateAsync(userExchangeRate, username);
             await localStorage.AddCurrencyForDisplayAsync(model.Currency, username);
+
+            await GetAllUserEvents();
+
         }
 
         await GetAllEvents();
@@ -81,8 +110,19 @@
     {
         _allEvents = (await unitOfService.EventService.GetAllAsync()).ToList();
     }
+
+    private async Task GetAllUserEvents()
+    {
+        var authState = await provider.GetAuthenticationStateAsync();
+        var username = authState.User.Identity.Name;
+        _usersTickets = (await unitOfService.SoldTicketService.GetAllByNameAsync(username)).ToList();
+    }
+
     private void GoToEvent(int id)
     {
         NavigationManager.NavigateTo($"/event/{id}");
     }
 }
+
+
+
