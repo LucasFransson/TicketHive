@@ -27,10 +27,10 @@ namespace TicketHive.Server.Data.Databases
 				.Property(t => t.Id)
 				.ValueGeneratedNever();
 
-			// Add seed data for CountryModel
+			// AddAsync seed data for CountryModel
 			modelBuilder.Entity<CountryModel>().HasData(DataSeeder.Countries);
 
-            // Add seed data for EventTypeModel
+            // AddAsync seed data for EventTypeModel
             modelBuilder.Entity<EventTypeModel>().HasData(DataSeeder.EventTypes);
 
             // Create Lists for Events and Tickets
@@ -172,9 +172,9 @@ namespace TicketHive.Server.Data.Databases
                    tickets,
                    ref idTicketCounter);
 
-            // Add seed data for EventModel from the list of events
+            // AddAsync seed data for EventModel from the list of events
             modelBuilder.Entity<EventModel>().HasData(events);
-            // Add seed data for TicketModel from the list of tickets
+            // AddAsync seed data for TicketModel from the list of tickets
             modelBuilder.Entity<TicketModel>().HasData(tickets);
         }
     }

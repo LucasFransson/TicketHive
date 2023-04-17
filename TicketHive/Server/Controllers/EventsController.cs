@@ -23,7 +23,7 @@ public class EventsController : ControllerBase
     {
 
         IEnumerable<EventDTO>? eventDTOs = (await _unitOfWork.Events.GetAllWithIncludesAsync())?
-                                                                 .Select(em => new EventDTO(    // Add to TransformDTO class
+                                                                 .Select(em => new EventDTO(    // AddAsync to TransformDTO class
                                                                         em.Id,
                                                                         em.Name,
                                                                         em.Description,
@@ -55,7 +55,7 @@ public class EventsController : ControllerBase
         
         if (eventModel is not null)
         {
-            EventDTO eventDTO = new(eventModel.Id,      // Add to TransformDTO class
+            EventDTO eventDTO = new(eventModel.Id,      // AddAsync to TransformDTO class
                                     eventModel.Name,
                                     eventModel.Description,
                                     eventModel.ImageString,
@@ -83,20 +83,38 @@ public class EventsController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post([FromBody] EventDTO eventDTO)
     {
-        if(eventDTO is not null)
+        if (eventDTO is not null)
         {
-            EventModel eventModel = new(eventDTO);
+            // Get the EventModel by its ID
+            EventModel eventModel = await _unitOfWork.Events.GetByIdAsync(eventDTO.Id);
 
-            await _unitOfWork.Events.Add(eventModel);
+            // If the EventModel is found, update it with the data from the DTO
+            if (eventModel is not null)
+            {
+                eventModel.Name = eventDTO.Name;
+                eventModel.Description = eventDTO.Description;
+                // Update other properties...
 
-            return Ok();
+                await _unitOfWork.CompleteAsync();
+
+                return Ok();
+            }
+            else
+            {
+                // If the EventModel is not found, create a new one
+                eventModel = new EventModel(eventDTO);
+
+                await _unitOfWork.Events.AddAsync(eventModel);
+
+                return Ok();
+            }
         }
 
         return BadRequest();
     }
 
-    // PUT api/<EventsController>/5
-    [HttpPut("{id}")]
+        // PUT api/<EventsController>/5
+        [HttpPut("{id}")]
     public void Put(int id, [FromBody] string value)
     {
     }

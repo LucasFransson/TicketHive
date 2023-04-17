@@ -29,20 +29,21 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
             <div class="modal-body">
                 <div class="container" style="color: #305076;">
                     <h2 class="mb-4">Add new event</h2>
                     <div class="card mb-4">
                         <div class="card-body">
-                            <EditForm Model="newEvent" OnValidSubmit="AddEvent" OnInvalidSubmit="HandleInvalidSubmit">
+                            <EditForm Model="_newEvent" OnValidSubmit="AddEvent" OnInvalidSubmit="HandleInvalidSubmit">
                                 <DataAnnotationsValidator/>
                                 <div class="form-group"> 
                                     <label for="event-name">Event Name</label>
-                                    <InputText class="form-control" id="event-name" @bind-Value="newEvent.Name"/>
+                                    <InputText class="form-control" id="event-name" @bind-Value="_eventName"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="event-type">Event Type</label>
-                                    <InputSelect class="form-control" id="event-type" @bind-Value="newEvent.EventTypeName">
+                                    <InputSelect class="form-control" id="event-type" @bind-Value="_eventTypeName">
                                         @if (_allEventTypes is not null)
                                         {
                                             foreach (var e in _allEventTypes)
@@ -54,29 +55,26 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="event-desc">Event Description</label>
-                                    <InputText class="form-control" id="event-date" @bind-Value="newEvent.Description">
+                                    <InputText class="form-control" id="event-date" @bind-Value="_eventDescription">
                                     </InputText>
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label for="event-Date">Start date</label>
-                                    <InputDate class="form-control" id="event-date" @bind-Value="newEvent.StartTime" format="dd/MM/yyyy">
-                                    </InputDate>
+                                    <label for="event-date">Start date</label>
+                                    <InputDate class="form-control" @bind-Value="_startTime" format="dd/MM/yyyy"></InputDate>
                                 </div>
-
 
                                 <div class="form-group">
                                     <label for="event-endDate">End date</label>
-                                    <InputDate class="form-control" id="event-date" @bind-Value="newEvent.EndTime" format="dd/MM/yyyy">
-                                    </InputDate>
+                                    <InputDate class="form-control" @bind-Value="_endTime" format="dd/MM/yyyy"></InputDate>
                                 </div>
 
 
 
                                     <div class="form-group">
                                     <label for="event-country">Country</label>
-                                    <InputSelect class="form-control" id="event-country" @bind-Value="newEvent.CountryName">
+                                    <InputSelect class="form-control" id="event-country" @bind-Value="_countryName">
                                         @if (_allEventTypes is not null)
                                         {
                                             foreach (var e in _allCountries)
@@ -93,12 +91,12 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text">$</span>
                                         </div>
-                                        <input type="text" class="form-control" id="event-price" placeholder="0.00" @bind="newEvent.Price">
+                                        <input type="text" class="form-control" id="event-price" placeholder="0.00" @bind="_eventPrice">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="event-capacity">Event Capacity</label>
-                                    <input type="number" class="form-control" id="event-capacity" step="10.00" @bind="newEvent.MaxUsers">
+                                    <input type="number" class="form-control" id="event-capacity" step="10.00" @bind="_eventCapacity">
                                 </div>
                             </EditForm>
                         </div>
@@ -123,7 +121,7 @@
 
                 <div class="col mb-4" style="color: #305076">
                     <div class="card h-100">
-                        <img src="@e.ImageString" class="card-img-top" alt="Event Image" />
+                        <img src="/images/@e.ImageString" alt="Event image" class="img-fluid rounded">
                         <div class="card-body">
                             <h5 class="card-title red-foreground">@e.Name</h5>
                             <h6 class="card-subtitle mb-2 text-muted">@e.EventType.Name</h6>
@@ -158,21 +156,33 @@
     private IEnumerable<EventTypeViewModel>? _allEventTypes = new List<EventTypeViewModel>();
     private IEnumerable<EventViewModel>? _allEvents = new List<EventViewModel>();
     private IEnumerable<CountryViewModel>? _allCountries = new List<CountryViewModel>();
-    EventViewModel newEvent = new();
-    private bool isAdmin;
+    private EventViewModel _newEvent = new EventViewModel();
+    private string _eventName = string.Empty;
+    private string _eventTypeName = string.Empty;
+    private string _eventDescription = string.Empty;
+    private DateTime _startTime;
+    private DateTime _endTime;
+    private string _countryName = string.Empty;
+    private decimal _eventPrice;
+    private int _eventCapacity;
+    private bool _isAdmin;
 
 
     protected override async Task OnInitializedAsync()
     {
         var authState = await _provider.GetAuthenticationStateAsync();
-
         var name = authState.User.Identity.Name;
+        _isAdmin = authState.User.IsInRole("Admin");
 
-        isAdmin = authState.User.IsInRole("Admin");
+        _allCountries = await unitOfService.CountryService.GetAllAsync();
+        _allEventTypes = await unitOfService.EventTypeService.GetAllAsync();
 
+
+        // set default values for country and event type to the first items in the lists
+        _countryName = _allCountries.FirstOrDefault()?.Name ?? string.Empty;
+        _eventTypeName = _allEventTypes.FirstOrDefault()?.Name ?? string.Empty;
         await GetAllEvents();
-        await GetAllEventTypes();
-        await GetAllCountries();
+
 
         StateHasChanged();
     }
@@ -182,15 +192,6 @@
 
     }
 
-    private async Task GetAllCountries()
-    {
-        _allCountries = await unitOfService.CountryService.GetAllAsync();
-    }
-
-    private async Task GetAllEventTypes()
-    {
-        _allEventTypes = await unitOfService.EventTypeService.GetAllAsync();
-    }
     private async Task GetAllEvents()
     {
         _allEvents = await unitOfService.EventService.GetAllAsync();
@@ -200,19 +201,89 @@
         await HandleButtonClick(id);
         await GetAllEvents();
         StateHasChanged();
-        OnInitializedAsync();
+        await OnInitializedAsync();
     }
+
     private async Task AddEvent()
     {
-        newEvent.ImageString = $"MicrosoftTeams-image ({new Random().Next(1, 25)}).png";
+        var newEventViewModel = new EventViewModel
+            {
+                Name = _eventName,
+                EventTypeName = _eventTypeName,
+                Description = _eventDescription,
+                MaxUsers = _eventCapacity,
+                StartTime = _startTime,
+                EndTime = _endTime,
+                CountryName = _countryName,
+                Price = _eventPrice,
+                ImageString = $"MicrosoftTeams-image ({new Random().Next(1, 25)}).png"
+            };
 
-        newEvent.Country = _allCountries.FirstOrDefault(c => c.Name.Equals(newEvent.CountryName))!;
-        newEvent.EventType = _allEventTypes.FirstOrDefault(et => et.Name.Equals(newEvent.EventTypeName))!;
+
+        //var country = _allCountries.FirstOrDefault(c => c.Name.Equals(newEventViewModel.CountryName));      //  might be the root of the problems here since its the only synchrone method i can find that can cause the errors on this page
+        //var eventType = _allEventTypes.FirstOrDefault(et => et.Name.Equals(newEventViewModel.EventTypeName));
+        
+        var country = await Task.FromResult(_allCountries.FirstOrDefault(c => c.Name.Equals(newEventViewModel.CountryName)));   // Hopefully this will solve all problems
+        var eventType = await Task.FromResult(_allEventTypes.FirstOrDefault(et => et.Name.Equals(newEventViewModel.EventTypeName)));
 
 
-        await unitOfService.EventService.AddAsync(newEvent);
+        if (country is not null && eventType is not null)
+        {   // extra check for ensuring that the country & eventtype is set before calling the api
+
+            newEventViewModel.Country = country;
+            newEventViewModel.EventType = eventType;
+
+            await unitOfService.EventService.AddAsync(newEventViewModel);   // add the event
+            //await AddTickets(newEventViewModel);
+
+
+            // define a task for adding tickets and set it to null
+            Task? addTicketsTask = null;
+            // Create tickets for each user
+            for (int i = 1; i <= newEventViewModel.MaxUsers; i++)
+            {
+                var ticket = new TicketViewModel
+                        {
+                            EventId = newEventViewModel.Id,
+                            Event = newEventViewModel,
+                            Price = newEventViewModel.Price,
+                            StartTime = newEventViewModel.StartTime,
+                            EndTime = newEventViewModel.EndTime
+                        };
+
+                addTicketsTask = unitOfService.TicketService.AddAsync(ticket);
+            }
+            // wait for the completion of the task
+            if (addTicketsTask != null)
+            {
+                await addTicketsTask;  // if the task is still set to null call the task and wait for it again
+            }
+
+            // call the get all events to refresh
+            await GetAllEvents();   
+            await OnInitializedAsync();
+        }
 
     }
+
+    //private async Task AddTickets(EventViewModel eventForTickets)   // Caused 400 bad request
+    //{
+
+    //    // Create tickets for each user
+    //    for (int i = 1; i <= eventForTickets.MaxUsers; i++)
+    //    {
+    //        var ticket = new TicketViewModel
+    //            {
+    //                EventId = eventForTickets.Id,
+    //                Event = eventForTickets,
+    //                Price = eventForTickets.Price,
+    //                StartTime = eventForTickets.StartTime,
+    //                EndTime = eventForTickets.EndTime
+    //            };
+
+    //        await unitOfService.TicketService.AddAsync(ticket);
+    //    }
+    //}
 
     private async Task HandleButtonClick(int id)
     {

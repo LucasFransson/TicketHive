@@ -25,6 +25,7 @@ namespace TicketHive.Server.Models
         {
             Id = dto.Id;
             EventId = dto.EventId;
+            Event = new EventModel(dto.Event);
             Price = dto.Price;
             StartTime = dto.StartTime;
             EndTime = dto.EndTime;

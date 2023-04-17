@@ -10,7 +10,7 @@ using TicketHive.Server.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// AddAsync services to the container.
 var connectionStringUser = builder.Configuration.GetConnectionString("UserDbConnection") ?? throw new InvalidOperationException("Connection string 'UserDbConnection' not found.");
 builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(connectionStringUser));
