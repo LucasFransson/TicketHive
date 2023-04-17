@@ -227,8 +227,10 @@ namespace TicketHive.Server.StaticMethods
                                       DateTime eventEnd,
                                       string eventType,
                                       List<EventModel> eventsList,
-                                      List<TicketModel> ticketsList)
+                                      List<TicketModel> ticketsList,
+                                      ref int counter)
         {
+        
             // Get the Country from string input (name)
             CountryModel selectedCountry = Countries.First(c => c.Name == countryName);
 
@@ -252,13 +254,15 @@ namespace TicketHive.Server.StaticMethods
             };
             eventsList.Add(newEvent);   // Add the Event to list of Events
 
+          
             // Create as many tickets as the value of 'MaxUsers' in the Event 
             for (int i = 1; i <= newEvent.MaxUsers; i++)
             {
                 var ticket = new TicketModel
                 {  
                     //Id = i,
-                    Id = GuidGenerator.GenerateInt(),
+                    //Id = GuidGenerator.GenerateInt(),
+                    Id= counter,
                     EventId = newEvent.Id,
                     Price = newEvent.Price,
                     StartTime = newEvent.StartTime,
@@ -266,6 +270,7 @@ namespace TicketHive.Server.StaticMethods
                 };
 
                 ticketsList.Add(ticket);    // Add each Ticket to the list of Tickets
+                counter++;
             }
         }
     }

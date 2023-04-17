@@ -8,6 +8,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace TicketHive.Server.Models
 {
+    [Serializable]
     public class SoldTicketModel
     {
         public int Id { get; set; }

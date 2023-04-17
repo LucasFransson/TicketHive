@@ -1,13 +1,16 @@
-﻿namespace TicketHive.Server.StaticMethods
+﻿using System;
+
+namespace TicketHive.Server.StaticMethods
 {
     public static class GuidGenerator
     {
         public static int GenerateInt()
         {
-            Guid myGuid = Guid.NewGuid();
-            byte[] byteArray = myGuid.ToByteArray();
-            int myInt = BitConverter.ToInt32(byteArray, 0);
-            return myInt;
+            //Guid myGuid = Guid.NewGuid();
+            //byte[] byteArray = myGuid.ToByteArray();
+            //int myInt = BitConverter.ToInt32(byteArray, 0);
+            //return myInt;
+            return  Guid.NewGuid().GetHashCode();
         }
     }
 }

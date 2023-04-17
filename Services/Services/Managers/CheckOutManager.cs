@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using TicketHive.Bll.Services.Implementations;
 using TicketHive.Bll.Services.Interfaces;
-using TicketHive.Shared.DTO;
 using TicketHive.Shared.DTOs;
 using TicketHive.Shared.ViewModels;
 
@@ -92,15 +91,15 @@ namespace TicketHive.Bll.Services.Managers
             {
                 await _unitOfService.SoldTicketService.AddAsync(t);
             }
-            
-			// Removes all the tickets from the db
-			foreach (var ticket in tickets)
-			{
-				await _unitOfService.TicketService.RemoveRange(tickets); // Await for some confirmation? 
-			}
-            
-            
-		}
+
+            // Removes all the tickets from the db
+            foreach (var ticket in tickets)
+            {
+                _unitOfService.TicketService.Remove(ticket.Id);
+            }
+
+
+        }
 		public void ConfirmBuy()
 		{
 
