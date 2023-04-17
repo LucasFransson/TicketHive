@@ -18,17 +18,17 @@ public class LocalStorageManager{
         _localStorage = localStorage;
     }
 
-    public async Task InitializeUserAsync(string username)
+    public async Task InitializeUserCartAsync(string username)
     {
-        bool IsUserInLocalStorage = await CheckIfUserExistsAsync(username);
+        bool IsUserHavingCart = await CheckIfUserAlreadyHaveCartAsync(username);
 
-        if (!IsUserInLocalStorage)
+        if (!IsUserHavingCart)
         {
             await AddCartToUser(username);
         }
     }
 
-    public async Task<bool> CheckIfUserExistsAsync(string username)
+    public async Task<bool> CheckIfUserAlreadyHaveCartAsync(string username)
     {
         return await _localStorage.ContainKeyAsync($"{username}_cart");
     }
