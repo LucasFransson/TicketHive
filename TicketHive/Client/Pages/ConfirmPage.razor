@@ -73,7 +73,7 @@
                 </div>
             </div>
             <p>Total Cost: @_totalCost</p>
-            <button class="btn btn-success btn-block my-4" style="width:100%;" @onclick="CheckOut">Confirm Order </button>
+            <button class="btn btn-success btn-block my-4" style="width:100%;" @onclick="@(async() => await CheckOut())">Confirm Order </button>
             <button class="btn btn-primary btn-block my-4" style="width:100%;" @onclick="RedirectUser">Return </button>
         </div>
     </div>
@@ -109,7 +109,7 @@
     }
     private async Task CheckOut()
     {
-        //await _checkOutManager.GetTickets(_cartItems);
+    
         await ConfirmBuy();
         if(_tickets is not null)
         {

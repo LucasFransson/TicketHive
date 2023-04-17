@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TicketHive.Server.Migrations.AppDb
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -334,17 +334,17 @@ namespace TicketHive.Server.Migrations.AppDb
                 columns: new[] { "Id", "CountryName", "Description", "EndTime", "EventTypeName", "ImageString", "MaxUsers", "Name", "Price", "StartTime" },
                 values: new object[,]
                 {
-                    { 1, "Sweden", "A Heavy Metal Concert", new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified), "Music Concerts", "MicrosoftTeams-image (13).png", 50, "Slayer", 300m, new DateTime(2023, 7, 30, 19, 30, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, "Spain", "A Football Match between Real Madrid and Barcelona", new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified), "Sports Events", "MicrosoftTeams-image (19).png", 30, "El Clásico", 100m, new DateTime(2023, 10, 21, 20, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3, "United Kingdom", "A Music Festival featuring top artists", new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified), "Festivals", "MicrosoftTeams-image (13).png", 20, "Glastonbury", 150m, new DateTime(2023, 6, 23, 10, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 4, "France", "A Wine Tasting event featuring top Bordeaux wines", new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified), "Food and wine tastings", "MicrosoftTeams-image (3).png", 50, "Bordeaux Wine Tasting", 200m, new DateTime(2023, 8, 12, 14, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 5, "Germany", "A Comedy Show featuring top German comedians", new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified), "Comedy shows", "MicrosoftTeams-image (21).png", 60, "German Stand-Up Comedy Night", 50m, new DateTime(2023, 9, 8, 20, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 6, "Italy", "A Trade Show showcasing top fashion brands", new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified), "Conferences and trade shows", "MicrosoftTeams-image (3).png", 50, "Milan Fashion Week", 500m, new DateTime(2023, 10, 16, 9, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 7, "Austria", "A Classical Music Concert by the Vienna Philharmonic Orchestra", new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified), "Music Concerts", "MicrosoftTeams-image (2).png", 10, "Vienna Philharmonic Orchestra", 100m, new DateTime(2023, 11, 3, 19, 30, 0, 0, DateTimeKind.Unspecified) },
-                    { 8, "Denmark", "A Food Festival featuring top chefs and restaurants", new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified), "Festivals", "MicrosoftTeams-image (14).png", 20, "Copenhagen Food Festival", 50m, new DateTime(2023, 8, 25, 12, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 9, "Ireland", "A Rugby Match between Ireland and England", new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified), "Sports Events", "MicrosoftTeams-image (10).png", 25, "Ireland vs. England Rugby Match", 80m, new DateTime(2023, 10, 14, 19, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 10, "Netherlands", "A Musical Theater Show based on the novel by Gaston Leroux", new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified), "Musicals", "MicrosoftTeams-image (18).png", 10, "The Phantom of the Opera", 120m, new DateTime(2023, 9, 10, 14, 30, 0, 0, DateTimeKind.Unspecified) },
-                    { 11, "Switzerland", "A Wine and Cheese Tasting event in Geneva", new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified), "Food and wine tastings", "MicrosoftTeams-image (15).png", 20, "Wine and Cheese Tasting in Geneva", 80m, new DateTime(2023, 7, 1, 18, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1, "Sweden", "A Heavy Metal Concert", new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified), "Music Concerts", "MicrosoftTeams-image (23).png", 50, "Slayer", 300m, new DateTime(2023, 7, 30, 19, 30, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, "Spain", "A Football Match between Real Madrid and Barcelona", new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified), "Sports Events", "MicrosoftTeams-image (21).png", 30, "El Clásico", 100m, new DateTime(2023, 10, 21, 20, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 3, "United Kingdom", "A Music Festival featuring top artists", new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified), "Festivals", "MicrosoftTeams-image (18).png", 20, "Glastonbury", 150m, new DateTime(2023, 6, 23, 10, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 4, "France", "A Wine Tasting event featuring top Bordeaux wines", new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified), "Food and wine tastings", "MicrosoftTeams-image (21).png", 50, "Bordeaux Wine Tasting", 200m, new DateTime(2023, 8, 12, 14, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 5, "Germany", "A Comedy Show featuring top German comedians", new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified), "Comedy shows", "MicrosoftTeams-image (10).png", 60, "German Stand-Up Comedy Night", 50m, new DateTime(2023, 9, 8, 20, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 6, "Italy", "A Trade Show showcasing top fashion brands", new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified), "Conferences and trade shows", "MicrosoftTeams-image (9).png", 50, "Milan Fashion Week", 500m, new DateTime(2023, 10, 16, 9, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 7, "Austria", "A Classical Music Concert by the Vienna Philharmonic Orchestra", new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified), "Music Concerts", "MicrosoftTeams-image (7).png", 10, "Vienna Philharmonic Orchestra", 100m, new DateTime(2023, 11, 3, 19, 30, 0, 0, DateTimeKind.Unspecified) },
+                    { 8, "Denmark", "A Food Festival featuring top chefs and restaurants", new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified), "Festivals", "MicrosoftTeams-image (9).png", 20, "Copenhagen Food Festival", 50m, new DateTime(2023, 8, 25, 12, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 9, "Ireland", "A Rugby Match between Ireland and England", new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified), "Sports Events", "MicrosoftTeams-image (3).png", 25, "Ireland vs. England Rugby Match", 80m, new DateTime(2023, 10, 14, 19, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 10, "Netherlands", "A Musical Theater Show based on the novel by Gaston Leroux", new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified), "Musicals", "MicrosoftTeams-image (14).png", 10, "The Phantom of the Opera", 120m, new DateTime(2023, 9, 10, 14, 30, 0, 0, DateTimeKind.Unspecified) },
+                    { 11, "Switzerland", "A Wine and Cheese Tasting event in Geneva", new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified), "Food and wine tastings", "MicrosoftTeams-image (22).png", 20, "Wine and Cheese Tasting in Geneva", 80m, new DateTime(2023, 7, 1, 18, 0, 0, 0, DateTimeKind.Unspecified) }
                 });
 
             migrationBuilder.InsertData(

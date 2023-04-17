@@ -238,10 +238,10 @@ h1 {
     .button-buy:hover {
         scale: 1.1;
         border: 1px solid #19da23;
-        border-radius: 50px;
+    /*    border-radius: 50px;*/
         color: #19da22;
-        background-image: linear-gradient( 150deg, #78eb4a38, #74e9464d, #6eeb3c79, #6eeb3c79, #74e9464d, #78eb4a3b );
-        animation: animateGradientBackground 4s reverse linear infinite;
+/*        background-image: linear-gradient( 150deg, #78eb4a38, #74e9464d, #6eeb3c79, #6eeb3c79, #74e9464d, #78eb4a3b );
+        animation: animateGradientBackground 4s reverse linear infinite;*/
     }
 
 /*Login input Container */
