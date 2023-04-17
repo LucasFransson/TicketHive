@@ -62,7 +62,8 @@ else
 
         username = authState.User.Identity.Name;
 
-        //isAdmin = authState.User.IsInRole("Admin");
+        await _localStorage.InitializeUserCartAsync(username);
+
         cartItems = await GetCartItems(username);
     }
 
