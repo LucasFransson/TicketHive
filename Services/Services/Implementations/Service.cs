@@ -73,16 +73,5 @@ namespace TicketHive.Bll.Services.Implementations
             var response = await _httpClient.PostAsJsonAsync($"/api/{GetAPIName().ToLower()}/range/delete", entities);
             response.EnsureSuccessStatusCode();
         }
-		public async Task<IEnumerable<TEntity>> Get<TEntity>(Expression<Func<TEntity, bool>> predicate)  // Problematic due to overall design, remove
-		{
-			var queryString = $"?predicate={predicate}";
-			var response = await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"api/myresource{queryString}");
-
-			if (response == null)
-			{
-				throw new Exception($"Failed to retrieve data.");
-			}
-			return response;
-		}
 	}
 }

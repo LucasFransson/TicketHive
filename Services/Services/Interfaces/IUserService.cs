@@ -7,7 +7,7 @@ using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Interfaces
 {
-    internal interface IUserService : IService<UserViewModel>
+    public interface IUserService : IService<UserViewModel>
 	{
     }
 }

@@ -45,40 +45,6 @@ public class EventsController : ControllerBase
                                                                         new EventTypeDTO(em.EventType.Name)));
 
         return Ok(eventDTOs);
-
-        //IEnumerable<EventDTO>? events = (await _unitOfWork.Events.GetAllWithIncludesAsync())
-        //                                                 .Select(em => new EventDTO(em.Id,
-        //                                                                           em.Name,
-        //                                                                           em.Description,
-        //                                                                           em.ImageString,
-        //                                                                           em.MaxUsers,
-        //                                                                           em.TicketsLeft,
-        //                                                                           em.Price,
-        //                                                                           em.StartTime,
-        //                                                                           em.EndTime,
-        //                                                                           em.CountryName,
-        //                                                                           new CountryDTO(em.CountryName,
-        //                                                                                          em.Country.Currency,
-        //                                                                                          em.Country.IsAvailableForUserRegistration
-        //                                                                                         ),
-        //                                                                           em.EventTypeName,
-        //                                                                           new EventTypeDTO(em.EventTypeName)
-        //                                                                                       ));
-
-
-        //IEnumerable<EventDTO>? events = (await _unitOfWork.Events.GetAllAsync()).Select(em => new EventDTO
-        //{
-        //    Id = em.Id,
-        //    Name = em.Name,
-        //    Description = em.Description,
-        //    MaxUsers = em.MaxUsers,
-        //    TicketsLeft = em.TicketsLeft,
-        //    Price = em.Price,
-        //    StartTime = em.StartTime,
-        //    EndTime = em.EndTime,
-        //    CountryName = em.CountryName,
-        //    EventTypeName = em.EventTypeName,
-        //});
     }
 
     // GET api/<EventsController>/5
@@ -108,20 +74,6 @@ public class EventsController : ControllerBase
                                     new EventTypeDTO(eventModel.EventType.Name)
                                     ) ;
 
-            //EventDTO eventDTO = new()
-            //{
-            //    Id = eventModel.Id,
-            //    Name = eventModel.Name,
-            //    Description = eventModel.Description,
-            //    MaxUsers = eventModel.MaxUsers,
-            //    IsSoldOut= eventModel.IsSoldOut,
-            //    Price = eventModel.Price,
-            //    StartTime = eventModel.StartTime,
-            //    EndTime = eventModel.EndTime,
-            //    CountryName = eventModel.CountryName,
-            //    EventTypeName = eventModel.EventTypeName
-            //};
-
             return Ok(eventDTO);
         }
 
@@ -135,16 +87,6 @@ public class EventsController : ControllerBase
         if(eventDTO is not null)
         {
             EventModel eventModel = new(eventDTO);
-            //{
-                //Name = eventDTO.Name,
-                //Description = eventDTO.Description,
-                //MaxUsers = eventDTO.MaxUsers,
-                //Price = eventDTO.Price,
-                //StartTime = eventDTO.StartTime,
-                //EndTime = eventDTO.EndTime,
-                //CountryName = eventDTO.CountryName,
-                //EventTypeName = eventDTO.EventTypeName,
-            //};
 
             await _unitOfWork.Events.Add(eventModel);
 

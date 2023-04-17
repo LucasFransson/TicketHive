@@ -15,6 +15,5 @@ namespace TicketHive.Bll.Services.Interfaces
         IService<EventViewModel> EventService { get; }
 		IService<UserViewModel> UserService { get; }
         IService<SoldTicketViewModel> SoldTicketService { get; } 
-
 	}
 }

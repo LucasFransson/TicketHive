@@ -9,6 +9,5 @@ namespace TicketHive.Bll.Services.Interfaces
 {
     public interface ITicketService : IService<TicketViewModel>
     {
-        //Task<TicketViewModel?> GetByEventId(int id);
     }
 }
