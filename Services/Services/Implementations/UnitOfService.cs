@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using TicketHive.Bll.Services.Interfaces;
 using TicketHive.Bll.Services.Managers;
-using TicketHive.Shared.DTO;
 using TicketHive.Shared.ViewModels;
 
 namespace TicketHive.Bll.Services.Implementations

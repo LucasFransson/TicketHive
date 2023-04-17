@@ -54,7 +54,7 @@ public class SoldTicketsController : ControllerBase
 
 	// POST api/<SoldTicketsController>
 	[HttpPost]
-    public async Task<ActionResult> Post([FromBody] SoldTicketDTO soldTicketDTO)
+    public async Task<IActionResult> Post([FromBody] SoldTicketDTO soldTicketDTO)
     {
         if (soldTicketDTO is not null)
         {
