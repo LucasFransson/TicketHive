@@ -9,19 +9,17 @@ namespace TicketHive.Server.Models
         [Key]
         [MaxLength(50)]
         public required string Name { get; set; }
-        //public List<EventModel>? Events { get; set; }
-
 
         public EventTypeModel()
         {
             
         }
+
         // Constructor for Model from recieving DTO
         [SetsRequiredMembers]
         public EventTypeModel(EventTypeDTO dto) 
         {
             Name = dto.Name;
-            //Events = dto.Events;
         }
     }
 }

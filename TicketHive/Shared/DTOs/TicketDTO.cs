@@ -15,11 +15,6 @@ public class TicketDTO
     public DateTime StartTime { get; set; }
     public DateTime EndTime { get; set; }
 
-
-    //public TicketDTO()
-    //{
-        
-    //}
     // Constructor for DTO from Model Input Parameters
     public TicketDTO(int id, int eventId, EventDTO eventDto, decimal price, DateTime startTime, DateTime endTime)
     {

@@ -30,6 +30,7 @@ namespace TicketHive.Shared.ViewModels
         {
             
         }
+
         // Constructor for ViewModel from DTO
         public EventViewModel(EventDTO dto)
         {

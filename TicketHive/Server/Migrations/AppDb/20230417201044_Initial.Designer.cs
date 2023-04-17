@@ -12,7 +12,7 @@ using TicketHive.Server.Data.Databases;
 namespace TicketHive.Server.Migrations.AppDb
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230417152630_Initial")]
+    [Migration("20230417201044_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -1269,7 +1269,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Heavy Metal Concert",
                             EndTime = new DateTime(2023, 7, 30, 23, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Music Concerts",
-                            ImageString = "MicrosoftTeams-image (23).png",
+                            ImageString = "MicrosoftTeams-image (20).png",
                             MaxUsers = 50,
                             Name = "Slayer",
                             Price = 300m,
@@ -1282,7 +1282,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Football Match between Real Madrid and Barcelona",
                             EndTime = new DateTime(2023, 10, 21, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Sports Events",
-                            ImageString = "MicrosoftTeams-image (21).png",
+                            ImageString = "MicrosoftTeams-image (6).png",
                             MaxUsers = 30,
                             Name = "El Clásico",
                             Price = 100m,
@@ -1295,7 +1295,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Music Festival featuring top artists",
                             EndTime = new DateTime(2023, 6, 25, 23, 59, 59, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Festivals",
-                            ImageString = "MicrosoftTeams-image (18).png",
+                            ImageString = "MicrosoftTeams-image (6).png",
                             MaxUsers = 20,
                             Name = "Glastonbury",
                             Price = 150m,
@@ -1308,7 +1308,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Wine Tasting event featuring top Bordeaux wines",
                             EndTime = new DateTime(2023, 8, 12, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Food and wine tastings",
-                            ImageString = "MicrosoftTeams-image (21).png",
+                            ImageString = "MicrosoftTeams-image (5).png",
                             MaxUsers = 50,
                             Name = "Bordeaux Wine Tasting",
                             Price = 200m,
@@ -1321,7 +1321,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Comedy Show featuring top German comedians",
                             EndTime = new DateTime(2023, 9, 8, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Comedy shows",
-                            ImageString = "MicrosoftTeams-image (10).png",
+                            ImageString = "MicrosoftTeams-image (6).png",
                             MaxUsers = 60,
                             Name = "German Stand-Up Comedy Night",
                             Price = 50m,
@@ -1334,7 +1334,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Trade Show showcasing top fashion brands",
                             EndTime = new DateTime(2023, 10, 20, 18, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Conferences and trade shows",
-                            ImageString = "MicrosoftTeams-image (9).png",
+                            ImageString = "MicrosoftTeams-image (2).png",
                             MaxUsers = 50,
                             Name = "Milan Fashion Week",
                             Price = 500m,
@@ -1347,7 +1347,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Classical Music Concert by the Vienna Philharmonic Orchestra",
                             EndTime = new DateTime(2023, 11, 3, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Music Concerts",
-                            ImageString = "MicrosoftTeams-image (7).png",
+                            ImageString = "MicrosoftTeams-image (20).png",
                             MaxUsers = 10,
                             Name = "Vienna Philharmonic Orchestra",
                             Price = 100m,
@@ -1360,7 +1360,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Food Festival featuring top chefs and restaurants",
                             EndTime = new DateTime(2023, 8, 27, 22, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Festivals",
-                            ImageString = "MicrosoftTeams-image (9).png",
+                            ImageString = "MicrosoftTeams-image (3).png",
                             MaxUsers = 20,
                             Name = "Copenhagen Food Festival",
                             Price = 50m,
@@ -1373,7 +1373,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Rugby Match between Ireland and England",
                             EndTime = new DateTime(2023, 10, 14, 21, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Sports Events",
-                            ImageString = "MicrosoftTeams-image (3).png",
+                            ImageString = "MicrosoftTeams-image (23).png",
                             MaxUsers = 25,
                             Name = "Ireland vs. England Rugby Match",
                             Price = 80m,
@@ -1386,7 +1386,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Musical Theater Show based on the novel by Gaston Leroux",
                             EndTime = new DateTime(2023, 9, 10, 17, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Musicals",
-                            ImageString = "MicrosoftTeams-image (14).png",
+                            ImageString = "MicrosoftTeams-image (6).png",
                             MaxUsers = 10,
                             Name = "The Phantom of the Opera",
                             Price = 120m,
@@ -1399,7 +1399,7 @@ namespace TicketHive.Server.Migrations.AppDb
                             Description = "A Wine and Cheese Tasting event in Geneva",
                             EndTime = new DateTime(2023, 7, 1, 20, 0, 0, 0, DateTimeKind.Unspecified),
                             EventTypeName = "Food and wine tastings",
-                            ImageString = "MicrosoftTeams-image (22).png",
+                            ImageString = "MicrosoftTeams-image (20).png",
                             MaxUsers = 20,
                             Name = "Wine and Cheese Tasting in Geneva",
                             Price = 80m,
@@ -1459,6 +1459,9 @@ namespace TicketHive.Server.Migrations.AppDb
                     b.Property<int>("EventId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("EventModelId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(5, 2)");
 
@@ -1471,7 +1474,7 @@ namespace TicketHive.Server.Migrations.AppDb
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EventId");
+                    b.HasIndex("EventModelId");
 
                     b.ToTable("SoldTickets");
                 });
@@ -4286,13 +4289,9 @@ namespace TicketHive.Server.Migrations.AppDb
 
             modelBuilder.Entity("TicketHive.Server.Models.SoldTicketModel", b =>
                 {
-                    b.HasOne("TicketHive.Server.Models.EventModel", "Event")
+                    b.HasOne("TicketHive.Server.Models.EventModel", null)
                         .WithMany("SoldTickets")
-                        .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Event");
+                        .HasForeignKey("EventModelId");
                 });
 
             modelBuilder.Entity("TicketHive.Server.Models.TicketModel", b =>
