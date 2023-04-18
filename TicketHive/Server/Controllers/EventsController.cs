@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Humanizer;
+using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
 using TicketHive.Server.Data.Repositories.Interfaces;
 using TicketHive.Server.Models;
@@ -93,7 +94,12 @@ public class EventsController : ControllerBase
             {
                 eventModel.Name = eventDTO.Name;
                 eventModel.Description = eventDTO.Description;
-                // Update other properties...
+                eventModel.MaxUsers = eventDTO.MaxUsers;
+                eventModel.Price = eventDTO.Price;
+                eventModel.StartTime = eventDTO.StartTime;
+                eventModel.EndTime = eventDTO.EndTime;
+                eventModel.CountryName = eventDTO.CountryName;
+                eventModel.EventTypeName = eventDTO.EventTypeName;
 
                 await _unitOfWork.CompleteAsync();
 
