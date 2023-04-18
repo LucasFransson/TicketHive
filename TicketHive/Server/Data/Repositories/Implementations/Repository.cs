@@ -31,7 +31,7 @@ namespace TicketHive.Server.Data.Repositories.Implementations
         {
             return await _context.Set<TEntity>().Where(predicate).ToListAsync();
         }
-        public async Task Add(TEntity entity)
+        public async Task AddAsync(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);
             await _context.SaveChangesAsync();

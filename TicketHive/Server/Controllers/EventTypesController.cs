@@ -51,7 +51,7 @@ public class EventTypesController : ControllerBase
         {
             EventTypeModel eventTypeModel = new(eventTypeDTO);
             
-            _unitOfWork.EventTypes.Add(eventTypeModel);
+            _unitOfWork.EventTypes.AddAsync(eventTypeModel);
 
             return Ok();
         }

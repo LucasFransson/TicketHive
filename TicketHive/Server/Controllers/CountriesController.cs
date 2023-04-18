@@ -50,7 +50,7 @@ public class CountriesController : ControllerBase
         {
             CountryModel countryModel = new(countryDTO);
 
-            await _unitOfWork.Countries.Add(countryModel);
+            await _unitOfWork.Countries.AddAsync(countryModel);
 
             return Ok();
         }

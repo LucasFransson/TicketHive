@@ -60,7 +60,7 @@ public class SoldTicketsController : ControllerBase
         {
             SoldTicketModel soldTicketModel = new(soldTicketDTO);
 
-            await _unitOfWork.SoldTickets.Add(soldTicketModel);
+            await _unitOfWork.SoldTickets.AddAsync(soldTicketModel);
 
             return Ok();
         }

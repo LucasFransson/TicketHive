@@ -252,7 +252,7 @@ namespace TicketHive.Server.StaticMethods
                 CountryName = countryName,
                 EventTypeName = eventType,
             };
-            eventsList.Add(newEvent);   // Add the Event to list of Events
+            eventsList.Add(newEvent);   // AddAsync the Event to list of Events
 
           
             // Create as many tickets as the value of 'MaxUsers' in the Event 
@@ -260,16 +260,14 @@ namespace TicketHive.Server.StaticMethods
             {
                 var ticket = new TicketModel
                 {  
-                    //Id = i,
-                    //Id = GuidGenerator.GenerateInt(),
-                    Id= counter,
+                    Id = counter,
                     EventId = newEvent.Id,
                     Price = newEvent.Price,
                     StartTime = newEvent.StartTime,
                     EndTime = newEvent.EndTime
                 };
 
-                ticketsList.Add(ticket);    // Add each Ticket to the list of Tickets
+                ticketsList.Add(ticket);    // AddAsync each Ticket to the list of Tickets
                 counter++;
             }
         }
