@@ -49,16 +49,6 @@ namespace TicketHive.Bll.Services.Implementations
 		{
 			return await _httpClient.GetFromJsonAsync<TEntity>($"/api/{GetAPIName().ToLower()}/{name}");
 		}
-        public async Task<IEnumerable<TEntity>> GetAllByNameAsync(string name)
-        {
-            if (typeof(TEntity) == typeof(SoldTicketViewModel)) // This should be put in the specific service instead
-            {
-                // Call the UserTickets endpoint instead of the default generic endpoint
-                return await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"/api/{GetAPIName().ToLower()}/usertickets/{name}");
-            }
-
-            return await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"/api/{GetAPIName().ToLower()}/{name}");
-        }
         public async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             return await _httpClient.GetFromJsonAsync<IEnumerable<TEntity>>($"/api/{GetAPIName().ToLower()}");

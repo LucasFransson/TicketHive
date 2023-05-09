@@ -13,17 +13,17 @@ namespace TicketHive.Bll.Services.Implementations
     {
         private readonly HttpClient _httpClient;
 
-        //public IService<TicketViewModel> TicketService { get; set; }
         public ITicketService TicketService { get; set; }
 
-        public IService<CountryViewModel> CountryService { get; set; }
+        public ICountryService CountryService { get; set; }
 
-        public IService<EventTypeViewModel> EventTypeService { get; set; }
+        public IEventTypeService EventTypeService { get; set; }
 
-        public IService<EventViewModel> EventService { get; set;
-        }
+        public IEventService EventService { get; set;
+        } 
+        public ISoldTicketService SoldTicketService { get; set; }
 		public IService<UserViewModel> UserService { get; set; }
-        public IService<SoldTicketViewModel> SoldTicketService { get; set; }
+       
 
 		public UnitOfService(HttpClient httpClient)
         {

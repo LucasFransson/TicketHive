@@ -12,8 +12,10 @@ namespace TicketHive.Bll.Services.Implementations
 {
     public class CountryService : Service<CountryViewModel>, ICountryService
     {
+        private readonly HttpClient _httpClient;
         public CountryService(HttpClient httpClient) : base(httpClient)
         {
+            _httpClient = httpClient;
         }
 	}
 }
