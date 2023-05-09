@@ -9,5 +9,6 @@ namespace TicketHive.Bll.Services.Interfaces
 {
     public interface ITicketService : IService<TicketViewModel>
     {
+        Task<IEnumerable<TicketViewModel>> GetTickets(int id, int quantity);
     }
 }
