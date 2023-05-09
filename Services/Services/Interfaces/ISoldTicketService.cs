@@ -9,5 +9,6 @@ namespace TicketHive.Bll.Services.Interfaces
 {
     public interface ISoldTicketService : IService<SoldTicketViewModel>
     {
+        Task<IEnumerable<SoldTicketViewModel>> GetAllByNameAsync(string name);
     }
 }
