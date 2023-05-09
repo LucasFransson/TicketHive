@@ -23,26 +23,27 @@ public class TicketsController : ControllerBase
     }
 
     // GET: api/<TicketsController>
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<TicketDTO>?>> Get()
+    //[HttpGet]
+    //public async Task<ActionResult<IEnumerable<TicketDTO>?>> Get()
+    //{
+    //    IEnumerable<TicketDTO>? tickets = (await _unitOfWork.Tickets.GetAllTicketsAsync())?.Select(TransformToDTO.FromTicketModel);
+
+    //    return Ok(tickets);
+    //}
+
+    // Get by eventId & quantity
+    [HttpGet("{id}/{quantity}")]
+    public async Task<ActionResult<IEnumerable<TicketDTO>?>> Get(int id, int quantity)
     {
-        IEnumerable<TicketDTO>? tickets = (await _unitOfWork.Tickets.GetAllWithIncludesAsync())?.Select(TransformToDTO.FromTicketModel);
 
-        return Ok(tickets);
-    }
+        IEnumerable<TicketModel>? ticketModels = await _unitOfWork.Tickets.GetByEventIdAsync(id,quantity);
 
-    // Get by eventId
-    [HttpGet("{id}")]
-    public async Task<ActionResult<TicketDTO>> Get(int id)
-    {
-
-        TicketModel? ticketModel = await _unitOfWork.Tickets.GetByEventIdAsync(id);
-
-        if (ticketModel is not null)
+        if (ticketModels.Any())
         {
-            return Ok(TransformToDTO.FromTicketModel(ticketModel));
+            return Ok(ticketModels.Select(TransformToDTO.FromTicketModel).ToList());
         }
-        return NotFound();
+
+        return BadRequest();
     }
 
     // POST api/<SoldTicketsController>

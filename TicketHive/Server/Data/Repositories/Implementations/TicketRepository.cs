@@ -15,40 +15,30 @@ namespace TicketHive.Server.Data.Repositories.Implementations
             _context = context;
         }
 
-        public async Task<IEnumerable<TicketModel>?> GetAllWithIncludesAsync()
-        {
-            return await _context.Tickets
-                .Include(t => t.Event)
-                .ThenInclude(e => e.Country)
-                .Include(t => t.Event)
-                .ThenInclude(e => e.EventType)
-                 .Include(t => t.Event)
-                .ThenInclude(e => e.SoldTickets)
-                .ToListAsync();
-        }
+        //public async Task<IEnumerable<TicketModel>?> GetAllTicketsAsync()
+        //{
+        //    return await _context.Tickets
+        //        .Include(t => t.Event)
+        //        .ThenInclude(e => e.Country)
+        //        .Include(t => t.Event)
+        //        .ThenInclude(e => e.EventType)
+        //         .Include(t => t.Event)
+        //        .ThenInclude(e => e.SoldTickets)
+        //        .ToListAsync();
+        //}
 
-        public async Task<TicketModel?> GetOneByIdWithIncludesAsync(int id)
+        public async Task<IEnumerable<TicketModel?>> GetByEventIdAsync(int id,int quantity)
         {
             return await _context.Tickets
-                .Include(t => t.Event)
-                .ThenInclude(e => e.Country)
-                .Include(t => t.Event)
-                .ThenInclude(e => e.EventType)
-                .Include(t => t.Event)
-                .ThenInclude(e => e.SoldTickets)
-                .FirstOrDefaultAsync(t => t.Id.Equals(id));
-        }
-
-        public async Task<TicketModel?> GetByEventIdAsync(int id)
-        {
-            return await _context.Tickets
-                .Include(t => t.Event)
-                .ThenInclude(e => e.Country)
-                .Include(t => t.Event)
-                .ThenInclude(e => e.EventType)
-                .Include(t=>t.Event)
-                .ThenInclude(e=>e.SoldTickets)
-                .FirstOrDefaultAsync(t => t.EventId.Equals(id));
+                            .Include(t => t.Event)
+                            .ThenInclude(e => e.Country)
+                            .Include(t => t.Event)
+                            .ThenInclude(e => e.EventType)
+                            .Include(t => t.Event)
+                            .ThenInclude(e => e.SoldTickets)
+                            .Where(t => t.EventId.Equals(id))
+                            .Take(quantity)
+                            .ToListAsync();
         }
 
         public async Task<bool> RemoveByIdAsync(int id)

@@ -6,10 +6,10 @@ namespace TicketHive.Server.Data.Repositories.Interfaces
 {
     public interface ITicketRepository : IRepository<TicketModel>
     {
-        Task<IEnumerable<TicketModel>?> GetAllWithIncludesAsync();
-        //object GetAsync(Expression<Func<TicketDTO, bool>> predicate);
-        Task<TicketModel?> GetOneByIdWithIncludesAsync(int id);
-        Task<TicketModel?> GetByEventIdAsync(int id);
+        //Task<IEnumerable<TicketModel>?> GetAllTicketsAsync();
+
+        Task<IEnumerable<TicketModel>> GetByEventIdAsync(int id, int quantity);
+
         Task<bool> RemoveByIdAsync(int id);
     }
 }

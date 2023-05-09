@@ -19,31 +19,38 @@ namespace TicketHive.Bll.Services.Managers
             _unitOfService = unitOfService;
         }
 
-        public async Task<List<TicketViewModel>> GetTickets(params CartItemViewModel[] items)
-        {
-            List<TicketViewModel> tickets = new();
-            foreach (var item in items)
-            {
-                TicketViewModel newTicket = await _unitOfService.TicketService.GetByIdAsync(item.Id);
-                tickets.Add(newTicket);
-            }
+        //public async Task<IEnumerable<TicketViewModel>> GetTickets(params CartItemViewModel[] items)
+        //{
+        //    IEnumerable<TicketViewModel> tickets;
 
-            return tickets;
-        }
+        //    tickets = await _unitOfService.TicketService.GetTickets(1, 1);
+        //    foreach (var item in items)
+        //    {
+        //        //TicketViewModel newTicket = await _unitOfService.TicketService.GetTickets(item.Id,2);
+        //        //tickets.Add(newTicket);
+        //    }
+
+        //    return tickets;
+        //}
         public async Task<List<TicketViewModel>> GetTickets(List<CartItemViewModel> items)
         {
-            
-            
-            List<TicketViewModel> tickets = new();
-            foreach (var item in items)
+            List<TicketViewModel> tickets = new();  
+            IEnumerable<TicketViewModel> eventTickets;
+
+            foreach (var eventGroup in items.GroupBy(e => e.Id))
             {
-                TicketViewModel newTicket = await _unitOfService.TicketService.GetByIdAsync(item.Id);
-               
-                tickets.Add(newTicket);
+                eventTickets = await _unitOfService.TicketService.GetTickets(eventGroup.First().Id, eventGroup.Count());
+                tickets.AddRange(eventTickets);
+
             }
 
             return tickets;
         }
+
+        //public int GetTicketsQuantity(CartItemViewModel item)
+        //{
+
+        //}
         public decimal GetTotalCost(params CartItemViewModel[] items)
 		{
 			decimal totalCost = 0;

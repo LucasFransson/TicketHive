@@ -9,7 +9,8 @@ namespace TicketHive.Bll.Services.Interfaces
 {
     public interface IUnitOfService 
     {
-        IService<TicketViewModel> TicketService { get; }
+        //IService<TicketViewModel> TicketService { get; }
+        ITicketService TicketService { get; }
         IService<CountryViewModel> CountryService { get; }
         IService<EventTypeViewModel> EventTypeService { get; }
         IService<EventViewModel> EventService { get; }

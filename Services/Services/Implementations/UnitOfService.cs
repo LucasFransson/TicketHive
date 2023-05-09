@@ -13,7 +13,8 @@ namespace TicketHive.Bll.Services.Implementations
     {
         private readonly HttpClient _httpClient;
 
-        public IService<TicketViewModel> TicketService { get; set; }
+        //public IService<TicketViewModel> TicketService { get; set; }
+        public ITicketService TicketService { get; set; }
 
         public IService<CountryViewModel> CountryService { get; set; }
 
